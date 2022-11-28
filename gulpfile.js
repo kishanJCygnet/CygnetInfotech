@@ -12,49 +12,49 @@ const imagewebp = require('gulp-webp');
 
 //SCSS
 function compilescss(){
-    return src('wp-content/themes/IRP/assets/scss/*.scss')
+    return src('wp-content/themes/cygnetinfotech/assets/scss/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(prefix())
     .pipe(minify())
-    .pipe(dest('wp-content/themes/IRP/assets/dist/css'))
+    .pipe(dest('wp-content/themes/cygnetinfotech/assets/dist/css'))
 }
 //css
 function minifycss(){
-    return src('wp-content/themes/IRP/assets/css/*.css')
+    return src('wp-content/themes/cygnetinfotech/assets/css/*.css')
     .pipe(prefix())
     .pipe(minify())
-    .pipe(dest('wp-content/themes/IRP/assets/dist/css'))
+    .pipe(dest('wp-content/themes/cygnetinfotech/assets/dist/css'))
 }
 
 //js Min
 function jsmin(){
-    return src('wp-content/themes/IRP/assets/js/*.js')
+    return src('wp-content/themes/cygnetinfotech/assets/js/*.js')
     .pipe(terser())
-    .pipe(dest('wp-content/themes/IRP/assets/dist/js'))
+    .pipe(dest('wp-content/themes/cygnetinfotech/assets/dist/js'))
 }
 
 //Optmize
 function optimizeim(){
-    return src('wp-content/themes/IRP/assets/images/*.{jpg, png}')
+    return src('wp-content/themes/cygnetinfotech/assets/images/*.{jpg, png}')
     .pipe(imagemin([imagemin.mozjpeg({quality:50, progressive: true}), imagemin.optipng({optimizationLevel: 2})]))
-    .pipe(dest('wp-content/themes/IRP/assets/dist/images'))
+    .pipe(dest('wp-content/themes/cygnetinfotech/assets/dist/images'))
 }
 
 //webp images
 
 function webpImage() {
-    return src('wp-content/themes/IRP/assets/images/*.{jpg, png}')
+    return src('wp-content/themes/cygnetinfotech/assets/images/*.{jpg, png}')
     .pipe(imagewebp())
-    .pipe(dest('wp-content/themes/IRP/assets/dist/images'))
+    .pipe(dest('wp-content/themes/cygnetinfotech/assets/dist/images'))
 }
 
 //create watch task
 function watchTask(){
-    watch('wp-content/themes/IRP/assets/**/*.scss', compilescss);
-    watch('wp-content/themes/IRP/assets/css/*.css', minifycss);
-    watch('wp-content/themes/IRP/assets/js/*.js', jsmin);
-    watch('wp-content/themes/IRP/assets/images/*.{jpg, png}', optimizeim);
-    watch('wp-content/themes/IRP/assets/dist/images/*.{jpg, png}', webpImage);
+    watch('wp-content/themes/cygnetinfotech/assets/**/*.scss', compilescss);
+    watch('wp-content/themes/cygnetinfotech/assets/css/*.css', minifycss);
+    watch('wp-content/themes/cygnetinfotech/assets/js/*.js', jsmin);
+    watch('wp-content/themes/cygnetinfotech/assets/images/*.{jpg, png}', optimizeim);
+    watch('wp-content/themes/cygnetinfotech/assets/dist/images/*.{jpg, png}', webpImage);
 }
 
 //Defult gulp
