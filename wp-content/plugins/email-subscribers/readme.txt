@@ -6,7 +6,7 @@ Tags: email marketing, subscription, autoresponder, post notification, welcome e
 Requires at least: 3.9
 Tested up to: 6.1.1
 Requires PHP: 5.6
-Stable tag: 5.5.0
+Stable tag: 5.5.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses
 
@@ -310,14 +310,20 @@ Refer [here](https://www.icegram.com/documentation/es-faq/).
 
 == Upgrade Notice ==
 
-= 5.5.0 =
+= 5.5.1 =
 
-* New: Workflow action to update contact's custom field [MAX]
-* Fix: SQL vulnerability while getting list's contacts count [Thanks to WPScan team]
-* Fix: Style issue for Drag-and-Drop form fields
-* Fix: Sending issue with Sendinblue when subscribers' name data is not present [MAX]
+* New: Added new styles for subscription forms [PRO]
+* Fix: Select list issue in form widget
+* Fix: Added permission check when getting contact counts on Audience export and Campaigns pages[Thanks to WPScan team]
+
 
 == Changelog ==
+
+**5.5.1 (01.11.2022)**
+
+* New: Added new styles for subscription forms [PRO]
+* Fix: Select list issue in form widget
+* Fix: Added permission check when getting contact counts on Audience export and Campaigns pages[Thanks to WPScan team]
 
 **5.5.0 (18.11.2022)**
 

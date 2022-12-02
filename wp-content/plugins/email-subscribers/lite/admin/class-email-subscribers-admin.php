@@ -171,73 +171,79 @@ class Email_Subscribers_Admin {
 		wp_enqueue_script( $this->email_subscribers, plugin_dir_url( __FILE__ ) . 'js/email-subscribers-admin.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-tabs' ), $this->version, false );
 
 		$ig_es_js_data = array(
-		'security'  => wp_create_nonce( 'ig-es-admin-ajax-nonce' ),
-		'i18n_data' => array(
-			// Broadcast messages.
-			'ajax_error_message'              => __( 'An error has occured. Please try again later.', 'email-subscribers' ),
-			'broadcast_saved_message'         => __( 'Broadcast saved successfully.', 'email-subscribers' ),
-			'broadcast_error_message'         => __( 'An error has occured while saving the broadcast. Please try again later.', 'email-subscribers' ),
-			'broadcast_subject_empty_message' => __( 'Please add a broadcast subject before saving.', 'email-subscribers' ),
-			'campaign_saved_message'          => __( 'Campaign saved successfully.', 'email-subscribers' ),
-			'campaign_error_message'          => __( 'An error has occured while saving the campaign. Please try again later.', 'email-subscribers' ),
-			'campaign_subject_empty_message'  => __( 'Please add a campaign subject before saving.', 'email-subscribers' ),
-			'empty_template_message'          => __( 'Please add email body.', 'email-subscribers' ),
-			'remove_conditions_message'       => __( 'Do you really like to remove all conditions?', 'email-subscribers' ),
-			'add_conditions_message'          => __( 'Please add some recipients before proceeding.', 'email-subscribers' ),
+			'security'   => wp_create_nonce( 'ig-es-admin-ajax-nonce' ),
+			'i18n_data'  => array(
+				// Broadcast messages.
+				'ajax_error_message'              => __( 'An error has occured. Please try again later.', 'email-subscribers' ),
+				'broadcast_saved_message'         => __( 'Broadcast saved successfully.', 'email-subscribers' ),
+				'broadcast_error_message'         => __( 'An error has occured while saving the broadcast. Please try again later.', 'email-subscribers' ),
+				'broadcast_subject_empty_message' => __( 'Please add a broadcast subject before saving.', 'email-subscribers' ),
+				'campaign_saved_message'          => __( 'Campaign saved successfully.', 'email-subscribers' ),
+				'campaign_error_message'          => __( 'An error has occured while saving the campaign. Please try again later.', 'email-subscribers' ),
+				'campaign_subject_empty_message'  => __( 'Please add a campaign subject before saving.', 'email-subscribers' ),
+				'empty_template_message'          => __( 'Please add email body.', 'email-subscribers' ),
+				'remove_conditions_message'       => __( 'Do you really like to remove all conditions?', 'email-subscribers' ),
+				'add_conditions_message'          => __( 'Please add some recipients before proceeding.', 'email-subscribers' ),
 
-			// Workflows messages.
-			'no_trigger_message'              => __( 'Please select a trigger before saving the workflow.', 'email-subscribers' ),
-			'no_actions_message'              => __( 'Please add some actions before saving the workflow.', 'email-subscribers' ),
-			'no_action_selected_message'      => __( 'Please select an action that this workflow should perform before saving the workflow.', 'email-subscribers' ),
-			'trigger_change_message'          => __( 'Changing the trigger will remove existing actions. Do you want to proceed anyway?.', 'email-subscribers' ),
-			'placeholder_copied_message'      => __( 'Copied!', 'email-subscribers' ),
-			'keyword_field_is_required'       => __( '{{field_name}} field is required!', 'email-subscribers' ),
-			'required_field_is_empty'         => __( 'Required field is empty!', 'email-subscribers' ),
-			'delete_confirmation_message'     => __( 'Are you sure?', 'email-subscribers' ),
+				// Workflows messages.
+				'no_trigger_message'              => __( 'Please select a trigger before saving the workflow.', 'email-subscribers' ),
+				'no_actions_message'              => __( 'Please add some actions before saving the workflow.', 'email-subscribers' ),
+				'no_action_selected_message'      => __( 'Please select an action that this workflow should perform before saving the workflow.', 'email-subscribers' ),
+				'trigger_change_message'          => __( 'Changing the trigger will remove existing actions. Do you want to proceed anyway?.', 'email-subscribers' ),
+				'placeholder_copied_message'      => __( 'Copied!', 'email-subscribers' ),
+				'keyword_field_is_required'       => __( '{{field_name}} field is required!', 'email-subscribers' ),
+				'required_field_is_empty'         => __( 'Required field is empty!', 'email-subscribers' ),
+				'delete_confirmation_message'     => __( 'Are you sure?', 'email-subscribers' ),
 
-			// Import subscribers messages.
-			'select_status'                   => esc_html__( 'Please select the status for the importing contacts!', 'email-subscribers' ),
-			'select_list'                     => esc_html__( 'Please select a list for importing contacts!', 'email-subscribers' ),
-			'select_email_column'             => esc_html__( 'Please select the email address column!', 'email-subscribers' ),
-			'prepare_data'                    => esc_html__( 'Preparing Data', 'email-subscribers' ),
-			/* translators: %s: Upload progress */
-			'uploading'                       => esc_html__( 'Uploading...%s', 'email-subscribers' ),
-			/* translators: %s: Import progress */
-			'import_contacts'                 => esc_html__( 'Importing contacts...%s', 'email-subscribers' ),
-			/* translators: %s: Import failed svg icon  */
-			'import_failed'                   => esc_html__( 'Import failed! %s', 'email-subscribers' ),
-			'no_windowclose'                  => esc_html__( 'Please do not close this window until it completes...', 'email-subscribers' ),
-			'prepare_import'                  => esc_html__( 'Preparing Import...', 'email-subscribers' ),
-			/* translators: 1. Imported contacts count 2. Total contacts count 3. Failed to import count 4. Memory usage */
-			'current_stats'                   => esc_html__( 'Currently %1$s of %2$s imported with %3$s errors. %4$s %5$s memory usage', 'email-subscribers' ),
-			/* translators: 1 Duplicate found email message */
-			'duplicate_emails_found_message'  => __( '%1$s duplicate emails found.', 'email-subscribers' ),
-			/* translators: %s: Time left in minutes */
-			'estimate_time'                   => esc_html__( 'Estimate time left: %s minutes', 'email-subscribers' ),
-			/* translators: %s: Next attempt delaly time */
-			'continues_in'                    => esc_html__( 'Continues in %s seconds', 'email-subscribers' ),
-			'error_importing'                 => esc_html__( 'There was a problem during importing contacts. Please check the error logs for more information!', 'email-subscribers' ),
-			'confirm_import'                  => esc_html__( 'Do you really like to import these contacts?', 'email-subscribers' ),
-			/* translators: %s: Process complete svg icon  */
-			'import_complete'                 => esc_html__( 'Import complete! %s', 'email-subscribers' ),
-			'onbeforeunloadimport'            => esc_html__( 'You are currently importing subscribers! If you leave the page all pending subscribers don\'t get imported!', 'email-subscribers' ),
-			'api_verification_success'        => esc_html__( 'API is valid. Fetching lists...', 'email-subscribers' ),
-			'mailchimp_notice_nowindow_close' => esc_html__( 'Fetching contacts from MailChimp...Please do not close this window', 'email-subscribers' ),
+				// Import subscribers messages.
+				'select_status'                   => esc_html__( 'Please select the status for the importing contacts!', 'email-subscribers' ),
+				'select_list'                     => esc_html__( 'Please select a list for importing contacts!', 'email-subscribers' ),
+				'select_email_column'             => esc_html__( 'Please select the email address column!', 'email-subscribers' ),
+				'prepare_data'                    => esc_html__( 'Preparing Data', 'email-subscribers' ),
+				/* translators: %s: Upload progress */
+				'uploading'                       => esc_html__( 'Uploading...%s', 'email-subscribers' ),
+				/* translators: %s: Import progress */
+				'import_contacts'                 => esc_html__( 'Importing contacts...%s', 'email-subscribers' ),
+				/* translators: %s: Import failed svg icon  */
+				'import_failed'                   => esc_html__( 'Import failed! %s', 'email-subscribers' ),
+				'no_windowclose'                  => esc_html__( 'Please do not close this window until it completes...', 'email-subscribers' ),
+				'prepare_import'                  => esc_html__( 'Preparing Import...', 'email-subscribers' ),
+				/* translators: 1. Imported contacts count 2. Total contacts count 3. Failed to import count 4. Memory usage */
+				'current_stats'                   => esc_html__( 'Currently %1$s of %2$s imported with %3$s errors. %4$s %5$s memory usage', 'email-subscribers' ),
+				/* translators: 1 Duplicate found email message */
+				'duplicate_emails_found_message'  => __( '%1$s duplicate emails found.', 'email-subscribers' ),
+				/* translators: %s: Time left in minutes */
+				'estimate_time'                   => esc_html__( 'Estimate time left: %s minutes', 'email-subscribers' ),
+				/* translators: %s: Next attempt delaly time */
+				'continues_in'                    => esc_html__( 'Continues in %s seconds', 'email-subscribers' ),
+				'error_importing'                 => esc_html__( 'There was a problem during importing contacts. Please check the error logs for more information!', 'email-subscribers' ),
+				'confirm_import'                  => esc_html__( 'Do you really like to import these contacts?', 'email-subscribers' ),
+				/* translators: %s: Process complete svg icon  */
+				'import_complete'                 => esc_html__( 'Import complete! %s', 'email-subscribers' ),
+				'onbeforeunloadimport'            => esc_html__( 'You are currently importing subscribers! If you leave the page all pending subscribers don\'t get imported!', 'email-subscribers' ),
+				'api_verification_success'        => esc_html__( 'API is valid. Fetching lists...', 'email-subscribers' ),
+				'mailchimp_notice_nowindow_close' => esc_html__( 'Fetching contacts from MailChimp...Please do not close this window', 'email-subscribers' ),
 
-			// verify Email authentication header messages
-			'error_send_test_email'           => esc_html__('SMTP Error : Unable to send test email', 'email-subscribers'),
-			'error_server_busy'				  => esc_html__('Server Busy : Please try again later', 'email-subscribers'),
-			'success_verify_email_headers'    => esc_html__('Headers verified successfully', 'email-subscribers'),
+				// verify Email authentication header messages
+				'error_send_test_email'           => esc_html__('SMTP Error : Unable to send test email', 'email-subscribers'),
+				'error_server_busy'				  => esc_html__('Server Busy : Please try again later', 'email-subscribers'),
+				'success_verify_email_headers'    => esc_html__('Headers verified successfully', 'email-subscribers'),
 
-			'confirm_select_all'			  => esc_html__('Want to select contacts on all pages?', 'email-subscribers'),
-		),
-		'is_pro'    => ES()->is_pro() ? true : false,
+				'confirm_select_all'			  => esc_html__('Want to select contacts on all pages?', 'email-subscribers'),
+			),
+			'is_pro'     => ES()->is_pro() ? true : false,
+			'is_premium' => ES()->is_premium(),
 		);
 
 		if ( 'es_settings' === $get_page ) {
 			$ig_es_js_data['popular_domains'] = ES_Common::get_popular_domains();
 			$ig_es_js_data['i18n_data']['delete_rest_api_confirmation'] = __( 'Are you sure you want to delete this key? This action cannot be undone.', 'email-subscribers' );
 			$ig_es_js_data['i18n_data']['select_user'] = __( 'Please select a user.', 'email-subscribers' );
+		}
+
+		if ( 'es_forms' === $get_page && ES_Drag_And_Drop_Editor::is_dnd_editor_page() ) {
+			$ig_es_js_data['frontend_css'] = ES_Form_Admin::get_frontend_css();
+			$ig_es_js_data['form_styles']  = ES_Form_Admin::get_form_styles();
 		}
 
 		wp_localize_script( $this->email_subscribers, 'ig_es_js_data', $ig_es_js_data );
@@ -703,6 +709,12 @@ class Email_Subscribers_Admin {
 	public function count_contacts_by_list() {
 
 		check_ajax_referer( 'ig-es-admin-ajax-nonce', 'security' );
+
+		$can_access_audience = ES_Common::ig_es_can_access( 'audience' );
+		$can_access_campaign = ES_Common::ig_es_can_access( 'campaigns' );
+		if ( ! ( $can_access_audience || $can_access_campaign ) ) {
+			return 0;
+		}
 
 		$list_id    = ig_es_get_request_data( 'list_id', 0 );
 		$status     = ig_es_get_request_data( 'status', 'all' );

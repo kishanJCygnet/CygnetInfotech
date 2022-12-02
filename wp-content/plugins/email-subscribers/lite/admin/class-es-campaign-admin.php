@@ -866,7 +866,6 @@ if ( ! class_exists( 'ES_Campaign_Admin' ) ) {
 										$editor_settings = array(
 											'attributes' => array(
 												'data-html-textarea-name'  => 'campaign_data[body]',
-												'data-is-in-campaign-flow' => 'yes',
 											),
 										);
 										( new ES_Drag_And_Drop_Editor() )->show_editor( $editor_settings );
