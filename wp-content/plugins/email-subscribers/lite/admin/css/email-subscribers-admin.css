@@ -2740,9 +2740,11 @@ top: 50%;}
 
 #es-edit-form-container #ig-es-dnd-builder .es-content #es-email-subscribers {padding: 15px;background-color:#fff}
 
-#es-edit-form-container #ig-es-dnd-builder .es-content .gjs-editor, #ig-es-dnd-builder .es-content .gjs-cv-canvas,
+#es-edit-form-container #ig-es-dnd-builder .es-content .gjs-editor, 
+#ig-es-dnd-builder .es-content .gjs-editor .gjs-cv-canvas,
 #es-edit-form-container #ig-es-dnd-builder .es-content {
-	box-shadow: none;border-top-left-radius: unset;
+	box-shadow: none;
+	border-top-left-radius: unset;
     border-bottom-left-radius: unset;
 }
 

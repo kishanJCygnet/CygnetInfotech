@@ -59,6 +59,16 @@ class ES_Form_Widget extends WP_Widget {
 			$data['custom_fields'] 		= ( ! empty( $form_data['custom_fields' ] ) ) ? $form_data['custom_fields' ] : '';
 		}
 
+		if ( ! empty( $form_data['settings'] ) ) {
+			$data['settings']['editor_type']    = ! empty( $form_data['settings']['editor_type'] ) ? $form_data['settings']['editor_type'] : array();
+			$data['settings']['dnd_editor_css'] = ! empty( $form_data['settings']['dnd_editor_css'] ) ? $form_data['settings']['dnd_editor_css'] : array();
+			$data['settings']['lists']          = ! empty( $form_data['settings']['lists'] ) ? $form_data['settings']['lists'] : array();
+		}
+
+		if ( ! empty( $form_data['body'] ) ) {
+			$data['body'] = ! empty( $form_data['body'] ) ? $form_data['body'] : '';
+		}
+
 		ES_Shortcode::render_form( $data );
 
 		echo wp_kses_post( $args['after_widget'] );
