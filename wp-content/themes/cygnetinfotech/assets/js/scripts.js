@@ -69,6 +69,9 @@ var CYGNET = {
 			} else if (jQuery('.blog-page-listing').length > 0) {
 				CYGNET.researchAnnouncementsListing.blogListing(jQuery('.submit-all-filter').serialize(), 1);
 
+			} else if (jQuery('.resources-page-listing').length > 0) {
+				CYGNET.researchAnnouncementsListing.resourcesListing(jQuery('.submit-all-filter').serialize(), 1);
+
 			} else if (jQuery('.whitepaper-page-listing').length > 0) {
 				CYGNET.researchAnnouncementsListing.whitePaperListing(jQuery('.submit-all-filter').serialize(), 1);
 
@@ -110,6 +113,9 @@ var CYGNET = {
 			} else if (jQuery('.blog-page-listing').length > 0) {
 				CYGNET.researchAnnouncementsListing.blogListing(formData, currentPage);
 
+			} else if (jQuery('.resources-page-listing').length > 0) {
+				CYGNET.researchAnnouncementsListing.resourcesListing(formData, currentPage);
+
 			} else if (jQuery('.whitepaper-page-listing').length > 0) {
 				CYGNET.researchAnnouncementsListing.whitePaperListing(formData, currentPage);
 
@@ -136,9 +142,18 @@ var CYGNET = {
 			jQuery('.filter-by-solution').val('').trigger('change');
 			jQuery('.filter-by-country').val('').trigger('change');
 			jQuery('.filter-by-category').val('').trigger('change');
+			jQuery('.filter-by-cpt').val('').trigger('change');
+			//jQuery(".filter-by-cpt option:selected").removeAttr("selected");
+			//jQuery("li.select2-selection__choice").remove();
+			//jQuery(".select2-selection__clear").remove();
+			//jQuery('.disvar').prop('disabled', true);
+			//jQuery('input[type="checkbox"]').attr("checked", "checked");
 
 			if (jQuery('.casestudy-page-listing').length > 0) {
 				CYGNET.researchAnnouncementsListing.caseStudyListing();
+
+			} else if (jQuery('.resources-page-listing').length > 0) {
+				CYGNET.researchAnnouncementsListing.resourcesListing();
 
 			} else {
 				CYGNET.researchAnnouncementsListing.blogListing();
@@ -195,6 +210,40 @@ var CYGNET = {
 					return false;
 				}
 			});
+		},
+		
+		/*
+		Resources Listing by AJAX
+		*/
+		resourcesListing: function (formData, currentPage) {
+			var pageNumber = (typeof currentPage == 'undefined') ? 1 : currentPage;
+			var categoryId = jQuery('.filter-by-category').val();
+			var cptslug = jQuery('.filter-by-cpt').val();
+			if(categoryId != '' || cptslug != ''){
+				jQuery.ajax({
+					url: ajaxPath.ajaxurl,
+					type: "POST",
+					data: {
+						'action': 'get_resources_listing_data',
+						'form_data': formData,
+						'current_page': pageNumber,
+						'flag': cptslug ? cptslug : '',
+						'category_id': categoryId ? categoryId : ''					
+					},
+					beforeSend: function(){
+						// Show image container
+						jQuery("#loader").show();
+				    },
+					success: function (response) {
+						jQuery('.resources-container').html(response);
+						return false;
+					},
+					complete:function(response){
+						// Hide image container
+						jQuery("#loader").hide();
+				    }
+				});
+			}
 		},
 
 		/*
@@ -325,7 +374,7 @@ var CYGNET = {
 			}
 			else{
 				jQuery('html, body').animate({
-					scrollTop: jQuery(".blog-page-listing, .webinar-page-listing, .ebook-page-listing, .casestudy-page-listing").offset().top - headerHeight - 120
+					scrollTop: jQuery(".blog-page-listing, .webinar-page-listing, .ebook-page-listing, .casestudy-page-listing, .resources-page-listing").offset().top - headerHeight - 120
 				}, 700);
 			}
 			CYGNET.researchAnnouncementsListing.processFieldData(objPageNumber);
