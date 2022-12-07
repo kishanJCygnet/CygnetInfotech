@@ -30,7 +30,6 @@ body {
     font-size: 54px;
     line-height: 64px;
   }
-
   section {
     padding: 80px 0;
     @include bp(xl-max) {
@@ -112,6 +111,7 @@ body {
     font-size: 14px;
     padding: 10px 25px;
     background-color: #3cb4e7;
+    border:1px solid #3cb4e7;
     border-radius: 10px;
     color: #fff;
 
@@ -141,8 +141,10 @@ body {
       transform: translate(-50%, -50%);
       z-index: 1;
     }
+  
     &:hover {
       color: #3cb4e7;
+      background-color: #fff;
       span.effect {
         width: 225%;
         height: 562.5px;
@@ -150,6 +152,14 @@ body {
     }
     &:active {
       background-color: #5a6d4c;
+    }
+    &.btn-outline{
+      background-color: #fff;
+      color: #3cb4e7;
+      &:hover {
+        background-color: #3cb4e7;
+        color: #fff;
+      }
     }
   }
   a,
@@ -1018,6 +1028,7 @@ video {
       }
     }
   }
+  
 }
 // .image-shape{
 //   position: relative;
