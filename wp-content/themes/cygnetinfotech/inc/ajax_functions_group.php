@@ -12,6 +12,7 @@ function get_casestudy_listing_data()
   $solution_query = '';
   $category_query = '';
   $items_per_page = '';
+  $news_category_query = '';
 
   $current_page = $_REQUEST['current_page'];
 
@@ -86,8 +87,17 @@ function get_casestudy_listing_data()
     $content_priority = 'content_priority';
   } elseif ($flag == 'in_the_news_listing') {
     $post_type = 'in_the_news';
-    $items_per_page = 3;
+    $items_per_page = 6;
     $content_priority = 'content_priority';
+	
+	$newscategoryId = $_REQUEST['news_category_id'];
+    if ($newscategoryId) {
+      $news_category_query = array(
+        'taxonomy' => 'news_categories',
+        'field' => 'term_id',
+        'terms' => $newscategoryId
+      );
+    }
   }
 
   //Querying wordpress to fetch all the data conditionally.
@@ -101,7 +111,8 @@ function get_casestudy_listing_data()
       $industry_query,
       $solution_query,
       $country_query,
-      $category_query
+      $category_query,
+	  $news_category_query
     ),
     'meta_query' => array(
       'relation' => 'AND',
@@ -352,12 +363,18 @@ function get_casestudy_listing_data()
             </div>
           </div>
 
-        <?php
+         <?php
         // In the News Listing by AJAX
-        elseif ($flag == 'in_the_news_listing') : ?>
+        elseif ($flag == 'in_the_news_listing') : 
+			$category = @get_the_terms($listingObj->ID, 'news_categories'); ?>
           <div class="col-sm-6 col-lg-4 mb-4">
             <div class="card h-100">
               <div class="card-image-box">
+				<?php if ($category[0]->name) : ?>
+                  <div class="card-image-tag">
+                    <span class="btn btn-sm btn-lightest-blue btn-muted px-3 case-tag"><?php echo $category[0]->name; ?></span>
+                  </div>
+                <?php endif; ?>
                 <?php if (has_post_thumbnail($post->ID)) : ?>
                   <?php $newsImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium_large'); ?>
                   <div class="card-image cover-bg" style="background-image: url('<?php echo $newsImage[0]; ?>');"></div>
@@ -377,12 +394,13 @@ function get_casestudy_listing_data()
               </div>
               <?php if (get_field('news_url', $post->ID)) : ?>
                 <div class="card-footer bg-transparent border-top-0 text-end">
-                  <a href="<?php echo the_field('news_url', $post->ID); ?>" class="read-more-link" title="Read More" target="_blank">Read More<img src="<?php echo THEME_PATH; ?>assets/images/Iconfeather-arrow-right.svg" alt="navigation right" /></a>
+                  <a href="<?php echo the_field('news_url', $post->ID); ?>" class="read-more-link" title="Read More" target="_blank">Read More<i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                 </div>
               <?php endif; ?>
             </div>
           </div>
     <?php endif;
+	
 		$s = $s + 0.2;
       endwhile; 
 	  else : ?>
@@ -481,12 +499,219 @@ function get_casestudy_listing_data()
   </div>
 <?php } 
 
+
+
+/* Resources Listing using AJAX */
+add_action('wp_ajax_get_resources_listing_data', 'get_resources_listing_data');
+add_action('wp_ajax_nopriv_get_resources_listing_data', 'get_resources_listing_data');
+
+function get_resources_listing_data()
+{
+  //Declaration of temporary variables
+  $type_query = array();
+  $date_query = array();
+  $category_query = '';
+  $items_per_page = '';
+
+  $current_page = $_REQUEST['current_page'];
+  
+  $flag = $_REQUEST['flag'];
+  $categoryId = $_REQUEST['category_id'];
+  
+  if($flag == '' && $categoryId != ''){
+	$post_type = array('post','ebooks','case_studies','webinars','whitepapers');
+  } else {
+	$post_type = $flag;
+  }  
+  $items_per_page = 6;
+  $content_priority = 'content_priority';
+  
+  if ($categoryId) {
+	  $category_query = array(
+		'taxonomy' => 'category',
+		'field' => 'term_id',
+		'terms' => $categoryId //$categoryId    array(50,53,52)
+	  );
+  }
+
+  //Querying wordpress to fetch all the data conditionally.
+  $args = array(
+    'post_type'     => $post_type,
+    'post_status'   => 'publish',
+    'posts_per_page' => $items_per_page,
+    'paged'      => $current_page,
+	'orderby'   => '_post_type__in',
+    'tax_query' => array(
+      'relation' => 'OR',
+      $category_query
+    )/*,
+    'meta_query' => array(
+      'relation' => 'AND',
+      $type_query,
+    ),
+    'date_query' => $date_query*/
+  );
+
+  $listingObj = new WP_Query($args); 
+  //echo "Last SQL-Query: {$listingObj->request}";
+
+  $i = 0; ?>
+  <div class="row mb-n4">
+    <?php if ($listingObj->have_posts()) :
+      while ($listingObj->have_posts()) :  $listingObj->the_post();
+        
+          $category = @get_the_terms($listingObj->ID, 'category');  
+		  $post_type = get_post_type_object(get_post_type($listingObj->ID));
+		  //echo "<pre>";print_r($post_type);
+			if($post_type->labels->singular_name == 'Post'){
+				$display_cpt_title = "Blog";
+			} else {
+				$display_cpt_title = $post_type->labels->singular_name;
+			}	
+		  ?>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card h-100 wow fadeInUp" data-wow-delay="<?php echo $s; ?>s" data-wow-offset="30">
+              <div class="card-image-box">
+                <?php if ($category[0]->name) : ?>
+                  <div class="card-image-tag">
+                    <span class="px-3 case-tag"><?php echo $category[0]->name; ?></span>
+                    <span class="px-3 case-tag"><?php echo $display_cpt_title; ?></span>
+                  </div>
+                <?php endif; ?>
+                <?php if (has_post_thumbnail($post->ID)) : ?>
+                  <?php $caseImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium_large'); ?>
+                  <div class="card-image cover-bg" loading="lazy" style="background-image: url('<?php echo $caseImage[0]; ?>');"></div>
+                <?php endif; ?>
+              </div>
+              <div class="card-body">
+                <?php if (get_the_title()) : ?>
+                  <h5 class="card-title">
+                    <a href="<?php echo get_field('custom_url', $post->ID); ?>" title="<?php the_title(); ?>" target="_blank">
+                      <?php echo wp_trim_words(get_the_title(), 10, '...'); ?>
+                    </a>
+                  </h5>
+                <?php endif; ?>
+                <?php
+                $blogContent = get_field('short_description', $post->ID);
+                if ($blogContent) : ?>
+                  <p class="card-text"><?php echo wp_trim_words($blogContent, 30, '...'); ?></p>
+                <?php endif; ?>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <a href="<?php echo get_field('custom_url', $post->ID); ?>" class="read-more-link" title="Know More" target="_blank">Read More <img src="<?php echo THEME_PATH; ?>assets/images/Iconfeather-arrow-right.svg" alt="navigation right" /></a>
+              </div>
+            </div>
+          </div>
+        
+    <?php 
+		$s = $s + 0.2;
+      endwhile; 
+	  else : ?>
+	  <p class="text-center">No Record Found</p>
+    <?php endif; ?>
+  </div>
+
+  <div class="pagination justify-content-center">
+    <?php
+    $output = '';
+    $total = $listingObj->found_posts;
+
+    if ($current_page > 1) :
+      $output .= '<a href="javascript:void(0);" title="Previous" class="pagination-link prev-link" data-page_num = ' . ($current_page - 1) . '><span aria-hidden="true"><i class="bi bi-chevron-left"></i></span></a>';
+
+    endif;
+
+    if ($current_page >= 5) :
+
+      if ($current_page == 1) :
+        $output .= '<a href="javascript:void(0);" class="pagination-link current-page" id="pagination_link' . $current_page . '" data-page_num = 1> 1 </a>';
+
+      else :
+        $output .= '<a href="javascript:void(0);" class="pagination-link" data-page_num = 1> 1 </a>';
+      endif;
+
+      $output .= '<span> .... </span>';
+
+      for ($j = ($current_page - 3); $j < $current_page; $j++) {
+        if ($current_page == $j) :
+          $output .= '<a href="javascript:void(0);" class="pagination-link current_page" id="pagination_link' . $current_page . '" data-page_num = ' . $j . '>' . $j . '</a>';
+
+        else :
+			$output .= '<a href="javascript:void(0);" class="pagination-link" data-page_num = ' . $j . '>' . $j . '</a>';
+        endif;
+      }
+
+      for ($k = $current_page; $k < ($current_page + 3); $k++) {
+
+        if ($k != (ceil($total / $items_per_page)) && $k != (ceil($total / $items_per_page) + 1)) :
+          if ($current_page != ceil($total / $items_per_page)) :
+            if ($current_page == $k) :
+              $output .= '<a href="javascript:void(0);" class="pagination-link current-page" id="pagination_link' . $current_page . '" data-page_num = ' . $k . '>' . $k . '</a>';
+
+            else :
+              $output .= '<a href="javascript:void(0);" class="pagination-link" data-page_num = ' . $k . '>' . $k . '</a>';
+            endif;
+          endif;
+        endif;
+      }
+
+      $output .= '<span> .... </span>';
+
+      if ($current_page == ceil($total / $items_per_page)) :
+        $output .= '<a href="javascript:void(0);" class="pagination-link current-page" id="pagination_link' . $current_page . '" data-page_num = ' . ceil($total / $items_per_page) . '> ' . ceil($total / $items_per_page) . ' </a>';
+
+      else :
+        $output .= '<a href="javascript:void(0);" class="pagination-link" data-page_num = ' . ceil($total / $items_per_page) . '> ' . ceil($total / $items_per_page) . ' </a>';
+      endif;
+
+    else :
+
+      for ($i = 1; $i <= ceil($total / $items_per_page); $i++) {
+        if ($i > 5) :
+          $output .= '<span> .... </span>';
+          if ($current_page == ceil($total / $items_per_page)) :
+            $output .= '<a href="javascript:void(0);" class="pagination-link current-page" id="pagination_link' . $current_page . '"  data-page_num = ' . ceil($total / $items_per_page) . '> ' . ceil($total / $items_per_page) . ' </a>';
+
+          else :
+            $output .= '<a href="javascript:void(0);" class="pagination-link" data-page_num = ' . ceil($total / $items_per_page) . '> ' . ceil($total / $items_per_page) . ' </a>';
+          endif;
+
+          break;
+
+        else :
+          if ($current_page == $i) :
+            $output .= '<a href="javascript:void(0);" class="pagination-link current-page"  id="pagination_link' . $current_page . '" data-page_num = ' . $i . '>' . $i . '</a>';
+
+          else :
+            $output .= '<a href="javascript:void(0);" class="pagination-link" data-page_num = ' . $i . '>' . $i . '</a>';
+          endif;
+        endif;
+      }
+    endif;
+
+    if (($current_page < ceil($total / $items_per_page)) && ($current_page != ceil($total / $items_per_page))) :
+      $output .= '<a href="javascript:void(0);" title="Next" class="pagination-link next-link" data-page_num = ' . ($current_page + 1) . '><span aria-hidden="true"><i class="bi bi-chevron-right"></i></span></a>';
+    endif;
+
+	if($total <= 6){
+		$output = '';
+	}
+    echo $output;
+    die();
+    ?>
+  </div>
+<?php } 
+
+
+
+
 /* Press Release Listing */
 add_action('wp_ajax_get_press_release_listing', 'get_press_release_listing');
 add_action('wp_ajax_nopriv_get_press_release_listing', 'get_press_release_listing');
 
 function get_press_release_listing()
 {
+
   //Declaration of temporary variables
   $items_per_page = '';
   $current_page = $_REQUEST['current_page'];
@@ -496,6 +721,15 @@ function get_press_release_listing()
     $post_type = 'press-release';
     $items_per_page = 6;
     $content_priority = 'content_priority';
+	
+	$prcategoryId = $_REQUEST['press_release_category_id']; /*16-5-2022*/
+    if ($prcategoryId) {
+      $pr_category_query = array(
+        'taxonomy' => 'press_release_categories',
+        'field' => 'term_id',
+        'terms' => $prcategoryId
+      );
+    }
   }
 
   //Querying wordpress to fetch all the data conditionally.
@@ -503,7 +737,11 @@ function get_press_release_listing()
     'post_type'     => $post_type,
     'post_status'   => 'publish',
     'posts_per_page' => $items_per_page,
-    'paged'      => $current_page
+    'paged'      => $current_page,
+	'tax_query' => array(
+      'relation' => 'AND',
+      $pr_category_query  /*16-5-2022*/
+    ),
   );
 
   $listingObj = new WP_Query($args); ?>
@@ -511,12 +749,17 @@ function get_press_release_listing()
   <div class="row mb-n4">
     <?php if ($listingObj->have_posts()) :
       while ($listingObj->have_posts()) :  $listingObj->the_post();
-
+		$category = @get_the_terms($listingObj->ID, 'press_release_categories');  /*16-5-2022*/
         // Press Release Listing by AJAX
         if ($flag == 'press_release_listing') : ?>
           <div class="col-sm-6 col-lg-4 mb-4">
             <div class="card h-100">
               <div class="card-image-box">
+				<?php if ($category[0]->name) : /*16-5-2022*/ ?>
+                  <div class="card-image-tag">
+                    <span class="btn btn-sm btn-lightest-blue btn-muted px-3 case-tag"><?php echo $category[0]->name; ?></span>
+                  </div>
+                <?php endif; ?>
                 <?php if (has_post_thumbnail($post->ID)) : ?>
                   <?php $pressImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium_large'); ?>
                   <div class="card-image cover-bg" style="background-image: url('<?php echo $pressImage[0]; ?>');"></div>
@@ -532,14 +775,16 @@ function get_press_release_listing()
               </div>
 
               <div class="card-footer bg-transparent border-top-0 text-end">
-                <a href="<?php the_permalink(); ?>" class="read-more-link" title="Read More">Read More<img src="<?php echo THEME_PATH; ?>assets/images/Iconfeather-arrow-right.svg" alt="navigation right" /></a>
+                <a href="<?php the_permalink(); ?>" class="read-more-link" title="Read More">Read More<i class="bi bi-arrow-right" aria-hidden="true"></i></a>
               </div>
             </div>
           </div>
     <?php endif;
 
       endwhile;
-    endif; ?>
+	   else : ?>
+	  <p class="text-center">No Record Found</p>
+    <?php endif; ?>
   </div>
 
   <div class="pagination justify-content-center">
@@ -568,7 +813,7 @@ function get_press_release_listing()
           $output .= '<a href="javascript:void(0);" class="pagination-links current_page" id="pagination_link' . $current_page . '" data-page_num = ' . $j . '>' . $j . '</a>';
 
         else :
-          $output .= '<a href="javascript:void(0);" class="pagination-link" data-page_num = ' . $j . '>' . $j . '</a>';
+          $output .= '<a href="javascript:void(0);" class="pagination_link" data-page_num = ' . $j . '>' . $j . '</a>';
         endif;
       }
 
@@ -623,12 +868,15 @@ function get_press_release_listing()
     if (($current_page < ceil($total / $items_per_page)) && ($current_page != ceil($total / $items_per_page))) :
       $output .= '<a href="javascript:void(0);" title="Next" class="pagination-links next-link" data-page_num = ' . ($current_page + 1) . '><span aria-hidden="true"><i class="bi bi-chevron-right"></i></span></a>';
     endif;
-
+	
+	if($total <= 6){
+		$output = '';
+	}
     echo $output;
     die();
     ?>
   </div>
-<?php } 
+<?php }
 
 /* Search Result Listing */
 add_action('wp_ajax_get_search_result_listing', 'get_search_result_listing');
