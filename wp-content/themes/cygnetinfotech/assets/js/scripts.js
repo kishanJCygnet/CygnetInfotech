@@ -142,6 +142,7 @@ var CYGNET = {
 			jQuery('.filter-by-solution').val('').trigger('change');
 			jQuery('.filter-by-country').val('').trigger('change');
 			jQuery('.filter-by-category').val('').trigger('change');
+			jQuery('.filter-by-news-category').val('').trigger('change');
 			jQuery('.filter-by-cpt').val('').trigger('change');
 			//jQuery(".filter-by-cpt option:selected").removeAttr("selected");
 			//jQuery("li.select2-selection__choice").remove();
@@ -155,6 +156,8 @@ var CYGNET = {
 			} else if (jQuery('.resources-page-listing').length > 0) {
 				CYGNET.researchAnnouncementsListing.resourcesListing();
 
+			} else if(jQuery('.in-the-news-page-listing').length > 0){
+				CYGNET.researchAnnouncementsListing.inthenewsListing();
 			} else {
 				CYGNET.researchAnnouncementsListing.blogListing();
 			}
@@ -339,6 +342,7 @@ var CYGNET = {
 		*/
 		inthenewsListing: function (formData, currentPage) {
 			var pageNumber = (typeof currentPage == 'undefined') ? 1 : currentPage;
+			var newscategoryId = jQuery('.filter-by-news-category').val();
 
 			jQuery.ajax({
 				url: ajaxPath.ajaxurl,
@@ -347,7 +351,8 @@ var CYGNET = {
 					'action': 'get_casestudy_listing_data',
 					'form_data': formData,
 					'current_page': pageNumber,
-					'flag': 'in_the_news_listing'
+					'flag': 'in_the_news_listing',
+					'news_category_id': newscategoryId ? newscategoryId : ''
 				},
 				success: function (response) {
 					jQuery('.in-the-news-container').html(response);
@@ -409,6 +414,7 @@ var CYGNET = {
 
 		pressReleaseListing: function (formData, currentPage) {
 			var pageNumber = (typeof currentPage == 'undefined') ? 1 : currentPage;
+			var prcategoryId = jQuery('.filter-by-press-release-category').val();
 
 			jQuery.ajax({
 				url: ajaxPath.ajaxurl,
@@ -417,7 +423,8 @@ var CYGNET = {
 					'action': 'get_press_release_listing',
 					'form_data': formData,
 					'current_page': pageNumber,
-					'flag': 'press_release_listing'
+					'flag': 'press_release_listing',
+					'press_release_category_id': prcategoryId ? prcategoryId : ''
 				},
 				success: function (response) {
 					jQuery('.press-release-container').html(response);
@@ -550,3 +557,17 @@ var CYGNET = {
 	},
 	
 };
+
+// Press Release search call functions
+jQuery('#press_release_filter_submit').click(function(){
+	CYGNET.pressReleaseList.pressReleaseListing();
+});
+
+
+jQuery('#clear-press-release-filter-research').click(function(){
+	console.log("case study is working");
+	jQuery('.filter-by-press-release-category').val('').trigger('change'); 
+	if (jQuery('.press-release-page-listing').length > 0) {
+		CYGNET.pressReleaseList.pressReleaseListing();
+	}
+});
