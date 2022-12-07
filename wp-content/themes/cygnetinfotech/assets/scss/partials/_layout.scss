@@ -17,7 +17,7 @@ html {
 
 body {
   // background-color: #ffffff !important;
-  background: #e4f8ff !important;
+  background: #ffffff !important;
   font-family: $roboto;
   font-size: 14px;
   line-height: 28pxpx;
@@ -1018,4 +1018,36 @@ video {
       }
     }
   }
+}
+// .image-shape{
+//   position: relative;
+//   .shape-bottom{
+//     overflow: hidden;
+//     position: relative;
+//     &::after{
+//       content: '';
+//       position: absolute;
+//       left: 0;
+//       right: 0;
+//       bottom: 0;
+//       background-color: #fff;
+//       top: 0;
+//   }
+//   svg{
+//     z-index: 1;
+//     position: relative;
+//     width: 100%;
+//   }
+//   }
+// }
+
+.image-shape{
+-webkit-mask-image: url(../../images/banner-img-shape.png);
+  mask-image: url(../../images/banner-img-shape.png);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat; 
+  -webkit-mask-size: cover;
+  mask-size: cover; 
+  -webkit-mask-position: center center;
+  mask-position: center center;
 }

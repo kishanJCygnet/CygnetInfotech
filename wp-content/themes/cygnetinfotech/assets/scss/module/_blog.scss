@@ -656,3 +656,82 @@ p {
 //     width: 10px;
 //     margin-left: 10px;
 // }
+.page-insight{
+    background-color: #fff !important;
+    .title-heading{
+        display: none;
+    }
+    .insights-inner{
+        flex-direction: column;
+         padding-left: 400px;
+         margin-left: auto;
+         position: relative;
+        .insights-card {
+            width: 100%;
+            .insights-content{
+                display: flex;
+            }
+            &:first-child{
+                position: absolute;
+                left: 0;
+                width: 380px;
+                bottom: 0;
+                height: 100%;
+                .insight-in-content{
+                    text-align: center;
+                }
+            }
+            .client-details{
+                height: auto;
+                position: absolute;
+                right: 38px;
+                top: 36px;
+                z-index: 2;               
+                background-color: transparent;
+                a{
+                    white-space: nowrap;
+                    border: 1px solid #0c3761;
+                    position: static;
+                    background-color: transparent;
+                }
+            }
+            .insights-content{
+                padding: 30px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-radius: 10px;
+                position: relative;
+                overflow: hidden;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    background: transparent linear-gradient(180deg, rgba(65, 191, 231,0.9) 0%, rgba(13, 52, 97,0.9) 100%) 0% 0% no-repeat padding-box;
+                }
+                .insight-in-content{
+                    margin-top: auto;
+                    z-index: 1;
+                    position: relative;
+                    width: 100%;
+                    background-color: rgba(255,255,255,0.8);
+                    .slider-title{
+                        margin-top: 0;
+                        line-height: normal;
+                        a{
+                            color: #0D3461 !important;
+                            font-weight: bold;
+                            font-size: 16px;
+                        }
+                    }
+                    .post-date-cls{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
