@@ -383,8 +383,8 @@ function get_casestudy_listing_data()
               <div class="card-body">
                 <?php if (get_the_title()) : ?>
                   <h5 class="card-title">
-                    <a href="<?php if (get_field('news_url', $post->ID)) {
-                                echo the_field('news_url', $post->ID);
+                    <a href="<?php if (get_field('custom_url', $post->ID)) {
+                                echo the_field('custom_url', $post->ID);
                               } else {
                                 echo '#';
                               } ?>" title="<?php the_title(); ?>" target="_blank">
@@ -392,9 +392,9 @@ function get_casestudy_listing_data()
                   </h5>
                 <?php endif; ?>
               </div>
-              <?php if (get_field('news_url', $post->ID)) : ?>
+              <?php if (get_field('custom_url', $post->ID)) : ?>
                 <div class="card-footer bg-transparent border-top-0 text-end">
-                  <a href="<?php echo the_field('news_url', $post->ID); ?>" class="read-more-link" title="Read More" target="_blank">Read More<i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                  <a href="<?php echo the_field('custom_url', $post->ID); ?>" class="read-more-link" title="Read More" target="_blank">Read More<i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                 </div>
               <?php endif; ?>
             </div>
@@ -556,56 +556,52 @@ function get_resources_listing_data()
   //echo "Last SQL-Query: {$listingObj->request}";
 
   $i = 0; ?>
-  <div class="row mb-n4">
-    <?php if ($listingObj->have_posts()) :
-      while ($listingObj->have_posts()) :  $listingObj->the_post();
-        
-          $category = @get_the_terms($listingObj->ID, 'category');  
-		  $post_type = get_post_type_object(get_post_type($listingObj->ID));
-		  //echo "<pre>";print_r($post_type);
-			if($post_type->labels->singular_name == 'Post'){
-				$display_cpt_title = "Blog";
-			} else {
-				$display_cpt_title = $post_type->labels->singular_name;
-			}	
-		  ?>
-          <div class="col-sm-6 col-lg-4 mb-4">
-            <div class="card h-100 wow fadeInUp" data-wow-delay="<?php echo $s; ?>s" data-wow-offset="30">
-              <div class="card-image-box">
-                <?php if ($category[0]->name) : ?>
-                  <div class="card-image-tag">
-                    <span class="px-3 case-tag"><?php echo $category[0]->name; ?></span>
-                    <span class="px-3 case-tag"><?php echo $display_cpt_title; ?></span>
-                  </div>
-                <?php endif; ?>
-                <?php if (has_post_thumbnail($post->ID)) : ?>
-                  <?php $caseImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium_large'); ?>
-                  <div class="card-image cover-bg" loading="lazy" style="background-image: url('<?php echo $caseImage[0]; ?>');"></div>
-                <?php endif; ?>
-              </div>
-              <div class="card-body">
-                <?php if (get_the_title()) : ?>
-                  <h5 class="card-title">
-                    <a href="<?php echo get_field('custom_url', $post->ID); ?>" title="<?php the_title(); ?>" target="_blank">
-                      <?php echo wp_trim_words(get_the_title(), 10, '...'); ?>
-                    </a>
-                  </h5>
-                <?php endif; ?>
-                <?php
-                $blogContent = get_field('short_description', $post->ID);
-                if ($blogContent) : ?>
-                  <p class="card-text"><?php echo wp_trim_words($blogContent, 30, '...'); ?></p>
-                <?php endif; ?>
-              </div>
-              <div class="card-footer bg-transparent border-top-0">
-                <a href="<?php echo get_field('custom_url', $post->ID); ?>" class="read-more-link" title="Know More" target="_blank">Read More <img src="<?php echo THEME_PATH; ?>assets/images/Iconfeather-arrow-right.svg" alt="navigation right" /></a>
-              </div>
-            </div>
-          </div>
-        
-    <?php 
-		$s = $s + 0.2;
-      endwhile; 
+  <div class="insights-section row mb-n4">
+    <?php if ($listingObj->have_posts()) :  ?>
+	<div class="insights-inner">
+		<?php
+		  while ($listingObj->have_posts()) :  $listingObj->the_post();
+			
+			  $category = @get_the_terms($listingObj->ID, 'category');  
+			  $post_type = get_post_type_object(get_post_type($listingObj->ID));
+			  //echo "<pre>";print_r($post_type);
+				if($post_type->labels->singular_name == 'Post'){
+					$display_cpt_title = "Blog";
+				} else {
+					$display_cpt_title = $post_type->labels->singular_name;
+				}
+				$caseImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium_large');				
+			  ?>
+				<div class="insights-card card wow fadeInUp" data-wow-delay="<?php echo $s; ?>s" data-wow-offset="50">
+					<div class="insights-content card-body">
+						<div class="client-details" <?php if ((has_post_thumbnail( $post->ID ) )) { ?>style="background-image:url('<?php echo $caseImage[0]; ?>')" <?php } ?> >
+							<?php echo $category[0]->name .'/'. $display_cpt_title; ?>
+						</div>
+						<div class="insight-in-content">
+							<span class="post-date-cls"><?php echo get_the_date( 'd F, Y', $post->ID ); ?></span>
+							<h2 class="slider-title">
+								<a href="<?php echo the_field('custom_url', $post->ID); ?>" target="_blank"><?php echo wp_trim_words(get_the_title(), 10, '...'); ?></a>										
+							</h2>
+							<div class="short-decoration">
+							   <p class="p2">
+							   <?php
+								if (get_field('short_description', $post->ID)) {
+									echo wp_trim_words( the_field('short_description', $post->ID), 20 );
+								}
+								?>
+								<p>
+							</div>
+							<div class="action">
+								<a href="<?php echo the_field('custom_url', $post->ID); ?>" target="_blank">Read More <svg fill="none" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m13.7071 4.29289c-.3905-.39052-1.0237-.39052-1.4142 0-.3905.39053-.3905 1.02369 0 1.41422l5.2929 5.29289h-13.5858c-.55228 0-1 .4477-1 1s.44772 1 1 1h13.5858l-5.2929 5.2929c-.3905.3905-.3905 1.0237 0 1.4142s1.0237.3905 1.4142 0l7-7c.3905-.3905.3905-1.0237 0-1.4142z" fill="rgb(0,0,0)" fill-rule="evenodd"/></svg></a>
+							</div>
+						</div>
+				  </div>
+				</div>
+		<?php 
+			$s = $s + 0.2;
+		  endwhile; ?>
+	  </div>
+	  <?php
 	  else : ?>
 	  <p class="text-center">No Record Found</p>
     <?php endif; ?>
