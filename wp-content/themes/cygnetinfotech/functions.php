@@ -364,7 +364,7 @@ function insights_slider()
                                 <div class="insight-in-content">
                                     <span class="post-date-cls"><?php echo get_the_date( 'd F, Y', $insights->ID ); ?></span>
                                     <h2 class="slider-title">
-										<a href="<?php echo the_field('custom_url', $insights->ID); ?>"><?php echo $insights->post_title;?></a>										
+										<a href="<?php echo the_field('custom_url', $insights->ID); ?>" target="_blank"><?php echo wp_trim_words($insights->post_title, 10, '...'); ?></a>										
 									</h2>
                                     <div class="short-decoration">
                                        <p class="p2">
