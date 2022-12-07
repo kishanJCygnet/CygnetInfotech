@@ -608,3 +608,150 @@ add_filter( 'rest_endpoints', function( $endpoints ){
     }
     return $endpoints;
 });
+
+/* News Filter block start - 16-5-2022 */
+add_shortcode('news_fillter', 'news_category_fillter');
+function news_category_fillter()
+{
+	ob_start();
+    global $post;
+	?>
+		<div class="filter-box mb-5">
+			<h5 class="text-dark-blue mb-3">Filter By:</h5>
+			<form class="submit-all-filter">
+				<div class="row gy-3">
+					<div class="col-md-6 col-lg-4 col-xl-3">
+						<select class="form-select select-category filter-by-news-category" name="filter-by-news-category">
+							<option value=""></option>
+							<?php
+							$categories = get_terms(['taxonomy' => 'news_categories', 'hide_empty' => true]);
+							foreach ($categories as $category) {?>
+								<option value="<?php echo $category->term_id;?>"><?php echo $category->name;?></option>
+							<?php }?>
+						</select>
+					</div>
+					<div class="col-md-6 col-lg-12 col-xl-3">
+						<div class="d-md-flex justify-content-start justify-content-lg-end justify-content-xl-start">
+							<input type="button" class="btn btn-primary me-2 disvar" title="Submit" value="Submit" id="filter_submit" disabled>
+							<input type="button" class="btn btn-outline-danger disvar" title="Clear all" value="Clear all" id="clear-filter-research" disabled>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script>
+		jQuery(document).ready(function () {
+			jQuery('.filter-by-news-category').on('change', function() {				
+				var cat = jQuery('.filter-by-news-category').val();
+				if(cat !=''){
+					jQuery('.disvar').prop('disabled', false);
+				} else {
+					jQuery('.disvar').prop('disabled', true);
+				}
+			});
+		});
+		</script>
+	<?php
+	wp_reset_postdata();
+	$caseVar = ob_get_clean();
+    return $caseVar;
+}
+/* <!-- Filter block end --> */
+
+/* Press Release Filter block start - 16-5-2022 */
+add_shortcode('press_release_fillter', 'press_release_category_fillter');
+function press_release_category_fillter()
+{
+	ob_start();
+    global $post;
+	?>
+		<div class="filter-box mb-5">
+			<h5 class="text-dark-blue mb-3">Filter By:</h5>
+			<form class="submit-all-filter">
+				<div class="row gy-3">
+					<div class="col-md-6 col-lg-4 col-xl-3">
+						<select class="form-select select-category filter-by-press-release-category" name="filter-by-press-release-category">
+							<option value=""></option>
+							<?php
+							$categories = get_terms(['taxonomy' => 'press_release_categories', 'hide_empty' => true]);
+							foreach ($categories as $category) {?>
+								<option value="<?php echo $category->term_id;?>"><?php echo $category->name;?></option>
+							<?php }?>
+						</select>
+					</div>
+					<div class="col-md-6 col-lg-12 col-xl-3">
+						<div class="d-md-flex justify-content-start justify-content-lg-end justify-content-xl-start">
+							<input type="button" class="btn btn-primary me-2" title="Submit" value="Submit" id="press_release_filter_submit">
+							<input type="button" class="btn btn-outline-danger" title="Clear all" value="Clear all" id="clear-press-release-filter-research">
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	<?php
+	wp_reset_postdata();
+	$caseVar = ob_get_clean();
+    return $caseVar;
+}
+/* <!-- Filter block end --> */
+
+/* Get job api shortcode start */
+function get_job_list_shortcode() {
+	
+	$curl = curl_init();
+
+	curl_setopt_array($curl, array(
+	  CURLOPT_URL => 'https://api.preprod1.zwayam.com/core/v1/jobs/?from_created_date=2021-01-01%2010:10:10&to_created_date=2022-12-12%2010:10:10&page_number=0&careersite_enabled=false',
+	  CURLOPT_RETURNTRANSFER => true,
+	  CURLOPT_ENCODING => '',
+	  CURLOPT_MAXREDIRS => 10,
+	  CURLOPT_TIMEOUT => 0,
+	  CURLOPT_FOLLOWLOCATION => true,
+	  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+	  CURLOPT_CUSTOMREQUEST => 'GET',
+	  CURLOPT_HTTPHEADER => array(
+		'Content-Type: application/json',
+		'api_key: d6uukp_810007262b6968bda3657b225b56cd026a275c0a614bd86cf8cfdc034ca257535e90fc2b8f2eb6bddbe12c45d29dfc7df20436cf1522a33839a9d3c0cbbb09e9'
+	  ),
+	));
+
+	$response = curl_exec($curl);
+	$errno = curl_errno($curl);
+	$err = curl_error($curl);
+	
+	//$response = json_decode($data,1)
+
+	curl_close($curl);
+
+	if ($errno) {
+		echo "cURL Error #:" . $err;
+	} else {
+		//echo $response;
+		$response = json_decode($response,true);
+		$data = $response['data'];
+		echo "<pre>";
+		print_r($data);
+	}
+
+//return $response;
+}
+add_shortcode('get_job_list', 'get_job_list_shortcode');
+/* Get job api shortcode end */
+
+add_filter ( 'posts_orderby', function ( $orderby, \WP_Query $q ) use ( $wpdb ) {
+    // Do nothing.
+    if ( '_post_type__in' !== $q->get( 'orderby' ) ) {
+        return $orderby;
+    }
+
+    // Custom _post_type__in ordering using FIELD on post types array items.
+    $post_type = $q->get( 'post_type' );
+    
+    if ( ! empty( $post_type ) && is_array( $post_type ) ) {
+        $post_type__in        = array_map( 'sanitize_title_for_query', $post_type );
+        $post_type__in_string = "'" . implode( "','", $post_type__in ) . "'";
+        return $orderby       = "FIELD( {$wpdb->posts}.post_type," . $post_type__in_string . ' )';
+    }
+
+    return $orderby;
+}, 10, 2 );
