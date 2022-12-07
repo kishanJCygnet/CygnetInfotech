@@ -364,13 +364,7 @@ function insights_slider()
                                 <div class="insight-in-content">
                                     <span class="post-date-cls"><?php echo get_the_date( 'd F, Y', $insights->ID ); ?></span>
                                     <h2 class="slider-title">
-										<?php
-										if($post_type->labels->singular_name == 'Case Study'){
-											?><a href="<?php echo get_field('pdf_link', $insights->ID); ?>" target="_blank"><?php echo $insights->post_title;?></a><?php
-										} else {
-											?><a href="<?php echo esc_url( get_permalink($insights->ID) ); ?>"><?php echo $insights->post_title;?></a><?php
-										}
-										?>										
+										<a href="<?php echo the_field('custom_url', $insights->ID); ?>"><?php echo $insights->post_title;?></a>										
 									</h2>
                                     <div class="short-decoration">
                                        <p class="p2">
@@ -383,6 +377,9 @@ function insights_slider()
                                         ?>
                                         <p>
                                     </div>
+									<div class="action">
+										<a href="<?php echo the_field('custom_url', $insights->ID); ?>" target="_blank">Read More <svg fill="none" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m13.7071 4.29289c-.3905-.39052-1.0237-.39052-1.4142 0-.3905.39053-.3905 1.02369 0 1.41422l5.2929 5.29289h-13.5858c-.55228 0-1 .4477-1 1s.44772 1 1 1h13.5858l-5.2929 5.2929c-.3905.3905-.3905 1.0237 0 1.4142s1.0237.3905 1.4142 0l7-7c.3905-.3905.3905-1.0237 0-1.4142z" fill="rgb(0,0,0)" fill-rule="evenodd"/></svg></a>
+									</div>
                                 </div>
                             </div>
                         </div>
@@ -682,13 +679,25 @@ function press_release_category_fillter()
 					</div>
 					<div class="col-md-6 col-lg-12 col-xl-3">
 						<div class="d-md-flex justify-content-start justify-content-lg-end justify-content-xl-start">
-							<input type="button" class="btn btn-primary me-2" title="Submit" value="Submit" id="press_release_filter_submit">
-							<input type="button" class="btn btn-outline-danger" title="Clear all" value="Clear all" id="clear-press-release-filter-research">
+							<input type="button" class="btn btn-primary me-2 disvarpress" title="Submit" value="Submit" id="press_release_filter_submit" disabled>
+							<input type="button" class="btn btn-outline-danger disvarpress" title="Clear all" value="Clear all" id="clear-press-release-filter-research" disabled>
 						</div>
 					</div>
 				</div>
 			</form>
 		</div>
+		<script>
+		jQuery(document).ready(function () {
+			jQuery('.filter-by-press-release-category').on('change', function() {				
+				var cat = jQuery('.filter-by-press-release-category').val();
+				if(cat !=''){
+					jQuery('.disvarpress').prop('disabled', false);
+				} else {
+					jQuery('.disvarpress').prop('disabled', true);
+				}
+			});
+		});
+		</script>
 	<?php
 	wp_reset_postdata();
 	$caseVar = ob_get_clean();
