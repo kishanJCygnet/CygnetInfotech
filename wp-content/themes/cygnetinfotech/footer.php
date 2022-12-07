@@ -141,6 +141,10 @@
 	<script src="<?php echo THEME_PATH; ?>assets/dist/js/owl.carousel.min.js"></script>	
 	<script src="<?php echo THEME_PATH; ?>assets/dist/js/wow.min.js"></script>
 	<script src="<?php echo THEME_PATH; ?>assets/dist/js/particles.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 	<script src="<?php echo THEME_PATH; ?>assets/dist/js/main.js"></script>	
 	<script type='text/javascript' id='cygnet-global-js-extra'>
 	/* <![CDATA[ */

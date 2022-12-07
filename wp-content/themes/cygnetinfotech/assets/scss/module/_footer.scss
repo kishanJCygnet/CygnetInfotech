@@ -1,14 +1,14 @@
 // Footer Content
 .footer {
    
-    color: #fff;   
+    color: #0D0D0D;   
     /* border-top: 1px solid rgba(255,255,255,.3); */
     // background-image: url(../../images/curve.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-    background-color: #1f4875;
+    background-color: #fff;
     @include bp(sm-max){
         background-size: contain;
     }
@@ -38,7 +38,7 @@
     }
     a {
         text-decoration: none;
-        color: #fff;
+        color: #0F7FA2;
         line-height: 1.5;
     }
     @include bp(xl-max) {

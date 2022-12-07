@@ -362,6 +362,7 @@ function insights_slider()
 									<a href="<?php echo $url; ?>"><?php echo $display_cpt_title; ?></a>
                                 </div>
                                 <div class="insight-in-content">
+                                    <span class="post-date-cls"><?php echo get_the_date( 'd F, Y', $insights->ID ); ?></span>
                                     <h2 class="slider-title">
 										<?php
 										if($post_type->labels->singular_name == 'Case Study'){
