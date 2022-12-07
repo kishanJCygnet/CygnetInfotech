@@ -2,6 +2,27 @@
 .banner-content {
     padding: 0;
     background-color: #0F3764;
+    .banner-inner-content{
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-bottom: 120px;
+        padding-top: 60px;
+    }
+    &.inside-page-banner{
+        .banner-inner-content {
+            .align-items-center{
+                justify-content: center;
+            }
+            .text-content {
+                h3{
+                    font-size: 20px;
+                    width: 600px;
+                    margin: auto;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
     &.overlay-bg{
         .banner-inner-content{
             background-color: #0F3764;
@@ -160,8 +181,7 @@
             }
             
         }    
-    }
-   
+    }   
     .text-content {
         // position: relative;
         @include bp(md-max){

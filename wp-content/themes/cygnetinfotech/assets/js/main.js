@@ -321,6 +321,16 @@ jQuery(document).ready(function(){
    $('.circle-shape').append(mySecondDiv);  
    var myshapearrowDiv=$('<div class="shape-top"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="213.646" viewBox="0 0 1920 213.646"><defs><linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#0d3461"/><stop offset="1" stop-color="#41bfe7"/></linearGradient></defs><g id="Mask_Group_21" data-name="Mask Group 21" transform="translate(0 -4795)" clip-path="url(#clip-path)"><path id="Path_46339" data-name="Path 46339" d="M2107.856,3507.776c74.517-14.069,155.885-14.069,230.4,0L4234.315,3805.8C4598.338,3874.529,4551.425,0,4165.092,0H372.977C-13.354,0-152.224,3874.529,211.8,3805.8Z" transform="translate(3188.832 8483.046) rotate(180)" fill="url(#linear-gradient)"/></g></svg></div>');
    $('.shape-aw-top').append(myshapearrowDiv);  
+
+
+  
+
+  $('.page-insight .insights-card').each(function(){
+
+      var styleAttribute= $(this).find('.client-details').attr('style');    
+      $(this).children('.insights-content').attr("style", styleAttribute);
+      $(this).find('.client-details').removeAttr("style");
+  });
 });
 
 var controller = new ScrollMagic.Controller();
