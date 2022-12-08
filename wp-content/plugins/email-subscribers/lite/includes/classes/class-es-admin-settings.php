@@ -397,7 +397,7 @@ class ES_Admin_Settings {
 				'type'    => 'checkbox',
 				'default' => 'no',
 			),
-
+			
 		);
 
 		$general_settings = apply_filters( 'ig_es_registered_general_settings', $general_settings );
@@ -437,7 +437,7 @@ class ES_Admin_Settings {
 
 		$pepipost_api_key_defined = ES()->is_const_defined( 'pepipost', 'api_key' );
 
-		$test_email = ES_Common::fetch_admin_email();
+		$test_email = ES_Common::get_admin_email();
 
 		$total_emails_sent = ES_Common::count_sent_emails();
 

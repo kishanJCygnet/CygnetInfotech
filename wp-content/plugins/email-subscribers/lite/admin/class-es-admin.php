@@ -281,7 +281,7 @@ if ( ! class_exists( 'ES_Admin' ) ) {
 
 			$type       = isset( $template_data['type'] ) ? $template_data['type'] : 'campaign';
 			$subject    = isset( $template_data['subject'] ) ? $template_data['subject'] : '';
-			$test_email = ES_Common::fetch_admin_email();
+			$test_email = ES_Common::get_admin_email();
 			$trim_character_count = 30;
 
 			if ( !( strlen($subject) <= $trim_character_count ) ) {

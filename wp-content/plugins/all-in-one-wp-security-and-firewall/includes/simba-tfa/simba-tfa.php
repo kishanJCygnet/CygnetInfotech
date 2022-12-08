@@ -309,11 +309,12 @@ class Simba_Two_Factor_Authentication_1 {
 	 * Enqueue CSS styling on the users page
 	 */
 	public function load_users_css() {
+		$css_version = (defined('WP_DEBUG') && WP_DEBUG) ? time() : filemtime($this->includes_dir().'/users.css');
 		wp_enqueue_style(
 			'tfa-users-css',
 			$this->includes_url().'/users.css',
 			array(),
-			$this->version,
+			$css_version,
 			'screen'
 		);
 	}

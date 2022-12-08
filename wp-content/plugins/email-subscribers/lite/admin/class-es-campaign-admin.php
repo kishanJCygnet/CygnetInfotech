@@ -496,7 +496,7 @@ if ( ! class_exists( 'ES_Campaign_Admin' ) ) {
 
 			$type       = isset( $campaign_data['type'] ) ? $campaign_data['type'] : 'campaign';
 			$subject    = isset( $campaign_data['subject'] ) ? $campaign_data['subject'] : '';
-			$test_email = ES_Common::fetch_admin_email();
+			$test_email = ES_Common::get_admin_email();
 			$trim_character_count = 30;
 
 			if ( !( strlen($subject) <= $trim_character_count ) ) {

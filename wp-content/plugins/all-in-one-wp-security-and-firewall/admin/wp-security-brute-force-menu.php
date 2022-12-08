@@ -65,7 +65,7 @@ class AIOWPSecurity_Brute_Force_Menu extends AIOWPSecurity_Admin_Menu {
 	
 	    echo '<h2 class="nav-tab-wrapper">';
 	    foreach ( $this->menu_tabs as $tab_key => $tab_caption ) {
-		if (is_multisite() && 1 != get_current_blog_id() && false === stristr($tab_caption, 'Rename login page') && false === stristr($tab_caption, 'Login CAPTCHA')) {
+		if ((!is_main_site()) && false === stristr($tab_caption, 'Rename login page') && false === stristr($tab_caption, 'Login CAPTCHA')) {
 			// Suppress the all Brute Force menu tabs if site is a multi site AND not the main site except "rename login" and "CAPTCHA"
 		} else {
 	            $active = $current_tab == $tab_key ? 'nav-tab-active' : '';
@@ -212,7 +212,7 @@ class AIOWPSecurity_Brute_Force_Menu extends AIOWPSecurity_Admin_Menu {
         <?php wp_nonce_field('aiowpsec-rename-login-page-nonce'); ?>
         <div class="aio_orange_box">
             <?php
-            $read_link = '<a href="https://www.tipsandtricks-hq.com/wordpress-security-and-firewall-plugin#advanced_features_note" target="_blank">' . __('must read this message', 'all-in-one-wp-security-and-firewall') . '</a>';
+            $read_link = '<a href="https://aiosplugin.com/important-note-on-intermediate-and-advanced-features" target="_blank">' . __('must read this message', 'all-in-one-wp-security-and-firewall') . '</a>';
             echo '<p>' . sprintf(__('This feature can lock you out of admin if it doesn\'t work correctly on your site. You %s before activating this feature.', 'all-in-one-wp-security-and-firewall'), $read_link) . '</p>';
             echo '<p>' . __("NOTE: If you are hosting your site on WPEngine or a provider which performs server caching, you will need to ask the host support people to NOT cache your renamed login page.", "all-in-one-wp-security-and-firewall") . '</p>';
             ?>
@@ -333,8 +333,8 @@ class AIOWPSecurity_Brute_Force_Menu extends AIOWPSecurity_Admin_Menu {
         <div class="aio_yellow_box">
             <?php
             $backup_tab_link = '<a href="admin.php?page='.AIOWPSEC_SETTINGS_MENU_SLUG.'&tab=tab2" target="_blank">' . __('backup', 'all-in-one-wp-security-and-firewall') . '</a>';
-            $video_link = '<a href="https://www.tipsandtricks-hq.com/all-in-one-wp-security-plugin-cookie-based-brute-force-login-attack-prevention-feature-5994" target="_blank">' . __('video tutorial', 'all-in-one-wp-security-and-firewall') . '</a>';
-            $info_msg = sprintf( __('To learn more about how to use this feature, please watch the following %s.', 'all-in-one-wp-security-and-firewall'), $video_link);
+            $tutorial_link = '<a href="https://aiosplugin.com/how-to-use-cookie-based-brute-force-login-attack-prevention-feature/" target="_blank">' . __('tutorial', 'all-in-one-wp-security-and-firewall') . '</a>';
+            $info_msg = sprintf( __('To learn more about how to use this feature, please read the following %s.', 'all-in-one-wp-security-and-firewall'), $tutorial_link);
             $brute_force_login_feature_link = '<a href="admin.php?page='.AIOWPSEC_FIREWALL_MENU_SLUG.'&tab=tab4" target="_blank">'.__('Cookie-based brute force login prevention', 'all-in-one-wp-security-and-firewall').'</a>';
             echo '<p>' . $info_msg . '</p>';
             ?>
@@ -356,7 +356,7 @@ class AIOWPSecurity_Brute_Force_Menu extends AIOWPSecurity_Admin_Menu {
         <?php wp_nonce_field('aiowpsec-enable-cookie-based-brute-force-prevention'); ?>
         <div class="aio_orange_box">
             <p>
-            <?php _e('This feature can lock you out of admin if it doesn\'t work correctly on your site. You <a href="https://www.tipsandtricks-hq.com/wordpress-security-and-firewall-plugin#advanced_features_note" target="_blank">'.__('must read this message', 'all-in-one-wp-security-and-firewall').'</a> before activating this feature.', 'all-in-one-wp-security-and-firewall'); ?>
+            <?php _e('This feature can lock you out of admin if it doesn\'t work correctly on your site. You <a href="https://aiosplugin.com/important-note-on-intermediate-and-advanced-features" target="_blank">'.__('must read this message', 'all-in-one-wp-security-and-firewall').'</a> before activating this feature.', 'all-in-one-wp-security-and-firewall'); ?>
             </p>
         </div>
         <?php
@@ -831,7 +831,7 @@ class AIOWPSecurity_Brute_Force_Menu extends AIOWPSecurity_Admin_Menu {
             <tr valign="top">
 				<th scope="row"><label for="aiowps_user_ip"><?php _e('Your current IP address', 'all-in-one-wp-security-and-firewall'); ?>:</label></th>
                 <td>
-                <input id="aiowps_user_ip" size="40" name="aiowps_user_ip" type="text" value="<?php echo $your_ip_address; ?>" readonly="readonly"/>
+				<input id="aiowps_user_ip" class="copy-to-clipboard" size="40" name="aiowps_user_ip" type="text" value="<?php echo esc_attr($your_ip_address); ?>" readonly>
                 <span class="description"><?php _e('You can copy and paste this address in the text box below if you want to include it in your login whitelist.', 'all-in-one-wp-security-and-firewall'); ?></span>
                 </td>
             </tr>

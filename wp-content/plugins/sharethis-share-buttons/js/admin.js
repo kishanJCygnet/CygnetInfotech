@@ -1014,6 +1014,7 @@ var ShareButtons = ( function( $, wp ) {
 		  wp.ajax.post( 'set_button_config', {
 			button: buttonCode,
 			config: config,
+			fresh: this.data.fresh,
 			nonce: this.data.nonce
 		  } );
 
@@ -1041,6 +1042,12 @@ var ShareButtons = ( function( $, wp ) {
 			  'product': button,
 			  'config': config
 			};
+
+			if ( ( 'true' === this.data.fresh && false !== this.data.first ) || false !== this.data.first ) {
+				const firstProd = 'sticky' === this.data.first || 'inline' === this.data.first ? this.data.first + '-share-buttons' : this.data.first;
+
+				theData['onboarding_product'] = true === this.data.fresh ? button : firstProd;
+			}
 
 
 			if ( 'undefined' === this.data.secret || undefined === this.data.secret ) {
