@@ -615,10 +615,9 @@ function news_category_fillter()
     global $post;
 	?>
 		<div class="filter-box mb-5">
-			<h5 class="text-dark-blue mb-3">Filter By:</h5>
-			<form class="submit-all-filter">
-				<div class="row gy-3">
-					<div class="col-md-6 col-lg-4 col-xl-3">
+			<!-- <h5 class="text-dark-blue mb-3">Filter By:</h5> -->
+			<form class="submit-all-filter d-flex">
+                    <div class="category me-4 select2-cn">
 						<select class="form-select select-category filter-by-news-category" name="filter-by-news-category">
 							<option value=""></option>
 							<?php
@@ -628,13 +627,12 @@ function news_category_fillter()
 							<?php }?>
 						</select>
 					</div>
-					<div class="col-md-6 col-lg-12 col-xl-3">
+					<div  class="action ms-auto ">
 						<div class="d-md-flex justify-content-start justify-content-lg-end justify-content-xl-start">
-							<input type="button" class="btn btn-primary me-2 disvar" title="Submit" value="Submit" id="filter_submit" disabled>
-							<input type="button" class="btn btn-outline-danger disvar" title="Clear all" value="Clear all" id="clear-filter-research" disabled>
+							<input type="button" class="btn me-2 disvar" title="Submit" value="Submit" id="filter_submit" disabled>
+							<input type="button" class="btn btn-outline disvar" title="Clear all" value="Clear all" id="clear-filter-research" disabled>
 						</div>
-					</div>
-				</div>
+					</div>			
 			</form>
 		</div>
 		<script>
@@ -664,10 +662,9 @@ function press_release_category_fillter()
     global $post;
 	?>
 		<div class="filter-box mb-5">
-			<h5 class="text-dark-blue mb-3">Filter By:</h5>
-			<form class="submit-all-filter">
-				<div class="row gy-3">
-					<div class="col-md-6 col-lg-4 col-xl-3">
+			<!-- <h5 class="text-dark-blue mb-3">Filter By:</h5> -->
+            <form class="submit-all-filter d-flex">				
+                <div class="category me-4 select2-cn">
 						<select class="form-select select-category filter-by-press-release-category" name="filter-by-press-release-category">
 							<option value=""></option>
 							<?php
@@ -677,13 +674,12 @@ function press_release_category_fillter()
 							<?php }?>
 						</select>
 					</div>
-					<div class="col-md-6 col-lg-12 col-xl-3">
+                    <div  class="action ms-auto ">
 						<div class="d-md-flex justify-content-start justify-content-lg-end justify-content-xl-start">
-							<input type="button" class="btn btn-primary me-2 disvarpress" title="Submit" value="Submit" id="press_release_filter_submit" disabled>
-							<input type="button" class="btn btn-outline-danger disvarpress" title="Clear all" value="Clear all" id="clear-press-release-filter-research" disabled>
+							<input type="button" class="btn me-2 disvarpress" title="Submit" value="Submit" id="press_release_filter_submit" disabled>
+							<input type="button" class="btn btn-outline disvarpress" title="Clear all" value="Clear all" id="clear-press-release-filter-research" disabled>
 						</div>
-					</div>
-				</div>
+					</div>			
 			</form>
 		</div>
 		<script>
