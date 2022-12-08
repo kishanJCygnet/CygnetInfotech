@@ -6,7 +6,7 @@ Tags: email marketing, subscription, autoresponder, post notification, welcome e
 Requires at least: 3.9
 Tested up to: 6.1.1
 Requires PHP: 5.6
-Stable tag: 5.5.1
+Stable tag: 5.5.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses
 
@@ -310,16 +310,19 @@ Refer [here](https://www.icegram.com/documentation/es-faq/).
 
 == Upgrade Notice ==
 
-= 5.5.1 =
+= 5.5.2 =
 
-* New: Added new styles for subscription forms [PRO]
-* Fix: Select list issue in form widget
-* Fix: Added permission check when getting contact counts on Audience export and Campaigns pages[Thanks to WPScan team]
-
+* New: Added option to automatically delete unconfirmed subscribers [PRO]
+* Fix: Incorrect remaining emails count show when sending campaigns manually
 
 == Changelog ==
 
-**5.5.1 (01.11.2022)**
+**5.5.2 (08.12.2022)**
+
+* New: Added option to automatically delete unconfirmed subscribers [PRO]
+* Fix: Incorrect remaining emails count show when sending campaigns manually
+
+**5.5.1 (01.12.2022)**
 
 * New: Added new styles for subscription forms [PRO]
 * Fix: Select list issue in form widget

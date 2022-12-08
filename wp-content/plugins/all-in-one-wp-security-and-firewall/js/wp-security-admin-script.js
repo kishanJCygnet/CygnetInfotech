@@ -261,8 +261,9 @@ jQuery(function($) {
         });
     }
 
-    // Hide 2FA premium advertisement
-    if (jQuery('.tfa-premium').length) {
+    // Hide 2FA premium section (advertisements) for free.
+    if (jQuery('.tfa-premium').length && 0 == jQuery('#tfa_trusted_for').length) {
+        jQuery('.tfa-premium').parent().find('hr').first().hide();
         jQuery('.tfa-premium').hide();
     }
 
@@ -272,4 +273,29 @@ jQuery(function($) {
 		jQuery('input[name=aiowps_trash_spam_comments_after_days]').prop('disabled', !jQuery(this).prop('checked'));
 	});
 	// End of trash spam comments toggle handling
+
+	// Copies text using the deprecated document.execCommand method
+	function deprecated_copy(text) {
+		var $temp = $('<input>');
+		$('body').append($temp);
+		$temp.val(event.target.value).select();
+		if (document.execCommand('copy')) {
+			alert(aios_trans.copied);
+		}
+		$temp.remove()
+	}
+
+	// Start of copy-to-clipboard click handling
+	jQuery('.copy-to-clipboard').on('click', function(event) {
+		if (navigator.clipboard) {
+			navigator.clipboard.writeText(event.target.value).then(function() {
+				alert(aios_trans.copied);
+			}, function() {
+				deprecated_copy(event.target.value);
+			});
+		} else {
+			deprecated_copy(event.target.value);
+		}
+	});
+	// End of copy-to-clipboard click handling
 });

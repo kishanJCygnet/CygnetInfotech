@@ -28,15 +28,17 @@ class AIOWPSecurity_General_Init_Tasks {
 			add_filter('retrieve_password_message', array($this, 'decode_reset_pw_msg'), 10, 4); //Fix for non decoded html entities in password reset link
 		}
 
-		if (current_user_can(AIOWPSEC_MANAGEMENT_PERMISSION) && is_admin()) {
+		if (current_user_can(apply_filters('aios_management_permission', 'manage_options')) && is_admin()) {
 			if ('1' == $aio_wp_security->configs->get_value('aios_google_recaptcha_invalid_configuration')) {
 				add_action('all_admin_notices', array($this, 'google_recaptcha_notice'));
 			}
 
-			add_action('all_admin_notices', array($this, 'do_firewall_notice'));
-			add_action('admin_post_aiowps_firewall_setup', array(AIOWPSecurity_Firewall_Setup_Notice::get_instance(), 'handle_setup_form'));
-			add_action('admin_post_aiowps_firewall_downgrade', array(AIOWPSecurity_Firewall_Setup_Notice::get_instance(), 'handle_downgrade_protection_form'));
-			add_action('admin_post_aiowps_firewall_setup_dismiss', array(AIOWPSecurity_Firewall_Setup_Notice::get_instance(), 'handle_dismiss_form'));
+			if (is_main_site() && is_super_admin()) {
+				add_action('all_admin_notices', array($this, 'do_firewall_notice'));
+				add_action('admin_post_aiowps_firewall_setup', array(AIOWPSecurity_Firewall_Setup_Notice::get_instance(), 'handle_setup_form'));
+				add_action('admin_post_aiowps_firewall_downgrade', array(AIOWPSecurity_Firewall_Setup_Notice::get_instance(), 'handle_downgrade_protection_form'));
+				add_action('admin_post_aiowps_firewall_setup_dismiss', array(AIOWPSecurity_Firewall_Setup_Notice::get_instance(), 'handle_dismiss_form'));
+			}
 
 			$this->reapply_htaccess_rules();
 			add_action('admin_notices', array($this,'reapply_htaccess_rules_notice'));
@@ -170,7 +172,7 @@ class AIOWPSecurity_General_Init_Tasks {
 				add_action('login_form', array($this, 'insert_honeypot_hidden_field'));
 			}
 		}
- 
+
 		// For registration honeypot feature
 		if ($aio_wp_security->configs->get_value('aiowps_enable_registration_honeypot') == '1') {
 			if (!is_user_logged_in()) {
@@ -459,7 +461,7 @@ class AIOWPSecurity_General_Init_Tasks {
 			$disabled_message .= '<tr id="disable-password">';
 			$disabled_message .= '<th>'.__('Disabled').'</th>';
 			$disabled_message .= '<td>'.htmlspecialchars(__('Application passwords have been disabled by All In One WP Security & Firewall plugin.', 'all-in-one-wp-security-and-firewall'));
-			if (current_user_can(AIOWPSEC_MANAGEMENT_PERMISSION)) {
+			if (current_user_can(apply_filters('aios_management_permission', 'manage_options'))) {
 				$aiowps_addtional_setting_url = 'admin.php?page=aiowpsec_userlogin&tab=additional';
 				$change_setting_url = is_multisite() ? network_admin_url($aiowps_addtional_setting_url) : admin_url($aiowps_addtional_setting_url);
 				$disabled_message .= '<p><a href="'.$change_setting_url.'"  class="button">'.__('Change setting', 'all-in-one-wp-security-and-firewall').'</a></p>';
@@ -625,14 +627,20 @@ class AIOWPSecurity_General_Init_Tasks {
 	}
 
 	/**
-	 * Displays a notice message if the plugin was reactivated after being initially deactivated.
-	 * Gives users option of re-applying the AIOS rules which were deleted from the .htaccess after deactivation.
+	 * Displays a notice message if the plugin is reactivated which gives users the option of re-applying the AIOS rules which were deleted from the .htaccess file at the last deactivation.
+	 *
+	 * @return Void
 	 */
 	public function reapply_htaccess_rules_notice() {
-		if (get_option('aiowps_temp_configs') !== false) {
+		if (false !== get_option('aiowps_temp_configs')) {
 			$reapply_htaccess_yes_url = wp_nonce_url('admin.php?page='.AIOWPSEC_MENU_SLUG_PREFIX.'&aiowps_reapply_htaccess=1', 'aiowps-reapply-htaccess-yes');
 			$reapply_htaccess_no_url  = wp_nonce_url('admin.php?page='.AIOWPSEC_MENU_SLUG_PREFIX.'&aiowps_reapply_htaccess=2', 'aiowps-reapply-htaccess-no');
-			echo '<div class="updated"><p>'.htmlspecialchars(__('Would you like All In One WP Security & Firewall to re-insert the security rules in your .htaccess file which were cleared when you deactivated the plugin?', 'all-in-one-wp-security-and-firewall')).'&nbsp;&nbsp;<a href="'.esc_url($reapply_htaccess_yes_url).'" class="button-primary">'.__('Yes', 'all-in-one-wp-security-and-firewall').'</a>&nbsp;&nbsp;<a href="'.esc_url($reapply_htaccess_no_url).'" class="button-primary">'.__('No', 'all-in-one-wp-security-and-firewall').'</a></p></div>';
+
+			if (is_main_site() && is_super_admin()) {
+				echo '<div class="updated"><p>'.htmlspecialchars(__('Would you like All In One WP Security & Firewall to restore the config settings and re-insert the security rules in your .htaccess file which were cleared when you deactivated the plugin?', 'all-in-one-wp-security-and-firewall')).'&nbsp;&nbsp;<a href="'.esc_url($reapply_htaccess_yes_url).'" class="button-primary">'.__('Yes', 'all-in-one-wp-security-and-firewall').'</a>&nbsp;&nbsp;<a href="'.esc_url($reapply_htaccess_no_url).'" class="button-primary">'.__('No', 'all-in-one-wp-security-and-firewall').'</a></p></div>';
+			} elseif (!is_main_site()) {
+				echo '<div class="updated"><p>'.htmlspecialchars(__('Would you like All In One WP Security & Firewall to restore the config settings which were cleared when you deactivated the plugin?', 'all-in-one-wp-security-and-firewall')).'&nbsp;&nbsp;<a href="'.esc_url($reapply_htaccess_yes_url).'" class="button-primary">'.__('Yes', 'all-in-one-wp-security-and-firewall').'</a>&nbsp;&nbsp;<a href="'.esc_url($reapply_htaccess_no_url).'" class="button-primary">'.__('No', 'all-in-one-wp-security-and-firewall').'</a></p></div>';
+			}
 		}
 	}
 

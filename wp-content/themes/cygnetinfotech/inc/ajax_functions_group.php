@@ -128,8 +128,10 @@ function get_casestudy_listing_data()
 
   $listingObj = new WP_Query($args); ?>
   <?php $i = 0; ?>
-  <div class="row mb-n4">
-    <?php if ($listingObj->have_posts()) :
+  <div class="insights-section row mb-n4">
+    <?php if ($listingObj->have_posts()) :  ?>
+	<div class="insights-inner">
+	<?php
       while ($listingObj->have_posts()) :  $listingObj->the_post();
 
         // Case Study Listing by AJAX
@@ -336,74 +338,42 @@ function get_casestudy_listing_data()
             </div>
           </div>
 
-        <?php
-        // Our Leaders Listing by AJAX
-        elseif ($flag == 'ourleaders_listing') : ?>
-          <div class="col-sm-6 col-lg-4 mb-4">
-            <div class="leadership-card card d-flex flex-wrap mb-4 h-100">
-              <div class="leadership-box">
-                <?php if (get_the_title()) : ?>
-                  <h4 class="leader-title"> <?php echo wp_trim_words(get_the_title(), 10, '...'); ?></h4>
-                <?php endif; ?>
-
-                <?php if (get_field('leader_designation', $post->ID)) : ?>
-                  <p><?php echo the_field('leader_designation', $post->ID); ?></p>
-                <?php endif; ?>
-
-                <?php if (get_field('leader_description', $post->ID)) : ?>
-                  <p class="text-light-gray"><?php echo the_field('leader_description', $post->ID); ?></p>
-                <?php endif; ?>
-              </div>
-
-              <?php if (get_field('leader_linkedin_url', $post->ID)) : ?>
-                <div class="linkedin-box">
-                  <a href="<?php echo the_field('leader_linkedin_url', $post->ID); ?>" title="Linkedin" class="link-linkedin" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                </div>
-              <?php endif; ?>
-            </div>
-          </div>
-
          <?php
         // In the News Listing by AJAX
         elseif ($flag == 'in_the_news_listing') : 
-			$category = @get_the_terms($listingObj->ID, 'news_categories'); ?>
-          <div class="col-sm-6 col-lg-4 mb-4">
-            <div class="card h-100">
-              <div class="card-image-box">
-				<?php if ($category[0]->name) : ?>
-                  <div class="card-image-tag">
-                    <span class="btn btn-sm btn-lightest-blue btn-muted px-3 case-tag"><?php echo $category[0]->name; ?></span>
-                  </div>
-                <?php endif; ?>
-                <?php if (has_post_thumbnail($post->ID)) : ?>
-                  <?php $newsImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium_large'); ?>
-                  <div class="card-image cover-bg" style="background-image: url('<?php echo $newsImage[0]; ?>');"></div>
-                <?php endif; ?>
-              </div>
-              <div class="card-body">
-                <?php if (get_the_title()) : ?>
-                  <h5 class="card-title">
-                    <a href="<?php if (get_field('custom_url', $post->ID)) {
-                                echo the_field('custom_url', $post->ID);
-                              } else {
-                                echo '#';
-                              } ?>" title="<?php the_title(); ?>" target="_blank">
-                      <?php echo wp_trim_words(get_the_title(), 10, '...'); ?></a>
-                  </h5>
-                <?php endif; ?>
-              </div>
-              <?php if (get_field('custom_url', $post->ID)) : ?>
-                <div class="card-footer bg-transparent border-top-0 text-end">
-                  <a href="<?php echo the_field('custom_url', $post->ID); ?>" class="read-more-link" title="Read More" target="_blank">Read More<i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-                </div>
-              <?php endif; ?>
-            </div>
-          </div>
+			$category = @get_the_terms($listingObj->ID, 'news_categories'); 
+			$newsImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium_large'); ?>
+			  <div class="insights-card card wow fadeInUp" data-wow-delay="<?php echo $s; ?>s" data-wow-offset="50">
+				<div class="insights-content card-body">
+					<div class="client-details" <?php if ((has_post_thumbnail( $post->ID ) )) { ?>style="background-image:url('<?php echo $newsImage[0]; ?>')" <?php } ?> >
+						<?php echo $category[0]->name; ?>
+					</div>
+					<div class="insight-in-content">
+						<span class="post-date-cls"><?php echo get_the_date( 'd F, Y', $post->ID ); ?></span>
+						<h2 class="slider-title">
+							<a href="<?php echo the_field('custom_url', $post->ID); ?>" target="_blank"><?php echo wp_trim_words(get_the_title(), 10, '...'); ?></a>										
+						</h2>
+						<div class="short-decoration">
+						   <p class="p2">
+						   <?php
+							if (get_field('short_description', $post->ID)) {
+								echo wp_trim_words( the_field('short_description', $post->ID), 20 );
+							}
+							?>
+							<p>
+						</div>
+						<div class="action">
+							<a href="<?php echo the_field('custom_url', $post->ID); ?>" target="_blank">Read More <svg fill="none" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m13.7071 4.29289c-.3905-.39052-1.0237-.39052-1.4142 0-.3905.39053-.3905 1.02369 0 1.41422l5.2929 5.29289h-13.5858c-.55228 0-1 .4477-1 1s.44772 1 1 1h13.5858l-5.2929 5.2929c-.3905.3905-.3905 1.0237 0 1.4142s1.0237.3905 1.4142 0l7-7c.3905-.3905.3905-1.0237 0-1.4142z" fill="rgb(0,0,0)" fill-rule="evenodd"/></svg></a>
+						</div>
+					</div>
+				</div>
+			  </div>
     <?php endif;
 	
 		$s = $s + 0.2;
-      endwhile; 
-	  else : ?>
+      endwhile; ?>
+	  </div>
+	  <?php else : ?>
 	  <p class="text-center">No Record Found</p>
     <?php endif; ?>
   </div>
@@ -742,43 +712,44 @@ function get_press_release_listing()
 
   $listingObj = new WP_Query($args); ?>
   <?php $i = 0; ?>
-  <div class="row mb-n4">
-    <?php if ($listingObj->have_posts()) :
+  <div class="insights-section row mb-n4">
+    <?php if ($listingObj->have_posts()) :  ?>
+	<div class="insights-inner">
+	<?php
       while ($listingObj->have_posts()) :  $listingObj->the_post();
-		$category = @get_the_terms($listingObj->ID, 'press_release_categories');  /*16-5-2022*/
+		$category = @get_the_terms($listingObj->ID, 'press_release_categories');
+		$pressImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium_large');
         // Press Release Listing by AJAX
         if ($flag == 'press_release_listing') : ?>
-          <div class="col-sm-6 col-lg-4 mb-4">
-            <div class="card h-100">
-              <div class="card-image-box">
-				<?php if ($category[0]->name) : /*16-5-2022*/ ?>
-                  <div class="card-image-tag">
-                    <span class="btn btn-sm btn-lightest-blue btn-muted px-3 case-tag"><?php echo $category[0]->name; ?></span>
-                  </div>
-                <?php endif; ?>
-                <?php if (has_post_thumbnail($post->ID)) : ?>
-                  <?php $pressImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium_large'); ?>
-                  <div class="card-image cover-bg" style="background-image: url('<?php echo $pressImage[0]; ?>');"></div>
-                <?php endif; ?>
-              </div>
-              <div class="card-body">
-                <?php if (get_the_title()) : ?>
-                  <h5 class="card-title">
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                      <?php echo wp_trim_words(get_the_title(), 10, '...'); ?></a>
-                  </h5>
-                <?php endif; ?>
-              </div>
-
-              <div class="card-footer bg-transparent border-top-0 text-end">
-                <a href="<?php the_permalink(); ?>" class="read-more-link" title="Read More">Read More<i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-              </div>
+          <div class="insights-card card wow fadeInUp" data-wow-delay="<?php echo $s; ?>s" data-wow-offset="50">
+            <div class="insights-content card-body">
+				<div class="client-details" <?php if ((has_post_thumbnail( $post->ID ) )) { ?>style="background-image:url('<?php echo $pressImage[0]; ?>')" <?php } ?> >
+					<?php echo $category[0]->name; ?>
+				</div>
+				<div class="insight-in-content">
+					<span class="post-date-cls"><?php echo get_the_date( 'd F, Y', $post->ID ); ?></span>
+					<h2 class="slider-title">
+						<a href="<?php the_permalink(); ?>"><?php echo wp_trim_words(get_the_title(), 10, '...'); ?></a>										
+					</h2>
+					<div class="short-decoration">
+					   <p class="p2">
+					   <?php
+						if (get_field('short_description', $post->ID)) {
+							echo wp_trim_words( the_field('short_description', $post->ID), 20 );
+						}
+						?>
+						<p>
+					</div>
+					<div class="action">
+						<a href="<?php the_permalink(); ?>">Read More <svg fill="none" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m13.7071 4.29289c-.3905-.39052-1.0237-.39052-1.4142 0-.3905.39053-.3905 1.02369 0 1.41422l5.2929 5.29289h-13.5858c-.55228 0-1 .4477-1 1s.44772 1 1 1h13.5858l-5.2929 5.2929c-.3905.3905-.3905 1.0237 0 1.4142s1.0237.3905 1.4142 0l7-7c.3905-.3905.3905-1.0237 0-1.4142z" fill="rgb(0,0,0)" fill-rule="evenodd"/></svg></a>
+					</div>
+				</div>
             </div>
           </div>
     <?php endif;
-
-      endwhile;
-	   else : ?>
+      endwhile; ?>
+	  </div>
+	  <?php else : ?>
 	  <p class="text-center">No Record Found</p>
     <?php endif; ?>
   </div>
