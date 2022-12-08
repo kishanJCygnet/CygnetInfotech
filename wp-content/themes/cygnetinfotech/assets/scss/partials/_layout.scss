@@ -952,6 +952,10 @@ video {
 }
 .circle-shape {
   position: relative;
+  .container{
+    position: relative; 
+    z-index: 2;
+  }
   .shape-bottom {
     position: absolute;
     left: 0;
@@ -986,6 +990,14 @@ video {
   &.sp-out-lgwhite{
     .shape-bottom {
       background-color: #fafafa;
+    }
+  }
+  &.shape-gray90{
+    .shape-bottom {
+      background-color: #fff;
+      &::after {
+        background-color: #fafafa;
+      }
     }
   }
 
@@ -1028,29 +1040,29 @@ video {
       }
     }
   }
-  
+
+  &.shape-aw-top{
+    .shape-top{
+      &::after{
+        background-color: #fff;
+      }
+      svg{
+        path{
+          fill: #3093bc;
+        }
+      }
+    }
+  }
+
 }
-// .image-shape{
-//   position: relative;
-//   .shape-bottom{
-//     overflow: hidden;
-//     position: relative;
-//     &::after{
-//       content: '';
-//       position: absolute;
-//       left: 0;
-//       right: 0;
-//       bottom: 0;
-//       background-color: #fff;
-//       top: 0;
-//   }
-//   svg{
-//     z-index: 1;
-//     position: relative;
-//     width: 100%;
-//   }
-//   }
-// }
+.home {
+  .contact-form-content {
+    padding-top: 0;
+    .shape-top{
+      display: none;
+    }
+  }
+}
 
 .image-shape{
 -webkit-mask-image: url(../../images/banner-img-shape.png);
@@ -1061,4 +1073,7 @@ video {
   mask-size: cover; 
   -webkit-mask-position: center center;
   mask-position: center center;
+}
+.gray90-bg{
+  background-color: #fafafa
 }

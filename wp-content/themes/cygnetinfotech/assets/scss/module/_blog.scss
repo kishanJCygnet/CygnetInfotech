@@ -430,7 +430,7 @@ p {
     font-size: 22px;
 }
 .pagination .pagination-link.current-page {
-    background-color: rgb(0 89 105);
+    background-color: #3cb4e7;
     color: #fff;
 }
 .pagination span i {
@@ -562,6 +562,8 @@ p {
     .insights-inner {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
+    
     }
     .insights-card {
         width: 31%;
@@ -581,6 +583,8 @@ p {
         .post-date-cls{
             font-size: 11px;
             color: #B9B9B9;
+            position: absolute;
+            top: 12px;
         }
     }
     .owl-stage {
@@ -588,6 +592,19 @@ p {
         display: flex;
     }
     .insights-content {
+        .badge{
+            background-color: #fff;
+            color: #000;
+            font-weight: normal;
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            border-radius: 15px;
+            font-size: 12px;
+            padding: 6px 12px;
+            word-spacing: 4px;
+            display: inline-block;
+        }
         .btn {
             position: absolute;
             left: 10px;
@@ -609,23 +626,30 @@ p {
         background-color: #fff;
         margin-top: -100px;
         box-shadow: 0px 3px 6px #00000029;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        position: relative;
         h2 {
             font-weight: 500;
             font-size: 20px;
             line-height: 32px;
             margin-bottom: 5px;
             margin-top: 10px;
+            width: 100%;
             a {
                 color: #242424 !important;
             }
         }
         .short-decoration{
+            width: 100%;
             .p2{
                 font-size: 14px !important;
             }
         }
         .action{
             margin: 10px 0;
+            margin-top: auto;
             a{
                 font-size: 12px;
                 font-weight: 500;
@@ -766,6 +790,7 @@ p {
 }
 
 .resources-page-listing {
+    padding-bottom: 0;
     .submit-all-filter{
        .select2-cn{
         width:350px;

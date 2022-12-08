@@ -10,15 +10,23 @@
     }
     &.inside-page-banner{
         .banner-inner-content {
+            min-height: 360px;
+            display: flex;
+            align-items: center;
+            padding-bottom: 60px;
             .align-items-center{
                 justify-content: center;
             }
             .text-content {
+                h1{
+                    margin-bottom: 0;
+                }
                 h3{
                     font-size: 20px;
                     width: 600px;
                     margin: auto;
                     max-width: 100%;
+                    margin-top: 40px;
                 }
             }
         }
