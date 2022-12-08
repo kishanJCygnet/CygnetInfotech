@@ -688,7 +688,7 @@ function get_press_release_listing()
     $items_per_page = 6;
     $content_priority = 'content_priority';
 	
-	$prcategoryId = $_REQUEST['press_release_category_id']; /*16-5-2022*/
+	$prcategoryId = $_REQUEST['press_release_category_id'];
     if ($prcategoryId) {
       $pr_category_query = array(
         'taxonomy' => 'press_release_categories',
@@ -706,7 +706,7 @@ function get_press_release_listing()
     'paged'      => $current_page,
 	'tax_query' => array(
       'relation' => 'AND',
-      $pr_category_query  /*16-5-2022*/
+      $pr_category_query
     ),
   );
 
