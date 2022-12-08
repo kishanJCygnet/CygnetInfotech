@@ -200,8 +200,7 @@ class AIOWPSecurity_Settings_Menu extends AIOWPSecurity_Admin_Menu {
 
         ?>
         <div class="aio_grey_box">
-			<p><?php _e('For information, updates and documentation, please visit the', 'all-in-one-wp-security-and-firewall'); ?> <a href="https://www.tipsandtricks-hq.com/wordpress-security-and-firewall-plugin" target="_blank"><?php echo htmlspecialchars('All In One WP Security & Firewall Plugin'); ?></a> <?php _e('Page', 'all-in-one-wp-security-and-firewall'); ?>.</p>
-            <p><a href="https://www.tipsandtricks-hq.com/development-center" target="_blank"><?php _e('Follow us', 'all-in-one-wp-security-and-firewall'); ?></a> <?php _e('on Twitter, Google+ or via Email to stay up to date about the new security features of this plugin.', 'all-in-one-wp-security-and-firewall'); ?></p>
+			<p><?php _e('For information, updates and documentation, please visit the', 'all-in-one-wp-security-and-firewall'); ?> <a href="https://aiosplugin.com" target="_blank"><?php echo htmlspecialchars('All In One WP Security & Firewall Plugin'); ?></a> <?php _e('Page', 'all-in-one-wp-security-and-firewall'); ?>.</p>
         </div>
 
         <div class="postbox">

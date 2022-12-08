@@ -439,6 +439,8 @@ class Share_Buttons {
 						'secret'        => $secret,
 						'buttonConfig'  => $button_config,
 						'nonce'         => wp_create_nonce( $this->plugin->meta_prefix ),
+						'fresh'         => get_option( 'sharethis_fract' ),
+						'first'         => get_option( 'sharethis_first_product', false ),
 					)
 				)
 			)
@@ -895,6 +897,9 @@ class Share_Buttons {
 
 		// Set option type and button value.
 		$type = strtolower( sanitize_text_field( wp_unslash( $_POST['type'] ) ) ); // WPCS: input var ok.
+
+		// Note the new install.
+		update_option( 'sharethis_fract', 'true' );
 
 		$this->set_the_defaults( $type );
 	}
@@ -1453,9 +1458,14 @@ class Share_Buttons {
 				),
 				'first'  => FILTER_SANITIZE_STRING,
 				'nonce'  => FILTER_SANITIZE_STRING,
+				'fresh'  => FILTER_SANITIZE_STRING,
 				'type'   => FILTER_SANITIZE_STRING,
 			)
 		);
+
+		if ( 'true' === $post['fresh'] ) {
+			update_option( 'sharethis_fract', 'false' );
+		}
 
 		if ( true === empty( $post['button'] ) || true === empty( $post['config'] ) ) {
 			wp_send_json_error( 'Button Config Set Failed' );

@@ -367,7 +367,7 @@ class Email_Subscribers_Pricing {
 							</span>
 
 							<div class="center">
-								<a class="ig_es_button small green center" href="https://www.icegram.com/?buy-now=407190&qty=1&coupon=es-upgrade-25&with-cart=1&utm_source=ig_es&utm_medium=<?php echo esc_attr( $utm_medium ); ?>&utm_campaign=starter" target="_blank" rel="noopener"><?php esc_html_e( 'Get 25% Off', 'email-subscribers' ); ?></a>
+								<a class="ig_es_button small green center" href="https://www.icegram.com/?buy-now=39043&qty=1&coupon=es-upgrade-25&page=6&with-cart=1&utm_source=ig_es&utm_medium=<?php echo esc_attr( $utm_medium ); ?>&utm_campaign=pro" target="_blank" rel="noopener"><?php esc_html_e( 'Get 25% Off', 'email-subscribers' ); ?></a>
 							</div>
 						</div>
 						<div class="ig_es_column column_one_fourth pricing scaleup" style="border-color: #15576F;padding: 0;border-width: 0.2em;">
@@ -380,7 +380,7 @@ class Email_Subscribers_Pricing {
 							</span>
 
 							<div class="center">
-								<a class="ig_es_button small green center" href="https://www.icegram.com/?buy-now=39944&qty=1&coupon=es-upgrade-25&with-cart=1&utm_source=ig_es&utm_medium=<?php echo esc_attr( $utm_medium ); ?>&utm_campaign=es-pro" target="_blank" rel="noopener"><?php esc_html_e( 'Get 25% Off', 'email-subscribers' ); ?><span style="width: 1em; height: 1em; background-image: url('https://www.storeapps.org/wp-content/themes/storeapps/assets/images/fidget.svg'); display: inline-block; margin-left: 0.5em" class="fidget spin"></span></a>
+								<a class="ig_es_button small green center" href="https://www.icegram.com/?buy-now=404335&qty=1&coupon=es-upgrade-25&page=6&with-cart=1&utm_source=ig_es&utm_medium=<?php echo esc_attr( $utm_medium ); ?>&utm_campaign=max" target="_blank" rel="noopener"><?php esc_html_e( 'Get 25% Off', 'email-subscribers' ); ?><span style="width: 1em; height: 1em; background-image: url('https://www.storeapps.org/wp-content/themes/storeapps/assets/images/fidget.svg'); display: inline-block; margin-left: 0.5em" class="fidget spin"></span></a>
 							</div>
 						</div>
 				</div>
@@ -739,12 +739,12 @@ class Email_Subscribers_Pricing {
 							</td>
 							<td class="ig_es_starter_feature_name">
 								<div class="center">
-									<a class="ig_es_button small green center" href="#ig_es_price_column_container" style="text-transform: none;"><?php esc_html_e( 'Buy Pro', 'email-subscribers' ); ?></a>
+									<a class="ig_es_button small green center" href="https://www.icegram.com/?buy-now=39043&qty=1&coupon=es-upgrade-25&page=6&with-cart=1&utm_source=ig_es&utm_medium=<?php echo esc_attr( $utm_medium ); ?>&utm_campaign=pro" target="_blank" style="text-transform: none;"><?php esc_html_e( 'Buy Pro', 'email-subscribers' ); ?></a>
 								</div>
 							</td>
 							<td class="ig_es_pro_feature_name">
 									<div class="center">
-										<a class="ig_es_button small green center" href="#ig_es_price_column_container" style="text-transform: none;"><?php esc_html_e( 'Buy Max', 'email-subscribers' ); ?></a>
+										<a class="ig_es_button small green center" href="https://www.icegram.com/?buy-now=404335&qty=1&coupon=es-upgrade-25&page=6&with-cart=1&utm_source=ig_es&utm_medium=<?php echo esc_attr( $utm_medium ); ?>&utm_campaign=max" target="_blank" style="text-transform: none;"><?php esc_html_e( 'Buy Max', 'email-subscribers' ); ?></a>
 									</div>
 							</td>
 						</tr>

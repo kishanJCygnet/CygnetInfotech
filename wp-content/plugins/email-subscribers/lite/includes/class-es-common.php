@@ -37,7 +37,7 @@ class ES_Common {
 	 *
 	 * @since 5.3.18
 	 */
-	public static function fetch_admin_email() {
+	public static function get_admin_email() {
 		$admin_email     = get_option( 'ig_es_admin_emails', '' );
 		$all_admin_email = explode(',', $admin_email);
 
@@ -1978,6 +1978,54 @@ class ES_Common {
 		$convert_time_format = get_option( 'time_format' );
 
 		return date_i18n( "$convert_date_format $convert_time_format", strtotime( $date ) );
+	}
+
+	/**
+	 * Get next local midnight time
+	 * 
+	 * @since 5.5.2
+	 * 
+	 * @return string $local_next_midnight_time next local midnight time
+	 */
+	public static function get_next_local_midnight_time() {
+		$next_day_utc_time   = time() + DAY_IN_SECONDS;
+		$offset_in_seconds   = self::get_timezone_offset_in_seconds();
+		$next_day_local_time = $next_day_utc_time + $offset_in_seconds;
+		$next_day_local_date = date_i18n( 'Y-m-d H:i:s', $next_day_local_time );
+	
+		$local_date_obj = new DateTime( $next_day_local_date );
+		$local_date_obj->setTime( 0, 0, 0 );
+	
+		$local_next_midnight_time = $local_date_obj->getTimestamp();
+
+		return $local_next_midnight_time;
+	}
+
+	/**
+	 * Convert UTC time for local midnight time
+	 * 
+	 * @since 5.5.2
+	 * 
+	 * @return string $utc_time_for_local_midnight UTC time local midnight time
+	 */
+	public static function get_utc_time_for_local_midnight_time() {
+		$offset_in_seconds           = self::get_timezone_offset_in_seconds();
+		$next_local_midnight_time    = self::get_next_local_midnight_time();
+		$utc_time_for_local_midnight = $next_local_midnight_time - $offset_in_seconds;
+		return $utc_time_for_local_midnight;
+	}
+
+	/**
+	 * Get site's timezone offset in seconds
+	 * 
+	 * @since 5.5.2
+	 * 
+	 * @return int $offset_in_seconds
+	 */
+	public static function get_timezone_offset_in_seconds() {
+		$offset            = get_option( 'gmt_offset' );
+		$offset_in_seconds = $offset * HOUR_IN_SECONDS;
+		return $offset_in_seconds;
 	}
 
 	/**
