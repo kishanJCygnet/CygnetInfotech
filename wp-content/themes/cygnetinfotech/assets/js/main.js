@@ -313,6 +313,8 @@ jQuery(document).ready(function(){
     jQuery('.insights-card',this).height(highestBox);
                   
   });
+
+  $('.contact-form-content').addClass('shape-aw-top');
   jQuery('svg').each(function(){
     jQuery(this).find('g').removeAttr('clip-path');
    });

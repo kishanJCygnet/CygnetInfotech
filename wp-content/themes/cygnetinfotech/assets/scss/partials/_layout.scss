@@ -30,7 +30,6 @@ body {
     font-size: 54px;
     line-height: 64px;
   }
-
   section {
     padding: 80px 0;
     @include bp(xl-max) {
@@ -112,6 +111,7 @@ body {
     font-size: 14px;
     padding: 10px 25px;
     background-color: #3cb4e7;
+    border:1px solid #3cb4e7;
     border-radius: 10px;
     color: #fff;
 
@@ -141,8 +141,10 @@ body {
       transform: translate(-50%, -50%);
       z-index: 1;
     }
+  
     &:hover {
       color: #3cb4e7;
+      background-color: #fff;
       span.effect {
         width: 225%;
         height: 562.5px;
@@ -150,6 +152,14 @@ body {
     }
     &:active {
       background-color: #5a6d4c;
+    }
+    &.btn-outline{
+      background-color: #fff;
+      color: #3cb4e7;
+      &:hover {
+        background-color: #3cb4e7;
+        color: #fff;
+      }
     }
   }
   a,
@@ -942,6 +952,10 @@ video {
 }
 .circle-shape {
   position: relative;
+  .container{
+    position: relative; 
+    z-index: 2;
+  }
   .shape-bottom {
     position: absolute;
     left: 0;
@@ -976,6 +990,14 @@ video {
   &.sp-out-lgwhite{
     .shape-bottom {
       background-color: #fafafa;
+    }
+  }
+  &.shape-gray90{
+    .shape-bottom {
+      background-color: #fff;
+      &::after {
+        background-color: #fafafa;
+      }
     }
   }
 
@@ -1018,28 +1040,29 @@ video {
       }
     }
   }
+
+  &.shape-aw-top{
+    .shape-top{
+      &::after{
+        background-color: #fff;
+      }
+      svg{
+        path{
+          fill: #3093bc;
+        }
+      }
+    }
+  }
+
 }
-// .image-shape{
-//   position: relative;
-//   .shape-bottom{
-//     overflow: hidden;
-//     position: relative;
-//     &::after{
-//       content: '';
-//       position: absolute;
-//       left: 0;
-//       right: 0;
-//       bottom: 0;
-//       background-color: #fff;
-//       top: 0;
-//   }
-//   svg{
-//     z-index: 1;
-//     position: relative;
-//     width: 100%;
-//   }
-//   }
-// }
+.home {
+  .contact-form-content {
+    padding-top: 0;
+    .shape-top{
+      display: none;
+    }
+  }
+}
 
 .image-shape{
 -webkit-mask-image: url(../../images/banner-img-shape.png);
@@ -1050,4 +1073,7 @@ video {
   mask-size: cover; 
   -webkit-mask-position: center center;
   mask-position: center center;
+}
+.gray90-bg{
+  background-color: #fafafa
 }
