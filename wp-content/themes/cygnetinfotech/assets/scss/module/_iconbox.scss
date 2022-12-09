@@ -167,3 +167,114 @@
         }
     }
 }
+.analysts-speak{
+    .icon-box {
+        &::before{
+            display: none;
+        }
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        padding: 0;
+        margin: auto;
+        box-shadow: 0px 10px 15px #0000000D;
+        border:15px solid rgba(137, 208, 238, 0.2);
+        .icon-box-title-content{
+            position: absolute;
+            top: 0;
+            padding: 0 10px;
+            left: 0;
+            right: 0;
+            bottom: -18px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent linear-gradient(180deg, #41BFE700 0%, rgba(13, 13, 13,0.67) 100%) 0% 0% no-repeat padding-box;
+            h3{
+                color: #fff;
+                font-weight: 500;
+                font-size: 16px;
+            }
+        }
+        .icon{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+         
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+                transform: scale(1);
+                transition: .3s all linear;
+            }
+        }
+        &:hover{
+            .icon-box-title-content{
+                background: transparent linear-gradient(180deg, #41c0e76a 0%, rgba(13, 13, 13,0.9) 100%) 0% 0% no-repeat padding-box;
+         
+            }
+            .icon{
+                img{
+                    transform: scale(1.3);
+                }
+            }
+        }
+    }
+}
+.hr-benifits{
+    .title-heading{
+        margin-top: 20px;
+        h2{
+            margin-bottom: 20px;
+        }
+    }
+    .icon-box-list{
+        & > div{
+            width: 20%;
+        }
+    }
+    .icon-box {
+        &::before{
+            display: none;
+        }
+        .icon-box-title-content{
+            margin-bottom: 0;
+            text-align: center;
+            margin-top: 10px;
+        h3{
+            color: #0D3461;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: normal;
+        }
+    }
+    .icon{
+        width: 35px;
+        height: 35px;
+        margin: auto;
+        svg{
+            fill:#0D3461;
+            path{
+                fill: #0D3461;
+            }
+        }
+    }
+    }
+    .container{
+        position: relative;
+    .icon-box-content{
+        font-size: 14px;
+        position: absolute;
+        bottom: -55px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+}
+}

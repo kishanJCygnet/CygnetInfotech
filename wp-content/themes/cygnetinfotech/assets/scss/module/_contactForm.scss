@@ -302,5 +302,18 @@ input[type=checkbox]:checked:after {
 .signupform .whatup-check .wpcf7-not-valid-tip{
    bottom: -25px;
 }
+.submit-all-filter{
+    .category {
+        select{
+            width: 300px;
+            max-width: 100%;
+            color: #000;
+            height: 45px;
+            option{
+                color: #393939;
+            }
+        }
+    }
+}
 
 // *************************  End Contact Form *********************
