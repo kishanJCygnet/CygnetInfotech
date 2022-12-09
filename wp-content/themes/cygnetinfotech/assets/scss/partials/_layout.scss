@@ -32,9 +32,9 @@ body {
   }
   section {
     padding: 80px 0;
-    @include bp(xl-max) {
-      padding: 60px 0;
-    }
+    // @include bp(xl-max) {
+    //   padding: 60px 0;
+    // }
     // @include bp(lg-max){
     //   padding: 30px 0;
     // }
@@ -211,7 +211,7 @@ body {
 
     h2 {
       color: #0c3761;
-      font-size: 32px !important;
+      font-size: 44px !important;
       margin-bottom: 50px;
       padding: 0 16px;
       line-height: 38px;
@@ -654,6 +654,7 @@ ul.more-list-detail {
   }
 }
 p {
+  color: #0D3461;
   @include bp(md-max) {
     margin-bottom: 15px !important;
   }
@@ -869,8 +870,14 @@ video {
     }
   }
 }
+.navy-blue-bg {
+  background-color: #22618B;
+}
 .mid-ng-blue {
   background-color: #1b4b76;
+}
+.sky-blue-bg{
+  background-color: #DBF3FB;
 }
 .home-contact-us {
   background: linear-gradient(190deg, rgba(62, 183, 223, 1) 0%, rgba(49, 149, 191, 1) 100%);
@@ -989,9 +996,30 @@ video {
   }
   &.sp-out-lgwhite{
     .shape-bottom {
-      background-color: #fafafa;
+      background-color: #fafafa !important;
     }
   }
+  &.sp-out-white{
+    .shape-bottom {
+      background-color: #fff !important;
+    }
+  }
+  &.sp-out-skyblue{
+    .shape-bottom {
+      background-color: #DBF3FB !important;
+    }
+  }
+  &.sp-out-mid-ng-blue{
+    .shape-bottom {
+      background-color: #1b4b76 !important;
+    }
+  }
+  &.sp-out-Gray-white{
+    .shape-bottom {
+      background-color: #e5e5e5 !important;
+    }
+  }
+  
   &.shape-gray90{
     .shape-bottom {
       background-color: #fff;
@@ -999,6 +1027,36 @@ video {
         background-color: #fafafa;
       }
     }
+  }
+  &.mid-ng-blue{
+    .shape-bottom {
+      background-color: #22618b;
+      &::after {
+        background-color: #1b4b76;
+      }
+    }
+  }
+  &.Gray-white{
+    .shape-bottom{
+      background-color: #1b4b76;
+      &::after{
+        background-color: #e5e5e5;
+      }
+    }
+  }
+  &.sp-in-white{
+    .shape-bottom{
+    &::after {
+      background-color: #ffffff;
+    }
+  }
+  }
+  &.sp-in-skyblue{
+    .shape-bottom{
+    &::after {
+      background-color: #DBF3FB;
+    }
+  }
   }
 
 }
@@ -1053,6 +1111,7 @@ video {
       }
     }
   }
+  
 
 }
 .home {
@@ -1076,4 +1135,24 @@ video {
 }
 .gray90-bg{
   background-color: #fafafa
+}
+.Gray-white{
+  background-color: #e5e5e5 ;
+} 
+.top-banner-margin{
+  padding-top: 200px;
+  margin-top: -154px;
+}
+.brand-vid {
+  width: 800px;
+  margin: auto;
+  max-width: 100%;
+}
+.our-smart-philosophy-video{
+  margin-top: -250px;
+  z-index: 2;
+  position: relative;
+}
+.tce-about-cygnet{
+  padding-bottom: 240px;
 }

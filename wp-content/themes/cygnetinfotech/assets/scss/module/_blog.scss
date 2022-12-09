@@ -561,19 +561,21 @@ p {
     padding-bottom: 0 !important;
     .insights-inner {
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    
+        flex-wrap: wrap; 
+        margin: 0 -20px;   
     }
     .insights-card {
-        width: 31%;
-        border-bottom-right-radius: 20px;
-        border-bottom-left-radius: 20px;
-        overflow: hidden;
+        width: 33%;
         border: 0;
         transition: 0.3s all linear;
         background-color: transparent;
-        padding-bottom: 30px;
+        padding:0 20px 30px;
+
+        .insights-content {
+           border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
         &:hover {
             // box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16), 0 10px 10px rgba(0, 0, 0, 0.16);
             .insight-in-content {

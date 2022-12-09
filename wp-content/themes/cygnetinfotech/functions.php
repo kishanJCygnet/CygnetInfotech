@@ -627,7 +627,7 @@ function news_category_fillter()
 							<?php }?>
 						</select>
 					</div>
-					<div  class="action ms-auto ">
+					<div  class="action">
 						<div class="d-md-flex justify-content-start justify-content-lg-end justify-content-xl-start">
 							<input type="button" class="btn me-2 disvar" title="Submit" value="Submit" id="filter_submit" disabled>
 							<input type="button" class="btn btn-outline disvar" title="Clear all" value="Clear all" id="clear-filter-research" disabled>
@@ -674,7 +674,7 @@ function press_release_category_fillter()
 							<?php }?>
 						</select>
 					</div>
-                    <div  class="action ms-auto ">
+                    <div  class="action">
 						<div class="d-md-flex justify-content-start justify-content-lg-end justify-content-xl-start">
 							<input type="button" class="btn me-2 disvarpress" title="Submit" value="Submit" id="press_release_filter_submit" disabled>
 							<input type="button" class="btn btn-outline disvarpress" title="Clear all" value="Clear all" id="clear-press-release-filter-research" disabled>

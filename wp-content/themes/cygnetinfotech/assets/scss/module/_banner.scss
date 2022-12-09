@@ -2,6 +2,8 @@
 .banner-content {
     padding: 0;
     background-color: #0F3764;
+    position: relative;
+    z-index: 1;
     .banner-inner-content{
         background-size: cover;
         background-repeat: no-repeat;

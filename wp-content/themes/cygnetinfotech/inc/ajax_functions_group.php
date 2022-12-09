@@ -346,7 +346,7 @@ function get_casestudy_listing_data()
 			  <div class="insights-card card wow fadeInUp" data-wow-delay="<?php echo $s; ?>s" data-wow-offset="50">
 				<div class="insights-content card-body">
 					<div class="client-details" <?php if ((has_post_thumbnail( $post->ID ) )) { ?>style="background-image:url('<?php echo $newsImage[0]; ?>')" <?php } ?> >
-						<?php echo $category[0]->name; ?>
+          <span class="badge"><?php echo $category[0]->name; ?></span>
 					</div>
 					<div class="insight-in-content">
 						<span class="post-date-cls"><?php echo get_the_date( 'd F, Y', $post->ID ); ?></span>
@@ -724,7 +724,7 @@ function get_press_release_listing()
           <div class="insights-card card wow fadeInUp" data-wow-delay="<?php echo $s; ?>s" data-wow-offset="50">
             <div class="insights-content card-body">
 				<div class="client-details" <?php if ((has_post_thumbnail( $post->ID ) )) { ?>style="background-image:url('<?php echo $pressImage[0]; ?>')" <?php } ?> >
-					<?php echo $category[0]->name; ?>
+					<span class="badge"><?php echo $category[0]->name; ?></span>
 				</div>
 				<div class="insight-in-content">
 					<span class="post-date-cls"><?php echo get_the_date( 'd F, Y', $post->ID ); ?></span>
