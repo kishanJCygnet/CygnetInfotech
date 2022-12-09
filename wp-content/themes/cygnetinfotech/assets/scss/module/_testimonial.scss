@@ -1,28 +1,37 @@
 //*********************** testimonial-section *********************************
-.testimonial-section,
 .light-bg {
     background-color: #fafafa !important;
 }
 
 .testimonial-section {
-     background-color: #ffffff !important;
      position: relative;
-     &:after{
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        top:0;
-        height: 300px;
-        background-image: url('../../images/caseStdy-bg.png');
-    }
+    //  &:after{
+    //     content: '';
+    //     position: absolute;
+    //     left: 0;
+    //     right: 0;
+    //     top:0;
+    //     height: 300px;
+    //     background-image: url('../../images/caseStdy-bg.png');
+    // }
 
     .title-heading{
-        text-align: right;
-        position: relative;
+       
+     
         z-index: 1;
+        .heading-border{
+            display: none;
+        }
         h2{
             color: #fff;
+            span{
+                display: inline-block;
+                width: 100%;
+                font-size: 14px;
+                font-weight: normal;
+                margin-top: 15px;
+                color: #fff;
+            }
         }
     }
     .testimonial {
@@ -174,7 +183,7 @@
                 @include bp(md-max) {
                     margin-bottom: 10px;
                     margin-top: 15px;
-                    }
+                 }
 
                 // border: 2px solid #9acdcd;
                 // border-radius: 50%;

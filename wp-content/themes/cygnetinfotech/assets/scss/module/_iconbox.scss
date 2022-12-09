@@ -278,3 +278,72 @@
     }
 }
 }
+.album-content{
+    display: flex;
+    .album-item{
+        width: 20%;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .album-item-box{
+        width: 100%;
+        display: flex;   
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+        border-radius: 55px;
+        margin: 15px 0;
+        .overlay{
+            opacity: 0;
+           
+            background: transparent linear-gradient(180deg, rgba(65, 191, 231,0.6) 0%, #0D3461 100%) 0% 0% no-repeat padding-box;
+            display: inline-flex;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+                position: absolute;
+                line-height: 1.5;
+               
+                padding: 10px;
+                color: #fff;
+         
+                font-size: 15px;
+        }
+        &:hover{
+            .overlay{
+                opacity: 1;
+                
+            }
+        }
+        & > div{
+            width: 100%;
+            float: none;
+            max-width: 100%;
+            flex: 1;
+            padding: 0;
+            position: relative;
+            z-index: 0;
+            .group{
+                margin: 0;
+                .stack {
+                    margin: 0;
+                    &::after,
+                    &::before{
+                        display: none;
+                    }
+                    img{
+                        margin: 0;
+                        border: 0;
+                        box-shadow: none;
+                    }
+                }
+                &::after{
+                    display: none;
+                }
+            }
+        }
+    }
+}

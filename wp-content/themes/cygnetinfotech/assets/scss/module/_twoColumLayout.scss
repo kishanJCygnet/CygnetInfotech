@@ -1,107 +1,104 @@
-.two-colum-layout .two-colum-content{
+.two-colum-layout .two-colum-content {
     display: flex;
-    justify-content: space-between;  
-    @include bp(sm-max){
+    justify-content: space-between;
+    @include bp(sm-max) {
         flex-wrap: wrap;
-    }   
+    }
 }
 /* .two-colum-layout .title-heading{
     margin-bottom: 100px;
 } */
-.two-colum-layout.pos-left .two-colum-content{
-    
+.two-colum-layout.pos-left .two-colum-content {
     flex-direction: row-reverse;
-    @include bp(sm-max){
+    @include bp(sm-max) {
         flex-direction: column-reverse;
     }
 }
-.two-colum-layout .two-colum-content > div{
+.two-colum-layout .two-colum-content > div {
     width: 50%;
-    @include bp(sm-max){
-        width: 100%;        
+    @include bp(sm-max) {
+        width: 100%;
     }
 }
 
-.two-colum-layout.cfr-tw-col-item.pos-left  .two-colum-content .col-right {
-   padding-right: 80px;
-   padding-left: 0;
+.two-colum-layout.cfr-tw-col-item.pos-left .two-colum-content .col-right {
+    padding-right: 80px;
+    padding-left: 0;
 }
-.two-colum-layout.cfr-tw-col-item.pos-left .two-colum-content .col-left{
-     padding-left: 80px;
-     text-align: left;
-     padding-right: 0;
-    
+.two-colum-layout.cfr-tw-col-item.pos-left .two-colum-content .col-left {
+    padding-left: 80px;
+    text-align: left;
+    padding-right: 0;
 }
-.two-colum-layout.cfr-tw-col-item .two-colum-content .col-right img{
-    box-shadow: 0 50px 100px -20px rgba(50,50,93,0.25),0 30px 60px -30px rgba(0,0,0,0.3);
+.two-colum-layout.cfr-tw-col-item .two-colum-content .col-right img {
+    box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
     border-radius: 25px;
 }
-.two-colum-layout.cfr-tw-col-item .two-colum-content img{
+.two-colum-layout.cfr-tw-col-item .two-colum-content img {
     width: 100%;
 }
 .two-colum-layout.cfr-tw-col-item .two-colum-content .col-right {
     padding-right: 0px;
     padding-left: 80px;
- }
- .two-colum-layout.cfr-tw-col-item .two-colum-content .col-left{
-
-      padding-right: 80px;
-      text-align: right;
- }
- .two-colum-layout .content-title-heading h2{
-     font-weight: 500;
-     line-height: 38px;
-     margin-bottom: 40px;
-     position: relative;
-     color: #0C3761;
- }
- .two-colum-layout.left-title .two-colum-content .col-left{
-     text-align: left;
-     
- }
- .two-colum-layout.left-title .heading-border{
-     left: 0;
-     right: auto;
- }
- 
- .two-colum-layout p{
-     font-size: 14px;
-     line-height: 28px;
- }
- .two-colum-layout .heading-border{
-     right: 0;
-     left: auto;
- } .two-colum-layout.pos-left .heading-border{
+}
+.two-colum-layout.cfr-tw-col-item .two-colum-content .col-left {
+    padding-right: 80px;
+    text-align: right;
+}
+.two-colum-layout .content-title-heading h2 {
+    font-weight: 500;
+    line-height: 38px;
+    margin-bottom: 40px;
+    position: relative;
+    color: #0c3761;
+}
+.two-colum-layout.left-title .two-colum-content .col-left {
+    text-align: left;
+}
+.two-colum-layout.left-title .heading-border {
     left: 0;
     right: auto;
- }
- .two-colum-layout .title-heading .heading-border{
-     left: calc(50% - 50px);
-     right: unset;
- }
-.two-colum-layout.hdsb-sing-solution  .two-colum-content .col-right img{
+}
+
+.two-colum-layout p {
+    font-size: 14px;
+    line-height: 28px;
+}
+.two-colum-layout .heading-border {
+    right: 0;
+    left: auto;
+}
+.two-colum-layout.pos-left .heading-border {
+    left: 0;
+    right: auto;
+}
+.two-colum-layout .title-heading .heading-border {
+    left: calc(50% - 50px);
+    right: unset;
+}
+.two-colum-layout.hdsb-sing-solution .two-colum-content .col-right img {
     margin-top: 51px;
     /* height: 400px; */
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 14px 28px rgb(0 0 0 / 16%), 0 10px 10px rgb(0 0 0 / 16%);
 }
-.two-colum-layout.hdsb-sing-solution  .two-colum-content .col-right{
+.two-colum-layout.hdsb-sing-solution .two-colum-content .col-right {
     padding-left: 50px;
 }
-.two-colum-layout.hdsb-sing-solution  .two-colum-content .col-left{
+.two-colum-layout.hdsb-sing-solution .two-colum-content .col-left {
     padding-right: 50px;
 }
 
-.pc-great-place-work{
-    .two-colum-content{
-        & > .col-right{
+.pc-great-place-work {
+    .two-colum-content {
+        & > .col-right {
             min-width: 550px;
             height: 338px;
             position: relative;
             border-radius: 104px;
-            overflow: hidden;   
-            &::after{
+            overflow: hidden;
+            &::after {
                 content: "";
                 position: absolute;
                 background-image: url(../../images/Great-place-to-work-logo.png);
@@ -114,31 +111,107 @@
                 background-size: contain;
             }
         }
-        .col-left{
-        min-width: calc(100% - 550px);
-        padding-right: 65px;
-        position: relative;
-       
+        .col-left {
+            min-width: calc(100% - 550px);
+            padding-right: 65px;
+            position: relative;
         }
     }
 }
-.pc-award{
-    .two-colum-content{
+.pc-award {
+    .two-colum-content {
         position: relative;
         padding: 0 30px;
-        &::after{
+        &::after {
             content: "";
             position: absolute;
             height: 110px;
-            background:linear-gradient(to right,#0f80a2ad,#0f80a2ad), url(../../images/businesspeople-celebrating-success.png);
+            background: linear-gradient(to right, #0f80a2ad, #0f80a2ad),
+                url(../../images/businesspeople-celebrating-success.png);
             left: 0;
             right: 0;
             border-radius: 54px;
-            top:calc(50% - 55px);
+            top: calc(50% - 55px);
             z-index: -1;
         }
-        p{
+        p {
             color: #fff;
+        }
+    }
+}
+.back-to-society {
+    display: flex;
+    align-items: center;
+    br {
+        display: none;
+    }
+    & > div {
+        width: 50%;
+        .album-content {
+            width: 100%;
+            .album-item {
+                width: 50%;
+                img {
+                    height: 200px;
+                    object-fit: cover;
+                }
+            }
+        }
+        &.col-right {
+            padding-left: 50px;
+            h2 {
+                color: #0c3761;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+.join-team {
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        height: 110px;
+        background: linear-gradient(to right, #0f80a2ad, #0f80a2ad),
+            url(../../images/businesspeople-celebrating-success.png);
+        left: 0;
+        right: 0;
+        border-radius: 0px;
+        top: calc(50% - 80px);
+        z-index: -1;
+    }
+    .join-team-content {
+        position: relative;
+        .content-item {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 150px;
+            & > div {
+                width: 50%;
+                h2 {
+                    margin-bottom: 40px;    
+                    font-size: 32px;
+                    color: #fff;
+                }
+                &:last-child {
+                    padding-left: 150px;
+                }
+                &:first-child {
+                    text-align: right;
+                    padding-right: 150px;
+                }
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            height: 397px;
+            background: url(../../images/chair.png);
+            left: calc(50% - 193px);
+            width: 391px;
+            top: 9px;
+            background-size: contain;   
+            background-repeat: no-repeat;
         }
     }
 }
