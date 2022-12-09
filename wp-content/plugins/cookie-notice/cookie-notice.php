@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice & Compliance for GDPR / CCPA
 Description: Cookie Notice allows you to you elegantly inform users that your site uses cookies and helps you comply with GDPR, CCPA and other data privacy laws.
-Version: 2.4.2
+Version: 2.4.3
 Author: Hu-manity.co
 Author URI: https://hu-manity.co/
 Plugin URI: https://cookie-compliance.co/
@@ -29,11 +29,12 @@ if ( ! defined( 'ABSPATH' ) )
  * Cookie Notice class.
  *
  * @class Cookie_Notice
- * @version	2.4.2
+ * @version	2.4.3
  */
 class Cookie_Notice {
 
 	private $status = '';
+	private $subscription = '';
 	private $x_api_key = 'hudft60djisdusdjwek';
 	private $app_host_url = 'https://app.hu-manity.co';
 	private $app_login_url = 'https://app.hu-manity.co/#/en/cc2/login';
@@ -105,7 +106,11 @@ class Cookie_Notice {
 			'update_delay_date'		=> 0,
 			'update_threshold_date'	=> 0
 		],
-		'version'	=> '2.4.2'
+		'data'	=> [
+			'status'		=> '',
+			'subscription'	=> 'basic'
+		],
+		'version'	=> '2.4.3'
 	];
 
 	/**
@@ -223,43 +228,76 @@ class Cookie_Notice {
 	}
 
 	/**
-	 * Set plugin status.
+	 * Set cookie compliance status.
 	 *
 	 * @return void
 	 */
 	public function set_status() {
+		$default_data = $this->defaults['data'];
+
 		if ( is_multisite() ) {
 			if ( $this->is_plugin_network_active() ) {
 				// network
 				if ( $this->is_network_admin() ) {
-					if ( $this->network_options['global_override'] )
-						$status = get_site_option( 'cookie_notice_status', '' );
-					else
-						$status = '';
+					if ( $this->network_options['global_override'] ) {
+						$data = get_site_option( 'cookie_notice_status', [] );
+						$type = 'network';
+					} else
+						$data = $default_data;
 				// site
 				} else {
-					if ( $this->network_options['global_override'] )
-						$status = get_site_option( 'cookie_notice_status', '' );
-					else
-						$status = get_option( 'cookie_notice_status', '' );
+					if ( $this->network_options['global_override'] ) {
+						$data = get_site_option( 'cookie_notice_status', [] );
+						$type = 'network';
+					} else {
+						$data = get_option( 'cookie_notice_status', [] );
+						$type = 'single';
+					}
 				}
 			} else {
 				// network
 				if ( $this->is_network_admin() )
-					$status = '';
+					$data = $default_data;
 				// site
-				else
-					$status = get_option( 'cookie_notice_status', '' );
+				else {
+					$data = get_option( 'cookie_notice_status', [] );
+					$type = 'single';
+				}
 			}
-		} else
-			$status = get_option( 'cookie_notice_status', '' );
+		} else {
+			$data = get_option( 'cookie_notice_status', [] );
+			$type = 'single';
+		}
+
+		// old status format?
+		if ( isset( $type ) && ! is_array( $data ) ) {
+			// old value saved as string
+			if ( is_string( $data ) && $this->check_status( $data ) ) {
+				// update status
+				$default_data['status'] = $data;
+
+				if ( $default_data['status'] === 'active' )
+					$default_data['subscription'] = 'pro';
+			}
+
+			// set data
+			$data = $default_data;
+
+			if ( $type === 'single' )
+				update_option( 'cookie_notice_status', $data );
+			else
+				update_site_option( 'cookie_notice_status', $data );
+		}
 
 		// set status
-		$this->status = $this->check_status( $status );
+		$this->status = $this->check_status( $data['status'] );
+
+		// set subscription
+		$this->subscription = $data['subscription'];
 	}
 
 	/**
-	 * Get plugin status.
+	 * Get cookie compliance status.
 	 *
 	 * @return string
 	 */
@@ -268,13 +306,22 @@ class Cookie_Notice {
 	}
 
 	/**
-	 * Check plugin status.
+	 * Check cookie compliance status.
 	 *
 	 * @param string $status
 	 * @return string
 	 */
 	public function check_status( $status ) {
 		return ! empty( $status ) && in_array( $status, [ 'active', 'pending' ], true ) ? $status : '';
+	}
+
+	/**
+	 * Get cookie compliance subscription.
+	 *
+	 * @return string
+	 */
+	public function get_subscription() {
+		return $this->subscription;
 	}
 
 	/**
@@ -385,7 +432,7 @@ class Cookie_Notice {
 		if ( $networkwide ) {
 			// add network options
 			add_site_option( 'cookie_notice_options', $this->defaults['general'] );
-			add_site_option( 'cookie_notice_status', '' );
+			add_site_option( 'cookie_notice_status', $this->defaults['data'] );
 			add_site_option( 'cookie_notice_version', $this->defaults['version'] );
 
 			global $wpdb;
@@ -418,7 +465,7 @@ class Cookie_Notice {
 	public function activate_site() {
 		// add default options
 		add_option( 'cookie_notice_options', $this->defaults['general'], '', false );
-		add_option( 'cookie_notice_status', '', '', false );
+		add_option( 'cookie_notice_status', $this->defaults['data'], '', false );
 		add_option( 'cookie_notice_version', $this->defaults['version'], '', false );
 	}
 
