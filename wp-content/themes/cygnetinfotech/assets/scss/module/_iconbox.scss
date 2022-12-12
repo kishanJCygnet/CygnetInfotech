@@ -132,6 +132,27 @@
             }
         }
     }
+    &.circle-shape-smp{
+        .icon-box-list {
+            .icon-box{
+                .icon {
+                    svg{
+                        width: 190px;
+                        height: 190px;
+                    }
+                }
+                h3{
+                    color: #0D3461;
+                    font-weight: bold;
+                }
+                &::after{
+                    border-bottom: 1px dashed rgb(79 76 76 / 37%);
+                }
+            } 
+        } 
+      
+       
+    }
 }
 .brand-purpose{
     .icon-box-list{
@@ -343,6 +364,83 @@
                 &::after{
                     display: none;
                 }
+            }
+        }
+    }
+}
+.circle-box-icon{
+
+    .icon-box-list{
+        text-align: center;
+        margin-top: 40px;
+        & > div{
+            &:first-child{
+                .icon-box{
+                    background-color: #89D0EE;
+                    border: 1px solid #41BFE7;
+                }
+            }
+            &:nth-child(2){
+                .icon-box{
+                    background-color: #168EC0;
+                    border: 1px solid #0F7FA2;
+                }
+            }
+            &:last-child{
+                .icon-box{
+                    background-color: #163963;
+                    border: 1px solid #062346;
+                    &::after{
+                        content: '';
+                        display: none;
+                    }
+                }
+            }
+        }
+        .icon-box{
+            display: inline-block;
+            height: 225px;
+            width: 225px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: auto;
+            box-shadow: 0px 10px 15px #0000000D;
+            overflow: visible;
+            &::before{
+                display:  none;
+            }
+            .icon-box-title-content{
+                text-align: center;
+                margin-bottom: 0;
+                margin-top: 40px;
+                h3{
+                color: #fff;
+                }
+            }
+            .icon{
+                background-color: transparent;
+                position: ABSOLUTE;
+                top: calc(50% - 65px);
+                svg{
+                    fill: #fff;
+                    path{
+                        fill: #fff;
+                    }
+                }
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                height: 58px;
+                left: calc(50% + 140px);
+                width: 155px;
+                background-image: url(../../images/right_arrow-blue.svg);
+                z-index: 4;
+                background-repeat: no-repeat;
+                background-size: contain;
             }
         }
     }
