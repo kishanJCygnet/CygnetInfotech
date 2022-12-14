@@ -343,6 +343,9 @@
 								<?php if (get_sub_field('image')){ ?>
 									<img src="<?php echo the_sub_field('image'); ?>"  alt="image" class="wow fadeIn" data-wow-delay="0.3s">
 								<?php } ?>
+								<?php if (get_sub_field('video_section')){ ?>
+									<?php echo the_sub_field('video_section'); ?>
+								<?php } ?>
 							</div>
 						</div>
 					</div>
