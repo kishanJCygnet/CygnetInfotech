@@ -215,3 +215,26 @@
         }
     }
 }
+.right-colum-img{
+    .col-left{
+        padding-right: 25px;
+    }
+    .col-right{
+        padding-left: 25px;
+        img{
+            border-radius: 130px;
+        }
+    }
+}
+.left-colum-img{
+    .col-right{
+        padding-right: 25px;
+        img{
+            border-radius: 130px;
+        }
+    }
+    .col-left{
+        padding-left: 25px;
+       
+    }
+}
