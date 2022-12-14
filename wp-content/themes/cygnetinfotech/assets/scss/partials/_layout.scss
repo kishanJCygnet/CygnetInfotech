@@ -65,7 +65,7 @@ body {
     font-weight: normal;
   }
   .p2 {
-    font-size: 18px !important;
+    font-size: 16px !important;
     line-height: 28px;
     font-weight: normal;
     color: #3b3a3a;
@@ -1143,13 +1143,14 @@ video {
 .top-banner-margin{
   padding-top: 200px;
   margin-top: -154px;
-}
+} 
 .brand-vid {
   width: 800px;
   margin: auto;
   max-width: 100%;
 }
-.our-smart-philosophy-video{
+.our-smart-philosophy-video,
+.our-smart-philosophy-vdnew{
   margin-top: -250px;
   z-index: 2;
   position: relative;
