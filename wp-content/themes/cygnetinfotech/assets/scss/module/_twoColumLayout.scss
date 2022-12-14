@@ -177,7 +177,7 @@
         left: 0;
         right: 0;
         border-radius: 0px;
-        top: calc(50% - 80px);
+        top: calc(50% - 115px);
         z-index: -1;
     }
     .join-team-content {
@@ -213,5 +213,28 @@
             background-size: contain;   
             background-repeat: no-repeat;
         }
+    }
+}
+.right-colum-img{
+    .col-left{
+        padding-right: 25px;
+    }
+    .col-right{
+        padding-left: 25px;
+        img{
+            border-radius: 130px;
+        }
+    }
+}
+.left-colum-img{
+    .col-right{
+        padding-right: 25px;
+        img{
+            border-radius: 130px;
+        }
+    }
+    .col-left{
+        padding-left: 25px;
+       
     }
 }

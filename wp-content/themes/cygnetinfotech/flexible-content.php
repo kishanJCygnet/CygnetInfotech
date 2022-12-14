@@ -1311,9 +1311,10 @@
 			
 			/* Multiple Images Section Start */
 			if (get_row_layout() == 'multiple_images_section') : ?>
-				<section class="multiple-images-class <?php echo the_sub_field('multiple_images_section_custom_class'); ?>">					
+				<section class="multiple-images <?php echo the_sub_field('multiple_images_section_custom_class'); ?>">					
 					<div class="container">
-						<div class="image-content-class">
+						<div class="multiple_inner_content">
+						<div class="col-left">
 							<div class="title-heading">
 								<?php if (get_sub_field('multiple_images_section_title')){ ?>
 									<h2 class="wow fadeInUp" data-wow-delay="0.3s"><?php echo the_sub_field('multiple_images_section_title'); ?>
@@ -1330,7 +1331,7 @@
 								</div>
 							<?php } ?>
 						</div>
-						<div class="image-class">
+						<div class="col-right">
 							<?php if (have_rows('multiple_images_section_images')) : ?>
 									<ul class="image-ul-class">
 										<?php while (have_rows('multiple_images_section_images')) : the_row();?>
@@ -1340,6 +1341,7 @@
 										<?php endwhile; ?>
 									</ul>
 							<?php endif; ?>
+						</div>
 						</div>
 					</div>					
 				</section>
