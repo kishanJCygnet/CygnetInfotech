@@ -1306,6 +1306,43 @@
 			<?php endif; 
 			/* Benefits Round Section End */	
 			
+			/* Multiple Images Section Start */
+			if (get_row_layout() == 'multiple_images_section') : ?>
+				<section class="multiple-images-class <?php echo the_sub_field('multiple_images_section_custom_class'); ?>">					
+					<div class="container">
+						<div class="image-content-class">
+							<div class="title-heading">
+								<?php if (get_sub_field('multiple_images_section_title')){ ?>
+									<h2 class="wow fadeInUp" data-wow-delay="0.3s"><?php echo the_sub_field('multiple_images_section_title'); ?>
+										<span class="heading-border"></span>
+									</h2>
+								<?php } ?>
+								<?php if (get_sub_field('multiple_images_section_sub_title')){ ?>
+									<h3 class="wow fadeInUp" data-wow-delay="0.6s" ><?php echo the_sub_field('multiple_images_section_sub_title'); ?></h3>
+								<?php } ?>
+							</div>
+							<?php if (get_sub_field('multiple_images_section_description')){ ?>
+								<div class="description">
+									<?php echo the_sub_field('multiple_images_section_description'); ?>
+								</div>
+							<?php } ?>
+						</div>
+						<div class="image-class">
+							<?php if (have_rows('multiple_images_section_images')) : ?>
+									<ul class="image-ul-class">
+										<?php while (have_rows('multiple_images_section_images')) : the_row();?>
+											<?php if (get_sub_field('multiple_images_section_image')){ ?>
+												<li class="image-li-class"><img src="<?php echo the_sub_field('multiple_images_section_image'); ?>" alt="<?php echo the_sub_field('multiple_images_section_title'); ?>"></li>
+											<?php } ?>
+										<?php endwhile; ?>
+									</ul>
+							<?php endif; ?>
+						</div>
+					</div>					
+				</section>
+			<?php endif; 
+			/* Multiple Images Section End */	
+			
 		endwhile;
 	endif; 	
 	?>
