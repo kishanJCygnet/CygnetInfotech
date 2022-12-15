@@ -701,7 +701,26 @@ function press_release_category_fillter()
 }
 /* <!-- Filter block end --> */
 
-/* Get job api shortcode start */
+add_filter ( 'posts_orderby', function ( $orderby, \WP_Query $q ) use ( $wpdb ) {
+    // Do nothing.
+    if ( '_post_type__in' !== $q->get( 'orderby' ) ) {
+        return $orderby;
+    }
+
+    // Custom _post_type__in ordering using FIELD on post types array items.
+    $post_type = $q->get( 'post_type' );
+    
+    if ( ! empty( $post_type ) && is_array( $post_type ) ) {
+        $post_type__in        = array_map( 'sanitize_title_for_query', $post_type );
+        $post_type__in_string = "'" . implode( "','", $post_type__in ) . "'";
+        return $orderby       = "FIELD( {$wpdb->posts}.post_type," . $post_type__in_string . ' )';
+    }
+
+    return $orderby;
+}, 10, 2 );
+
+
+/* Get job api shortcode start 12-12-2022*/
 function get_job_list_shortcode() {
 	
 	$curl = curl_init();
@@ -725,39 +744,213 @@ function get_job_list_shortcode() {
 	$errno = curl_errno($curl);
 	$err = curl_error($curl);
 	
-	//$response = json_decode($data,1)
-
 	curl_close($curl);
-
+	$errtex = '';
 	if ($errno) {
-		echo "cURL Error #:" . $err;
+		$errtex = "cURL Error #:" . $err;
 	} else {
-		//echo $response;
 		$response = json_decode($response,true);
 		$data = $response['data'];
-		echo "<pre>";
-		print_r($data);
+		$total_data = $response['totalCount'];
+		$pagecount = 1;
+		if($total_data > 10){
+			$pagecount = ceil($total_data / 10);
+		}
+		//echo "<pre>";
+		//print_r($data);
+		?> 
+		<div class="" id="careerlistingid"> 
+			<?php
+			if ($data && count($data) > 0) :  
+				foreach ($data as $jobs) :
+					?>
+					<div>
+						<?php if($jobs['jobTitle'] != ''){  ?>
+							<h3><?php echo $jobs['jobTitle']; ?></h3>
+						<?php } ?>						
+						<?php if($jobs['role'] != ''){  ?>
+							<span>Role: <?php echo $jobs['role']; ?> Years</span>
+						<?php } ?>
+						<?php if($jobs['location'] != ''){  ?>
+							<span>Location: <?php echo $jobs['location']; ?> Years</span>
+						<?php } ?>
+						<?php if($jobs['minYrsOfExperience'] != ''){  ?>
+							<span>Min Years Of Experience: <?php echo $jobs['minYrsOfExperience']; ?>+ Years</span>
+						<?php } ?>
+						<?php if($jobs['positionsReq'] != ''){  ?>
+							<span>Positions Required: <?php echo $jobs['positionsReq']; ?></span>
+						<?php } ?>
+						<span><a href="<?php echo site_url();?>/career-details?jobid=<?php echo $jobs['id']; ?>">-></a></span>
+					</div>
+					<?php
+				endforeach;
+			endif;
+		?>
+		</div>
+		<?php		
+		for($i=1;$i<=$pagecount;$i++){
+			echo '<span class="pagenumber"><a href="javascript:void(0);" class="career-page" data-id="'.$i.'">'.$i.'</a></span>';
+		}
 	}
-
+if($errtex != '' && $data == ''){
+?>
+<div class="container norecordfound">
+	<p>No Record Found</p>
+</div>
+<?php } 
 //return $response;
 }
 add_shortcode('get_job_list', 'get_job_list_shortcode');
 /* Get job api shortcode end */
 
-add_filter ( 'posts_orderby', function ( $orderby, \WP_Query $q ) use ( $wpdb ) {
-    // Do nothing.
-    if ( '_post_type__in' !== $q->get( 'orderby' ) ) {
-        return $orderby;
-    }
+/* Apply job form within job detail page 12-12-2022*/
+add_action('wpcf7_before_send_mail', 'cf7_validate_api', 10, 3);
 
-    // Custom _post_type__in ordering using FIELD on post types array items.
-    $post_type = $q->get( 'post_type' );
-    
-    if ( ! empty( $post_type ) && is_array( $post_type ) ) {
-        $post_type__in        = array_map( 'sanitize_title_for_query', $post_type );
-        $post_type__in_string = "'" . implode( "','", $post_type__in ) . "'";
-        return $orderby       = "FIELD( {$wpdb->posts}.post_type," . $post_type__in_string . ' )';
-    }
+function cf7_validate_api($cf7, &$abort, $submission) {
+	if ($cf7->id() == 4024 ) 
+    {		
 
-    return $orderby;
-}, 10, 2 );
+    //Get the current posted form instance
+   /* $form_to_DB = WPCF7_Submission::get_instance();
+    if ($form_to_DB) {
+        $formData = $form_to_DB->get_posted_data(); // Get all data from the posted form
+        $uploaded_files = $form_to_DB->uploaded_files(); // this allows you access to the upload file in the temp location
+    }
+	//echo "<pre>";print_r($uploaded_files);
+
+    // Let's insert the new post first to get the ID.
+    $newpostid = wp_insert_post(array(
+        'post_status' => 'draft',
+        'post_title' => "job-".$formData['jobid'], // Can be  $formData['YOUR-CF7-FIELD-NAME']
+        'post_type' => "post", //Post Type
+        'post_content' => "job-".$formData['jobid'], // Can be  $formData['YOUR-CF7-FIELD-NAME']
+    ));
+
+
+    // We need to get the CF7 field name from FILE
+    $cf7_file_field_name = 'job-resume-file'; // [file uploadyourfile]
+
+    //Do the magic the same as the refer link above
+    $image_name = $formData[$cf7_file_field_name];
+    $image_location = $uploaded_files[$cf7_file_field_name];
+    print_r($image_location[0]);
+	$image_content = file_get_contents($image_location[0]);
+    $wud = wp_upload_dir();
+    $upload = wp_upload_bits($image_name, null, $image_content);
+	echo "<pre>";print_r($upload);
+    $chemin_final = $upload['url'];
+    $filename = $upload['file'];
+	echo "<pre>";print_r($filename);*/
+    /*if ($filename > '') {
+        require_once(ABSPATH . 'wp-admin/includes/admin.php');
+        $wp_filetype = wp_check_filetype(basename($filename), null);
+        $attachment = array(
+            'post_mime_type' => $wp_filetype['type'],
+            'post_title' => preg_replace('/\.[^.]+$/', '', basename($filename)),
+            'post_content' => '',
+            'post_status' => 'inherit'
+        );
+        $attach_id = wp_insert_attachment($attachment, $filename, $newpostid);
+        require_once(ABSPATH . 'wp-admin/includes/image.php');
+        $attach_data = wp_generate_attachment_metadata($attach_id, $filename);
+        wp_update_attachment_metadata($attach_id, $attach_data);
+        //Define the new Thumbnail can be also a ACF field
+        update_post_meta($newpostid, "_thumbnail_id", $attach_id);
+    }*/
+	
+	
+
+
+
+
+
+
+
+/*$submission = WPCF7_Submission::get_instance();
+print_r($submission->uploaded_files());
+print_r($submission->get_posted_data());exit;*/
+		$jobfirstname = $_POST['job-first-name'];
+		$joblastname = $_POST['job-last-name'];
+		$jobemail = $_POST['job-email'];
+		$jobphone = $_POST['job-phone'];
+		$joblocation = $_POST['job-location'];
+		$jobnoticedPeriod = $_POST['job-noticedPeriod'];
+		$jobexperience = $_POST['job-experience'];
+		$joblastCompanyWorked = $_POST['job-lastCompanyWorked'];
+		$jobcurrentCtc = $_POST['job-currentCtc'];
+		$jobexpectedCtc = $_POST['job-expectedCtc'];
+		//$jobreasonForLeaving = $_POST['job-reasonForLeaving'];
+		//$jobpreferredLocation = $_POST['job-preferredLocation'];
+		$jobqualification = $_POST['job-qualification'];
+		$jobid = $_POST['jobid'];
+		
+		$curl = curl_init();
+
+		curl_setopt_array($curl, array(
+		  CURLOPT_URL => 'https://api.preprod1.zwayam.com/core/v1/jobs/'.$jobid.'/applies/',
+		  CURLOPT_RETURNTRANSFER => true,
+		  CURLOPT_ENCODING => '',
+		  CURLOPT_MAXREDIRS => 10,
+		  CURLOPT_TIMEOUT => 0,
+		  CURLOPT_FOLLOWLOCATION => true,
+		  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		  CURLOPT_CUSTOMREQUEST => 'POST',
+		  CURLOPT_POSTFIELDS =>'{
+		  "contact": {
+			"firstName": "'.$jobfirstname.'",
+			"lastName": "'.$joblastname.'",
+			"emailId": "'.$jobemail.'",
+			"phoneNumber": {
+			  "phoneNo": "'.$jobphone.'"
+			}
+		  },
+		  "location": "'.$joblocation.'",
+		  "empInfo": {
+			"noticedPeriod": "'.$jobnoticedPeriod.'",
+			"experience": "'.$jobexperience.'",
+			"lastCompanyWorked": "'.$joblastCompanyWorked.'",
+			"amount": {
+			  "currentCtc": "'.$jobcurrentCtc.'",
+			  "expectedCtc": "'.$jobexpectedCtc.'"
+			},
+			"reasonForLeaving": "",
+			"preferredLocation": "",
+			"relevantExperienceInMonths": "",
+			"expectedSalary": ""
+		  },
+		  "personalInfo": {
+			"panNumber": "",
+			"drivingLicense": "",
+			"passportNumber": ""
+		  },
+		  "eduInfo": {
+			"highestEducationalQualification": "'.$jobqualification.'",
+			"lastQualificationDate": ""
+		  }
+		}',
+		  CURLOPT_HTTPHEADER => array(
+			'apiKey: d6uukp_810007262b6968bda3657b225b56cd026a275c0a614bd86cf8cfdc034ca257535e90fc2b8f2eb6bddbe12c45d29dfc7df20436cf1522a33839a9d3c0cbbb09e9',
+			'Content-Type: application/json'
+		  ),
+		));
+
+		$response = curl_exec($curl);	
+		$errno = curl_errno($curl);
+		$err = curl_error($curl);
+		
+		curl_close($curl);
+		$errtex = '';
+		if ($errno) {
+			echo $errtex = "API Error:" . $err;
+			exit;
+		} else {
+			$response = json_decode($response,true);
+			echo $response['msg'];
+			echo $applyid =  $response['applyId'];
+			print_r($response);
+			return;
+		}
+    } else {
+		return;
+	}
+}
