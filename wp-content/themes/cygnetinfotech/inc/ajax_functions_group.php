@@ -987,3 +987,77 @@ function get_search_result_listing()
         ?>
       </div>
 <?php } ?>
+
+
+
+<?php
+/* Career Listing 12-12-2022*/
+add_action('wp_ajax_get_career_listing', 'get_career_listing');
+add_action('wp_ajax_nopriv_get_career_listing', 'get_career_listing');
+
+function get_career_listing()
+{
+  $current_page = $_REQUEST['current_page'] - 1;
+  $flag = $_REQUEST['flag'];
+
+  if ($flag == 'career_listing') {
+	$curl = curl_init();
+
+	curl_setopt_array($curl, array(
+	  CURLOPT_URL => 'https://api.preprod1.zwayam.com/core/v1/jobs/?from_created_date=2021-01-01%2010:10:10&to_created_date=2022-12-12%2010:10:10&page_number='.$current_page.'&careersite_enabled=false',
+	  CURLOPT_RETURNTRANSFER => true,
+	  CURLOPT_ENCODING => '',
+	  CURLOPT_MAXREDIRS => 10,
+	  CURLOPT_TIMEOUT => 0,
+	  CURLOPT_FOLLOWLOCATION => true,
+	  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+	  CURLOPT_CUSTOMREQUEST => 'GET',
+	  CURLOPT_HTTPHEADER => array(
+		'Content-Type: application/json',
+		'api_key: d6uukp_810007262b6968bda3657b225b56cd026a275c0a614bd86cf8cfdc034ca257535e90fc2b8f2eb6bddbe12c45d29dfc7df20436cf1522a33839a9d3c0cbbb09e9'
+	  ),
+	));
+
+	$response = curl_exec($curl);
+	$errno = curl_errno($curl);
+	$err = curl_error($curl);
+	
+	curl_close($curl);
+	$errtex = '';
+	if ($errno) {
+		$errtex = "cURL Error #:" . $err;
+	} else {
+		$response = json_decode($response,true);
+		$data = $response['data'];
+			
+		//echo "<pre>";
+		//print_r($data);
+		
+		if ($data && count($data) > 0) :  
+			foreach ($data as $jobs) :
+				?>
+				<div>
+					<?php if($jobs['jobTitle'] != ''){  ?>
+						<h3><?php echo $jobs['jobTitle']; ?></h3>
+					<?php } ?>						
+					<?php if($jobs['role'] != ''){  ?>
+						<span>Role: <?php echo $jobs['role']; ?></span>
+					<?php } ?>
+					<?php if($jobs['location'] != ''){  ?>
+						<span>Location: <?php echo $jobs['location']; ?></span>
+					<?php } ?>
+					<?php if($jobs['minYrsOfExperience'] != ''){  ?>
+						<span>Min Years Of Experience: <?php echo $jobs['minYrsOfExperience']; ?>+ Years</span>
+					<?php } ?>
+					<?php if($jobs['positionsReq'] != ''){  ?>
+						<span>Positions Required: <?php echo $jobs['positionsReq']; ?></span>
+					<?php } ?>
+					<span><a href="<?php echo site_url();?>/career-details?jobid=<?php echo $jobs['id']; ?>">-></a></span>
+				</div>
+				<?php
+			endforeach;
+		endif;
+	}
+ }
+ die();
+} ?>
