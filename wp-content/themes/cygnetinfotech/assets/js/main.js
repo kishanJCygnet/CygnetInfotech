@@ -56,12 +56,12 @@ function AddReadMore() {
   //This limit you can set after how much characters you want to show Read More.
   var carLmt = 20;
   // Text to show when text is collapsed
-  var readMoreTxt = " Read More";
+  var readMoreTxt = " Read more";
   // Text to show when text is expanded
-  var readLessTxt = " Read Less";
+  var readLessTxt = " Read less";
   
   //Traverse all selectors with this class and manupulate HTML part to show Read More
-  jQuery(".icon-box .description:not(.no-readmore .icon-box .description):not(.automation-experience .icon-box .description):not(.benifits .icon-box .description):not(.desktop-commands .icon-box .description):not(.Integrations-section .icon-box .description):not(.capabilitie-section .icon-box .description)").each(function() {
+  jQuery(".icon-box .description:not(.no-readmore .icon-box .description):not(.automation-experience .icon-box .description):not(.benifits .icon-box .description):not(.desktop-commands .icon-box .description):not(.Integrations-section .icon-box .description):not(.capabilitie-section .icon-box .description),.icon-box .readmore_description").each(function() {
     
     //alert(words.length);
       if (jQuery(this).find(".firstSec").length)
@@ -80,7 +80,7 @@ function AddReadMore() {
         }        
           
         if(secdHalf != ''){
-            var strtoadd = firstSet + "<span class='dot'>...</span>" + "<span class='SecSec'>" + secdHalf + "</span><span class='readMore'  title='Click to Show More'>" + readMoreTxt + "</span><span class='readLess' title='Click to Show Less'>" + readLessTxt + "</span>";
+            var strtoadd = firstSet + "<span class='dot'>...</span>" + "<span class='SecSec'>" + secdHalf + "</span><span class='readMore'  title='Click to Show More'>" + readMoreTxt + "<i class='fas fa-angle-down'></i></span><span class='readLess' title='Click to Show Less'>" + readLessTxt + "<i class='fas fa-angle-up'></i></span>";
          }
          else{
           var strtoadd = firstSet;
@@ -91,12 +91,56 @@ function AddReadMore() {
   });
   //Read More and Read Less Click Event binding
   jQuery(document).on("click", ".readMore, .readLess", function() {
-      jQuery(this).closest(".icon-box .description").toggleClass("showlesscontent showmorecontent");
+      jQuery(this).closest(".icon-box .description, .icon-box .readmore_description").toggleClass("showlesscontent showmorecontent");
+  });
+}
+function AddLargeReadMore() {
+  //This limit you can set after how much characters you want to show Read More.
+  var carLmt = 100;
+  // Text to show when text is collapsed
+  var readMoreTxt = " Read more";
+  // Text to show when text is expanded
+  var readLessTxt = " Read less";
+  
+  //Traverse all selectors with this class and manupulate HTML part to show Read More
+  jQuery(".readmore_large_description").each(function() {
+    
+    //alert(words.length);
+      if (jQuery(this).find(".firstSec").length)
+          return;
+
+      var allstr = jQuery(this).text().split(" ");
+      var firstSet = '';
+      var secdHalf = '';
+        for (var i=0;i<allstr.length;i++)
+        {
+          if(i < carLmt){
+            firstSet += allstr[i]+' ';
+          } else {
+            secdHalf += allstr[i]+' ';
+          }
+        }        
+          
+        if(secdHalf != ''){
+            var strtoadd = firstSet + "<span class='dot'>...</span>" + "<span class='SecSec'>" + secdHalf + "</span><span class='readMore'  title='Click to Show More'>" + readMoreTxt + "<i class='fas fa-angle-down'></i></span><span class='readLess' title='Click to Show Less'>" + readLessTxt + "<i class='fas fa-angle-up'></i></span>";
+         }
+         else{
+          var strtoadd = firstSet;
+        
+         }
+          jQuery(this).html(strtoadd);
+         
+  });
+  //Read More and Read Less Click Event binding
+  jQuery(document).on("click", ".readMore, .readLess", function() {
+      jQuery(this).closest(".readmore_large_description").toggleClass("showlesscontent showmorecontent");
   });
 }
 jQuery(function() {
   //Calling function after Page Load
+  AddLargeReadMore();
   AddReadMore();
+  
 }); 
 
 

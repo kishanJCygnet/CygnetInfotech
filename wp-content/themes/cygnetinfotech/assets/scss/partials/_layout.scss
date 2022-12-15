@@ -1190,3 +1190,21 @@ video {
 br{
   display: none;
 }
+.logo-item-content{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+   li{
+    padding: 10px;
+    img{
+      background-color: #fff;
+      padding: 20px;
+      height: 100%;
+      object-fit: contain;
+      box-shadow: 0px 10px 15px #0000000A;
+      border: 1px solid #E5E5E5;
+      border-radius: 5px;
+    }
+   }
+}
