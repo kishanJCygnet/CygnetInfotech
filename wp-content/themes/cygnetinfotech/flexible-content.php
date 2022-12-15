@@ -187,6 +187,9 @@
 											<?php if (get_sub_field('icon_box_description')){ ?>
 												<div class="description p2 showlesscontent"><?php echo the_sub_field('icon_box_description'); ?></div>
 											<?php } ?>
+											<?php if (get_sub_field('read_more_description')){ ?>
+												<div class="readmore_description"><?php echo the_sub_field('read_more_description'); ?></div>
+											<?php } ?>
 											<?php if (get_sub_field('icon_box_url')){ ?>
 												<div class="action">
 													<a href="<?php echo the_sub_field('icon_box_url'); ?>" class="readmore text-uppercase">Read More</a>
