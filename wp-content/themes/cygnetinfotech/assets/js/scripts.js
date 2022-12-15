@@ -6,7 +6,7 @@ var CYGNET = {
 		//CYGNET.newsdetailSlider();
 		CYGNET.pressReleaseList;
 		CYGNET.pressReleaseList.init();
-
+		CYGNET.careerList;
 		CYGNET.searchResultList;
 		CYGNET.searchResultList.init();
 		CYGNET.popupVideo();
@@ -449,6 +449,27 @@ var CYGNET = {
 			CYGNET.pressReleaseList.processFieldData(objPageNumber);
 		}
 	},
+	
+	/* Career Listing by AJAX 12-12-2022*/
+	careerList: {		
+		careerListing: function (currentPage) {
+			var pageNumber = (typeof currentPage == 'undefined') ? 1 : currentPage;
+			
+			jQuery.ajax({
+				url: ajaxPath.ajaxurl,
+				type: "POST",
+				data: {
+					'action': 'get_career_listing',
+					'current_page': pageNumber,
+					'flag': 'career_listing'
+				},
+				success: function (response) {
+					jQuery('#careerlistingid').html(response);
+					return false;
+				}
+			});
+		},
+	},
 
 	/* Search Result Listing by AJAX */
 	searchResultList: {
@@ -563,11 +584,15 @@ jQuery('#press_release_filter_submit').click(function(){
 	CYGNET.pressReleaseList.pressReleaseListing();
 });
 
-
 jQuery('#clear-press-release-filter-research').click(function(){
-	console.log("case study is working");
 	jQuery('.filter-by-press-release-category').val('').trigger('change'); 
 	if (jQuery('.press-release-page-listing').length > 0) {
 		CYGNET.pressReleaseList.pressReleaseListing();
 	}
+});
+
+/*12-12-2022*/
+jQuery('.pagenumber a.career-page').click(function(){
+	var careerpage = jQuery(this).attr("data-id");
+	CYGNET.careerList.careerListing(careerpage);
 });
