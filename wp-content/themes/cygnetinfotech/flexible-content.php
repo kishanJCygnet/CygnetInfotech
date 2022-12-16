@@ -247,8 +247,7 @@
 							<script>
 							jQuery(document).ready(function() {
 								jQuery('.client-logo-slider').length && jQuery('.client-logo-slider').owlCarousel({
-									loop: false,
-									
+									loop: false,									
 									autoplay: true,
 									nav: false,
 									dots: true,
