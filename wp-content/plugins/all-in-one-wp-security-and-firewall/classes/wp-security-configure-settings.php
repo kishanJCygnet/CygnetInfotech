@@ -50,6 +50,7 @@ class AIOWPSecurity_Configure_Settings {
 		$aio_wp_security->configs->set_value('aiowps_lockdown_allowed_ip_addresses', '');
 
 		// CAPTCHA feature
+		$aio_wp_security->configs->set_value('aiowps_default_captcha', '');
 		$aio_wp_security->configs->set_value('aiowps_enable_login_captcha', '');//Checkbox
 		$aio_wp_security->configs->set_value('aiowps_enable_custom_login_captcha', '');//Checkbox
 		$aio_wp_security->configs->set_value('aiowps_enable_woo_login_captcha', '');//Checkbox
@@ -160,7 +161,7 @@ class AIOWPSecurity_Configure_Settings {
 		// Google reCAPTCHA
 		$aio_wp_security->configs->set_value('aiowps_recaptcha_site_key', '');
 		$aio_wp_security->configs->set_value('aiowps_recaptcha_secret_key', '');
-		$aio_wp_security->configs->set_value('aiowps_default_recaptcha', '');//Checkbox
+		$aio_wp_security->configs->set_value('aiowps_default_recaptcha', ''); // Not used since 5.1.2
 
 		// Deactivation Handler
 		$aio_wp_security->configs->set_value('aiowps_on_uninstall_delete_db_tables', '1'); //Checkbox
@@ -223,6 +224,7 @@ class AIOWPSecurity_Configure_Settings {
 		$aio_wp_security->configs->add_value('aiowps_enable_whitelisting', '');//Checkbox
 		$aio_wp_security->configs->add_value('aiowps_allowed_ip_addresses', '');
 		// CAPTCHA feature
+		$aio_wp_security->configs->add_value('aiowps_default_captcha', '');
 		$aio_wp_security->configs->add_value('aiowps_enable_login_captcha', '');//Checkbox
 		$aio_wp_security->configs->add_value('aiowps_enable_custom_login_captcha', '');//Checkbox
 		$aio_wp_security->configs->add_value('aiowps_enable_woo_login_captcha', '');//Checkbox
@@ -328,7 +330,7 @@ class AIOWPSecurity_Configure_Settings {
 		// Google reCAPTCHA
 		$aio_wp_security->configs->add_value('aiowps_recaptcha_site_key', '');
 		$aio_wp_security->configs->add_value('aiowps_recaptcha_secret_key', '');
-		$aio_wp_security->configs->add_value('aiowps_default_recaptcha', '');//Checkbox
+		$aio_wp_security->configs->add_value('aiowps_default_recaptcha', ''); // Not used since 5.1.2
 
 		// Deactivation Handler
 		$aio_wp_security->configs->add_value('aiowps_on_uninstall_delete_db_tables', '1'); //Checkbox

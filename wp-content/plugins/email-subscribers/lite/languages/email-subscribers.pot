@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Icegram Express - Email Subscribers, Newsletters and Marketing Automation Plugin plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Icegram Express - Email Subscribers, Newsletters and Marketing Automation Plugin 5.5.2\n"
+"Project-Id-Version: Icegram Express - Email Subscribers, Newsletters and Marketing Automation Plugin 5.5.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/email-subscribers\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-12-07T19:27:59+01:00\n"
+"POT-Creation-Date: 2022-12-14T05:55:03+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: email-subscribers\n"
@@ -659,7 +659,7 @@ msgstr ""
 #: lite/includes/classes/class-es-admin-settings.php:241
 #: lite/includes/classes/class-es-campaign-report.php:436
 #: lite/includes/classes/class-es-contacts-table.php:838
-#: lite/includes/classes/class-es-export-subscribers.php:339
+#: lite/includes/classes/class-es-export-subscribers.php:331
 #: lite/includes/classes/class-es-import-subscribers.php:587
 #: lite/includes/classes/class-es-import-subscribers.php:681
 #: lite/includes/classes/class-es-import-subscribers.php:1102
@@ -1533,7 +1533,7 @@ msgstr ""
 #: lite/admin/partials/help.php:237
 #: lite/includes/classes/class-es-campaign-report.php:437
 #: lite/includes/classes/class-es-campaigns-table.php:631
-#: lite/includes/classes/class-es-export-subscribers.php:341
+#: lite/includes/classes/class-es-export-subscribers.php:333
 #: lite/includes/classes/class-es-import-subscribers.php:690
 #: lite/includes/classes/class-es-import-subscribers.php:1353
 #: lite/includes/classes/class-es-reports-table.php:325
@@ -3046,7 +3046,7 @@ msgstr ""
 
 #: lite/includes/classes/class-es-contacts-table.php:142
 #: lite/includes/classes/class-es-export-subscribers.php:72
-#: lite/includes/classes/class-es-export-subscribers.php:162
+#: lite/includes/classes/class-es-export-subscribers.php:154
 msgid "Export Contacts"
 msgstr ""
 
@@ -3122,7 +3122,7 @@ msgid "Please enter valid email address"
 msgstr ""
 
 #: lite/includes/classes/class-es-contacts-table.php:592
-#: lite/includes/classes/class-es-export-subscribers.php:157
+#: lite/includes/classes/class-es-export-subscribers.php:149
 #: lite/includes/classes/class-es-handle-sync-wp-user.php:216
 #: lite/includes/classes/class-es-import-subscribers.php:409
 #: lite/includes/classes/class-es-lists-table.php:83
@@ -3315,15 +3315,15 @@ msgstr ""
 msgid "Unsubscribed contacts"
 msgstr ""
 
-#: lite/includes/classes/class-es-export-subscribers.php:101
+#: lite/includes/classes/class-es-export-subscribers.php:100
 msgid "Unconfirmed contacts"
 msgstr ""
 
-#: lite/includes/classes/class-es-export-subscribers.php:263
+#: lite/includes/classes/class-es-export-subscribers.php:255
 msgid "Export the Subscribers"
 msgstr ""
 
-#: lite/includes/classes/class-es-export-subscribers.php:337
+#: lite/includes/classes/class-es-export-subscribers.php:329
 #: lite/includes/classes/class-es-import-subscribers.php:588
 #: lite/includes/classes/class-es-import-subscribers.php:682
 #: lite/includes/classes/class-es-import-subscribers.php:1094
@@ -3332,7 +3332,7 @@ msgstr ""
 msgid "First Name"
 msgstr ""
 
-#: lite/includes/classes/class-es-export-subscribers.php:338
+#: lite/includes/classes/class-es-export-subscribers.php:330
 #: lite/includes/classes/class-es-import-subscribers.php:589
 #: lite/includes/classes/class-es-import-subscribers.php:683
 #: lite/includes/classes/class-es-import-subscribers.php:1099
@@ -3341,7 +3341,7 @@ msgstr ""
 msgid "Last Name"
 msgstr ""
 
-#: lite/includes/classes/class-es-export-subscribers.php:340
+#: lite/includes/classes/class-es-export-subscribers.php:332
 #: lite/includes/classes/class-es-lists-table.php:33
 #: lite/includes/compatibilities/elementor/actions/class-es-ig-form-action.php:51
 #: lite/includes/workflows/actions/class-es-action-add-to-list.php:31
@@ -3351,11 +3351,11 @@ msgstr ""
 msgid "List"
 msgstr ""
 
-#: lite/includes/classes/class-es-export-subscribers.php:342
+#: lite/includes/classes/class-es-export-subscribers.php:334
 msgid "Opt-In Type"
 msgstr ""
 
-#: lite/includes/classes/class-es-export-subscribers.php:343
+#: lite/includes/classes/class-es-export-subscribers.php:335
 msgid "Created On"
 msgstr ""
 

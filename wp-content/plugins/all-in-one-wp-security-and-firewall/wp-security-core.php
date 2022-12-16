@@ -8,7 +8,7 @@ if (!class_exists('AIO_WP_Security')) {
 
 	class AIO_WP_Security {
 
-		public $version = '5.1.2';
+		public $version = '5.1.3';
 
 		public $db_version = '1.9.6';
 		
@@ -560,7 +560,7 @@ if (!class_exists('AIO_WP_Security')) {
 		 */
 		public function aiowps_login_enqueue() {
 			global $aio_wp_security;
-			if (!$aio_wp_security->is_login_lockdown_by_const() && $aio_wp_security->configs->get_value('aiowps_default_recaptcha')) {
+			if (!$aio_wp_security->is_login_lockdown_by_const() && 'google-recaptcha-v2' == $aio_wp_security->configs->get_value('aiowps_default_captcha')) {
 				if ($aio_wp_security->configs->get_value('aiowps_enable_login_captcha') == '1' || $aio_wp_security->configs->get_value('aiowps_enable_registration_page_captcha') == '1') {
 					wp_enqueue_script('google-recaptcha', 'https://www.google.com/recaptcha/api.js?hl=' . AIOWPSecurity_Captcha::get_google_recaptcha_compatible_site_locale(), array(), AIO_WP_SECURITY_VERSION);
 					// Below is needed to provide some space for the Google reCAPTCHA form (otherwise it appears partially hidden on RHS)

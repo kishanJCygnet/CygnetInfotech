@@ -738,12 +738,13 @@ class AIOWPSecurity_Utility_Htaccess {
 	 * If it finds the tag it will deem the file as being .htaccess specific.
 	 * This was written to supplement the .htaccess restore functionality
 	 *
-	 * @param string $file
+	 * @param string $file_contents - the contents of the .htaccess file
+	 *
 	 * @return boolean
 	 */
-	public static function check_if_htaccess_contents($file) {
+	public static function check_if_htaccess_contents($file_contents) {
 		$is_htaccess = false;
-		$file_contents = file_get_contents($file);
+		
 		if (false === $file_contents || strlen($file_contents) == 0) {
 			return -1;
 		}

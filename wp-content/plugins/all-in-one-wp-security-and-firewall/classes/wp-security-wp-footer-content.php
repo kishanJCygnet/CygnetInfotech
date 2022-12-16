@@ -11,7 +11,7 @@ class AIOWPSecurity_WP_Footer_Content {
 		global $aio_wp_security;
 		
 		// If Google reCAPTCHA is enabled do relevant tasks
-		if ($aio_wp_security->configs->get_value('aiowps_default_recaptcha')) {
+		if ('google-recaptcha-v2' == $aio_wp_security->configs->get_value('aiowps_default_captcha')) {
 			// For WooCommerce forms.
 			// Only proceed if WooCommerce installed and active
 			if (AIOWPSecurity_Utility::is_woocommerce_plugin_active()) {
