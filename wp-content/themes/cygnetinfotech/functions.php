@@ -230,6 +230,11 @@ function testimonial_slider()
                                 <h2 class="wow fadeInUp" data-wow-offset="50"><?php echo the_sub_field('testimonials_title'); ?> <span class="heading-border"></span></h2>
 							</div>
 						<?php endif; ?>
+						<?php if (get_sub_field('testimonials_sub_title')) : ?>
+							<div class="title-heading">
+                                <h3 class="wow fadeInUp" data-wow-offset="50"><?php echo the_sub_field('testimonials_sub_title'); ?> </h3>
+							</div>
+						<?php endif; ?>
 
                 <div class="testimonial">
                     <ul class="owl-carousel testimonial-slider">
