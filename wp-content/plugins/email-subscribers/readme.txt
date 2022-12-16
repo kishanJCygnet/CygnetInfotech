@@ -6,7 +6,7 @@ Tags: email marketing, subscription, autoresponder, post notification, welcome e
 Requires at least: 3.9
 Tested up to: 6.1.1
 Requires PHP: 5.6
-Stable tag: 5.5.2
+Stable tag: 5.5.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses
 
@@ -310,12 +310,15 @@ Refer [here](https://www.icegram.com/documentation/es-faq/).
 
 == Upgrade Notice ==
 
-= 5.5.2 =
+= 5.5.3 =
 
-* New: Added option to automatically delete unconfirmed subscribers [PRO]
-* Fix: Incorrect remaining emails count show when sending campaigns manually
+Fix: CSV injection while exporting Subscribers
 
 == Changelog ==
+
+**5.5.3 (14.12.2022)**
+
+Fix: CSV injection while exporting Subscribers
 
 **5.5.2 (08.12.2022)**
 

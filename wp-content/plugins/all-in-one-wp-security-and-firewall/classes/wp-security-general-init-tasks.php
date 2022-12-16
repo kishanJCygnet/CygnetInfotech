@@ -238,7 +238,7 @@ class AIOWPSecurity_General_Init_Tasks {
 			switch_to_blog($blog_id);
 			if ($aio_wp_security->configs->get_value('aiowps_enable_comment_captcha') == '1') {
 				if (!is_user_logged_in()) {
-					if ($aio_wp_security->configs->get_value('aiowps_default_recaptcha')) {
+					if ('google-recaptcha-v2' == $aio_wp_security->configs->get_value('aiowps_default_captcha')) {
 						add_action('wp_head', array($this, 'add_recaptcha_script'));
 					}
 					add_action('comment_form_after_fields', array($this, 'insert_captcha_question_form'), 1);
@@ -250,7 +250,7 @@ class AIOWPSecurity_General_Init_Tasks {
 		} else {
 			if ($aio_wp_security->configs->get_value('aiowps_enable_comment_captcha') == '1') {
 				if (!is_user_logged_in()) {
-					if ($aio_wp_security->configs->get_value('aiowps_default_recaptcha')) {
+					if ('google-recaptcha-v2' == $aio_wp_security->configs->get_value('aiowps_default_captcha')) {
 						add_action('wp_head', array($this, 'add_recaptcha_script'));
 					}
 					add_action('comment_form_after_fields', array($this, 'insert_captcha_question_form'), 1);
@@ -380,12 +380,12 @@ class AIOWPSecurity_General_Init_Tasks {
 			return '';
 		}
 
-		if ($aio_wp_security->configs->get_value('aiowps_default_recaptcha')) {
+		if ('google-recaptcha-v2' == $aio_wp_security->configs->get_value('aiowps_default_captcha')) {
 			$site_key = esc_html($aio_wp_security->configs->get_value('aiowps_recaptcha_site_key'));
 			$cap_form = '<div class="g-recaptcha-wrap" style="padding:10px 0 10px 0"><div class="g-recaptcha" data-sitekey="'.$site_key.'"></div></div>';
 			$cust_html_code .= $cap_form;
 			return $cust_html_code;
-		} else {
+		} elseif ('simple-math' == $aio_wp_security->configs->get_value('aiowps_default_captcha')) {
 			$cap_form = '<p class="aiowps-captcha"><label>'.__('Please enter an answer in digits:', 'all-in-one-wp-security-and-firewall').'</label>';
 			$cap_form .= '<div class="aiowps-captcha-equation"><strong>';
 			$maths_question_output = $aio_wp_security->captcha_obj->generate_maths_question();
@@ -415,7 +415,7 @@ class AIOWPSecurity_General_Init_Tasks {
 	public function insert_captcha_question_form() {
 		global $aio_wp_security;
 
-		if ($aio_wp_security->configs->get_value('aiowps_default_recaptcha')) {
+		if ('google-recaptcha-v2' == $aio_wp_security->configs->get_value('aiowps_default_captcha')) {
 
 			// WooCommerce "my account" page needs special consideration, ie,
 			// need to display two Google reCAPTCHA forms on same page (for login and register forms)
@@ -434,7 +434,7 @@ class AIOWPSecurity_General_Init_Tasks {
 
 			// For all other forms simply display Google reCAPTCHA as per normal
 			$aio_wp_security->captcha_obj->display_recaptcha_form();
-		} else {
+		} elseif ('simple-math' == $aio_wp_security->configs->get_value('aiowps_default_captcha')) {
 			// Display plain maths CAPTCHA form
 			$aio_wp_security->captcha_obj->display_captcha_form();
 		}
