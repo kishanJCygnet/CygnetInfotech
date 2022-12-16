@@ -818,7 +818,7 @@
 			
 			/* Tab within Tab Section */ 
 			if (get_row_layout() == 'tab_within_tab_section') :  ?>
-				<section class="tab-within-tab-section <?php echo the_sub_field('main_tab_custom_class'); ?>">
+				<section class="tab-within-tab-section <?php echo the_sub_field('main_tab_custom_class'); ?>" <?php echo $slugid; ?>>
 				
 					<div class="container section-container-padding">
 						<div class="title-heading">
@@ -1081,7 +1081,7 @@
 			
 			/* Single Image With Content Start */
 			if (get_row_layout() == 'single_image_with_content') : ?>
-				<section class="curved-section default-content <?php echo the_sub_field('single_image_with_content_custom_class'); ?>">					
+				<section class="curved-section default-content <?php echo the_sub_field('single_image_with_content_custom_class'); ?>" <?php echo $slugid; ?>>					
 					<div class="container section-container-padding">
 						 <div class="title-heading">
 							<?php if (get_sub_field('single_image_with_content_title')){ ?>
@@ -1162,7 +1162,7 @@
 			
 			/* Tab Section With Click Start */
 			if (get_row_layout() == 'tab_section_with_click') : ?> 
-			<section class="tab-section <?php echo the_sub_field('tab_section_with_click_custom_class'); ?>">
+			<section class="tab-section <?php echo the_sub_field('tab_section_with_click_custom_class'); ?>" <?php echo $slugid; ?>>
 				<div class="container">
 					<div class="tab-section-main">
 						<div class="title-heading">
@@ -1276,7 +1276,7 @@
 			
 			/* Benefits Round Section Start */
 			if (get_row_layout() == 'benefits_round_section') : ?>
-				<section class="benefits-class <?php echo the_sub_field('benefits_custom_class'); ?>">					
+				<section class="benefits-class <?php echo the_sub_field('benefits_custom_class'); ?>" <?php echo $slugid; ?>>					
 					<div class="container">
 						<div class="bcirp-content">
 							<div class="bcirp-title"><?php echo the_sub_field('round_title'); ?></div>
@@ -1314,7 +1314,7 @@
 			
 			/* Multiple Images Section Start */
 			if (get_row_layout() == 'multiple_images_section') : ?>
-				<section class="multiple-images <?php echo the_sub_field('multiple_images_section_custom_class'); ?>">					
+				<section class="multiple-images <?php echo the_sub_field('multiple_images_section_custom_class'); ?>" <?php echo $slugid; ?>>					
 					<div class="container">
 						<div class="multiple_inner_content">
 						<div class="col-left">
