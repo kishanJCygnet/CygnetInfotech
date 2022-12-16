@@ -90,7 +90,7 @@ function remove_cssjs_ver($src)
     return $src;
 }
 add_filter('style_loader_src', 'remove_cssjs_ver', 10, 2);
-add_filter('script_loader_src', 'remove_cssjs_ver', 10, 2);
+//add_filter('script_loader_src', 'remove_cssjs_ver', 10, 2);
 /* Remove RSD Links */
 remove_action('wp_head', 'rsd_link');
 /* Disable Emoticons */
@@ -277,7 +277,7 @@ function testimonial_slider()
 				nav: true,
 				dots: true,
 				mouseDrag:false,
-                items: 1,
+                items: <?php echo the_sub_field('display_testimonials'); ?>,
 				navText: [
 					'<span><img src="<?php echo THEME_PATH; ?>assets/images/right-arrow.png" alt="" /></span>',
                     '<span><img src="<?php echo THEME_PATH; ?>assets/images/right-arrow.png" alt="" /></span>'
@@ -768,7 +768,7 @@ function get_job_list_shortcode() {
 						<?php if($jobs['jobTitle'] != ''){  ?>
 							<h3><?php echo $jobs['jobTitle']; ?></h3>
 						<?php } ?>						
-						<?php if($jobs['role'] != ''){  ?>
+						<?php /*if($jobs['role'] != ''){  ?>
 							<span>Role: <?php echo $jobs['role']; ?> Years</span>
 						<?php } ?>
 						<?php if($jobs['location'] != ''){  ?>
@@ -779,8 +779,8 @@ function get_job_list_shortcode() {
 						<?php } ?>
 						<?php if($jobs['positionsReq'] != ''){  ?>
 							<span>Positions Required: <?php echo $jobs['positionsReq']; ?></span>
-						<?php } ?>
-						<span><a href="<?php echo site_url();?>/career-details?jobid=<?php echo $jobs['id']; ?>">-></a></span>
+						<?php } */?>
+						<span><a href="<?php echo site_url();?>/career-details?jobid=<?php echo $jobs['id']; ?>">Know More -></a></span>
 					</div>
 					<?php
 				endforeach;
