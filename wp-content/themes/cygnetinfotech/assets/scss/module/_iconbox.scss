@@ -666,6 +666,27 @@
                 position: absolute;
                 top: -203px;
                 left: 93px;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    height: 20px;
+                    width: 20px;
+                    background-color: #4a4a4a;
+                    border-radius: 50%;
+                    bottom: -58px;
+                    left: -31px;
+                }
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: 5px;
+                    height: 65px;
+                    background-color: #4a4a4a;
+                    top: 100%;
+                    transform: rotate(39deg);
+                    left: -3px;
+                    top: 96px;
+                }
                 svg {
                     fill: #fff;
                     path {
@@ -691,6 +712,21 @@
             &:nth-child(2),
             &:nth-child(3) {
                 margin-top: 200px;
+                .icon-box {
+                    .icon {
+                        top: -185px;
+                        &::after{                           
+                            bottom: -75px;
+                            left: 42px;                                                
+                        }
+                        &::before{                           
+                            transform: rotate(0deg);
+                            left: 49px;
+                            top: 105px;
+                        }
+                    }
+                }
+                
             }
             &:first-child {
                 .icon-box {
@@ -705,8 +741,106 @@
                     .icon {
                         top: -185px;
                         left: -50px;
+                        &::after{                           
+                            right: -31px;
+                            left: auto;
+                        }
+                        &::before{                           
+                            transform: rotate(-39deg);
+                            right: -3px;
+                            top: 96px;
+                            left: auto;
+                        }
                     }
                 }
+            }
+        }
+    }
+}
+.partner-comments{
+    .icon-box-list{
+     
+        .icon-box {
+            &::before{
+                display: none;
+            }
+            &::after{
+              display: none;
+            }
+            background-color: transparent;
+            color: #fff;
+            border: 0;
+            overflow: visible;
+            .icon-box-title-content{
+                h3{
+                    font-size: 28px;
+                    color: #3cb4e7;
+                    span{
+                        display: inline-block;
+                        width: 100%;                  
+                        font-size: 20px;
+                        font-weight: normal;
+                        margin-top: 10px;
+                    }
+                }
+            }
+            .description {
+                p{
+                    font-size: 20px;
+                    color: #F9F9F9;
+                    line-height: 1.5;
+                    margin: 10px 0 30px;
+                    font-weight: 500;
+                }
+            }
+            .readmore_description{
+                font-size: 14px;
+                line-height: 1.6;
+                color: #dbdbdb;
+
+                .readLess, .readMore{
+                    color: #3cb4e7;
+                }
+            }
+
+        }
+        &>div{
+            border-bottom: 1px solid #ffffff12;
+            &:nth-child(odd){
+                .icon-box{
+                text-align: right;
+                &::after{
+                    content: "";
+                    width: 1px;
+                    position: absolute;
+                    top: 0;
+                    bottom: -28px;
+                    border-right: 1px dashed #3cb4e6;
+                    right: -13px;
+                    display: block;
+                }
+                &::before{
+                    content: "";
+                    position: absolute;
+                    right: -22px;
+                    left: auto;
+                    top: 28px;
+                    height: 20px;
+                    bottom: auto;
+                    width: 20px;
+                    background-color: #ffffff;
+                    border-radius: 10px;
+                    z-index: 1;
+                    display: block;
+                }
+                .icon-box-title-content{
+                    h3{
+                        span{
+                            text-align: right;
+                        }
+                    }
+                }
+               }
             }
         }
     }
