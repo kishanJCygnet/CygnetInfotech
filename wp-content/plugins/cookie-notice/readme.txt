@@ -4,7 +4,7 @@ Tags: gdpr, ccpa, cookies, consent, compliance
 Requires at least: 4.7
 Requires PHP: 5.4
 Tested up to: 6.1.1
-Stable tag: 2.4.3
+Stable tag: 2.4.4
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -120,6 +120,9 @@ Yes! The plugin + web appliaction version includes technical compliance features
 4. Cookie Compliance settings
 
 == Changelog ==
+
+= 2.4.4 =
+* Fix: Undefined index: status and subscription
 
 = 2.4.3 =
 * Fix: Deprecated preg_replace() notice in PHP 8.1
@@ -441,5 +444,5 @@ Initial release
 
 == Upgrade Notice ==
 
-= 2.4.3 =
-* Fix: Deprecated preg_replace() notice in PHP 8.1
+= 2.4.4 =
+* Fix: Undefined index: status and subscription
