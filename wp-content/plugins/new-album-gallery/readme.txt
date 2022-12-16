@@ -3,8 +3,8 @@ Contributors: awordpresslife
 Donate link: https://paypal.me/awplife
 Tags: gallery, album gallery, video gallery, album, carousel, responsive gallery
 Requires at least: 4.0
-Tested up to: 6.0.1
-Stable tag: 1.4.7
+Tested up to: 6.1.1
+Stable tag: 1.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -88,8 +88,11 @@ https://wordpress.org/support/plugin/new-album-gallery/
 
 == Changelog ==
 
-= 1.4.7 =
+= 1.4.8 =
+* Column issues fixed
+* Tested for WordPress 6.1.1
 
+= 1.4.7 =
 * WordPress security issues fixed
 
 = 1.4.6 =

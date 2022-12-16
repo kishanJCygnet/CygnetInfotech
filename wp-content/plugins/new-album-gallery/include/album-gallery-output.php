@@ -51,7 +51,7 @@ while ( $loop->have_posts() ) :
 
 	if ( isset( $album_gallery_settings['image-slide-ids'] ) && count( $album_gallery_settings['image-slide-ids'] ) > 0 ) {
 		$count = 0; ?>
-		<div id="album_gallery_<?php echo esc_attr( $album_gallery_id ); ?>" class="<?php echo esc_attr( $col_large_desktops ); ?> <?php echo esc_attr( $col_desktops ); ?> <?php echo esc_attr( $col_tablets ); ?> <?php echo esc_attr( $col_phones ); ?>">
+		<div id="album_gallery_<?php echo esc_attr( $album_gallery_id ); ?>" class="awp_center <?php echo esc_attr( $col_large_desktops ); ?> <?php echo esc_attr( $col_desktops ); ?> <?php echo esc_attr( $col_tablets ); ?> <?php echo esc_attr( $col_phones ); ?>">
 		<?php
 		
 		foreach ( $album_gallery_settings['image-slide-ids'] as $attachment_id ) {
@@ -65,22 +65,19 @@ while ( $loop->have_posts() ) :
 			$slide_type         = $album_gallery_settings['image-slide-type'][ $count ];
 			$slide_link         = $album_gallery_settings['image-slide-link'][ $count ];
 			$album_image_title  = get_the_title( $attachment_id );
-
-
-			
-				if (strpos($slide_link, 'youtube') !== false) {
-							$lightboxop = 'pw-lightbox'; $vedio_class = 'youtube'; $video_icon = 'fab fa-youtube';
-							if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $slide_link, $match)) {
-								$vedio_id = $match[1];
-								$link_url = 'https://www.youtube.com/embed/'.$vedio_id;
-							}
-						} elseif(strpos($slide_link, 'vimeo') !== false) { 
-							$lightboxop = 'pw-lightbox'; $vedio_class = 'vemio'; $video_icon = 'fab fa-vimeo';
-							if (preg_match('%^https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)(?:[?]?.*)$%im', $slide_link, $regs)) {
-								$vedio_id = $regs[3];
-								$link_url = 'https://player.vimeo.com/video/'.$vedio_id;
-							}
-						}
+			if (strpos($slide_link, 'youtube') !== false) {
+				$lightboxop = 'pw-lightbox'; $vedio_class = 'youtube'; $video_icon = 'fab fa-youtube';
+				if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $slide_link, $match)) {
+					$vedio_id = $match[1];
+					$link_url = 'https://www.youtube.com/embed/'.$vedio_id;
+				}
+			} elseif(strpos($slide_link, 'vimeo') !== false) { 
+				$lightboxop = 'pw-lightbox'; $vedio_class = 'vemio'; $video_icon = 'fab fa-vimeo';
+				if (preg_match('%^https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)(?:[?]?.*)$%im', $slide_link, $regs)) {
+					$vedio_id = $regs[3];
+					$link_url = 'https://player.vimeo.com/video/'.$vedio_id;
+				}
+			}
 			?>
 			<div class="
 			<?php
@@ -160,6 +157,9 @@ while ( $loop->have_posts() ) :
 	endwhile;
 ?>
 <style>
+.awp_center {
+    text-align: center !important;
+}
 <?php
 if ( $col_large_desktops == 'col-lg-3' ) {
 	?>

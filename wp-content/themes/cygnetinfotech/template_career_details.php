@@ -55,9 +55,27 @@ if($jobid != ''){
 								<div class="article-container">
 									<div class="container-with-sidebar">
 										<article class="blog-contents">
-											<?php echo 'location: '.$data['location']; ?><br/><br/>
-											<?php echo 'minYrsOfExperience: '.$data['minYrsOfExperience']; ?><br/><br/>
-											<?php echo 'longDescription: '.$data['longDescription']; ?><br/><br/>
+											<?php if($data['longDescription'] != ''){  ?>
+												<span>Long Description: <?php echo $data['longDescription']; ?></span>
+											<?php } ?>
+											<?php if($data['desiredSkill'] != ''){  ?>
+												<span>Desired Skill: <?php echo $data['desiredSkill']; ?></span>
+											<?php } ?>
+											<?php if($data['qualification'] != ''){  ?>
+												<span>Qualification: <?php echo $data['qualification']; ?></span>
+											<?php } ?>
+											<?php if($data['role'] != ''){  ?>
+												<span>Role: <?php echo $data['role']; ?></span>
+											<?php } ?>
+											<?php if($data['location'] != ''){  ?>
+												<span>Location: <?php echo $data['location']; ?></span>
+											<?php } ?>
+											<?php if($data['minYrsOfExperience'] != ''){  ?>
+												<span>Min Years Of Experience: <?php echo $data['minYrsOfExperience']; ?>+ Years</span>
+											<?php } ?>
+											<?php if($data['positionsReq'] != ''){  ?>
+												<span>Positions Required: <?php echo $data['positionsReq']; ?></span>
+											<?php } ?>
 										</article>	
 									</div>
 								</div>
@@ -69,7 +87,7 @@ if($jobid != ''){
         </div>
 		
 		<div>
-			<?php echo do_shortcode('[contact-form-7 id="4024" title="Apply Job"]'); ?>
+			<?php echo do_shortcode('[contact-form-7 id="37334" title="Apply Job"]'); ?>
 		</div>
 	<?php } else { ?>
 		<div class="container norecordfound">
