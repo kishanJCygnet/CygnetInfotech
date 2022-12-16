@@ -15,9 +15,7 @@
     //     background-image: url('../../images/caseStdy-bg.png');
     // }
 
-    .title-heading{
-       
-     
+    .title-heading{    
         z-index: 1;
         .heading-border{
             display: none;
@@ -35,24 +33,11 @@
         }
     }
     .testimonial {
-        width: 900px;
-        // margin-top: 40px;
         max-width: 100%;
         margin: auto;
-        @include bp(xl-max) {
-            width: calc(100% - 260px);
-        }
-        @include bp(md-max) {
-            width: 100%;
-        }
-        @include bp(sm-max) {
-            position: relative;
-        }
-        @include bp(xs-max) {
-            width: 100%;
-        }
         .owl-item{
             padding: 15px;
+            padding-top: 90px;
         }
         
     }
@@ -61,55 +46,20 @@
         padding-left: 0;
         position: relative;
         list-style-type: none;
-        // &::after{
-        //     content: "";
-        //     height: 142px;
-        //     width: 344px;
-        //     background-image: url(../../images/testimonial-dots1.svg) !important;
-        //     background-size: 100% 100%;
-        //     position: absolute;
-        //     z-index: 0;
-        //     top: 156px;
-        //     right: 74px;
-        //     @include bp(md-max) {
-        //      top: 154px;
-        //      right: -33px;
-        //     }
-        //     @include bp(sm-max) {
-        //         width: 200px;
-        //         right: 0px;
-        //     }
-        // }
-        // &::before{
-        //     content: "";
-        //     height: 142px;
-        //     width: 344px;
-        //     background-image: url(../../images/testimonial-dots1.svg)!important;
-        //     background-size: 100% 100%;
-        //     position: absolute;
-        //     z-index: 0;
-        //     bottom: -14px;
-        //     left: 109px;
-        //     @include bp(md-max) {
-        //         bottom: 22px;
-        //         left: 0px;
-        //     }
-        //     @include bp(sm-max) {
-        //         width: 200px;
-        //     }
-        // }
+      
     }
     .testimonial-content {
         align-items: center;
-        // padding-bottom: 65px;
         background-color: #fff;
-        border-radius: 20px;
-        box-shadow: 0px 3px 6px #00000029;
+        border-radius: 10px;
+        border-top-left-radius: 80px;
+        border-top-right-radius: 80px;
+        box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
         display: flex;
-        padding: 30px 80px;
-        // position: absolute;
-        // left: 0;
-        // right: 0;
+        padding: 90px 30px 30px;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        
         @include bp(md-max) {
             text-align: center;
         }
@@ -123,31 +73,10 @@
                     border-radius: 50%;
                 }
             }
-            @include bp(md-max) {
-                position: static !important;
-                text-align: center;
-                display: inline-block;
-                // opacity: 0;
-                // visibility: hidden;
-                .img{
-                    width: 90px !important;
-                    height: 90px !important;
-                    min-width: 90px !important;
-                    min-height: 90px !important;
-                    margin: auto;
-                    img{
-                       min-width: 88px !important;
-                        min-height: 88px !important;
-                       width: 88px !important;
-                        height: 88px !important;
-                    }
-                }
-            }
+          
         }
         &.active{
-            @include bp(sm-max) {
-                display: block;
-            }
+          
             .short-decoration {
                 opacity: 1;
                 visibility: visible;
@@ -159,11 +88,7 @@
                 opacity: 1;
             }
         }     
-        @include bp(md-max) {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
+       
         .client-details {
             // position: absolute;
             // left: 0;
@@ -180,18 +105,12 @@
             }
             .img{
                 margin-bottom: 20px;
-                @include bp(md-max) {
-                    margin-bottom: 10px;
-                    margin-top: 15px;
-                 }
+                position: absolute;
+                top: 1px;
+                left: calc(50% - 86px);
+               
 
-                // border: 2px solid #9acdcd;
-                // border-radius: 50%;
-                // padding: 0px;
-                // @include bp(md-max) {
-                //     opacity: 0;
-                //     visibility: hidden;  
-                // }
+                
                 img {
                     width: 172px;
                     height: 172px;    
@@ -202,36 +121,15 @@
                 }
             }
         }
-        .short-decoration {           
-            // padding-left: 100px;
+        .short-decoration {  
             background-color: #fff;
-            // padding: 30px 50px;
             border-radius: 15px;
             color: #0F3764;
-            width: 730px;
             margin: auto;
-            // box-shadow: 0px 51px 0px -23px rgb(156 204 204 / 77%), 0px 109px 0px -56px rgb(156 204 204 / 48%);
-            position: relative;
-            // margin-top: 150px;
-            // opacity: 0;
-            // visibility: hidden;
-            z-index: 1;
-            padding-right: 30px;
-            padding-top: 60px;
-
-            @include bp(lg-max) {
-                width: 560px;
-            }
-            @include bp(md-max) {
-                padding-left: 0;
-                text-align: center;
-                width: 100%;
-                margin-top: 30px;
-                padding-right: 0;
-            }
-            @include bp(sm-max) {
-                padding: 10px 0px 0;
-            }
+            position: relative;         
+             z-index: 1;
+            padding-top: 20px;      
+          
             .p1 {
                 font-weight: 600;
                 margin-bottom: 2px;
@@ -247,24 +145,15 @@
             }
             &::before {
                 content: "";
-                background-image: url(../../images/left-quote.png);
+                background-image: url(../../images/client-qoutes.png);
                 position: absolute;
-                top: -2px;
+                top: -47px;
                 width: 50px;
-                height: 45px;
+                height: 50px;
                 background-size: cover;
                 background-repeat: no-repeat;
-                left: 0px;
-                transform: rotate(0deg);
-                @include bp(lg-max) {                  
-                    bottom: -55px;
-                }  
-                @include bp(md-max) {                  
-                    right: 10px;
-                    top: -33px;
-                    width: 35px;
-                    height: 30px;
-                }      
+                left: 0;
+                transform: rotate(0);                  
                            
             }
             .client_video{

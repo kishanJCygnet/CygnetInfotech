@@ -61,7 +61,7 @@ function AddReadMore() {
   var readLessTxt = " Read less";
   
   //Traverse all selectors with this class and manupulate HTML part to show Read More
-  jQuery(".icon-box .description:not(.no-readmore .icon-box .description):not(.automation-experience .icon-box .description):not(.benifits .icon-box .description):not(.desktop-commands .icon-box .description):not(.Integrations-section .icon-box .description):not(.capabilitie-section .icon-box .description),.icon-box .readmore_description").each(function() {
+  jQuery(".icon-box .description:not(.no-readmore .icon-box .description):not(.automation-experience .icon-box .description):not(.benifits .icon-box .description):not(.desktop-commands .icon-box .description):not(.Integrations-section .icon-box .description):not(.capabilitie-section .icon-box .description),.icon-box .readmore_description:not(.partner-comments .icon-box .readmore_description)").each(function() {
     
     //alert(words.length);
       if (jQuery(this).find(".firstSec").length)
@@ -91,7 +91,7 @@ function AddReadMore() {
   });
   //Read More and Read Less Click Event binding
   jQuery(document).on("click", ".readMore, .readLess", function() {
-      jQuery(this).closest(".icon-box .description, .icon-box .readmore_description").toggleClass("showlesscontent showmorecontent");
+      jQuery(this).closest(".icon-box .description, .icon-box .readmore_description:not(.partner-comments .icon-box .readmore_description)").toggleClass("showlesscontent showmorecontent");
   });
 }
 function AddLargeReadMore() {
@@ -103,7 +103,7 @@ function AddLargeReadMore() {
   var readLessTxt = " Read less";
   
   //Traverse all selectors with this class and manupulate HTML part to show Read More
-  jQuery(".readmore_large_description").each(function() {
+  jQuery(".readmore_large_description, .partner-comments .icon-box .readmore_description").each(function() {
     
     //alert(words.length);
       if (jQuery(this).find(".firstSec").length)
@@ -133,7 +133,7 @@ function AddLargeReadMore() {
   });
   //Read More and Read Less Click Event binding
   jQuery(document).on("click", ".readMore, .readLess", function() {
-      jQuery(this).closest(".readmore_large_description").toggleClass("showlesscontent showmorecontent");
+      jQuery(this).closest(".readmore_large_description, .partner-comments .icon-box .readmore_description").toggleClass("showlesscontent showmorecontent");
   });
 }
 jQuery(function() {
