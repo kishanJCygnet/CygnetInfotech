@@ -281,8 +281,7 @@ function testimonial_slider()
 				autoplay: false,
 				nav: true,
 				dots: true,
-				mouseDrag:false,
-                items: <?php echo the_sub_field('display_testimonials'); ?>,
+				items: <?php echo the_sub_field('display_testimonials'); ?>,
 				navText: [
 					'<span><img src="<?php echo THEME_PATH; ?>assets/images/right-arrow.png" alt="" /></span>',
                     '<span><img src="<?php echo THEME_PATH; ?>assets/images/right-arrow.png" alt="" /></span>'

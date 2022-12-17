@@ -413,3 +413,7 @@ new ScrollMagic.Scene({
 .setClassToggle('.menu-section','show-drop')
 .addTo(controller); // assign the scene to the controller
 
+jQuery('.long-time-cygnetian .testimonial-slider').owlCarousel({
+  items: 1,  
+});
+
