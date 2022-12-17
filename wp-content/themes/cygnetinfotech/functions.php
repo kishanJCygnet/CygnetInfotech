@@ -811,68 +811,8 @@ add_shortcode('get_job_list', 'get_job_list_shortcode');
 add_action('wpcf7_before_send_mail', 'cf7_validate_api', 10, 3);
 
 function cf7_validate_api($cf7, &$abort, $submission) {
-	if ($cf7->id() == 4024 ) 
-    {		
-
-    //Get the current posted form instance
-   /* $form_to_DB = WPCF7_Submission::get_instance();
-    if ($form_to_DB) {
-        $formData = $form_to_DB->get_posted_data(); // Get all data from the posted form
-        $uploaded_files = $form_to_DB->uploaded_files(); // this allows you access to the upload file in the temp location
-    }
-	//echo "<pre>";print_r($uploaded_files);
-
-    // Let's insert the new post first to get the ID.
-    $newpostid = wp_insert_post(array(
-        'post_status' => 'draft',
-        'post_title' => "job-".$formData['jobid'], // Can be  $formData['YOUR-CF7-FIELD-NAME']
-        'post_type' => "post", //Post Type
-        'post_content' => "job-".$formData['jobid'], // Can be  $formData['YOUR-CF7-FIELD-NAME']
-    ));
-
-
-    // We need to get the CF7 field name from FILE
-    $cf7_file_field_name = 'job-resume-file'; // [file uploadyourfile]
-
-    //Do the magic the same as the refer link above
-    $image_name = $formData[$cf7_file_field_name];
-    $image_location = $uploaded_files[$cf7_file_field_name];
-    print_r($image_location[0]);
-	$image_content = file_get_contents($image_location[0]);
-    $wud = wp_upload_dir();
-    $upload = wp_upload_bits($image_name, null, $image_content);
-	echo "<pre>";print_r($upload);
-    $chemin_final = $upload['url'];
-    $filename = $upload['file'];
-	echo "<pre>";print_r($filename);*/
-    /*if ($filename > '') {
-        require_once(ABSPATH . 'wp-admin/includes/admin.php');
-        $wp_filetype = wp_check_filetype(basename($filename), null);
-        $attachment = array(
-            'post_mime_type' => $wp_filetype['type'],
-            'post_title' => preg_replace('/\.[^.]+$/', '', basename($filename)),
-            'post_content' => '',
-            'post_status' => 'inherit'
-        );
-        $attach_id = wp_insert_attachment($attachment, $filename, $newpostid);
-        require_once(ABSPATH . 'wp-admin/includes/image.php');
-        $attach_data = wp_generate_attachment_metadata($attach_id, $filename);
-        wp_update_attachment_metadata($attach_id, $attach_data);
-        //Define the new Thumbnail can be also a ACF field
-        update_post_meta($newpostid, "_thumbnail_id", $attach_id);
-    }*/
-	
-	
-
-
-
-
-
-
-
-/*$submission = WPCF7_Submission::get_instance();
-print_r($submission->uploaded_files());
-print_r($submission->get_posted_data());exit;*/
+	if ($cf7->id() == 37334 ) 
+    {
 		$jobfirstname = $_POST['job-first-name'];
 		$joblastname = $_POST['job-last-name'];
 		$jobemail = $_POST['job-email'];
@@ -949,8 +889,61 @@ print_r($submission->get_posted_data());exit;*/
 			exit;
 		} else {
 			$response = json_decode($response,true);
-			echo $response['msg'];
-			echo $applyid =  $response['applyId'];
+			$response['msg'];
+			$applyid =  $response['applyId'];
+			
+			if($applyid != ''){
+				/* File copied from one folder to other folder */
+				$submission = WPCF7_Submission::get_instance();
+				$files = $submission->uploaded_files();
+				
+				$source = $files['job-resume-file'][0]; 
+				$explode_source = explode('/',$source);
+				$getfilename = end($explode_source);
+				$destination = '/var/www/html/cygnetnew/wp-content/uploads/resume/'.$applyid.'_'.$getfilename; 
+				if( !copy($source, $destination) ) { 
+					echo $errtex = "File can't be copied! \n";
+					exit; 
+				} 
+				else { 
+					//echo "File has been copied! \n"; 
+					
+					$curl = curl_init();
+
+					curl_setopt_array($curl, array(
+					  CURLOPT_URL => 'https://api.preprod1.zwayam.com/core/v1/jobs/'.$jobid.'/applies/'.$applyid.'/resume',
+					  CURLOPT_RETURNTRANSFER => true,
+					  CURLOPT_ENCODING => '',
+					  CURLOPT_MAXREDIRS => 10,
+					  CURLOPT_TIMEOUT => 0,
+					  CURLOPT_FOLLOWLOCATION => true,
+					  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+					  CURLOPT_CUSTOMREQUEST => 'POST',
+					  CURLOPT_POSTFIELDS =>array('file'=> new CURLFILE($destination)),
+					  CURLOPT_HTTPHEADER => array(
+						'apiKey: d6uukp_810007262b6968bda3657b225b56cd026a275c0a614bd86cf8cfdc034ca257535e90fc2b8f2eb6bddbe12c45d29dfc7df20436cf1522a33839a9d3c0cbbb09e9',
+						'Content-Type: application/json'
+					  ),
+					));
+
+					$response = curl_exec($curl);	
+					$errno = curl_errno($curl);
+					$err = curl_error($curl);
+					
+					curl_close($curl);
+					$errtex = '';
+					if ($errno) {
+						echo $errtex = "Resume API Error:" . $err;
+						exit;
+					} else {
+						$response = json_decode($response,true);
+						echo "<pre>";
+						print_r($response);
+						exit;
+					}
+					
+				}
+			}
 			print_r($response);
 			return;
 		}
