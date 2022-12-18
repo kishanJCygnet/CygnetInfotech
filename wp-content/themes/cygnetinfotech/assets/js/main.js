@@ -361,6 +361,7 @@ jQuery(document).ready(function(){
   $('.contact-form-content').addClass('shape-aw-top');
   jQuery('svg').each(function(){
     jQuery(this).find('g').removeAttr('clip-path');
+    jQuery(this).find('clipPath').remove();
    });
 // <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="181.318" viewBox="0 0 1920 181.318"><defs><clipPath id="clip-path"><rect id="Rectangle_8161" data-name="Rectangle 8161" width="1920" height="181.318" transform="translate(0 4044)" fill="#fff"/></clipPath></defs><g id="Mask_Group_20" data-name="Mask Group 20" transform="translate(0 -4044)" clip-path="url(#clip-path)"><path id="Subtraction_18" data-name="Subtraction 18" d="M1995.9,1789.985c-34.173,0-68.729-.607-102.709-1.8-33.758-1.188-67.861-2.989-101.359-5.353-33.259-2.344-66.866-5.309-99.888-8.812-32.8-3.48-65.869-7.581-98.287-12.187-32.233-4.58-64.723-9.787-96.562-15.476-31.653-5.654-63.52-11.937-94.714-18.675-31.031-6.7-62.233-14.032-92.738-21.789-30.355-7.717-60.85-16.065-90.637-24.813-29.673-8.716-59.419-18.054-88.411-27.755-28.887-9.664-57.841-19.961-86.059-30.6-28.106-10.6-56.229-21.829-83.585-33.371-27.26-11.5-54.5-23.63-80.978-36.048-26.4-12.381-52.724-25.382-78.253-38.64-25.478-13.229-50.847-27.072-75.4-41.143-24.521-14.05-48.887-28.705-72.421-43.558-23.519-14.844-46.841-30.283-69.318-45.89s-44.708-31.8-66.086-48.131-42.5-33.259-62.732-50.286c-20.27-17.055-40.205-34.669-59.253-52.354-19.075-17.712-37.8-35.992-55.646-54.335-17.882-18.38-35.349-37.3-51.916-56.229-16.626-19-32.794-38.527-48.058-58.038-15.32-19.579-30.15-39.685-44.078-59.757-13.972-20.134-27.419-40.788-39.969-61.389-12.6-20.684-24.622-41.858-35.738-62.936-11.179-21.2-21.736-42.867-31.378-64.394-9.7-21.649-18.747-43.775-26.9-65.766-8.2-22.121-15.694-44.681-22.286-67.051C33.915,660.889,28.009,637.927,23,615.157,17.953,592.225,13.682,568.89,10.3,545.8c-3.4-23.271-6-46.951-7.707-70.381C.875,451.824,0,427.829,0,404.1a979.972,979.972,0,0,1,22.075-206.82,1016.137,1016.137,0,0,1,27-99.97C59.681,64.715,72.164,31.975,86.178,0a1132.077,1132.077,0,0,0,52.609,104.678c19.327,33.983,40.878,67.854,64.057,100.669C225.88,237.961,251.1,270.355,277.8,301.63c26.566,31.118,55.271,61.909,85.313,91.52,29.932,29.5,61.935,58.563,95.122,86.377,33.128,27.763,68.248,54.965,104.386,80.853s74.194,51.106,113.1,74.951C714.688,659.208,755.491,682.313,797,704c41.621,21.747,84.991,42.611,128.9,62.011,44.112,19.488,89.863,37.984,135.983,54.973,46.4,17.093,94.353,33.093,142.517,47.555,48.528,14.571,98.493,27.947,148.506,39.759,206.494,48.764,422.829,73.488,643,73.488s436.5-24.725,643-73.488c50.013-11.812,99.978-25.187,148.506-39.759,48.166-14.462,96.114-30.462,142.517-47.555C2976.036,804,3021.786,785.5,3065.9,766.012c43.905-19.4,87.274-40.262,128.9-62.011,41.5-21.686,82.307-44.789,121.274-68.671,38.918-23.852,76.972-49.068,113.1-74.951s71.256-53.088,104.387-80.853c33.188-27.813,65.189-56.875,95.121-86.377,30.043-29.61,58.747-60.4,85.313-91.52,26.711-31.284,51.931-63.679,74.957-96.283,23.184-32.822,44.735-66.693,64.057-100.669A1132.308,1132.308,0,0,0,3905.625,0c14.014,31.97,26.5,64.71,37.105,97.31a1015.641,1015.641,0,0,1,27,99.97A980.228,980.228,0,0,1,3991.8,404.1c0,23.728-.875,47.722-2.6,71.317-1.709,23.433-4.3,47.112-7.707,70.381-3.377,23.089-7.646,46.425-12.691,69.359-5.012,22.771-10.918,45.733-17.555,68.246-6.59,22.37-14.09,44.93-22.285,67.051-8.148,21.99-17.2,44.116-26.9,65.766-9.643,21.526-20.2,43.192-31.378,64.394-11.125,21.1-23.149,42.271-35.738,62.936-12.544,20.593-25.991,41.247-39.969,61.389-13.926,20.068-28.755,40.174-44.076,59.757-15.267,19.514-31.436,39.041-48.06,58.038-16.567,18.933-34.036,37.852-51.915,56.229-17.832,18.326-36.554,36.607-55.646,54.335-19.059,17.7-39,35.311-59.252,52.354s-41.354,33.954-62.731,50.286-43.62,32.53-66.088,48.131-45.782,31.036-69.317,45.89-47.891,29.5-72.421,43.558c-24.556,14.072-49.923,27.915-75.4,41.143-25.534,13.261-51.862,26.262-78.251,38.64-26.467,12.416-53.713,24.545-80.979,36.048-27.356,11.542-55.479,22.77-83.584,33.371-28.206,10.639-57.16,20.936-86.06,30.6-29,9.7-58.744,19.042-88.41,27.755-29.8,8.75-60.291,17.1-90.637,24.813-30.512,7.759-61.713,15.089-92.737,21.789-31.2,6.737-63.063,13.021-94.714,18.675-31.84,5.688-64.329,10.9-96.562,15.476-32.418,4.606-65.487,8.707-98.286,12.188-33.02,3.5-66.627,6.469-99.887,8.813-33.5,2.363-67.6,4.164-101.36,5.353C2064.634,1789.378,2030.076,1789.985,1995.9,1789.985Z" transform="translate(-1035.9 2421.628)" fill="#41bfe7" /></g></svg>
    var mySecondDiv=$('<div class="shape-bottom"></div>');
@@ -385,16 +386,16 @@ var timelinedrop = new TimelineMax();
 var tween1 = TweenMax.to(".menu-section .drops",0.5, {scale:1, y: 320, opacity:1, ease:Linear.easeNone});
 var tween2 = TweenMax.to(".menu-section .place-work-center", 1, {scale:1, opacity:1, ease:Sine.easeOut, delay: 1.5},);
 
-var menuitem1 = TweenMax.to(".menu-section .menu li:first-child", 0.5, {opacity:1, y:100, x:-400, ease:Sine.easeOut});
-var menuitem2 = TweenMax.to(".menu-section .menu li:nth-child(2)", 0.2, {opacity:1, y:250, x: -50, ease:Sine.easeOut});
-var menuitem3 = TweenMax.to(".menu-section .menu li:nth-child(3)", 0.3, {opacity:1, y:100, x: 300, ease:Sine.easeOut});
-var menuitem4 = TweenMax.to(".menu-section .menu li:nth-child(4)", 0.2, {opacity:1, y:350, x: -500, ease:Sine.easeOut});
-var menuitem5 = TweenMax.to(".menu-section .menu li:nth-child(5)", 0.5, {opacity:1, y:450, x: -200, ease:Sine.easeOut});
-var menuitem6 = TweenMax.to(".menu-section .menu li:nth-child(6)", 0.4, {opacity:1, y:426, x: 172, ease:Sine.easeOut});
-var menuitem7 = TweenMax.to(".menu-section .menu li:nth-child(7)", 0.7, {opacity:1, y:350, x: 400, ease:Sine.easeOut});
-var menuitem8 = TweenMax.to(".menu-section .menu li:nth-child(8)", 0.4, {opacity:1, y:570, x: -450, ease:Sine.easeOut});
-var menuitem9 = TweenMax.to(".menu-section .menu li:nth-child(9)", 0.7, {opacity:1, y:630, x: -50,  ease:Sine.easeOut});
-var menuitem10 = TweenMax.to(".menu-section .menu li:nth-child(10)", 0.3, {opacity:1, y:570, x: 450, ease:Sine.easeOut});
+var menuitem1 = TweenMax.to(".menu-section .menu li:first-child", 0.5, {opacity:1, y:20, x:-400, ease:Sine.easeOut});
+var menuitem2 = TweenMax.to(".menu-section .menu li:nth-child(2)", 0.2, {opacity:1, y:170, x: -50, ease:Sine.easeOut});
+var menuitem3 = TweenMax.to(".menu-section .menu li:nth-child(3)", 0.3, {opacity:1, y:20, x: 300, ease:Sine.easeOut});
+var menuitem4 = TweenMax.to(".menu-section .menu li:nth-child(4)", 0.2, {opacity:1, y:270, x: -500, ease:Sine.easeOut});
+var menuitem5 = TweenMax.to(".menu-section .menu li:nth-child(5)", 0.5, {opacity:1, y:370, x: -200, ease:Sine.easeOut});
+var menuitem6 = TweenMax.to(".menu-section .menu li:nth-child(6)", 0.4, {opacity:1, y:344, x: 172, ease:Sine.easeOut});
+var menuitem7 = TweenMax.to(".menu-section .menu li:nth-child(7)", 0.7, {opacity:1, y:270, x: 400, ease:Sine.easeOut});
+var menuitem8 = TweenMax.to(".menu-section .menu li:nth-child(8)", 0.4, {opacity:1, y:490, x: -450, ease:Sine.easeOut});
+var menuitem9 = TweenMax.to(".menu-section .menu li:nth-child(9)", 0.7, {opacity:1, y:550, x: -50,  ease:Sine.easeOut});
+var menuitem10 = TweenMax.to(".menu-section .menu li:nth-child(10)", 0.3, {opacity:1, y:490, x: 450, ease:Sine.easeOut});
 
 timelinedrop.add(tween1).add(tween2).add(menuitem1).add(menuitem2).add(menuitem3).add(menuitem4).add(menuitem5).add(menuitem6).add(menuitem7).add(menuitem8).add(menuitem9).add(menuitem10);
 // create a scene
@@ -409,11 +410,33 @@ new ScrollMagic.Scene({
     jQuery('#vd1')[0].play();
    
 })
-.addIndicators()
 .setClassToggle('.menu-section','show-drop')
 .addTo(controller); // assign the scene to the controller
 
 jQuery('.long-time-cygnetian .testimonial-slider').owlCarousel({
   items: 1,  
+});
+
+function pepoleclu(){
+  var widnowWidth = $(window).width();
+  var colRight = $('.pepole-culture-album .col-right').width();
+  var containerWidth =  $('.pepole-culture-album .container').width();
+  var coladdWidth = (widnowWidth - containerWidth)/2;
+  var restultWidth = colRight + coladdWidth;
+  $('.pepole-culture-album .col-right').css('min-width', restultWidth)
+}
+
+$('.album-item .album-item-box .overlay').each(function(){
+  $overlay = $(this).clone();
+  $(this).siblings('.awp_center').find('.group').append($overlay);
+  $(this).remove();
+
+});
+
+$(document).ready(function(){
+  pepoleclu();
+});
+$(window).resize(function(){
+  pepoleclu();
 });
 

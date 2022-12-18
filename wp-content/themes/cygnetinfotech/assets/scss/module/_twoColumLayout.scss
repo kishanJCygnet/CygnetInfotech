@@ -182,7 +182,7 @@
         left: 0;
         right: 0;
         border-radius: 0px;
-        top: calc(50% - 115px);
+        top: calc(50% - 59px);
         z-index: -1;
     }
     .join-team-content {
@@ -283,6 +283,163 @@
                     background-color: #35aed4;
                     border: 1px solid #e2e2e2;
                     border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+.album-content {
+    display: flex;
+    .album-item {
+        width: 20%;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .album-item-box {
+        width: 100%;
+        display: flex;
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+        border-radius: 55px;
+        margin: 15px 0;
+        .overlay {
+            opacity: 0;
+              background: transparent linear-gradient(180deg, rgba(65, 191, 231, 0.6) 0%, #0d3461 100%) 0% 0% no-repeat
+                padding-box;
+            display: inline-flex;          
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            position: absolute;
+            line-height: 1.5;
+            padding: 10px;
+            color: #fff;
+            font-size: 15px;
+            transition: .3s all linear;
+            border-radius: 50px;
+        }
+        &:hover {
+            .overlay {
+                opacity: 1;
+                z-index: 2;
+              
+            }
+        }
+        & > div {
+            width: 100%;
+            float: none;
+            max-width: 100%;
+            flex: 1;
+            padding: 0;
+            position: relative;
+            z-index: 0;
+            .group {
+                margin: 0;
+                .stack {
+                    margin: 0;
+                    z-index: 1;
+                    &::after,
+                    &::before {
+                        display: none;
+                    }
+                    img {
+                        margin: 0;
+                        border: 0;
+                        box-shadow: none;
+                    }
+                }
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.pepole-culture-album{
+    .album-content{
+        .album-item{
+            width: 100%;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            .album-item-box{
+                width: 20%;
+                padding: 15px;
+                margin: 0;
+                display: flex;
+                height: 230px;
+                img{
+                    height: 200px;
+                    object-fit: cover;
+                    border-radius: 50px;
+                }
+            }
+        }
+    }
+    .two-colum-content{
+        .col-left{
+            min-width: 300px;
+        }
+        .col-right{
+            width: calc(100% - 350px);
+        }
+    }
+}
+.event-activity{
+    .two-colum-content{
+        h3{
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        & > div{
+            padding: 30px;
+        }
+        .col-left{
+            & > div{
+                background-image: url(../../images/how-is-your-deals-group-people-business-conference-modern-classroom-daytime.png);
+                height: 380px !important;
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-radius: 30px;
+                position: relative;
+                & > div{
+                    background-color: #fff;
+                    width: 80%;
+                    padding: 20px;
+                    box-shadow: 0px 3px 6px #00000029;
+                    border-radius: 30px;
+                    left: 10%;
+                    position: absolute;                 
+                    bottom: -90px;
+                    min-height: 220px;
+                    text-align: center;
+                }
+            }
+        }
+        .col-right{
+            & > div{
+                background-image: url(../../images/Slide-02.png);
+                height: 380px !important;
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-radius: 30px;
+                position: relative;
+                .ea-content{
+                    background-color: #fff;
+                    width: 80%;
+                    padding: 20px;
+                    box-shadow: 0px 3px 6px #00000029;
+                    border-radius: 30px;
+                    left: 10%;
+                    position: absolute;                 
+                    bottom: -90px;
+                    min-height: 228px;
+                    text-align: center;
                 }
             }
         }

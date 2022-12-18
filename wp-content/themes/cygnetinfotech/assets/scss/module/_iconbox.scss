@@ -29,7 +29,7 @@
             }
         }
         .description {
-            font-size: 16px !important;
+            font-size: 14px !important;
             @include bp(sm-max) {
                 font-size: 14px !important;
             }
@@ -80,9 +80,58 @@
         width: 100%;
         height: 100px;
     }
+    .icon-box-list{
+        .icon-box{
+            position: relative;
+            padding-bottom: 40px;
+
+            .description {
+                display: flex;
+                flex-wrap: wrap;
+                // height: calc(100% - 38px);
+                
+                .arrow-action{
+                    margin-top: auto;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 10px;
+                    a{
+                        color: #41BFE7;
+                        position: relative;
+                        left: 0;
+                        transition: .3s all linear;
+                        
+                    }
+                }
+                &:hover{
+                    .arrow-action{
+                        a{
+                          color: #062346;
+                          font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 .home-wwdo {
     background-color: #1b4b76;
+    .title-heading{
+        h3{
+            font-size: 34px;
+            text-shadow: 0px 0px 30px #3CB4E7;
+            margin-bottom: 25px;
+        }
+    } 
+    .icon-box-content{
+        margin-bottom: 20px;
+        font-size: 14px;
+        text-align: center;
+        p{
+        color: #fff;
+        }
+    }
     .icon-box-list {
         background-color: rgb(255 255 255 / 9%);
         border-radius: 80px;
@@ -296,75 +345,7 @@
         }
     }
 }
-.album-content {
-    display: flex;
-    .album-item {
-        width: 20%;
-        padding: 0 10px;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    .album-item-box {
-        width: 100%;
-        display: flex;
-        position: relative;
-        text-align: center;
-        overflow: hidden;
-        border-radius: 55px;
-        margin: 15px 0;
-        .overlay {
-            opacity: 0;
 
-            background: transparent linear-gradient(180deg, rgba(65, 191, 231, 0.6) 0%, #0d3461 100%) 0% 0% no-repeat
-                padding-box;
-            display: inline-flex;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-            position: absolute;
-            line-height: 1.5;
-
-            padding: 10px;
-            color: #fff;
-
-            font-size: 15px;
-        }
-        &:hover {
-            .overlay {
-                opacity: 1;
-            }
-        }
-        & > div {
-            width: 100%;
-            float: none;
-            max-width: 100%;
-            flex: 1;
-            padding: 0;
-            position: relative;
-            z-index: 0;
-            .group {
-                margin: 0;
-                .stack {
-                    margin: 0;
-                    &::after,
-                    &::before {
-                        display: none;
-                    }
-                    img {
-                        margin: 0;
-                        border: 0;
-                        box-shadow: none;
-                    }
-                }
-                &::after {
-                    display: none;
-                }
-            }
-        }
-    }
-}
 .circle-box-icon {
     .icon-box-list {
         text-align: center;
@@ -460,16 +441,18 @@
                 top: 12px;
             }
             .icon-box-title-content {
+                margin-bottom: 10px;
                 h3 {
                     font-size: 16px;
                     color: #363636;
                 }
             }
             .description {
-                font-size: 13px !important;
-                color: #7a7a7a;
-                line-height: 19px;
+               
                 address {
+                    font-size: 13px !important;
+                    color: #7a7a7a;
+                    line-height: 19px;
                     span {
                         display: inline-block;
                         width: 100%;
@@ -494,10 +477,21 @@
     }
 }
 .contact-address-local {
+    .container{
+        position: relative;
+        .icon-box-content{
+            width: 400px;
+            position: absolute;
+            left: 0;
+            top: 125px;
+        }
+    }
+  
     .icon-box-list {
         width: calc(100% - 400px);
         margin-left: auto;
     }
+    
 }
 .client-speak-list {
     .icon-box-list {

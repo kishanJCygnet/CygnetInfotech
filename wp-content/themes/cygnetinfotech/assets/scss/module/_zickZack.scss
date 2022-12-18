@@ -440,11 +440,15 @@
             width: 1px;
             background-color: #0f3764;
             left: 50%;
+            z-index: 2;
         }
         .zick-zack-inner-content{
            
             width: 50%;
             padding: 50px 0;
+            margin: 0;
+            position: relative;
+            z-index: 3;
             
             .text-content{
                 position: relative;
@@ -458,13 +462,14 @@
             .icon{
                 width: 105px;
                 height: 105px;
-                background-color: #0f3764;
+                background: transparent linear-gradient(92deg, #0D3461 0%, #41BFE7 100%) 0% 0% no-repeat padding-box;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 border-radius: 50%;
                 position: absolute;
                 left: -125px;
+                z-index: 3;
                 svg{
                     fill: #fff;
                     path{
@@ -484,6 +489,7 @@
                     right: -125px;
                 }
             }
+          
             
         }
     }
