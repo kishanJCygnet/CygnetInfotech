@@ -344,6 +344,9 @@ function insights_slider()
                     <?php if (get_field('insight_title', 'option')) : ?>
                         <h2 class="wow fadeInUp" data-wow-offset="50"><?php echo the_field('insight_title', 'option'); ?> <span class="heading-border"></span></h2>
                     <?php endif; ?>
+					<?php if (get_sub_field('sub_title')) : ?>
+                        <h3 class="wow fadeInUp" data-wow-offset="60"><?php echo the_sub_field('sub_title'); ?></h3>
+                    <?php endif; ?>
                 </div>
                 <div class="insights-inner">
                 <?php foreach ($insights as $insights) :
