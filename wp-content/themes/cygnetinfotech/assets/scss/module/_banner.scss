@@ -191,7 +191,42 @@
             }
             
         }    
-    }   
+    }  
+    &.home-banner-content{
+        z-index: 0;
+        .banner-inner-content{
+            padding-bottom: 50px;
+            padding-top: 150px;
+        }
+        .technology-move{
+            position: absolute;
+            top: -100px;
+            left: 0;
+            right: 0;
+        }
+        .text-content{
+            h1{
+                font-size: 48px;
+                line-height: 1.0;
+                margin-bottom: 10px;
+            }
+            .btn{
+                padding: 8px 15px;
+                border-radius: 6px;
+                background-color: #ffffff;
+                color: #3cb4e7;
+                font-weight: 500;
+                margin-top: 15px;
+                margin-right: 0 !important;
+                font-size: 13px;
+                &:hover{
+                    .text{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    } 
     .text-content {
         // position: relative;
         @include bp(md-max){

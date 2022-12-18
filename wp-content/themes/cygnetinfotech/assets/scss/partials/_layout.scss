@@ -674,7 +674,7 @@ video {
   position: relative;
   // background-color: #E4F8FF;
   // background-blend-mode: multiply;
-  height: 1170px;
+  height: 1030px;
   video {
     opacity: 0.6;
   }
@@ -721,7 +721,7 @@ video {
   background-color: #fff;
   padding-top: 0;
   left: calc(50% - 80px);
-  top: 90px;
+  top: 0px;
   border-radius: 50%;
   opacity: 0;
   display: inline-block;
@@ -771,8 +771,6 @@ video {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.21);
   border-radius: 50%;
-  height: 100%;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -781,11 +779,27 @@ video {
   font-size: 16px;
   padding: 10px;
   line-height: 1.5;
-  background-image: linear-gradient(180deg, rgb(65, 191, 231, 0.65) 0%, rgb(13, 52, 97, 0.65) 100%),
-    url("../../images/paper-analysis-min.jpg");
   background-size: cover;
   box-shadow: 0px 8px 40px #41bfe7f2;
   border: 1px solid #ffffff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: .3s all linear;
+  flex-wrap: wrap;
+  overflow: hidden;
+  .firsttext{
+    width: 100%;
+  }
+  .secondtext{
+    position: absolute;
+    bottom: -100%;
+   opacity: 0;
+   visibility: hidden;
+    width: 200px !important;
+  }
 }
 .menu li {
   position: absolute;
@@ -793,14 +807,32 @@ video {
   height: 100px;
   text-align: center;
   left: calc(50% - 50px);
-  top: 110px;
+  top: 40px;
   opacity: 0;
+  transition: .3s all linear;
+  &:hover{
+    a{
+      left: -30px;
+      top: -30px;
+      bottom: -30px;
+      right: -30px;
+      .firsttext{
+        display: none;
+      }
+      .secondtext{
+        opacity: 1;
+        visibility: visible;     
+        top: 50px;   
+      }
+    }
+  }
+
 }
 .menu li:first-child,
 .menu li:nth-child(3),
 .menu li:nth-child(9) {
-  width: 233px;
-  height: 233px;
+  width: 180px;
+  height: 180px;
 }
 .menu li:nth-child(2),
 .menu li:nth-child(4),
@@ -874,7 +906,7 @@ video {
   background-color: #22618B;
 }
 .mid-ng-blue {
-  background-color: #1b4b76;
+  background-color: #1b4b76 !important;
 }
 .bg-darkblue{
   background-color: #0D3461;
@@ -1137,6 +1169,19 @@ video {
       display: none;
     }
   }
+  .shape-aw-top.shape-aw-top{
+    .shape-top{
+      &::after{
+        background-color: #fafafa;
+      }
+      svg {
+        fill: #3aacd4;
+        path{
+          fill: #3aacd4;
+        }
+      }
+    } 
+  }
 }
 
 .image-shape{
@@ -1150,7 +1195,7 @@ video {
   mask-position: center center;
 }
 .gray90-bg{
-  background-color: #fafafa
+  background-color: #fafafa !important;
 }
 .Gray-white{
   background-color: #e5e5e5 ;
@@ -1254,4 +1299,116 @@ br{
       }
     }
   }
+}
+.cygnation-corner-pepole{
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .ccp-item{
+    width: 356px;
+    margin-bottom: 250px;
+    .text{
+      margin-top: 15px;
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    &:nth-child(2){      
+      position: absolute;
+      width: 800px;
+      left: calc(50% - 400px);
+      text-align: center;
+      bottom: -43%;
+      img{        
+        top: -50px;
+        position: relative;
+      }
+    
+    }
+    &:nth-child(3){
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+      width: 390px;
+      img{
+        width: 164px;
+        position: relative;
+        left: 190px;
+        top: 40px;
+      }
+    }
+  }
+}
+.pc-ccp{
+  position: relative;
+  .cta-action{
+   
+    position: absolute;
+    bottom: -54px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: auto;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg{
+      width: 20px;
+      fill: #fff;
+      path{
+        fill: #fff;
+      }
+    }
+  }
+}
+.btn-text{
+ 
+ padding: 0;
+   a{
+    position: relative;
+    left: 0;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    height: auto;
+    display: inline-flex;
+    align-items: center;
+    background-color: transparent;
+    color: #0D3461;
+    border: 0;
+    text-transform: none;
+    transition: .3s all linear;
+    svg{
+      margin-left: 5px;
+      transition: .3s all linear;
+    }
+    &:hover{
+      background-color: #22618B;
+      color: #fff;
+      svg{
+        margin-left: 10px;
+      }
+    }
+   }
+  
+ 
+}
+.wwdo-cta{
+  padding-bottom: 0 !important;
+  position: relative;
+  a{
+    position: absolute;
+    top: -95px;
+    left: calc(50% - 45px);
+    padding: 2px 15px;
+    font-size: 13px;
+    text-transform: none;
+    z-index: 2;
+  }
+}
+.home-insight-cta{
+  padding-bottom: 0 !important;
 }
