@@ -436,6 +436,19 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12">
+									<?php $extension = pathinfo(get_sub_field('cta_icon'), PATHINFO_EXTENSION);
+										if($extension == 'svg'){
+											$cta_icon = get_sub_field('cta_icon');
+											$stream_opts = [
+												"ssl" => [
+													"verify_peer"=>false,
+													"verify_peer_name"=>false,
+												]
+											];														 
+											echo file_get_contents($cta_icon, false, stream_context_create($stream_opts));
+										} else { ?>
+											<img src="<?php echo the_sub_field('cta_icon'); ?>" alt="<?php echo the_sub_field('cta_button_label'); ?>">
+									<?php } ?>
 									<a href="<?php echo the_sub_field('contact_us'); ?>" class="btn wow fadeInUp" data-wow-offset="50" ><span class="text"><?php echo the_sub_field('cta_button_label'); ?></span></a>
 								</div>
 							</div>
@@ -540,7 +553,7 @@
 						</div>
 						<?php 
 						$dynamic_col = get_sub_field('columns');
-						if (have_rows('icon_box_content')) :  ?>
+						if (have_rows('icon_box_content')) : $s = 1; ?>
 								<div class="row icon-box-list">
 									<div class="owl-carousel icon-slider">
 										<?php while (have_rows('icon_box_content')) : the_row(); ?>
