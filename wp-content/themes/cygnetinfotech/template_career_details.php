@@ -36,22 +36,62 @@ if($jobid != ''){
 	if($errtex == '' && $data != ''){
 ?>
         <div class="case-study">
-            <section class="bg-light pt-0">
-				<div class="blog-detail">                        
-					<div class="section-container-padding pb-0">
-						<div class="single-container">
-							<div class="blog-top-section inside-page-banner image-shape overlay-bg  gray90-bg">
+            <section class="pt-0">
+				<div class="career-detail">                        
+				
+							<div class="career-top-section image-shape">
 								<div class="container">
-									<div class="head-title-content">
-										<div class="col-left">											
-											<div class="blog-title">
+									<div class="head-title-content">																				
+											<div class="job-title">
 												<h1><?php echo $data['jobTitle']; ?></h1>
-											</div>
-										</div>                  
+												<div class="job-type">
+													<span class="location">Ahmedabad, Gujarat</span>
+													<span class="JobExp">Experience: 6+ Years</span>
+												</div>
+												<div class="jobAply">
+													<a class="btn" href="#">Apply Now <i class="fas fa-right-arrow"></i></a>
+												</div>
+											</div>										        
 									</div> 
 								</div>
+							</div>							
+						
+				</div>
+            </section>
+			<section class="py-0">
+				<div class="container">
+				<div class="job-description">
+								<div class="introduction">
+									<h3>Introduction</h3>
+									<p>Client Interfacing, requirement gathering, analysis, scoping & review for IT Services customers across multiple domains</p>
+
+									<ul>
+										<li>Experience in Scoping, preparing BRS / SRS / FRS, Wireframes & different Diagrams </li>
+										<li>Technology & solution consulting </li>
+										<li>Developing a compelling proposal by involving key stakeholders </li>
+										<li>Risk tracking and management throughout the Proposal process </li>
+										<li>Presales support (Case Study, Capability Decks, etc.) </li>
+										<li>Strong Presentation and Visual Enhancement skills - MS PowerPoint/Visio/related Graphic tools</li>
+										<li>Industry/Domain & Technology led research/Market research</li>
+									</ul>
+
+								</div>
+								<div class="experience">
+									<h3>Experience/Skills</h3>
+									
+									<ul>
+											<li>Excellent written/verbal English language skills</li>
+											<li>Excellent interpersonal & collaboration skills/Stakeholder Management</li>
+											<li>Consultative Approach while understanding Customer's business & requirements and proposing solution </li>
+											<li>Problem solving </li>
+											<li>Strong Presentation and Visual Enhancement skills - MS Office/Visio/related Graphic tools</li>
+											<li>Ability to work on aggressive schedules </li>
+											<li>Client Interfacing </li>
+											<li>Good team player</li>
+									</ul>
+								</div>
 							</div>
-							<div class="container section-container-padding pt-0 pb-0">
+							<div class="section-container-padding pt-0 pb-0">
 								<div class="article-container">
 									<div class="container-with-sidebar">
 										<article class="blog-contents">
@@ -80,10 +120,8 @@ if($jobid != ''){
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
 				</div>
-            </section>
+			</section>
         </div>
 		
 		<!-- <div>
