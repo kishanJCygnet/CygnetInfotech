@@ -40,7 +40,7 @@ if($jobid != ''){
 				<div class="blog-detail">                        
 					<div class="section-container-padding pb-0">
 						<div class="single-container">
-							<div class="blog-top-section">
+							<div class="blog-top-section inside-page-banner image-shape overlay-bg  gray90-bg">
 								<div class="container">
 									<div class="head-title-content">
 										<div class="col-left">											
@@ -86,9 +86,9 @@ if($jobid != ''){
             </section>
         </div>
 		
-		<div>
+		<!-- <div>
 			<?php echo do_shortcode('[contact-form-7 id="37334" title="Apply Job"]'); ?>
-		</div>
+		</div> -->
 	<?php } else { ?>
 		<div class="container norecordfound">
 			<p>No Record Found</p>
