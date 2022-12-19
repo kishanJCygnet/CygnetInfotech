@@ -1036,24 +1036,24 @@ function get_career_listing()
 		if ($data && count($data) > 0) :  
 			foreach ($data as $jobs) :
 				?>
-				<div>
-					<?php if($jobs['jobTitle'] != ''){  ?>
-						<h3><?php echo $jobs['jobTitle']; ?></h3>
-					<?php } ?>						
-					<?php if($jobs['role'] != ''){  ?>
-						<span>Role: <?php echo $jobs['role']; ?></span>
-					<?php } ?>
-					<?php if($jobs['location'] != ''){  ?>
-						<span>Location: <?php echo $jobs['location']; ?></span>
-					<?php } ?>
-					<?php if($jobs['minYrsOfExperience'] != ''){  ?>
-						<span>Min Years Of Experience: <?php echo $jobs['minYrsOfExperience']; ?>+ Years</span>
-					<?php } ?>
-					<?php if($jobs['positionsReq'] != ''){  ?>
-						<span>Positions Required: <?php echo $jobs['positionsReq']; ?></span>
-					<?php } ?>
-					<span><a href="<?php echo site_url();?>/career-details?jobid=<?php echo $jobs['id']; ?>">-></a></span>
-				</div>
+				<li>
+						<?php if($jobs['jobTitle'] != ''){  ?>
+							<h3><?php echo $jobs['jobTitle']; ?></h3>
+						<?php } ?>						
+						<?php /*if($jobs['role'] != ''){  ?>
+							<span>Role: <?php echo $jobs['role']; ?> Years</span>
+						<?php } ?>
+						<?php if($jobs['location'] != ''){  ?>
+							<span>Location: <?php echo $jobs['location']; ?> Years</span>
+						<?php } ?>
+						<?php if($jobs['minYrsOfExperience'] != ''){  ?>
+							<span>Min Years Of Experience: <?php echo $jobs['minYrsOfExperience']; ?>+ Years</span>
+						<?php } ?>
+						<?php if($jobs['positionsReq'] != ''){  ?>
+							<span>Positions Required: <?php echo $jobs['positionsReq']; ?></span>
+						<?php } */?>
+						<span><a class="btn" href="<?php echo site_url();?>/career-details?jobid=<?php echo $jobs['id']; ?>">Know More <i class="fas fa-arrow-right"></i></a></span>
+						</li>
 				<?php
 			endforeach;
 		endif;

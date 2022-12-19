@@ -766,12 +766,12 @@ function get_job_list_shortcode() {
 		//echo "<pre>";
 		//print_r($data);
 		?> 
-		<div class="" id="careerlistingid"> 
+		<ul class="joblisting" id="careerlistingid"> 
 			<?php
 			if ($data && count($data) > 0) :  
 				foreach ($data as $jobs) :
 					?>
-					<div>
+					<li>
 						<?php if($jobs['jobTitle'] != ''){  ?>
 							<h3><?php echo $jobs['jobTitle']; ?></h3>
 						<?php } ?>						
@@ -787,13 +787,13 @@ function get_job_list_shortcode() {
 						<?php if($jobs['positionsReq'] != ''){  ?>
 							<span>Positions Required: <?php echo $jobs['positionsReq']; ?></span>
 						<?php } */?>
-						<span><a href="<?php echo site_url();?>/career-details?jobid=<?php echo $jobs['id']; ?>">Know More -></a></span>
-					</div>
+						<span><a class="btn" href="<?php echo site_url();?>/career-details?jobid=<?php echo $jobs['id']; ?>">Know More <i class="fas fa-arrow-right"></i></a></span>
+						</li>
 					<?php
 				endforeach;
 			endif;
 		?>
-		</div>
+		</ul>
 		<?php		
 		for($i=1;$i<=$pagecount;$i++){
 			echo '<span class="pagenumber"><a href="javascript:void(0);" class="career-page" data-id="'.$i.'">'.$i.'</a></span>';
