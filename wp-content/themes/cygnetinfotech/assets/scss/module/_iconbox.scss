@@ -839,3 +839,47 @@
         }
     }
 }
+.ahmedaba-Inspiration{
+    .icon-box-list{
+        .icon-box {
+            &::before{
+                display: none;
+            }
+            background-color: transparent;
+            text-align: center;
+            padding: 0;
+            .icon{
+                margin-bottom: 30px;
+                position: relative;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    height: 15px;
+                    width: 15px;
+                    background-color: #0d3461;
+                    border-radius: 50%;
+                    bottom: -24px;
+                }
+            }
+        }
+        & > div:nth-child(even){
+            .icon-box {
+                display: flex;
+                flex-direction: column-reverse;
+                flex-wrap: wrap;
+                .icon{
+                    width: 100%;
+                    margin-top: 30px;
+                    margin-bottom: 0;
+                    &::before{
+                        bottom: auto;
+                        top: -19px;
+                    }
+                }
+                .description{
+                    width: 100%;
+                }
+            }
+        }   
+    }
+}
