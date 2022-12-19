@@ -542,7 +542,7 @@
 			/* Icon Box Slider Start */
 			if (get_row_layout() == 'icon_box_slider') : ?>
 				<section class="<?php echo the_sub_field('icon_box_custom_class'); ?>" <?php echo $slugid; ?>>
-					<div class="container-fluid">
+					<div class="container">
 						<div class="title-heading">
 							<?php if (get_sub_field('title')){ ?>
 								<h2 class="wow fadeInUp" data-wow-offset="50"><?php echo the_sub_field('title'); ?>
@@ -602,6 +602,7 @@
 										loop: false,
 										margin: 10,
 										autoplay: false,
+										items:1,
 										nav: true,
 										dots: true,
 										mouseDrag:false,

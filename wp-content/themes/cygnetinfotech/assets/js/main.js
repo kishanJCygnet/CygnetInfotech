@@ -435,6 +435,31 @@ $('.album-item .album-item-box .overlay').each(function(){
 
 $(document).ready(function(){
   pepoleclu();
+
+  $('.cdes').hover(function(){
+    $('.des-logo').toggleClass('highlight-logo');
+  });
+  $('.cygnet-teatech').hover(function(){
+    $('.tt-logo').toggleClass('highlight-logo');
+  });
+  $('.cygnetirp').hover(function(){
+    $('.irp-logo').toggleClass('highlight-logo');
+  });
+  $('.cygnetfintech').hover(function(){
+    $('.ft-logo').toggleClass('highlight-logo');
+  });
+  $('.testingwhiz').hover(function(){
+    $('.tw-logo').toggleClass('highlight-logo');
+  });
+  $('.automationwhiz').hover(function(){
+    $('.aw-logo').toggleClass('highlight-logo');
+  });
+  $('.cygnature').hover(function(){
+    $('.cn-logo').toggleClass('highlight-logo');
+  });
+  $('.git').hover(function(){
+    $('.gitlab-logo').toggleClass('highlight-logo');
+  });
 });
 $(window).resize(function(){
   pepoleclu();
