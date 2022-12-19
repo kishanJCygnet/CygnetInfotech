@@ -794,10 +794,26 @@ function get_job_list_shortcode() {
 			endif;
 		?>
 		</ul>
-		<?php		
+		<div class="pagination justify-content-center">
+		<?php	$cls = '';	
 		for($i=1;$i<=$pagecount;$i++){
-			echo '<span class="pagenumber"><a href="javascript:void(0);" class="career-page" data-id="'.$i.'">'.$i.'</a></span>';
-		}
+			if($i==1){
+				$cls = 'current-page';
+			} else {
+				$cls = '';
+			}
+			echo '<span class="pagenumber"><a href="javascript:void(0);" class="career-page pagination-lnk '.$cls.' " data-id="'.$i.'">'.$i.'</a></span>';
+		} ?>
+		</div>
+		<script>
+			jQuery(document).ready(function() {
+				jQuery(".career-page").on('click', function() {
+					jQuery(".career-page").removeClass("current-page");
+					jQuery(this).addClass("current-page");
+				});
+			});
+		</script>
+		<?php
 	}
 if($errtex != '' && $data == ''){
 ?>

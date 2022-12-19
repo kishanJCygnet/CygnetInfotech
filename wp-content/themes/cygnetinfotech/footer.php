@@ -15,7 +15,7 @@
 		<div class="contact-form"> 
 			<div class="container" id="contactus">			
 			<?php $post_slug = $post->post_name;
-			if($post_slug != 'community-version' && $post_slug != 'download-enterprise' && $post_slug != 'sign-up' && $post_slug != 'thank-you-for-contacting-us' && $post_slug != 'thank-you-for-signing-up' && $post_slug != 'thank-you-for-your-interest' && $post_slug != 'thank-you-for-webinar-registration' && $post_slug != 'thank-you-for-downloading-case-study' && $post_slug != 'thank-you-for-signing-up-community' && $post_slug != 'thank-you-for-signing-up-enterprise' && !is_404()){  ?>				
+			if($post_slug != 'community-version' && $post_slug != 'download-enterprise' && $post_slug != 'sign-up' && $post_slug != 'thank-you-for-contacting-us' && $post_slug != 'thank-you-for-signing-up' && $post_slug != 'thank-you-for-your-interest' && $post_slug != 'thank-you-for-webinar-registration' && $post_slug != 'thank-you-for-downloading-case-study' && $post_slug != 'thank-you-for-signing-up-community' && $post_slug != 'thank-you-for-signing-up-enterprise' && !is_404() && !is_page_template( 'template_career_details.php')){  ?>				
 				<div class="title-heading">	
 					<h2>Get in touch
 						<span class="heading-border"></span>
@@ -23,6 +23,17 @@
 				</div>
 				<div class="form-content">
 					<?php echo do_shortcode('[contact-form-7 id="172" title="Contact Us"]'); ?>
+					<input type="hidden" value="contact_us" id="hd_type">
+				</div>
+			<?php } ?>
+			<?php if(is_page_template( 'template_career_details.php' )){ ?>
+				<div class="title-heading">	
+					<h2>Apply Now
+						<span class="heading-border"></span>
+					</h2>
+				</div>
+				<div class="form-content">
+					<?php echo do_shortcode('[contact-form-7 id="37334" title="Apply Job"]'); ?>
 					<input type="hidden" value="contact_us" id="hd_type">
 				</div>
 			<?php } ?>
