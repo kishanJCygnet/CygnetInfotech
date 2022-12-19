@@ -214,7 +214,7 @@ body {
       font-size: 44px !important;
       margin-bottom: 50px;
       padding: 0 16px;
-      line-height: 38px;
+      line-height: 50px;
       display: inline-block;
       position: relative;
       font-weight: bold;
@@ -1416,4 +1416,80 @@ br{
   font-size: 28px;
   color: #0D3461;
   font-weight: 500;
+}
+.Our-offerings-portfolio {
+  .title-heading{
+    h2{
+      font-size: 32px !important;
+    }
+  }
+  .portfolio-description{
+    width: 623px;
+    margin: auto;
+    font-size: 16px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 6px #00000029;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 150px;
+    z-index: 1;
+    .portfolio-content{
+      padding: 50px;
+    }
+    b{
+      cursor: pointer;
+      &:hover{
+        color: #19c5e3;
+      }      
+    }
+    strong{
+      color: rgb(50, 50, 50);
+    }
+    .logos-items{
+      img{
+        position: absolute;
+        width: 220px;
+        padding: 17px 34px;
+        box-shadow: 0px 10px 15px #0000000A;
+        border: 1px solid #E5E5E5;
+        border-radius: 5px;
+      }
+    }
+    .des-logo{
+      left: -175px;
+      top: -130px;
+    }
+   
+    .tt-logo{
+      top: -130px;
+      right: -175px;
+    }
+    .irp-logo{
+      left: -280px;
+      top: 25%;
+    }
+    .ft-logo{
+      left: -280px;
+      top: 65%;
+    }
+    .gitlab-logo{
+      bottom:  -130px;
+      left: -175px;
+    }
+    .tw-logo{
+      right: -280px;
+      top: 25%;
+    }
+    .aw-logo{
+      right:-280px;
+      top: 65%;
+    }
+    .cn-logo{
+      right: -175px;
+      bottom:  -130px;
+    }
+    .highlight-logo{
+      box-shadow: 0px 10px 15px #3CB4E630 !important;
+    }
+  }
 }
