@@ -45,8 +45,14 @@ if($jobid != ''){
 											<div class="job-title">
 												<h1><?php echo $data['jobTitle']; ?></h1>
 												<div class="job-type">
-													<span class="location">Ahmedabad, Gujarat</span>
-													<span class="JobExp">Experience: 6+ Years</span>
+													<?php if($data['location'] != ''){  ?>
+														<span class="location"><?php echo $data['location']; ?></span>
+													<?php } ?>
+													<?php if($data['minYrsOfExperience'] != ''){  ?>
+														<span class="JobExp">Experience: <?php echo $data['minYrsOfExperience']; ?>+ Years</span>
+													<?php } ?>
+													<!--<span class="location">Ahmedabad, Gujarat</span>
+													<span class="JobExp">Experience: 6+ Years</span>-->
 												</div>
 												<div class="jobAply">
 													<a class="btn" href="#">Apply Now <i class="fas fa-right-arrow"></i></a>
@@ -91,7 +97,7 @@ if($jobid != ''){
 									</ul>
 								</div>
 							</div>
-							<div class="section-container-padding pt-0 pb-0">
+							<!--<div class="section-container-padding pt-0 pb-0">
 								<div class="article-container">
 									<div class="container-with-sidebar">
 										<article class="blog-contents">
@@ -106,20 +112,14 @@ if($jobid != ''){
 											<?php } ?>
 											<?php if($data['role'] != ''){  ?>
 												<span>Role: <?php echo $data['role']; ?></span>
-											<?php } ?>
-											<?php if($data['location'] != ''){  ?>
-												<span>Location: <?php echo $data['location']; ?></span>
-											<?php } ?>
-											<?php if($data['minYrsOfExperience'] != ''){  ?>
-												<span>Min Years Of Experience: <?php echo $data['minYrsOfExperience']; ?>+ Years</span>
-											<?php } ?>
+											<?php } ?>										
 											<?php if($data['positionsReq'] != ''){  ?>
 												<span>Positions Required: <?php echo $data['positionsReq']; ?></span>
 											<?php } ?>
 										</article>	
 									</div>
 								</div>
-							</div>
+							</div>-->
 				</div>
 			</section>
         </div>
