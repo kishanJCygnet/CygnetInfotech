@@ -37,11 +37,6 @@
 					<input type="hidden" value="contact_us" id="hd_type">
 				</div>
 			<?php } ?>
-			<?php //if ( is_front_page() ) : ?>
-				<!--<div class="technology-move">
-					<div class="text-center"> <img src="<?php echo THEME_PATH; ?>images/phraise.png" alt="" /></div>
-				</div>-->
-			<?php //endif; ?>
 			</div>
 		</div>
 	</section>
@@ -177,30 +172,12 @@
 			location = url + '/thank-you-for-your-interest';
 		} else if(e.detail.contactFormId == 172 || e.detail.contactFormId == 30976) {
 			location = url + '/thank-you-for-contacting-us';
+		} else if(e.detail.contactFormId == 37334) {
+			location = url + '/thank-you-for-applying-job';
 		}
 	  }, false);
 	</script>
 	
-	<!-- Download PDF from fet a free copy pdf -->
-	<!--<script>
-	jQuery(document).ready(function(){
-		var siteurl = '<?php echo THEME_PATH; ?>images/Cygnature_a_fresh_and_innovative_approach_to_digital_signing_Deep_Analysis_Vignette.pdf';
-		if (siteurl) {
-			document.addEventListener('wpcf7mailsent', function(e) {
-				if (e.detail.contactFormId == 24597) {
-				//if (e.detail.contactFormId == 22243) {  //local
-					var pdfurl = siteurl ? siteurl : '';
-
-					//e.stopPropagation();
-					// You can place extra checks here.
-					var tab = window.open(pdfurl, '_blank');
-					tab.focus();
-					location = url + '/thank-you-for-your-interest';
-				}
-			}, false);
-		}
-	});
-	</script>-->
 		
 <?php wp_footer(); ?>
 

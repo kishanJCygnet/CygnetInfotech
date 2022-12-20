@@ -909,7 +909,7 @@ function cf7_validate_api($cf7, &$abort, $submission) {
 		} else {
 			$response = json_decode($response,true);
 			$response['msg'];
-			$applyid =  $response['applyId'];
+			echo $applyid =  $response['applyId'];
 			
 			if($applyid != ''){
 				/* File copied from one folder to other folder */
