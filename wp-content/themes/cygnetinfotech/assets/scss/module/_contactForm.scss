@@ -39,10 +39,12 @@
        box-shadow: 0px 3px 6px #0000001A;
        border: 0.5px solid rgba(225, 225, 225,0.15);
        border-radius: 10px;
+       color: #fff;
    
 
        &:focus{
         outline: 0;
+        color: #fff;
        }
     
     }
@@ -64,6 +66,11 @@
 }
 .contact-form-content {
     background-color: #F3FBFF;
+    select{
+        option{
+            color: #000;            
+        }
+    }
     .contact-form{
         .container{
             width: 1200px;
@@ -83,6 +90,7 @@
     display: inline-block;
     bottom: 11px;
     font-size: 13px !important;
+    color: #b10000 !important;
 }
 .wpcf7-form-control-wrap.profession-type {
     .wpcf7-not-valid-tip {
@@ -247,7 +255,7 @@ option {
     color:#fff;
 }
 .whatup-check > span:last-child a{
-    color: #80DBD1;
+    color: #3cb4e7;
 }
 .whatup-check > span:last-child a:hover{
     color: #0C3761;
@@ -313,6 +321,21 @@ input[type=checkbox]:checked:after {
                 color: #393939;
             }
         }
+    }
+}
+.file-input-group{
+
+    .input-group-text {
+        position: absolute;
+        top: 5px;
+        left: 3px;
+        bottom: 0px;
+        height: 45px;
+        display: flex;
+        border-radius: 10px !important;
+        background-color: #fff;
+        color: #000;
+        font-weight: bold;
     }
 }
 
