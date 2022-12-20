@@ -85,13 +85,13 @@ body {
   }
 
   input[type="submit"] {
-    border: 1px solid #80dbd1 !important;
+    border: 1px solid #3cb4e7 !important;
     border-radius: 10px !important;
-    background-color: #80dbd1 !important;
+    background-color: #3cb4e7 !important;
     color: #fff !important;
     &:hover {
       background-color: #fff !important;
-      color: #80dbd1 !important;
+      color: #3cb4e7 !important;
     }
   }
   .release-note-content,
@@ -1571,5 +1571,42 @@ br{
         font-size: 16px;
       }
     }
+  }
+}
+
+.pagination{
+  border-top: 0;
+  display: flex;
+  justify-content: center !important;
+  width: 650px;
+  border-top: 0 !important;
+
+  a,span{
+    font-size: 32px;
+    font-weight: 500;
+  }
+  a{
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    color: #0d3862;
+    font-size: 22px;
+  }
+ 
+  span{
+    i{
+      background-image: url(images/angle-double-left.svg);
+      display: inline-block;
+      width: 22px;
+      height: 19px;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+  .pagination-lnk.current-page{
+    background-color: rgb(60 180 231 / 26%);
   }
 }
