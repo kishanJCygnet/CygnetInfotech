@@ -1239,9 +1239,9 @@ if ( ! class_exists( 'ES_Campaign_Admin' ) ) {
 
 				$campaign_data['body'] = $campaign_body;
 
-				return $campaign_data;
 			}
-
+			
+			return $campaign_data;
 		}
 
 		/**
@@ -1504,7 +1504,7 @@ if ( ! class_exists( 'ES_Campaign_Admin' ) ) {
 				$ignore_last_run        = true;
 				$campaign_id 			= $campaign_data['id'];
 				$campaign_body 			= $campaign_data['body'];
-				$post_ids               = ES_Post_Digest::get_post_id_for_post_digest( $campaign_id, $ignore_stored_post_ids, $ignore_last_run );
+				$post_ids               = ES_Post_Digest::get_matching_post_ids( $campaign_id, $ignore_stored_post_ids, $ignore_last_run );
 				$campaign_body          = ES_Post_Digest::process_post_digest_template( $campaign_body, $post_ids );
 				$campaign_data['body']  = $campaign_body;
 			}

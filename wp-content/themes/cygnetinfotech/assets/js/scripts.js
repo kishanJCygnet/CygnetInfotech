@@ -382,12 +382,12 @@ var CYGNET = {
 			
 			if (jQuery(".in-the-news-page-listing, .ourleaders-page-listing, .whitepaper-page-listing").length > 0){
 				jQuery('html, body').animate({
-					scrollTop: jQuery(".in-the-news-page-listing, .ourleaders-page-listing, .whitepaper-page-listing").offset().top - headerHeight - 120
+					scrollTop: jQuery(".in-the-news-page-listing, .ourleaders-page-listing, .whitepaper-page-listing").offset().top - headerHeight - 150
 				}, 700);
 			}
 			else{
 				jQuery('html, body').animate({
-					scrollTop: jQuery(".blog-page-listing, .webinar-page-listing, .ebook-page-listing, .casestudy-page-listing, .resources-page-listing").offset().top - headerHeight - 120
+					scrollTop: jQuery(".blog-page-listing, .webinar-page-listing, .ebook-page-listing, .casestudy-page-listing, .resources-page-listing").offset().top - headerHeight - 150
 				}, 700);
 			}
 			CYGNET.researchAnnouncementsListing.processFieldData(objPageNumber);
@@ -460,7 +460,7 @@ var CYGNET = {
 			};
 			var headerHeight = jQuery("header").outerHeight();
 			jQuery('html, body').animate({
-				scrollTop: jQuery(".press-release-page-listing").offset().top - headerHeight - 120
+				scrollTop: jQuery(".press-release-page-listing").offset().top - headerHeight - 150
 			}, 700);
 			CYGNET.pressReleaseList.processFieldData(objPageNumber);
 		}

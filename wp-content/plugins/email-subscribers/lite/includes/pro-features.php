@@ -282,13 +282,14 @@ function ig_es_add_settings_tabs( $es_settings_tabs ) {
  */
 function ig_es_add_upsale( $fields ) {
 
+	$general_fields = $fields['general'];
+
 	if ( ES()->can_upsell_features( array( 'lite', 'starter', 'trial' ) ) ) {
 
 		$utm_args = array(
 			'utm_medium' => 'track_clicks',
 		);
 
-		$general_fields = $fields['general'];
 
 		$premium_url = ES_Common::get_utm_tracking_url( $utm_args );
 		// General Settings
@@ -306,7 +307,48 @@ function ig_es_add_upsale( $fields ) {
 				'upgrade_title' => __( 'Track key insight behaviour with MAX', 'email-subscribers' ),
 				'upgrade_desc'  => __( 'Enable Link Tracking, UTM tracking and understand customer behavior to plan your next campaign accordingly.', 'email-subscribers' ),
 			),
+		);
 
+		$general_fields = ig_es_array_insert_after( $general_fields, 'ig_es_track_email_opens', $general_settings_field );
+
+		if ( ES()->can_upsell_features( array( 'lite', 'starter' ) ) ) {
+
+			$track_utm = array(
+				'ig_es_track_utm' => array(
+					'id'         => 'ig_es_track_utm_p',
+					'name'       => __( 'Google Analytics UTM tracking', 'email-subscribers' ),
+					'info'       => __( 'Do you want to automatically add campaign tracking parameters in emails to track performance in Google Analytics? (We recommend keeping it enabled)', 'email-subscribers' ),
+					'type'       => 'checkbox',
+					'default'    => 'no',
+					'is_premium' => true,
+					'link'       => ES_Common::get_utm_tracking_url( array(
+						'url'=>'https://www.icegram.com/documentation/how-to-add-utm-parameters-to-email/',
+						'utm_medium' => 'utm_tracking' ) ),
+					'disabled'   => true,
+				),
+				'ig_es_summary_automation' => array(
+					'id'         => 'summary_automation',
+					'name'       => __( 'Weekly summary', 'email-subscribers' ),
+					'info'       => __( 'Would you like to receive an automated weekly summary?', 'email-subscribers' ),
+					'type'       => 'checkbox',
+					'default'    => 'no',
+					'is_premium' => true,
+					'link'       => ES_Common::get_utm_tracking_url( array(
+						'url'		 => 'https://www.icegram.com/documentation/enabling-and-understanding-the-weekly-summary-report-in-the-email-subscribers/',
+						'utm_medium' => 'summary_automation' ) ),
+					'disabled'   => true,
+				),
+
+			);
+
+			$general_fields = ig_es_array_insert_after( $general_fields, 'ig_es_track_link_click', $track_utm );
+		}
+		
+	}
+
+	if ( ES()->can_upsell_features( array( 'lite', 'trial' ) ) ) {
+
+		$starter_general_setting_fields = array(
 			'ig_es_intermediate_unsubscribe_page' => array(
 				'id'         => 'ig_es_intermediate_unsubscribe_page_p',
 				'name'       => __( 'Allow user to select list(s) while unsubscribing', 'email-subscribers' ),
@@ -350,44 +392,7 @@ function ig_es_add_upsale( $fields ) {
 			),
 		);
 
-		$general_fields = ig_es_array_insert_after( $general_fields, 'ig_es_track_email_opens', $general_settings_field );
-
-		if ( ES()->can_upsell_features( array( 'lite', 'starter' ) ) ) {
-
-			$track_utm = array(
-				'ig_es_track_utm' => array(
-					'id'         => 'ig_es_track_utm_p',
-					'name'       => __( 'Google Analytics UTM tracking', 'email-subscribers' ),
-					'info'       => __( 'Do you want to automatically add campaign tracking parameters in emails to track performance in Google Analytics? (We recommend keeping it enabled)', 'email-subscribers' ),
-					'type'       => 'checkbox',
-					'default'    => 'no',
-					'is_premium' => true,
-					'link'       => ES_Common::get_utm_tracking_url( array(
-						'url'=>'https://www.icegram.com/documentation/how-to-add-utm-parameters-to-email/',
-						'utm_medium' => 'utm_tracking' ) ),
-					'disabled'   => true,
-				),
-				'ig_es_summary_automation' => array(
-					'id'         => 'summary_automation',
-					'name'       => __( 'Weekly summary', 'email-subscribers' ),
-					'info'       => __( 'Would you like to receive an automated weekly summary?', 'email-subscribers' ),
-					'type'       => 'checkbox',
-					'default'    => 'no',
-					'is_premium' => true,
-					'link'       => ES_Common::get_utm_tracking_url( array(
-						'url'		 => 'https://www.icegram.com/documentation/enabling-and-understanding-the-weekly-summary-report-in-the-email-subscribers/',
-						'utm_medium' => 'summary_automation' ) ),
-					'disabled'   => true,
-				),
-
-			);
-
-			$general_fields = ig_es_array_insert_after( $general_fields, 'ig_es_track_link_click', $track_utm );
-		}
-		$fields['general'] = $general_fields;
-	}
-
-	if ( ES()->can_upsell_features( array( 'lite', 'trial' ) ) ) {
+		$general_fields = ig_es_array_insert_after( $general_fields, 'ig_es_track_link_click', $starter_general_setting_fields );
 
 		$utm_args = array(
 			'url' => 'https://www.icegram.com/documentation/how-do-i-enable-captcha/',
@@ -468,6 +473,8 @@ function ig_es_add_upsale( $fields ) {
 
 		$fields['security_settings'] = array_merge( $fields['security_settings'], $track_ip_address );
 	}
+
+	$fields['general'] = $general_fields;
 
 	return $fields;
 }

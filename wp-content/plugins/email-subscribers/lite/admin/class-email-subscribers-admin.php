@@ -180,6 +180,7 @@ class Email_Subscribers_Admin {
 				'broadcast_subject_empty_message' => __( 'Please add a broadcast subject before saving.', 'email-subscribers' ),
 				'campaign_saved_message'          => __( 'Campaign saved successfully.', 'email-subscribers' ),
 				'campaign_error_message'          => __( 'An error has occured while saving the campaign. Please try again later.', 'email-subscribers' ),
+				'campaign_preivew_error_message'  => __( 'An error has occured while previewing the campaign. Please try again later.', 'email-subscribers' ),
 				'campaign_subject_empty_message'  => __( 'Please add a campaign subject before saving.', 'email-subscribers' ),
 				'empty_template_message'          => __( 'Please add email body.', 'email-subscribers' ),
 				'remove_conditions_message'       => __( 'Do you really like to remove all conditions?', 'email-subscribers' ),

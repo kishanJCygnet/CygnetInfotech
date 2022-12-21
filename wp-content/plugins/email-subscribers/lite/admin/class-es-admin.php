@@ -841,7 +841,7 @@ if ( ! class_exists( 'ES_Admin' ) ) {
 				$ignore_last_run        = true;
 				$template_id 			= $template_data['id'];
 				$template_body 			= $template_data['body'];
-				$post_ids               = ES_Post_Digest::get_post_id_for_post_digest( $template_id, $ignore_stored_post_ids, $ignore_last_run );
+				$post_ids               = ES_Post_Digest::get_matching_post_ids( $template_id, $ignore_stored_post_ids, $ignore_last_run );
 				$template_body          = ES_Post_Digest::process_post_digest_template( $template_body, $post_ids );
 				$template_data['body']  = $template_body;
 			}
