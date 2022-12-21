@@ -418,106 +418,106 @@ jQuery(document).ready(function () {
 
 var controller = new ScrollMagic.Controller();
 
-var timelinedrop = new TimelineMax();
-var tween1 = TweenMax.to(".menu-section .drops", 0.5, {
-  scale: 1,
-  y: 320,
-  opacity: 1,
-  ease: Linear.easeNone,
-});
-var tween2 = TweenMax.to(".menu-section .place-work-center", 1, {
-  scale: 1,
-  opacity: 1,
-  ease: Sine.easeOut,
-  delay: 1.5,
-});
+// var timelinedrop = new TimelineMax();
+// var tween1 = TweenMax.to(".menu-section .drops", 0.5, {
+//   scale: 1,
+//   y: 320,
+//   opacity: 1,
+//   ease: Linear.easeNone,
+// });
+// var tween2 = TweenMax.to(".menu-section .place-work-center", 1, {
+//   scale: 1,
+//   opacity: 1,
+//   ease: Sine.easeOut,
+//   delay: 1.5,
+// });
 
-var menuitem1 = TweenMax.to(".menu-section .menu li:first-child", 0.5, {
-  opacity: 1,
-  y: 20,
-  x: -400,
-  ease: Sine.easeOut,
-});
-var menuitem2 = TweenMax.to(".menu-section .menu li:nth-child(2)", 0.2, {
-  opacity: 1,
-  y: 170,
-  x: -50,
-  ease: Sine.easeOut,
-});
-var menuitem3 = TweenMax.to(".menu-section .menu li:nth-child(3)", 0.3, {
-  opacity: 1,
-  y: 20,
-  x: 300,
-  ease: Sine.easeOut,
-});
-var menuitem4 = TweenMax.to(".menu-section .menu li:nth-child(4)", 0.2, {
-  opacity: 1,
-  y: 270,
-  x: -500,
-  ease: Sine.easeOut,
-});
-var menuitem5 = TweenMax.to(".menu-section .menu li:nth-child(5)", 0.5, {
-  opacity: 1,
-  y: 370,
-  x: -200,
-  ease: Sine.easeOut,
-});
-var menuitem6 = TweenMax.to(".menu-section .menu li:nth-child(6)", 0.4, {
-  opacity: 1,
-  y: 344,
-  x: 172,
-  ease: Sine.easeOut,
-});
-var menuitem7 = TweenMax.to(".menu-section .menu li:nth-child(7)", 0.7, {
-  opacity: 1,
-  y: 270,
-  x: 400,
-  ease: Sine.easeOut,
-});
-var menuitem8 = TweenMax.to(".menu-section .menu li:nth-child(8)", 0.4, {
-  opacity: 1,
-  y: 490,
-  x: -450,
-  ease: Sine.easeOut,
-});
-var menuitem9 = TweenMax.to(".menu-section .menu li:nth-child(9)", 0.7, {
-  opacity: 1,
-  y: 550,
-  x: -50,
-  ease: Sine.easeOut,
-});
-var menuitem10 = TweenMax.to(".menu-section .menu li:nth-child(10)", 0.3, {
-  opacity: 1,
-  y: 510,
-  x: 450,
-  ease: Sine.easeOut,
-});
+// var menuitem1 = TweenMax.to(".menu-section .menu li:first-child", 0.5, {
+//   opacity: 1,
+//   y: 20,
+//   x: -400,
+//   ease: Sine.easeOut,
+// });
+// var menuitem2 = TweenMax.to(".menu-section .menu li:nth-child(2)", 0.2, {
+//   opacity: 1,
+//   y: 170,
+//   x: -50,
+//   ease: Sine.easeOut,
+// });
+// var menuitem3 = TweenMax.to(".menu-section .menu li:nth-child(3)", 0.3, {
+//   opacity: 1,
+//   y: 20,
+//   x: 300,
+//   ease: Sine.easeOut,
+// });
+// var menuitem4 = TweenMax.to(".menu-section .menu li:nth-child(4)", 0.2, {
+//   opacity: 1,
+//   y: 270,
+//   x: -500,
+//   ease: Sine.easeOut,
+// });
+// var menuitem5 = TweenMax.to(".menu-section .menu li:nth-child(5)", 0.5, {
+//   opacity: 1,
+//   y: 370,
+//   x: -200,
+//   ease: Sine.easeOut,
+// });
+// var menuitem6 = TweenMax.to(".menu-section .menu li:nth-child(6)", 0.4, {
+//   opacity: 1,
+//   y: 344,
+//   x: 172,
+//   ease: Sine.easeOut,
+// });
+// var menuitem7 = TweenMax.to(".menu-section .menu li:nth-child(7)", 0.7, {
+//   opacity: 1,
+//   y: 270,
+//   x: 400,
+//   ease: Sine.easeOut,
+// });
+// var menuitem8 = TweenMax.to(".menu-section .menu li:nth-child(8)", 0.4, {
+//   opacity: 1,
+//   y: 490,
+//   x: -450,
+//   ease: Sine.easeOut,
+// });
+// var menuitem9 = TweenMax.to(".menu-section .menu li:nth-child(9)", 0.7, {
+//   opacity: 1,
+//   y: 550,
+//   x: -50,
+//   ease: Sine.easeOut,
+// });
+// var menuitem10 = TweenMax.to(".menu-section .menu li:nth-child(10)", 0.3, {
+//   opacity: 1,
+//   y: 510,
+//   x: 450,
+//   ease: Sine.easeOut,
+// });
 
-timelinedrop
-  .add(tween1)
-  .add(tween2)
-  .add(menuitem1)
-  .add(menuitem2)
-  .add(menuitem3)
-  .add(menuitem4)
-  .add(menuitem5)
-  .add(menuitem6)
-  .add(menuitem7)
-  .add(menuitem8)
-  .add(menuitem9)
-  .add(menuitem10);
+// timelinedrop
+//   .add(tween1)
+//   .add(tween2)
+//   .add(menuitem1)
+//   .add(menuitem2)
+//   .add(menuitem3)
+//   .add(menuitem4)
+//   .add(menuitem5)
+//   .add(menuitem6)
+//   .add(menuitem7)
+//   .add(menuitem8)
+//   .add(menuitem9)
+//   .add(menuitem10);
 // create a scene
 new ScrollMagic.Scene({
   triggerElement: ".menu-section",
-  triggerHook: 0.6,
+  triggerHook:1,
   reverse: false,
 }) // pins the element for the the scene's duration
-  .setTween(timelinedrop)
+  // .setTween(timelinedrop)
   // .on("enter", function (event) {
   //   jQuery(".menu-section .drops").delay("slow").fadeOut();
   //   jQuery("#vd1")[0].push();
   // })
-  .set
+  .addIndicators()
   .setClassToggle(".menu-section", "show-drop")
   .addTo(controller); // assign the scene to the controller
 
