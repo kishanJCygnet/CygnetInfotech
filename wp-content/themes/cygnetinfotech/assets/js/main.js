@@ -251,31 +251,31 @@ setInterval(function () {
   next.addClass("active animate__animated animate__fadeIn");
 }, 5000);
 
-jQuery(window).scroll(function () {
-  var scroll = jQuery(window).scrollTop();
+// jQuery(window).scroll(function () {
+//   var scroll = jQuery(window).scrollTop();
 
-  if (scroll >= 300) {
-    jQuery("#contact_us").addClass("shake-btn");
-    setTimeout(function () {
-      jQuery("#contact_us").removeClass("shake-btn");
-    }, 10000);
-  } else if (scroll >= 600) {
-    jQuery("#contact_us").addClass("shake-btn");
-    setTimeout(function () {
-      jQuery("#contact_us").removeClass("shake-btn");
-    }, 10000);
-  } else if (scroll >= 900) {
-    jQuery("#contact_us").addClass("shake-btn");
-    setTimeout(function () {
-      jQuery("#contact_us").removeClass("shake-btn");
-    }, 10000);
-  } else if (scroll >= 1200) {
-    jQuery("#contact_us").addClass("shake-btn");
-    setTimeout(function () {
-      jQuery("#contact_us").removeClass("shake-btn");
-    }, 10000);
-  }
-});
+//   if (scroll >= 300) {
+//     jQuery("#contact_us").addClass("shake-btn");
+//     setTimeout(function () {
+//       jQuery("#contact_us").removeClass("shake-btn");
+//     }, 10000);
+//   } else if (scroll >= 600) {
+//     jQuery("#contact_us").addClass("shake-btn");
+//     setTimeout(function () {
+//       jQuery("#contact_us").removeClass("shake-btn");
+//     }, 10000);
+//   } else if (scroll >= 900) {
+//     jQuery("#contact_us").addClass("shake-btn");
+//     setTimeout(function () {
+//       jQuery("#contact_us").removeClass("shake-btn");
+//     }, 10000);
+//   } else if (scroll >= 1200) {
+//     jQuery("#contact_us").addClass("shake-btn");
+//     setTimeout(function () {
+//       jQuery("#contact_us").removeClass("shake-btn");
+//     }, 10000);
+//   }
+// });
 // jQuery('.testimonial-slider > li:first-child').addClass('active');
 // setInterval(function()
 // {
@@ -488,7 +488,7 @@ var menuitem9 = TweenMax.to(".menu-section .menu li:nth-child(9)", 0.7, {
 });
 var menuitem10 = TweenMax.to(".menu-section .menu li:nth-child(10)", 0.3, {
   opacity: 1,
-  y: 490,
+  y: 510,
   x: 450,
   ease: Sine.easeOut,
 });
@@ -513,10 +513,11 @@ new ScrollMagic.Scene({
   reverse: false,
 }) // pins the element for the the scene's duration
   .setTween(timelinedrop)
-  .on("enter", function (event) {
-    jQuery(".menu-section .drops").delay("slow").fadeOut();
-    jQuery("#vd1")[0].play();
-  })
+  // .on("enter", function (event) {
+  //   jQuery(".menu-section .drops").delay("slow").fadeOut();
+  //   jQuery("#vd1")[0].push();
+  // })
+  .set
   .setClassToggle(".menu-section", "show-drop")
   .addTo(controller); // assign the scene to the controller
 
@@ -601,7 +602,7 @@ $(document).ready(function () {
     $(this).remove();
   });
 
-  $("a[href*=#]").bind("click", function (e) {
+  $("a[href*=\\#]").bind("click", function (e) {
     e.preventDefault(); // prevent hard jump, the default behavior
     var target = $(this).attr("href"); // Set the target as variable
     // perform animated scrolling by getting top-position of target-element and set it as scroll target
@@ -609,7 +610,7 @@ $(document).ready(function () {
       .stop()
       .animate(
         {
-          scrollTop: $(target).offset().top,
+          scrollTop: $(target).offset().top
         },
         600,
         function () {
@@ -634,11 +635,13 @@ $(window)
       }
     });
 
-    $stikysop = $(".osp-sticky-section");
-    if ($stikysop.position().top <= scrollDistance) {
-      $(".osp-sticky-section").addClass("fix-sticky");
-    } else {
-      $(".osp-sticky-section").removeClass("fix-sticky");
-    }
+
+    $(".osp-sticky-section").each(function (i) {
+        if ($(this).position().top <= scrollDistance) {
+          $(this).addClass("fix-sticky");
+        } else {
+          $(this).removeClass("fix-sticky");
+        }
+      });
   })
   .scroll();

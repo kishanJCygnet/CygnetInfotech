@@ -675,6 +675,8 @@ video {
   // background-color: #E4F8FF;
   // background-blend-mode: multiply;
   height: 1030px;
+  overflow-y: visible;
+  overflow-x: clip;
   video {
     opacity: 0.6;
   }
@@ -759,7 +761,7 @@ video {
   video {
     width: 100%;
     position: absolute;
-    top: -350px;
+    top: 0px;
   }
 }
 .menu {
@@ -1618,7 +1620,7 @@ br{
   height: 0;
 
   .home-sticky-inner{
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     position: relative;
     top: 100px;
