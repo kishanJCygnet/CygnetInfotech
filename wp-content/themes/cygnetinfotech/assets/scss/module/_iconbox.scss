@@ -199,6 +199,70 @@
         }
     }
 }
+.tce-about-icon-box{
+     position: sticky;
+     top: 35px;
+     margin-bottom: 150px;
+     z-index: 4;
+     background-color: transparent !important;
+    .icon-box-list {
+        width: 1350px;
+        margin: auto;
+        background-color: rgb(255 255 255 / 9%);
+        border-radius: 80px;
+        border: 0px;
+        background-color: transparent;
+        padding: 10px;
+        .icon-box {
+            text-align: center;
+            background-color: transparent;
+            border: 0;
+            overflow: visible;
+            height: auto;
+            h3 {
+                font-weight: normal;
+                color: #0D3461;
+                letter-spacing: 2px;
+                font-size: 16px;
+                margin-top: 20px;
+                font-weight: 500;
+            }
+            .icon {
+                height: 190px;
+                width: 190px;
+                position: static !important;
+                margin: auto;
+                background-color: #fff;
+                border-radius: 50%;
+                svg{
+                    height: 190px;
+                    width: 190px;
+                }
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                height: 1px;
+                left: calc(55% + 76px);
+                top: 37%;
+                width: calc(100% - 82px);
+                border-bottom: 1px dashed rgb(131 123 123 / 37%);
+            }
+            &::before {
+                display: none;
+            }
+        }
+        & > div {
+            &:last-child {
+                .icon-box {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
 .brand-purpose {
     .icon-box-list {
         .icon-box {
@@ -822,4 +886,7 @@
             }
         }   
     }
+}
+.tce-about-icon-box{
+    background-color: #fff;
 }
