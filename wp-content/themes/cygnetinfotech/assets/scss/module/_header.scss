@@ -1,4 +1,5 @@
 body{
+
 //  Top bar
 .text-blue{
     color: $PrussianBlue;
@@ -306,7 +307,7 @@ input[type="checkbox"]:after {
 
 // header
 header {
-    position: static;
+    position: relative;
     z-index: 999;
     top: 0;
     left: 0;
