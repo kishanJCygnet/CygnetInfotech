@@ -6,7 +6,7 @@ Tags: email marketing, subscription, autoresponder, post notification, welcome e
 Requires at least: 3.9
 Tested up to: 6.1.1
 Requires PHP: 5.6
-Stable tag: 5.5.3
+Stable tag: 5.5.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses
 
@@ -310,11 +310,17 @@ Refer [here](https://www.icegram.com/documentation/es-faq/).
 
 == Upgrade Notice ==
 
-= 5.5.3 =
+= 5.5.4 =
 
-Fix: CSV injection while exporting Subscribers
+* Fix: Preview was not working in post digest [MAX]
+* Fix: Comment/order checkout opt-in field setting not visible [PRO]
 
 == Changelog ==
+
+**5.5.4 (21.12.2022)**
+
+* Fix: Preview was not working in post digest [MAX]
+* Fix: Comment/order checkout opt-in field setting not visible [PRO]
 
 **5.5.3 (14.12.2022)**
 

@@ -566,6 +566,11 @@ function remove_post_type_page_from_search() {
     global $wp_post_types;
     $wp_post_types['testimonials']->exclude_from_search = true;
     $wp_post_types['case_studies']->exclude_from_search = true;
+    $wp_post_types['webinars']->exclude_from_search = true;
+    $wp_post_types['in_the_news']->exclude_from_search = true;
+    $wp_post_types['ebooks']->exclude_from_search = true;
+    $wp_post_types['whitepapers']->exclude_from_search = true;
+    $wp_post_types['post']->exclude_from_search = true;
 }
 add_action('init', 'remove_post_type_page_from_search');
 
