@@ -346,12 +346,12 @@ function get_casestudy_listing_data()
 			  <div class="insights-card card wow fadeInUp" data-wow-delay="<?php echo $s; ?>s" data-wow-offset="50">
 				<div class="insights-content card-body">
 					<div class="client-details" <?php if ((has_post_thumbnail( $post->ID ) )) { ?>style="background-image:url('<?php echo $newsImage[0]; ?>')" <?php } ?> >
-          <span class="badge"><?php echo $category[0]->name; ?></span>
+						<span class="badge"><?php echo $category[0]->name; ?></span>
 					</div>
 					<div class="insight-in-content">
 						<span class="post-date-cls"><?php echo get_the_date( 'd F, Y', $post->ID ); ?></span>
 						<h2 class="slider-title">
-							<a href="<?php echo the_field('custom_url', $post->ID); ?>" target="_blank"><?php echo wp_trim_words(get_the_title(), 10, '...'); ?></a>										
+							<a href="<?php echo the_field('news_url', $post->ID); ?>" target="_blank"><?php echo wp_trim_words(get_the_title(), 10, '...'); ?></a>										
 						</h2>
 						<div class="short-decoration">
 						   <p class="p2">
@@ -363,7 +363,7 @@ function get_casestudy_listing_data()
 							<p>
 						</div>
 						<div class="action">
-							<a href="<?php echo the_field('custom_url', $post->ID); ?>" target="_blank">Read More <svg fill="none" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m13.7071 4.29289c-.3905-.39052-1.0237-.39052-1.4142 0-.3905.39053-.3905 1.02369 0 1.41422l5.2929 5.29289h-13.5858c-.55228 0-1 .4477-1 1s.44772 1 1 1h13.5858l-5.2929 5.2929c-.3905.3905-.3905 1.0237 0 1.4142s1.0237.3905 1.4142 0l7-7c.3905-.3905.3905-1.0237 0-1.4142z" fill="rgb(0,0,0)" fill-rule="evenodd"/></svg></a>
+							<a href="<?php echo the_field('news_url', $post->ID); ?>" target="_blank">Read More <svg fill="none" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m13.7071 4.29289c-.3905-.39052-1.0237-.39052-1.4142 0-.3905.39053-.3905 1.02369 0 1.41422l5.2929 5.29289h-13.5858c-.55228 0-1 .4477-1 1s.44772 1 1 1h13.5858l-5.2929 5.2929c-.3905.3905-.3905 1.0237 0 1.4142s1.0237.3905 1.4142 0l7-7c.3905-.3905.3905-1.0237 0-1.4142z" fill="rgb(0,0,0)" fill-rule="evenodd"/></svg></a>
 						</div>
 					</div>
 				</div>
