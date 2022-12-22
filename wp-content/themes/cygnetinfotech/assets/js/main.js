@@ -517,7 +517,6 @@ new ScrollMagic.Scene({
   //   jQuery(".menu-section .drops").delay("slow").fadeOut();
   //   jQuery("#vd1")[0].push();
   // })
-  .addIndicators()
   .setClassToggle(".menu-section", "show-drop")
   .addTo(controller); // assign the scene to the controller
 
