@@ -225,6 +225,9 @@
      margin-bottom: 150px;
      z-index: 4;
      background-color: transparent !important;
+     @include bp(sm-max){
+        margin-bottom: 10px; 
+     }
     .icon-box-list {
         width: 1350px;
         max-width: 100%;
@@ -290,9 +293,11 @@
                 border-bottom: 1px dashed rgb(131 123 123 / 37%);
                 @include bp(sm-max){
                     width: 1px;
-                    height: 100px;
+                    height: 40px;
                     border-bottom: 0;
                     border-right: 1px dashed rgb(131 123 123 / 37%);
+                    left: 50%;
+                    top: 87%;
                 }
             }
             &::before {
@@ -375,9 +380,16 @@
     .icon-box-list {
         & > div {
             width: 20%;
+            @include bp(md-max){
+                max-width: 25%;
+                flex: 0 0 25%;
+            }
         }
     }
     .icon-box {
+        @include bp(lg-max){
+            padding: 20px 10px;
+        }
         &::before {
             display: none;
         }
@@ -418,9 +430,16 @@
 }
 
 .circle-box-icon {
+    @include bp(sm-max){
+        padding-bottom: 0 !important;
+    }
+   
     .icon-box-list {
         text-align: center;
         margin-top: 40px;
+        @include bp(sm-max){
+            margin-top: 0px;
+        }
         & > div {
             &:first-child {
                 .icon-box {
@@ -500,6 +519,9 @@
                     width: 100%;
                     margin-top: 20px;
                 }
+                @include bp(sm-max){
+                    margin-top: 0px;
+                }
                 h3 {
                     color: #fff;
                     @include bp(md-max){
@@ -516,6 +538,10 @@
                     left: calc(50% - 20px);
                     position: static;
                     padding: 20px;
+                }
+                @include bp(sm-max){
+                    height: 100px;
+                    width: 100px;
                 }
 
                 svg {
@@ -553,6 +579,13 @@
                     width: 63px;
                     left: calc(50% + 93px);
                     top: 32%;
+                }
+                @include bp(sm-max){
+                    width: 50px;
+                    left: calc(50% - 32px);
+                    bottom: -29px;
+                    top: auto;
+                    transform: rotate(90deg);
                 }
             }
         }

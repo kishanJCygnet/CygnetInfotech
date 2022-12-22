@@ -103,6 +103,12 @@
             position: relative;
             border-radius: 104px;
             overflow: hidden;
+            @include bp(lg-max){
+                min-width: 470px;
+            }
+            @include bp(md-max){
+                min-width: 348px;
+            }
             &::after {
                 content: "";
                 position: absolute;
@@ -120,6 +126,12 @@
             min-width: calc(100% - 550px);
             padding-right: 65px;
             position: relative;
+            @include bp(lg-max){
+                min-width: calc(100% - 470px);
+            }
+            @include bp(md-max){
+                min-width: calc(100% - 348px);
+            }
         }
     }
 }
@@ -159,6 +171,9 @@
                 img {
                     height: 200px;
                     object-fit: cover;
+                    @include bp(md-max){
+                        height: 150px; 
+                    }
                 }
             }
         }
@@ -184,6 +199,12 @@
         border-radius: 0px;
         top: calc(50% - 59px);
         z-index: -1;
+        @include bp(lg-max){
+            top: calc(50% - 73px);
+        }
+        @include bp(md-max){
+            top: calc(50% - 116px);
+        }
     }
     .join-team-content {
         position: relative;
@@ -197,6 +218,9 @@
                     margin-bottom: 40px;    
                     font-size: 32px;
                     color: #fff;
+                    @include bp(md-max){
+                        font-size: 24px;
+                    }
                 }
                 &:last-child {
                     padding-left: 150px;
@@ -236,6 +260,9 @@
         padding-right: 25px;
         img{
             border-radius: 130px;
+            @include bp(lg-max){
+                border-radius: 90px;
+            }
         }
     }
     .col-left{
@@ -306,6 +333,9 @@
         overflow: hidden;
         border-radius: 55px;
         margin: 15px 0;
+        @include bp(md-max){
+            border-radius: 25px;
+        }
         .overlay {
             opacity: 0;
               background: transparent linear-gradient(180deg, rgba(65, 191, 231, 0.6) 0%, #0d3461 100%) 0% 0% no-repeat
@@ -321,6 +351,9 @@
             font-size: 15px;
             transition: .3s all linear;
             border-radius: 50px;
+            @include bp(md-max){
+                border-radius: 25px;
+            }
         }
         &:hover {
             .overlay {
@@ -342,6 +375,7 @@
                 .stack {
                     margin: 0;
                     z-index: 1;
+                    width: 100%;
                     &::after,
                     &::before {
                         display: none;
@@ -350,6 +384,7 @@
                         margin: 0;
                         border: 0;
                         box-shadow: none;
+                        width: 100%;
                     }
                 }
                 &::after {
@@ -373,10 +408,27 @@
                 margin: 0;
                 display: flex;
                 height: 230px;
+                @include bp(xl-max){
+                    height: 200px;
+                }
+                @include bp(md-max){
+                    width: 25%;
+                    padding: 10px;
+                    height: 165px;
+                }
+
                 img{
                     height: 200px;
                     object-fit: cover;
                     border-radius: 50px;
+                    @include bp(xl-max){
+                        height: 170px;
+                    }
+                    @include bp(md-max){                    
+                        height: 145px;
+                        border-radius: 25px;
+                    }
+    
                 }
             }
         }
