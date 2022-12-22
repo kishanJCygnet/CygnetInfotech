@@ -98,7 +98,7 @@ class ES_Drag_And_Drop_Editor {
 
 			$form_editor_data = array(
 				'lists' => $lists,
-				'i18n' => array(
+				'i18n'  => array(
 					'no_list_selected_message' => __( 'Please select list(s) in which contact will be subscribed.', 'email-subscribers' ),
 				),
 			);

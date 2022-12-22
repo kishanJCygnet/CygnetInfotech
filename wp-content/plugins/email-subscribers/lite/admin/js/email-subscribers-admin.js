@@ -1270,7 +1270,20 @@
 				let template_button = $('#view_campaign_preview_button');
 				$(template_button).parent().find('.es-send-success').hide();
 				$(template_button).parent().find('.es-send-error').hide();
-				ig_es_show_campaign_preview_in_popup();
+				let campaign_data = $('form#campaign_form').serialize();
+				jQuery(template_button).addClass('loading');
+				ig_es_save_campaign( campaign_data ).then( response => {
+					if (response.success) {
+						let response_data = response.data;
+						let campaign_id   = response_data.campaign_id;
+						$('#campaign_id').val( campaign_id );
+						ig_es_show_campaign_preview_in_popup();
+					} else {
+						alert( ig_es_js_data.i18n_data.campaign_preivew_error_message );
+					}
+				}, response => {
+					alert( ig_es_js_data.i18n_data.campaign_preivew_error_message );
+				});
 			});
 
 			$('#view_template_preview_button').on('click', function(){
@@ -3618,7 +3631,7 @@
 	let drafting_campaign = false;
 	function ig_es_draft_campaign( trigger_elem ) {
 
-		if( drafting_campaign){
+		if( drafting_campaign ){
 			return;
 		}
 
@@ -3641,43 +3654,41 @@
 		}
 
 		ig_es_sync_wp_editor_content();
+		let campaign_data = $(trigger_elem).closest('form').serialize();
 
-		let form_data = $(trigger_elem).closest('form').serialize();
-		// Add action to form data
-		form_data += '&action=ig_es_draft_campaign&security='  + ig_es_js_data.security;
-		jQuery.ajax({
+		ig_es_save_campaign( campaign_data ).then( response => {
+			if (response.success) {
+				if ( 'undefined' !== typeof response.data ) {
+					let response_data = response.data;
+					let campaign_id  = response_data.campaign_id;
+					$('#campaign_id').val( campaign_id );
+					if ( is_draft_bttuon || is_save_bttuon ) {
+						alert( ig_es_js_data.i18n_data.campaign_saved_message );
+					}
+				} else {
+					if ( is_draft_bttuon ) {
+						alert( ig_es_js_data.i18n_data.campaign_error_message );
+					}
+				}
+			} else {
+				alert( ig_es_js_data.i18n_data.ajax_error_message );
+			}
+		}, response => {
+			alert( ig_es_js_data.i18n_data.ajax_error_message );
+		});
+	}
+
+	function ig_es_save_campaign( campaign_data ) {
+		campaign_data += '&action=ig_es_draft_campaign&security='  + ig_es_js_data.security;
+		return jQuery.ajax({
 			method: 'POST',
 			url: ajaxurl,
-			data: form_data,
+			data: campaign_data,
 			dataType: 'json',
 			beforeSend: function() {
 				// Prevent submit button untill saving is complete.
 				$('#ig_es_campaign_submitted').addClass('opacity-50 cursor-not-allowed').attr('disabled','disabled');
-			},
-			success: function (response) {
-				if (response.success) {
-					if ( 'undefined' !== typeof response.data ) {
-						let response_data = response.data;
-						let campaign_id  = response_data.campaign_id;
-						$('#campaign_id').val( campaign_id );
-						if ( is_draft_bttuon || is_save_bttuon ) {
-							alert( ig_es_js_data.i18n_data.campaign_saved_message );
-						}
-					} else {
-						if ( is_draft_bttuon ) {
-							alert( ig_es_js_data.i18n_data.campaign_error_message );
-						}
-					}
-				} else {
-					alert( ig_es_js_data.i18n_data.ajax_error_message );
-				}
-			},
-			error: function (err) {
-				alert( ig_es_js_data.i18n_data.ajax_error_message );
 			}
-		}).always(function(){
-			drafting_campaign = false;
-			$('#ig_es_campaign_submitted').removeClass('opacity-50 cursor-not-allowed').removeAttr('disabled');
 		});
 	}
 
@@ -3786,8 +3797,7 @@ function ig_es_show_campaign_preview_in_popup() {
 		return;
 	}
 
-	let template_button = jQuery('#view_campaign_preview_button');
-	jQuery(template_button).addClass('loading');
+	
 	let form_data = jQuery('#view_campaign_preview_button').closest('form').serialize();
 	// Add action to form data
 	form_data += form_data + '&action=ig_es_get_campaign_preview&security='  + ig_es_js_data.security;
@@ -3817,7 +3827,7 @@ function ig_es_show_campaign_preview_in_popup() {
 			alert( ig_es_js_data.i18n_data.ajax_error_message );
 		}
 	}).done(function(){
-		jQuery(template_button).removeClass('loading');
+		jQuery('#view_campaign_preview_button').removeClass('loading');
 	});
 }
 
