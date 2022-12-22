@@ -3,7 +3,7 @@
     padding: 0;
     background-color: #0F3764;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     .banner-inner-content{
         background-size: cover;
         background-repeat: no-repeat;
@@ -16,6 +16,12 @@
             display: flex;
             align-items: center;
             padding-bottom: 60px;
+            @include bp(md-max){
+                min-height: 300px;
+            }
+            @include bp(sm-max){
+                min-height: 230px;
+            }
             .align-items-center{
                 justify-content: center;
             }
@@ -26,9 +32,13 @@
                 h3{
                     font-size: 20px;
                     width: 600px;
-                    margin: auto;
                     max-width: 100%;
+                    margin: auto;               
                     margin-top: 40px;
+                    @include bp(sm-max){
+                        width: 100%;
+                    }
+
                 }
             }
         }
@@ -197,19 +207,32 @@
         .banner-inner-content{
             padding-bottom: 50px;
             padding-top: 150px;
+            @include bp(xs-max){
+                padding-top: 70px;
+            }
         }
         .technology-move{
             position: absolute;
             top: -100px;
             left: 0;
             right: 0;
+            @include bp(xs-max){
+                top: -65px;
+            }
         }
         .text-content{
             h1{
                 font-size: 48px;
                 line-height: 1.0;
                 margin-bottom: 10px;
-            }
+                @include bp(sm-max){
+                    font-size: 38px;
+                    line-height: 1.4;               
+                 }
+                 @include bp(xs-max){
+                    font-size: 30px;
+                 }
+                }
             .btn{
                 padding: 8px 15px;
                 border-radius: 6px;
@@ -393,4 +416,5 @@
         }
     }
 }
+
 // ********************** End Banner Content ***************************************

@@ -18,9 +18,12 @@
         text-align: left;
         background-color: #fff;
         overflow: hidden;
+        @include bp(md-max) {
+            padding: 10px 15px 10px 30px;
+        }
         @include bp(xs-max) {
             padding: 15px;
-            text-align: center;
+            
         }
         .icon-box-title-content {
             margin-bottom: 15px;
@@ -81,6 +84,15 @@
         height: 100px;
     }
     .icon-box-list{
+        justify-content: center;
+        & > div{
+            @include bp(md-max){
+                width: 50%;
+            }
+            @include bp(xs-max){
+                width: 100%;
+            }
+        }
         .icon-box{
             position: relative;
             padding-bottom: 40px;
@@ -122,6 +134,9 @@
             font-size: 34px;
             text-shadow: 0px 0px 30px #3CB4E7;
             margin-bottom: 25px;
+            @include bp(sm-max){
+                font-size: 24px;
+            }
         }
     } 
     .icon-box-content{
@@ -164,6 +179,13 @@
                 top: 37%;
                 width: calc(100% - 129px);
                 border-bottom: 1px dashed #ffffff5e;
+                @include bp(sm-max){
+                    left: auto;
+                    top: 88%;
+                    width: 1px;
+                    height: 62px;
+                    border-right: 1px dashed rgba(255,255,255,.368627451)
+                }
             }
             &::before {
                 display: none;
@@ -199,26 +221,37 @@
         }
     }
 }
-.tce-about-icon-box{
-     position: sticky;
-     top: 35px;
+.tce-about-icon-box{    
      margin-bottom: 150px;
      z-index: 4;
      background-color: transparent !important;
     .icon-box-list {
         width: 1350px;
+        max-width: 100%;
         margin: auto;
         background-color: rgb(255 255 255 / 9%);
         border-radius: 80px;
         border: 0px;
         background-color: transparent;
-        padding: 10px;
+        padding: 10px;  
+        @include bp(xl-max) {
+            width: 1160px;
+        }     
+         @include bp(lg-max) {
+            width: 990px;
+        }    
+        & > div{
+            @include bp(sm-max) {
+                margin: 0;
+            }  
+        }
         .icon-box {
             text-align: center;
             background-color: transparent;
             border: 0;
             overflow: visible;
             height: auto;
+            padding-left: 10px;
             h3 {
                 font-weight: normal;
                 color: #0D3461;
@@ -234,9 +267,17 @@
                 margin: auto;
                 background-color: #fff;
                 border-radius: 50%;
+                @include bp(sm-max){
+                    width: 130px;
+                    height: 130px;
+                }
                 svg{
                     height: 190px;
                     width: 190px;
+                    @include bp(sm-max){
+                        width: 130px;
+                        height: 130px;
+                    }
                 }
             }
             &::after {
@@ -247,6 +288,12 @@
                 top: 37%;
                 width: calc(100% - 82px);
                 border-bottom: 1px dashed rgb(131 123 123 / 37%);
+                @include bp(sm-max){
+                    width: 1px;
+                    height: 100px;
+                    border-bottom: 0;
+                    border-right: 1px dashed rgb(131 123 123 / 37%);
+                }
             }
             &::before {
                 display: none;
@@ -267,6 +314,14 @@
     .icon-box-list {
         .icon-box {
             padding-left: 180px;
+            @include bp(md-max){
+                padding-left: 100px;
+            }
+            @include bp(sm-max){
+                padding-left: 0;
+                text-align: center;
+                padding-right: 0;
+            }
             &::before {
                 display: none;
             }
@@ -280,10 +335,22 @@
                 position: absolute;
                 left: 0;
                 top: 0;
+                @include bp(md-max){
+                    width: 80px;
+                    height: 80px;
+                }
+                @include bp(sm-max){
+                    width: 80px;
+                    height: 80px;
+                }
                 svg {
                     width: 60px;
                     height: 60px;
                     fill: #0d3461;
+                    @include bp(md-max){
+                        width: 40px;
+                        height: 40px;
+                    }
                     path {
                         fill: #0d3461;
                     }
@@ -359,18 +426,45 @@
                 .icon-box {
                     background-color: #89d0ee;
                     border: 1px solid #41bfe7;
+                    @include bp(md-max){
+                        background-color: transparent;
+                        border-color: transparent;
+                        .icon {
+                            background-color: #89d0ee;
+                            border: 1px solid #41bfe7;
+                            box-shadow: 0px 10px 15px #0000000d;
+                        }
+                    }
                 }
             }
             &:nth-child(2) {
                 .icon-box {
                     background-color: #168ec0;
                     border: 1px solid #0f7fa2;
+                    @include bp(md-max){
+                        background-color: transparent;
+                        border-color: transparent;
+                        .icon {
+                            background-color: #168ec0;
+                         border: 1px solid #0f7fa2;
+                            box-shadow: 0px 10px 15px #0000000d;
+                        }
+                    }
                 }
             }
             &:last-child {
                 .icon-box {
                     background-color: #163963;
                     border: 1px solid #062346;
+                    @include bp(md-max){
+                        background-color: transparent;
+                        border-color: transparent;
+                        .icon {
+                            background-color: #163963;
+                            border: 1px solid #062346;
+                            box-shadow: 0px 10px 15px #0000000d;
+                        }
+                    }
                     &::after {
                         content: "";
                         display: none;
@@ -390,23 +484,48 @@
             margin: auto;
             box-shadow: 0px 10px 15px #0000000d;
             overflow: visible;
+            @include bp(md-max){
+                height: 100%;
+                width: 100%;
+                box-shadow: none;
+            }
             &::before {
                 display: none;
             }
             .icon-box-title-content {
                 text-align: center;
                 margin-bottom: 0;
-                margin-top: 40px;
+                margin-top: 100px;
+                @include bp(md-max){
+                    width: 100%;
+                    margin-top: 20px;
+                }
                 h3 {
                     color: #fff;
+                    @include bp(md-max){
+                        color: #163963;
+                    }
                 }
             }
             .icon {
                 background-color: transparent;
                 position: ABSOLUTE;
                 top: calc(50% - 65px);
+                @include bp(md-max){
+                    top: calc(50% - 20px);
+                    left: calc(50% - 20px);
+                    position: static;
+                    padding: 20px;
+                }
+
                 svg {
                     fill: #fff;
+                    width: 80px;
+                    height: 80px;
+                    @include bp(md-max){
+                        width: 40px;
+                        height: 40px;
+                    }
                     path {
                         fill: #fff;
                     }
@@ -418,10 +537,23 @@
                 height: 24px;
                 left: calc(50% + 140px);
                 width: 155px;
+                top: 50%;
                 background-image: url(../../images/right_arrow-blue.svg);
                 z-index: 4;
                 background-repeat: no-repeat;
                 background-size: contain;
+                @include bp(xl-max){
+                    width: 115px;
+                }
+                @include bp(lg-max){
+                    width: 63px;
+                    left: calc(50% + 131px);
+                }
+                @include bp(md-max){
+                    width: 63px;
+                    left: calc(50% + 93px);
+                    top: 32%;
+                }
             }
         }
     }
@@ -581,16 +713,13 @@
         }
     }
 }
-
 .showlesscontent .SecSec,
 .showlesscontent .readLess {
     display: none;
 }
-
 .showmorecontent .readMore {
     display: none;
 }
-
 .readMore,
 .readLess {
     font-weight: 400;
@@ -620,7 +749,6 @@
 .showmorecontent .dot {
     display: none;
 }
-
 .talent-upskilling {
     .title-heading {
         position: relative;
@@ -855,6 +983,10 @@
             .icon{
                 margin-bottom: 30px;
                 position: relative;
+                @include bp(sm-max){
+                    width: 100%;
+                    height: auto;
+                }
                 &::before{
                     content: '';
                     position: absolute;
@@ -871,13 +1003,24 @@
                 display: flex;
                 flex-direction: column-reverse;
                 flex-wrap: wrap;
+                @include bp(sm-max){
+                    flex-direction: column;
+                }
                 .icon{
                     width: 100%;
                     margin-top: 30px;
                     margin-bottom: 0;
+                    @include bp(sm-max){
+                        margin-top: 0px;
+                        margin-bottom: 30px;
+                    }
                     &::before{
                         bottom: auto;
                         top: -19px;
+                        @include bp(sm-max){
+                            top: auto;
+                            bottom: -24px;
+                        }
                     }
                 }
                 .description{
