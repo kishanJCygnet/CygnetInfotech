@@ -14,19 +14,13 @@
     }
     .footer-container{
         // background: rgb(161 205 255 / 11%);
-        padding-top: 30px;
-        padding-bottom: 30px;
-        text-align: right;
-        @include bp(md-max) {
-            padding-top: 40px;
-            
-        }
+        text-align: right;       
         @include bp(sm-max) {
             padding-bottom: 0;
-            padding-top: 40px;
+     
         }
         .container{
-           
+           padding-top: 40px;
             @include bp(sm-max) {
                 background-color: rgb(31 72 117);
                 padding-bottom: 20px;

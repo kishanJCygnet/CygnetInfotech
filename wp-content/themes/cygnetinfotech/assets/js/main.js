@@ -635,13 +635,14 @@ $(window)
       }
     });
 
-
-    $(".osp-sticky-section").each(function (i) {
+    if($(window).width() > 767){
+      $(".osp-sticky-section").each(function (i) {
         if ($(this).position().top <= scrollDistance) {
           $(this).addClass("fix-sticky");
         } else {
           $(this).removeClass("fix-sticky");
         }
       });
+    }
   })
   .scroll();

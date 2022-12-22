@@ -431,6 +431,11 @@
         margin: auto;
         max-width: 100%;
         position: relative;
+        padding: 0 30px;
+        @include bp(sm-max){
+            padding: 0 0px !important;
+        }
+        
         &:after{
             content: '';
             position: absolute;
@@ -441,6 +446,9 @@
             background-color: #0f3764;
             left: 50%;
             z-index: 2;
+            @include bp(sm-max){
+                display: none;
+            }
         }
         .zick-zack-inner-content{
            
@@ -449,6 +457,18 @@
             margin: 0;
             position: relative;
             z-index: 3;
+            @include bp(sm-max){
+                width: 100%;
+                padding: 15px 0;
+            }
+            .in-content{
+                @include bp(sm-max){
+                    width: 100%;
+                    justify-content: center;
+                    text-align: center;
+                   
+                }
+            }
             
             .text-content{
                 position: relative;
@@ -457,6 +477,9 @@
                     font-size: 32px;
                     color: #0f3764;
                     margin-bottom: 20px;
+                    @include bp(sm-max){
+                        font-size: 24px;                        
+                    }
                 }
             }
             .icon{
@@ -470,20 +493,48 @@
                 position: absolute;
                 left: -125px;
                 z-index: 3;
+                @include bp(sm-max){
+                    position: static;
+                    margin-bottom: 20px;
+                    width: 75px;
+                    height: 75px;
+                    margin: auto;
+                    margin-bottom: 20px;
+                }
                 svg{
                     fill: #fff;
+                    width: 60px;
+                    height: 60px;
+                    @include bp(sm-max){
+                        width: 40px;
+                        height: 40px;
+                    }                  
+             
                     path{
                         fill: #fff;
+                        stroke: #fff !important;
                     }
                 }
             }
             &:nth-child(odd){
                 margin-left: auto;
                 padding-left: 70px;
+                @include bp(sm-max){
+                    padding-left: 0;
+                }
             }
             &:nth-child(even){
                 text-align: right;
                 padding-right: 70px;
+                @include bp(sm-max){
+                    padding-right: 0;
+                    
+                }
+                .in-content {
+                    .col-text{
+                        text-align: center;
+                    }
+                }
                 .icon{
                     left: auto;
                     right: -125px;

@@ -33,7 +33,10 @@ body {
   section {
     padding: 80px 0;
     @include bp(md-max) {
-      padding: 60px 0;
+      padding: 60px 15px;
+    }
+    @include bp(sm-max) {
+      padding: 50px 15px;
     }
     // @include bp(lg-max){
     //   padding: 30px 0;
@@ -235,7 +238,7 @@ body {
       font-size: 44px !important;
       margin-bottom: 50px;
       padding: 0 16px;
-      line-height: 50px;
+      line-height: 1.5;
       display: inline-block;
       position: relative;
       font-weight: bold;
@@ -701,6 +704,12 @@ video {
   @include bp(sm-max){
     height: 1350px;
   }
+  @include bp(xs-max){
+    height: 1210px;
+  }
+  @include bp(sxxs-max){
+    height: 1376px;
+  }
 
   &::before{
     content: "";
@@ -844,6 +853,10 @@ video {
    opacity: 0;
    visibility: hidden;
     width: 200px !important;
+    @include bp(xs-max){
+      width: 155px!important;
+      font-size: 14px;
+    } 
   }
 }
 .menu li {
@@ -861,13 +874,23 @@ video {
       top: -30px;
       bottom: -30px;
       right: -30px;
+      @include bp(sxxs-max){
+        left: -10px;
+      top: -10px;
+      bottom: -10px;
+      right: -10px; 
+      }
       .firsttext{
         display: none;
       }
       .secondtext{
         opacity: 1;
         visibility: visible;     
-        top: 50px;   
+        top: 50px;  
+        @include bp(xs-max){
+          width: 155px!important;
+          font-size: 14px;
+        } 
       }
     }
   }
@@ -878,6 +901,11 @@ video {
 .menu li:nth-child(9) {
   width: 180px;
   height: 180px;
+
+  @include bp(xs-max){
+    width: 150px;
+    height: 150px;
+  }
 }
 .menu li:nth-child(2),
 .menu li:nth-child(4),
@@ -886,14 +914,26 @@ video {
 .menu li:nth-child(10) {
   width: 165px;
   height: 165px;
+  @include bp(xs-max){
+    width: 135px;
+    height: 135px;
+  }
 }
 .menu li:nth-child(5) {
   width: 140px;
   height: 140px;
+  @include bp(xs-max){
+    width: 110px;
+    height: 110px;
+  }
 }
 .menu li:nth-child(7) {
   width: 200px;
   height: 200px;
+  @include bp(xs-max){
+    width: 170px;
+    height: 170px;
+  }
 }
 .menu li:nth-child(2) a {
   animation-delay: 1s;
@@ -924,6 +964,10 @@ video {
     left: -134px;
     top: 130px;
   }
+  @include bp(sxxs-max){
+    left: -46px;
+    top: 130px;
+  }
 }
 .menu li:nth-child(2){
   left: -50px;
@@ -934,6 +978,13 @@ video {
   }
   @include bp(sm-max){
     top: 329px;
+  }
+  @include bp(xs-max){
+    top: 298px;
+  }
+  @include bp(sxxs-max){
+    top: 367px;
+    left: -56px;
   }
 }
 .menu li:nth-child(3){
@@ -946,6 +997,14 @@ video {
   @include bp(sm-max){
     left: 129px;
     top: 133px;
+  }
+  @include bp(xs-max){
+    top: 127px;
+    left: 109px;
+  }
+  @include bp(sxxs-max){    
+    top: 259px;
+    left: 71px; 
   }
 }
 .menu li:nth-child(4){
@@ -963,6 +1022,14 @@ video {
       left: -145px;
       top: 482px;
     }
+    @include bp(xs-max){
+      left: -115px;
+      top: 440px;
+    }
+    @include bp(xxs-max){
+      left: 80px;
+      top: 464px;
+    }
 }
 .menu li:nth-child(5){
   left: -200px;
@@ -978,6 +1045,13 @@ video {
     top: 638px;
     left: 0px;
   }
+  @include bp(xs-max){
+    top: 581px;
+  }
+  @include bp(sxxs-max){
+    left: -49px;
+    top: 540px;
+  }
 }
 .menu li:nth-child(6){
   left: 172px;
@@ -991,6 +1065,14 @@ video {
   }
   @include bp(sm-max){
     left: 162px;
+  }
+  @include bp(xs-max){
+    left: 131px;
+    top: 459px;
+  }
+  @include bp(sxxs-max){
+    left: 80px;
+    top: 627px;
   }
 }
 .menu li:nth-child(7){
@@ -1008,6 +1090,13 @@ video {
     top: 758px;
     left: 105px;
   }
+  @include bp(xs-max){
+    top: 681px;
+  }
+  @include bp(sxxs-max){
+    top: 1039px;
+    left: 56px;
+  }
 }
 .menu li:nth-child(8){
   left: -450px;
@@ -1024,6 +1113,13 @@ video {
     top: 787px;
     left: -118px;
   }
+  @include bp(xs-max){
+    top: 702px;
+  }
+  @include bp(sxxs-max){
+    top: 702px;
+    left: -56px;
+  }
 }
 .menu li:nth-child(9){
   left: -50px;
@@ -1038,6 +1134,14 @@ video {
   @include bp(sm-max){
     left: 90px;
     top: 984px;
+  }
+  @include bp(xs-max){
+    left: 117px;
+    top: 895px;
+  }
+  @include bp(sxxs-max){  
+    left: 88px;
+    top: 826px;
   }
 }
 .menu li:nth-child(10){
@@ -1055,6 +1159,15 @@ video {
     left: -134px;
     top: 1005px;
   }
+  @include bp(xs-max){
+    left: -112px;
+    top: 887px;
+  }
+  @include bp(sxxs-max){
+    left: -63px;
+  top: 948px;
+  }
+
 }
 
 @-webkit-keyframes action1 {
@@ -1113,6 +1226,7 @@ video {
   .content-cn {
     text-align: center;
     width: 634px;
+    max-width: 100%;
     margin: auto;
     span {
       display: inline-block;
@@ -1123,6 +1237,10 @@ video {
       font-size: 14px;
       position: relative;
       text-align: center;
+      @include bp(sm-max){
+        padding: 20px 0;
+      }
+     
       i {
         position: absolute;
         left: 0;
@@ -1138,6 +1256,9 @@ video {
       font-size: 14px;
       border-radius: 10px;
       color: #41bfe7;
+      @include bp(sm-max){
+        line-height: 1.3;
+      }
       svg {
         width: 20px;
         height: 20px;
@@ -1149,12 +1270,22 @@ video {
     }
     & > span {
       background-color: rgba(255, 255, 255, 0.02);
+      @include bp(sm-max){
+        background-color: transparent;
+      }
       & > span {
         background-color: rgba(255, 255, 255, 0.02);
+          @include bp(sm-max){
+            background-color: transparent;
+          }
         & > span {
           background-color: rgba(255, 255, 255, 0.05);
+          @include bp(sm-max){
+            background-color: transparent;
+          }
           & > span {
             background-color: rgba(255, 255, 255, 0.07);
+
           }
         }
       }
@@ -1162,12 +1293,24 @@ video {
     &:hover {
       & > span {
         background-color: rgba(255, 255, 255, 0.08);
+        @include bp(sm-max){
+          background-color: transparent;
+        }
         & > span {
           background-color: rgba(255, 255, 255, 0.08);
+          @include bp(sm-max){
+            background-color: transparent;
+          }
           & > span {
             background-color: rgba(255, 255, 255, 0.1);
+            @include bp(sm-max){
+              background-color: transparent;
+            }
             & > span {
               background-color: rgba(255, 255, 255, 0.2);
+              @include bp(sm-max){
+                background-color: transparent;
+              }
             }
           }
         }
@@ -1312,6 +1455,9 @@ video {
 .shape-aw-top{
   position: relative;
   padding-top: 240px;
+  @include bp(md-max){
+    padding-top: 166px;
+  }
   .shape-top{
     position: absolute;
     top: 0;
@@ -1319,6 +1465,9 @@ video {
     right: 0;
     height: 203px;
     overflow: hidden;
+    @include bp(md-max){
+      height: 155px;
+    }
     &::after{
       content: '';
       position: absolute;
@@ -1598,6 +1747,12 @@ br{
     font-size: 13px;
     text-transform: none;
     z-index: 2;
+    @include bp(md-max){
+      top: -75px;
+    }
+    @include bp(sm-max){
+      top: -65px;
+    }
   }
 }
 .home-insight-cta{
@@ -1815,6 +1970,9 @@ br{
   top: 0px;
   z-index: 99;
   height: 0;
+  @include bp(md-max){
+    display: none;
+  }
 
   .home-sticky-inner{
     display: inline-flex;
@@ -1845,6 +2003,9 @@ br{
 }
 .osp-sticky-section{
   &.fix-sticky{
+    .tce-about-icon-box{
+      position: sticky;
+      top: 35px;
     .icon-box-title-content{
       display: none;
     }
@@ -1858,6 +2019,8 @@ br{
       }
     } 
   }
+   
+  }
 }
 .modal-dialog{
   .btn-close{
@@ -1868,5 +2031,14 @@ br{
     background-color: #fff;
     opacity: 1;
     top: 5px;
+  }
+}
+#whatwedo{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.stiky-osp-after-content{
+  @include bp(sm-max){
+    padding-bottom: 0;
   }
 }
