@@ -548,7 +548,7 @@ function get_resources_listing_data()
 							<span class="badge"><?php echo $category[0]->name .' / '. $display_cpt_title; ?></span>
 						</div>
 						<div class="insight-in-content">
-							<span class="post-date-cls"><?php echo get_the_date( 'd F, Y', $post->ID ); ?></span>
+							<!--<span class="post-date-cls"><?php echo get_the_date( 'd F, Y', $post->ID ); ?></span>-->
 							<h2 class="slider-title">
 								<a href="<?php echo the_field('custom_url', $post->ID); ?>" target="_blank"><?php echo wp_trim_words(get_the_title(), 10, '...'); ?></a>										
 							</h2>
