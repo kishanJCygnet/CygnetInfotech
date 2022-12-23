@@ -533,7 +533,9 @@
                 }
                 .in-content {
                     .col-text{
+                        @include bp(sm-max){
                         text-align: center;
+                        }
                     }
                 }
                 .icon{
@@ -641,7 +643,9 @@
                     }
                 }
                 .col-text{
-                    text-align: center;
+                    @include bp(sm-max){
+                        text-align: center;
+                     }                 
                 }
                 
         }

@@ -250,6 +250,8 @@
         border-radius: 0px;
         top: calc(50% - 59px);
         z-index: -1;
+        background-size: cover;
+        background-repeat: no-repeat;
         @include bp(lg-max){
             top: calc(50% - 73px);
         }
