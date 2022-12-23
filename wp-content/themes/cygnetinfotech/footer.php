@@ -67,41 +67,45 @@
 						</a>
 					</div>
 					<!-- Footer logo end -->
-					<div>
+					<div class="terms-condition">
 						<!-- social links begin -->
-						<div class="social-media mb-3">
+						<div class="social-media">
 							<span class="mb-md-0 fw-medium textPrimery">
 								<?php if (get_field('footer_inquiry_email', 'option')) : ?>
-									<span class=" textSecondry">Inquiry :</span> 
-									<a href="mailto:<?php echo the_field('footer_inquiry_email', 'option'); ?>"><?php echo the_field('footer_inquiry_email', 'option'); ?></a>
-									<span class="v-divider mx-2"></span>
+									<span class=" textSecondry">Inquiry :
+									<a href="mailto:<?php echo the_field('footer_inquiry_email', 'option'); ?>"><?php echo the_field('footer_inquiry_email', 'option'); ?></a></span> 
+									
 								<?php endif; ?>
 								<?php if (get_field('footer_support_email', 'option')) : ?>
-									<span class=" textSecondry">Support :</span> <a href="mailto:<?php echo the_field('footer_support_email', 'option'); ?>"><?php echo the_field('footer_support_email', 'option'); ?></a>
-									<span class="v-divider mx-2"></span>
+									<span class=" textSecondry">Support :<a href="mailto:<?php echo the_field('footer_support_email', 'option'); ?>"><?php echo the_field('footer_support_email', 'option'); ?></a></span> 
+									
 								<?php endif; ?>
 								<?php if (get_field('footer_phone_number', 'option')) : ?>
-									<span class=" textSecondry">Phone :</span> <a href="tel:<?php echo the_field('footer_phone_number', 'option'); ?>"><?php echo the_field('footer_phone_number', 'option'); ?></a>
+									<span class=" textSecondry">Phone : <a href="tel:<?php echo the_field('footer_phone_number', 'option'); ?>"><?php echo the_field('footer_phone_number', 'option'); ?></a></span>
 								<?php endif; ?>
 							</span>
 						</div>
 						<!-- social links end -->
 
 						<!-- Copyright and footer links begin -->
-						<div class="footer-links d-flex flex-wrap flex-column flex-md-row">
+						<div class="footer-links">
 							<address
-								class="copyright-text d-inline-flex mb-2 justify-content-center justify-content-md-end fw-medium">
-								Copyright – <?php echo date('Y'); ?> <?php echo the_field('copyright_text', 'option'); ?> </address>
+								class="copyright-text">
+								&#169; Copyright <?php echo date('Y'); ?> by <?php echo the_field('copyright_text', 'option'); ?> </address>
 							<div class="menu-footer-links-container">
 							<?php wp_nav_menu(array(
 								'theme_location'  => 'footer_menu',
-								'menu_class' => 'footer-links ps-0 d-inline-flex list-none mb-0 justify-content-center justify-content-md-end',
+								'menu_class' => 'footer-links',
 								'items_wrap'      => '<ul id="menu-footer-links" class="%2$s">%3$s</ul>',
 								'echo'            => true
 							)); ?>
 							</div>
 						</div>
 						<!-- Copyright and footer links end -->
+					</div>
+
+					<div class="footer-social-icons">
+							text
 					</div>
 				</div>
 			</div>
@@ -181,9 +185,11 @@
 		
 <?php wp_footer(); ?>
 
-<ul class="navbar-nav ms-auto justify-content-end item-cent">
-	<li class="nav-item Website-list">
+<ul class="Website-list">
+	<li class="nav-item ">
 		<a class="nav-link gp-website" href="javascript:void(0);">Group Websites</a> 
+		<div class="innerweb-list">
+			<h2>Group Websites</h2>
 		<?php /* Group website links start */
 			if (have_rows('group_websites', 'option')) : ?>
 			<ul>
@@ -200,6 +206,7 @@
 			</ul>
 			<?php endif; 
 			/* Group website links end */ ?>	
+			</div>
 	</li>
 </ul>
 
