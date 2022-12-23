@@ -438,6 +438,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<a href="<?php echo the_sub_field('contact_us'); ?>" class="btn wow fadeInUp" data-wow-offset="50" >
+									<span class="text"><?php echo the_sub_field('cta_button_label'); ?></span>
 										<?php if (get_sub_field('cta_icon')){ 
 										$extension = pathinfo(get_sub_field('cta_icon'), PATHINFO_EXTENSION);
 											if($extension == 'svg'){
@@ -453,7 +454,7 @@
 												<img src="<?php echo the_sub_field('cta_icon'); ?>" alt="<?php echo the_sub_field('cta_button_label'); ?>">
 										<?php } 
 										} ?>
-										<span class="text"><?php echo the_sub_field('cta_button_label'); ?></span>
+										
 									</a>
 								</div>
 							</div>

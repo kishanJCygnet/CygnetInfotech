@@ -881,6 +881,9 @@ p {
        .select2-cn{
         width:350px;
         position: relative;
+        @include bp(lg-max){
+            width:300px; 
+        }
         @include bp(md-max){
             width: 48%;
             margin-right: 0 !important;
