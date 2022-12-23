@@ -181,5 +181,27 @@
 		
 <?php wp_footer(); ?>
 
+<ul class="navbar-nav ms-auto justify-content-end item-cent">
+	<li class="nav-item Website-list">
+		<a class="nav-link gp-website" href="javascript:void(0);">Group Websites</a> 
+		<?php /* Group website links start */
+			if (have_rows('group_websites', 'option')) : ?>
+			<ul>
+				<?php while (have_rows('group_websites', 'option')) : the_row(); 
+						if (get_sub_field('website_url', 'option') && get_sub_field('website_title', 'option')) { ?>
+						<li>
+							<a href="<?php echo the_sub_field('website_url', 'option'); ?>" title="<?php echo the_sub_field('website_title', 'option'); ?>" ><?php echo the_sub_field('website_title', 'option'); ?></a>
+							<?php if (get_sub_field('website_description', 'option')){ ?>
+								<span><?php echo the_sub_field('website_description', 'option'); ?></span>
+							<?php } ?>
+						</li>
+						<?php } 
+					endwhile; ?>
+			</ul>
+			<?php endif; 
+			/* Group website links end */ ?>	
+	</li>
+</ul>
+
 </body>
 </html>

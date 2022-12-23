@@ -61,61 +61,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="topBar navbar-expand-lg py-2">
             <div class="container d-flex">
 				<div class="top-bar-content">
-                <ul class="navbar-nav ms-auto   justify-content-end item-cent">
-                    <li class="nav-item Website-list">
-                        <a class="nav-link gp-website" href="javascript:void(0);">Group Websites</a> 
-						<?php /* Group website links start */
-							if (have_rows('group_websites', 'option')) : ?>
-							<ul>
-								<?php while (have_rows('group_websites', 'option')) : the_row(); 
-										if (get_sub_field('website_url', 'option') && get_sub_field('website_title', 'option')) { ?>
-										<li>
-											<a href="<?php echo the_sub_field('website_url', 'option'); ?>" title="<?php echo the_sub_field('website_title', 'option'); ?>" ><?php echo the_sub_field('website_title', 'option'); ?></a>
-										</li>
-										<?php } 
-									endwhile; ?>
-							</ul>
-							<?php endif; 
-							/* Group website links end */ ?>	
-                    </li>
-                    <!-- <li class="nav-item d-none">
-                        <a href="<?php echo site_url(); ?>/15-days-free-trial" class="btn"> 15 Days Free Trial</a>
-                    </li> -->
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="https://account.cygnature.io/Account/Login" target="_blank">Login</a>
-                    </li> -->
-                    <!-- <li class="nav-item"> -->
-						<!--<a id="sign-up" class="nav-link" href="<?php //echo site_url(); ?>/sign-up">Sign Up</a>-->
-						<!-- <a id="sign-up" class="nav-link" href="<?php echo site_url(); ?>/15-days-free-trial"><span>Get 15 Days Free Trial</span><span class="d-none">Sign Up</span></a> -->
-						<?php /*if($post->post_name != 'sign-documents-for-free'){ ?>
-							<a id="sign-up" class="nav-link" href="#contactus">Sign Up</a>
-						<?php } else { ?>
-							<a id="sign-up" class="nav-link" href="#signupform">Sign Up</a>
-						<?php }*/ ?>
-                    <!-- </li> -->
-                </ul>
-                <div class="d-flex item-center">
-                    <!--<a href="#" class="so-icon"><i class="fas fa-search"></i></a>-->
-					<span class="search-icon">
-                        <span class="overlay"></span>
-                        <?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
-                    </span>
-                    <!-- Social icon start-->
-					<?php if (have_rows('header_icons', 'option')) : ?>
-					  <?php while (have_rows('header_icons', 'option')) : the_row(); ?>
-						  <a class="so-icon" href="<?php if (get_sub_field('social_link', 'option')) {
-									  echo the_sub_field('social_link', 'option');
-									} else {
-									  echo '#';
-									} ?>" <?php if (get_sub_field('social_link_title', 'option')) : ?>title="<?php echo the_sub_field('social_link_title', 'option'); ?>" <?php endif; ?> target="_blank" rel="noopener">
-							<?php if (get_sub_field('social_icons', 'option')) : ?>
-							  <i class="fab <?php echo the_sub_field('social_icons', 'option'); ?>" aria-hidden="true"></i>
-							<?php endif; ?>
-						  </a>
-					  <?php endwhile; ?>
-					<?php endif; ?>			
-					<!-- Social icon end -->
-                </div>
+					<!--<ul class="navbar-nav ms-auto   justify-content-end item-cent">
+						<li class="nav-item Website-list">
+							<a class="nav-link gp-website" href="javascript:void(0);">Group Websites</a> 
+							<?php /* Group website links start */
+								if (have_rows('group_websites', 'option')) : ?>
+								<ul>
+									<?php while (have_rows('group_websites', 'option')) : the_row(); 
+											if (get_sub_field('website_url', 'option') && get_sub_field('website_title', 'option')) { ?>
+											<li>
+												<a href="<?php echo the_sub_field('website_url', 'option'); ?>" title="<?php echo the_sub_field('website_title', 'option'); ?>" ><?php echo the_sub_field('website_title', 'option'); ?></a>
+											</li>
+											<?php } 
+										endwhile; ?>
+								</ul>
+								<?php endif; 
+								/* Group website links end */ ?>	
+						</li>
+					</ul>-->
+					<div class="d-flex item-center">
+						<!--<a href="#" class="so-icon"><i class="fas fa-search"></i></a>-->
+						<span class="search-icon">
+							<span class="overlay"></span>
+							<?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
+						</span>
+						<!-- Social icon start-->
+						<?php if (have_rows('header_icons', 'option')) : ?>
+						  <?php while (have_rows('header_icons', 'option')) : the_row(); ?>
+							  <a class="so-icon" href="<?php if (get_sub_field('social_link', 'option')) {
+										  echo the_sub_field('social_link', 'option');
+										} else {
+										  echo '#';
+										} ?>" <?php if (get_sub_field('social_link_title', 'option')) : ?>title="<?php echo the_sub_field('social_link_title', 'option'); ?>" <?php endif; ?> target="_blank" rel="noopener">
+								<?php if (get_sub_field('social_icons', 'option')) : ?>
+								  <i class="fab <?php echo the_sub_field('social_icons', 'option'); ?>" aria-hidden="true"></i>
+								<?php endif; ?>
+							  </a>
+						  <?php endwhile; ?>
+						<?php endif; ?>			
+						<!-- Social icon end -->
+					</div>
 				</div>
             </div>
         </div>
