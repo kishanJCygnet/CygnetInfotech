@@ -34,7 +34,7 @@ if (have_posts()) :
 											<div class="share-social-media">
 												<span>Share </span>
 												<a href="javascript:void(0)" title="Share" class="share-btn"><i class="bi bi-share" aria-hidden="true"></i></a>
-												<?php echo sharethis_inline_buttons(); ?>
+												<?php //echo sharethis_inline_buttons(); ?>
 												<a href="#newsletter" class="btn"><span class="text">Subscribe</span><span class="effect"></span></a>
 											</div>
 									   </div>-->                           

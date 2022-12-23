@@ -727,7 +727,7 @@ function get_press_release_listing()
 					<span class="badge"><?php echo $category[0]->name; ?></span>
 				</div>
 				<div class="insight-in-content">
-					<span class="post-date-cls"><?php echo get_the_date( 'd F, Y', $post->ID ); ?></span>
+					<!--<span class="post-date-cls"><?php echo get_the_date( 'd F, Y', $post->ID ); ?></span>-->
 					<h2 class="slider-title">
 						<a href="<?php the_permalink(); ?>"><?php echo wp_trim_words(get_the_title(), 10, '...'); ?></a>										
 					</h2>
