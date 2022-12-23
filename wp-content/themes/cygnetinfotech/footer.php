@@ -103,9 +103,22 @@
 						</div>
 						<!-- Copyright and footer links end -->
 					</div>
-
 					<div class="footer-social-icons">
-							text
+						<!-- Social icon start-->
+						<?php if (have_rows('header_icons', 'option')) : ?>
+						  <?php while (have_rows('header_icons', 'option')) : the_row(); ?>
+							  <a class="so-icon" href="<?php if (get_sub_field('social_link', 'option')) {
+										  echo the_sub_field('social_link', 'option');
+										} else {
+										  echo '#';
+										} ?>" <?php if (get_sub_field('social_link_title', 'option')) : ?>title="<?php echo the_sub_field('social_link_title', 'option'); ?>" <?php endif; ?> target="_blank" rel="noopener">
+								<?php if (get_sub_field('social_icons', 'option')) : ?>
+								  <i class="fab <?php echo the_sub_field('social_icons', 'option'); ?>" aria-hidden="true"></i>
+								<?php endif; ?>
+							  </a>
+						  <?php endwhile; ?>
+						<?php endif; ?>			
+						<!-- Social icon end -->
 					</div>
 				</div>
 			</div>
