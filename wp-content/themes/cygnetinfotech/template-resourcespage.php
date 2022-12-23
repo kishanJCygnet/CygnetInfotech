@@ -49,8 +49,7 @@ get_header();
 			<!-- Resources start -->
 			<div class="default-content text-center"><p>Please select any one fillter...</p></div>
 			<!-- Image loader -->
-			<div id="loader" style="display: none;">
-			  <img src="<?php echo site_url(); ?>/wp-content/themes/cygnetinfotech/assets/images/Spinner-2.gif" width="50px" height="50px">
+			<div id="loader" class="loader" style="display: none;">
 			</div>
 			<!-- Image loader -->
 			<div class="resources-container" style="display:none;"></div>

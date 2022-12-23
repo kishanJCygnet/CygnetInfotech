@@ -2,9 +2,9 @@
     justify-content: center;
     z-index: 2;
     position: relative;
-    @include bp(sm-max) {
-        justify-content: space-between;
-    }
+    // @include bp(sm-max) {
+    //     justify-content: space-between;
+    // }
     & > div {
         margin: 15px 0;
     }
@@ -371,6 +371,9 @@
 }
 
 .hr-benifits {
+    @include bp(sm-max){
+        padding-bottom: 0;
+    }
     .title-heading {
         margin-top: 20px;
         h2 {
@@ -383,6 +386,14 @@
             @include bp(md-max){
                 max-width: 25%;
                 flex: 0 0 25%;
+            }
+            @include bp(sm-max){
+                max-width: 33.33%;
+                flex: 0 0 33.33%;
+            }
+            @include bp(xs-max){
+                max-width: 50%;
+                flex: 0 0 50%;
             }
         }
     }
@@ -593,6 +604,14 @@
 }
 .contact-address-list {
     .icon-box-list {
+        & > div{
+            @include bp(md-max){
+                width: 50%;
+            }
+            @include bp(sm-max){
+                width: 100%;
+            }
+        }
         .icon-box {
             &::before {
                 display: none;
@@ -604,16 +623,32 @@
             min-height: 147px;
             padding-left: 78px;
             position: relative;
+            
             .icon {
-                position: absolute;
+                position: absolute !important;
                 left: 12px;
                 top: 12px;
+                width: 54px;
+                height: calc(100% - 24px);
+                border-radius: 10px;
+                overflow: hidden;
+                img{
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
             .icon-box-title-content {
                 margin-bottom: 10px;
+                @include bp(lg-max){
+                    margin-bottom: 5px;
+                    padding-right: 34px;
+                }
                 h3 {
                     font-size: 16px;
                     color: #363636;
+                    @include bp(lg-max){
+                        line-height: normal;
+                    }
                 }
             }
             .description {
@@ -636,10 +671,17 @@
                         position: absolute;
                         right: 12px;
                         bottom: 12px;
+                        @include bp(lg-max){
+                            bottom: auto;
+                            top: 6px;
+                        }
                     }
                 }
                 .address-content {
                     padding-right: 78px;
+                    @include bp(lg-max){
+                        padding-right: 0;
+                    }
                 }
             }
         }
@@ -653,21 +695,43 @@
             position: absolute;
             left: 0;
             top: 125px;
+            @include bp(md-max){
+                width: 100%;
+                position: static;
+            }
         }
     }
   
     .icon-box-list {
         width: calc(100% - 400px);
         margin-left: auto;
+        @include bp(md-max){
+            width: 100%;
+            margin-left: 0;
+        }
     }
     
 }
 .client-speak-list {
     .icon-box-list {
+        & > div{
+            @include bp(md-max){
+            width: 50%;
+            }
+            @include bp(xs-max){
+                width: 100%;
+                }
+        }
         .icon-box {
             padding: 20px 30px 20px 30px;
             min-height: 100%;
             height: auto;
+            @include bp(lg-max){
+                padding: 20px 5px 20px 5px;
+            }
+            @include bp(xs-max){
+                padding: 5px;
+            }
             &::before {
                 display: none;
             }
@@ -681,7 +745,19 @@
                 align-items: center;
                 justify-content: center;
                 z-index: 2;
-                position: relative;
+                position: relative !important;
+                overflow: hidden;
+                @include bp(xs-max){
+                    height: 130px;
+                     width: 130px;
+                    }
+                img{
+                    object-fit: contain;
+                    width: 115px;
+                    @include bp(xs-max){
+                        width: 90px;
+                    }
+                }
             }
             .icon-box-title-content {
                 text-align: center;
@@ -695,6 +771,9 @@
                     border-radius: 16px;
                     padding: 0px 15px;
                     font-size: 13px;
+                    @include bp(xs-max){
+                        font-size: 12px;
+                    }
                 }
             }
             .description {
@@ -723,6 +802,9 @@
                 }
                 h3 {
                     font-size: 20px;
+                    @include bp(xs-max){
+                        font-size: 16px;
+                    }
                 }
                 span {
                     color: #757575;
@@ -918,7 +1000,7 @@
 }
 .partner-comments{
     .icon-box-list{
-     
+        justify-content: space-between;
         .icon-box {
             &::before{
                 display: none;
@@ -965,9 +1047,15 @@
         }
         &>div{
             border-bottom: 1px solid #ffffff12;
+            &:last-child{
+                border-bottom: 0px solid #ffffff12;
+            }
             &:nth-child(odd){
                 .icon-box{
                 text-align: right;
+                @include bp(sm-max){
+                    text-align: left;
+                }
                 &::after{
                     content: "";
                     width: 1px;
@@ -977,6 +1065,9 @@
                     border-right: 1px dashed #3cb4e6;
                     right: -13px;
                     display: block;
+                    @include bp(sm-max){
+                        display: none;
+                    }
                 }
                 &::before{
                     content: "";
@@ -991,11 +1082,17 @@
                     border-radius: 10px;
                     z-index: 1;
                     display: block;
+                    @include bp(sm-max){
+                        display: none;
+                    }
                 }
                 .icon-box-title-content{
                     h3{
                         span{
                             text-align: right;
+                            @include bp(sm-max){
+                                text-align: left;
+                            }
                         }
                     }
                 }

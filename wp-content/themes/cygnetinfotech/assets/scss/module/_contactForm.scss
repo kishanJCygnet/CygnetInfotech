@@ -311,15 +311,32 @@ input[type=checkbox]:checked:after {
    bottom: -25px;
 }
 .submit-all-filter{
+    @include bp(sm-max){
+        flex-wrap: wrap;
+    }
     .category {
+        @include bp(sm-max){
+            width: 100%;
+            margin-right: 0 !important;
+        }
         select{
             width: 300px;
+            @include bp(sm-max){
+                width: 100%;
+            }
             max-width: 100%;
             color: #000;
             height: 45px;
             option{
                 color: #393939;
             }
+        }
+    }
+    .action{
+        @include bp(sm-max){
+        margin-top: 10px;
+        width: 100%;
+        text-align: right;
         }
     }
 }

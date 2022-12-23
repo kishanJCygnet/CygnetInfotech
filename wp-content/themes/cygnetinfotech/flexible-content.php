@@ -384,11 +384,7 @@
 														<!-- <img src="" alt="<?php echo the_sub_field('title'); ?>"> -->
 													</div>
 												<?php } ?>
-												<?php if (get_sub_field('button_label') && get_sub_field('button_url')){ ?>
-													<div class="zig-zag-button">
-														<a href="<?php echo the_sub_field('button_url'); ?>" class="btn"><span class="text"><?php echo the_sub_field('button_label'); ?></span><span class="effect"></span></a>
-													</div>
-												<?php } ?>
+												
 											</div>
 											<div class="col-text">
 												<div class="text-content">
@@ -415,6 +411,11 @@
 														<?php } ?>
 														<?php if (get_sub_field('description')){ ?>
 															<p class="wow fadeInUp" data-wow-delay="0.6s"><?php echo the_sub_field('description'); ?></p>
+														<?php } ?>
+														<?php if (get_sub_field('button_label') && get_sub_field('button_url')){ ?>
+															<div class="zig-zag-button mt-3 btn-text">
+																<a href="<?php echo the_sub_field('button_url'); ?>"><?php echo the_sub_field('button_label'); ?><i class="fas fa-arrow-right"></i> </a>
+															</div>
 														<?php } ?>
 													</div>
 												</div>
@@ -615,15 +616,6 @@
 										],
 										responsive : {
 											// breakpoint from 0 up
-											0 : {
-												items:1,
-											},
-											768 : {
-												items:2,
-											},
-											992 : {
-												items:3,
-											},
 											1200 : {
 												margin: 20,
 												items: <?php echo $dynamic_col; ?>,
