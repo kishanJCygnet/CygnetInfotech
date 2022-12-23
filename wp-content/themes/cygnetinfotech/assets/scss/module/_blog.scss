@@ -428,6 +428,11 @@ p {
     align-items: center;
     color: #0d3862;
     font-size: 22px;
+    @include bp(sm-max){
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
 }
 .pagination .pagination-link.current-page {
     background-color: #3cb4e7;
@@ -440,6 +445,14 @@ p {
     height: 19px;
     background-repeat: no-repeat;
     background-size: contain;
+}
+.in-the-news-container{
+    .pagination{
+        margin-top: 0;        
+       a {
+        color: #fff;
+       }
+    }
 }
 .blog-contents .blog-banner {
     height: 300px;
@@ -563,6 +576,9 @@ p {
         display: flex;
         flex-wrap: wrap; 
         margin: 0 -20px;   
+        @include bp(md-max){
+            margin: 0 0px;   
+        }
     }
     .insights-card {
         width: 33%;
@@ -576,7 +592,6 @@ p {
         @include bp(sm-max){
             width: 100%;
         }
-
         .insights-content {
            border-radius: 15px;
             overflow: hidden;
@@ -622,13 +637,14 @@ p {
     }
     .card-body {
         padding: 0;
+        padding-bottom: 10px;
     }
     .insight-in-content {
         padding: 14px;
         border-top: 0;
         border-radius: 10px;
         /* border-bottom-left-radius: 20px; */
-        height: calc(100% - 208px);
+        // height: calc(100% - 208px);
         width: calc(100% - 65px);
         margin: auto;
         background-color: #fff;
@@ -638,6 +654,7 @@ p {
         flex-wrap: wrap;
         align-items: flex-start;
         position: relative;
+        min-height: calc(100% - 198px);
         @include bp(lg-max){
             width: calc(100% - 15px);
         }
@@ -650,6 +667,10 @@ p {
             width: 100%;
             @include bp(lg-max){
                 font-size: 18px;
+                line-height: 1.3;
+            }
+            @include bp(md-max){
+                font-size: 16px;
                 line-height: 1.3;
             }
             a {
@@ -734,8 +755,15 @@ p {
          padding-left: 400px;
          margin-left: auto;
          position: relative;
+         @include bp(md-max){
+            padding-left: 0px;
+        }
         .insights-card {
             width: 100%;
+            @include bp(md-max){
+                padding: 0 0px 30px;
+            }
+           
             .insights-content{
                 display: flex;
             }
@@ -745,8 +773,27 @@ p {
                 width: 380px;
                 bottom: 0;
                 height: 100%;
+                padding-left: 0;
+                @include bp(md-max){
+                    position: static;
+                    width: 100%;
+                }
                 .insight-in-content{
                     text-align: center;
+                    @include bp(md-max){
+                        text-align: left;
+                    }
+                }
+                .insight-in-content{
+                    .slider-title{
+                        padding-right: 0 !important;
+                        @include bp(md-max){
+                            padding-right: 50px !important;
+                        }
+                    }
+                    .action{
+                        width: 100%;
+                    }
                 }
             }
             .client-details{
@@ -756,6 +803,10 @@ p {
                 top: 36px;
                 z-index: 2;               
                 background-color: transparent;
+                @include bp(sm-max){
+                    right: 15px;
+                    top: 15px;
+                }
                 a{
                     white-space: nowrap;
                     border: 1px solid #0c3761;
@@ -770,6 +821,9 @@ p {
                 border-radius: 10px;
                 position: relative;
                 overflow: hidden;
+                @include bp(sm-max){
+                    padding: 10px; 
+                }
                 &::after{
                     content: "";
                     position: absolute;
@@ -785,10 +839,18 @@ p {
                     position: relative;
                     width: 100%;
                     background-color: rgba(255,255,255,0.8);
+                    height: auto !important;
+                    @include bp(sm-max){
+                    padding-top: 35px;
+                    }
                     .slider-title{
                         margin-top: 0;
                         line-height: normal;
                         padding-right: 80px;
+                        @include bp(sm-max){
+                            padding-right: 0 !important;
+                        }
+                        
                         a{
                             color: #0D3461 !important;
                             font-weight: bold;
@@ -806,10 +868,27 @@ p {
 
 .resources-page-listing {
     padding-bottom: 0;
+    .action {
+        @include bp(md-max){
+            margin-top: 15px;
+        }
+    }
     .submit-all-filter{
+        @include bp(md-max){
+            flex-wrap: wrap !important; 
+            justify-content: space-between;           
+        }
        .select2-cn{
         width:350px;
         position: relative;
+        @include bp(md-max){
+            width: 48%;
+            margin-right: 0 !important;
+        }
+        @include bp(sm-max){
+            width: 100%;
+            margin: 10px 0px !important;
+        }
         &::after{
             content: "";
             background-image: url(../../images/arrow-down.svg);
@@ -864,6 +943,9 @@ p {
         }
        }
     }
+    .select2-container{
+        width: 100% !important;
+    }
 }
 .select2-dropdown {
     .select2-results__option {
@@ -895,6 +977,36 @@ p {
 .select2-container--open{
     .select2-dropdown--below{
         margin-top: 32px;
+    }
+}
+.resources-container{
+    .insights-inner{
+        @include bp(md-max){
+            padding: 0 !important;
+          }
+    }
+    .insights-section{
+        .insights-content{
+          
+            @include bp(md-max){
+                padding-bottom: 10px !important;
+              }
+            .client-details{
+                @include bp(md-max){
+                  height: 200px;
+                }
+            }
+            .insight-in-content{
+                @include bp(md-max){
+                min-height: calc(100% - 99px);
+                }
+                h2{
+                @include bp(md-max){
+                    font-size: 14px !important;
+                }
+            }
+            }
+        }
     }
 }
 

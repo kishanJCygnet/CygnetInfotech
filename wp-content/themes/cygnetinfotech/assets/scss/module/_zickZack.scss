@@ -376,7 +376,8 @@
 //  }
 // }
 .zick-zack-content{
-    width: 1200px;
+    width: 1230px;
+    padding: 0 15px;
     margin: auto;
     max-width: 100%;
     position: relative;
@@ -545,11 +546,35 @@
         }
     }
 }
+.zig-zag-button{
+    &.btn-text{
+      a{
+            padding: 5px 0;
+            i{
+                margin-left: 5px;
+            }
+            &:hover{
+                padding: 5px 10px;
+            }
+        }
+    }
+}
 .our-partner{
     .zick-zack-content {
         .zick-zack-inner-content{
             z-index: 2;
             position: relative;
+                @include bp(sm-max){
+                    border-bottom: 1px solid #f0f0f0;
+                    margin: 0px 0;
+                    padding: 40px 0;
+                }
+                &:last-child{
+                    @include bp(sm-max){
+                        border-bottom: 0px solid #f0f0f0;                       
+                        padding-bottom:0;
+                    }
+                }
             .col-img{
                 background-image: none;
                 width: 420px;
@@ -560,18 +585,53 @@
                 align-items: center;
                 justify-content: center;
                 border-radius: 50%;
+                @include bp(lg-max){
+                    width: 300px;
+                    height: 300px;
+                }
+                @include bp(md-max){
+                    width: 200px;
+                    height: 200px;
+                }
+                @include bp(sm-max){
+                    width: 150px;
+                    height: 150px;
+                    margin: auto;
+                    margin-bottom: 17px;
+                }
                 .img-content{
                     width: 274px;
                     height: 274px;
                     background-size: contain;
                     background-repeat: no-repeat;
                     background-position: center;
+                    @include bp(lg-max){
+                        width: 154px;
+                          height: 154px;
+                    }
+                    @include bp(md-max){
+                        width: 94px;
+                          height: 94px;
+                    }
                 }
             }
             .in-content {
                 justify-content: space-between;
+                @include bp(sm-max){
+                    flex-wrap: wrap;
+                    text-align: center;
+                }
                 .col-text{
                     width: calc(100% - 470px);
+                    @include bp(lg-max){
+                        width: calc(100% - 350px);
+                    }
+                    @include bp(md-max){
+                        width: calc(100% - 250px);
+                    }
+                    @include bp(sm-max){
+                       width: 100%;
+                    }
                 }
             }
             &:nth-child(even){
@@ -579,6 +639,9 @@
                     .img-content{
                         margin: auto;
                     }
+                }
+                .col-text{
+                    text-align: center;
                 }
                 
         }

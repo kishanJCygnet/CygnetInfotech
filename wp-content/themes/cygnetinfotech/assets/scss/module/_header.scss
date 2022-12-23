@@ -178,7 +178,7 @@ body{
     height: 30px;  
     transition: 0.3s all linear;
     border-radius: 5px; 
-    display: none;
+    // display: none;
 
     .overlay {
         @include positionOverlay;
