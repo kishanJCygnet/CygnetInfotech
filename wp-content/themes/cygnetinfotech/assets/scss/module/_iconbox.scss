@@ -143,10 +143,7 @@
         margin-bottom: 20px;
         font-size: 14px;
         text-align: center;
-        @include bp(xs-max){
-            width: 96%;
-            margin: auto;
-        }
+        
         p{
         color: #fff;
         }
@@ -155,6 +152,10 @@
         background-color: rgb(255 255 255 / 9%);
         border-radius: 80px;
         border: 1px solid #ffffff30;
+        @include bp(xs-max){
+            width: 96%;
+            margin: auto;
+        }
 
         .icon-box {
             text-align: center;
