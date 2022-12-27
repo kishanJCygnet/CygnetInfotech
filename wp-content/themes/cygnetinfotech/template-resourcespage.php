@@ -47,7 +47,7 @@ get_header();
 			</div>
 			<!-- Filter block end -->
 			<!-- Resources start -->
-			<div class="default-content text-center"><p>Please select any one fillter...</p></div>
+			<div class="default-content text-center"><p>Please select a filter to explore more.</p></div>
 			<!-- Image loader -->
 			<div id="loader" class="loader" style="display: none;">
 			</div>
