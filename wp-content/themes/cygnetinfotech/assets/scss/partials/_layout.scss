@@ -602,6 +602,14 @@ video {
   .custom-cf7-spinner {
     display: inline-block;
     position: relative;
+    @include bp(xs-max){
+      width: 100%;
+    }
+    input{
+      @include bp(xs-max){
+        width: 100%;
+      }
+    }
   }
   input {
     margin-top: 0 !important;
@@ -879,7 +887,7 @@ video {
     width: 200px !important;
     @include bp(xs-max) {
       width: 155px !important;
-      font-size: 14px;
+      font-size: 12px;
     }
   }
 }
@@ -2437,6 +2445,9 @@ br {
         width: 50%;
         padding: 10px;
         margin: 0 !important;
+        @include bp(xs-max){
+          width: 100%;
+        }
       }
     }
     & > div{
