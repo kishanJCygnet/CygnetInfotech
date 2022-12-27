@@ -285,7 +285,19 @@ function testimonial_slider()
 				navText: [
 					'<span><img src="<?php echo THEME_PATH; ?>assets/images/right-arrow.png" alt="" /></span>',
                     '<span><img src="<?php echo THEME_PATH; ?>assets/images/right-arrow.png" alt="" /></span>'
-				],               
+				],     
+				responsive : {
+                        // breakpoint from 0 up
+                        0 : {
+                            margin: 15,
+                            items: 1,
+                        },
+                        768 : {
+                            margin: 15,
+							items: <?php echo the_sub_field('display_testimonials'); ?>,
+                        },
+                       
+                    }	          
 				
 			})
 		})

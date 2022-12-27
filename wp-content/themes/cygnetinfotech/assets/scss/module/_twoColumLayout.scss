@@ -612,10 +612,11 @@
         }
         & > div{
             padding: 30px;
+            margin-bottom: 100px;
         }
         .col-left{
             & > div{
-                background-image: url(../../images/how-is-your-deals-group-people-business-conference-modern-classroom-daytime.png);
+                background-image: url(../../images/L&D-Display-image.png);
                 height: 380px !important;
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -629,8 +630,8 @@
                     border-radius: 30px;
                     left: 10%;
                     position: absolute;                 
-                    bottom: -90px;
-                    min-height: 220px;
+                    bottom: -190px;
+                    min-height: calc(100% - 100px);
                     text-align: center;
                 }
             }
@@ -651,8 +652,8 @@
                     border-radius: 30px;
                     left: 10%;
                     position: absolute;                 
-                    bottom: -90px;
-                    min-height: 228px;
+                    bottom: -190px;
+                    min-height: calc(100% - 100px);
                     text-align: center;
                 }
             }

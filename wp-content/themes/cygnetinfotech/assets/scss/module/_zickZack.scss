@@ -681,9 +681,30 @@
         .zick-zack-inner-content{
             margin: 0 auto;
             margin-bottom: 160px !important;
+            
+            @include bp(sm-max){
+                margin-bottom: 120px !important;
+            }
+            &:last-child{
+                @include bp(sm-max){
+                    margin-bottom: 0px !important;
+                }
+            }
+            
+            &:first-child{
+                @include bp(sm-max){
+                    padding-top: 50px;
+                }
+            }
                     .col-img{
                          background-image: none;
                          position: absolute;
+                         @include bp(sm-max){
+                            background-image: none;
+                            position: absolute;
+                            left: calc(50% - 75px);
+                            top: -82px;
+                         }
                         .img-content{
                             width: 274px;
                             height: 274px;
@@ -691,6 +712,12 @@
                             box-shadow: 0px 3px 6px #00000029;
                             border: 6px solid #FFFFFF;
                             background-color: #fff;
+                            background-size: cover;
+                            background-position: center center;
+                            @include bp(sm-max){
+                                width: 150px;
+                                height: 150px;
+                            }
                         }
                     }
                     .in-content {
@@ -704,12 +731,28 @@
                             padding: 30px;
                             padding-left: 120px;
                             margin-left: auto;
+                            @include bp(sm-max){
+                                width: calc(100%);
+                                padding-top: 80px;
+                                text-align: center;
+                                padding-left: 10px;
+                                padding-right: 10px;
+                            }
                             h3{
                                 position: absolute;
                                 left: 0px;
-                                bottom: -137px;
+                                bottom: -150px;
                                 text-align: center;
                                 width: 274px;
+                               
+                                @include bp(md-max){
+                                    bottom: -125px;
+                                }
+                                @include bp(sm-max){
+                                   position: static; 
+                                   margin: auto; 
+                                   width: auto;                                  
+                                }
                             }
                         }
                     }  
@@ -720,6 +763,13 @@
                                 margin-left: 0;
                                 padding-left: 30px;
                                 padding-right: 120px;
+                                @include bp(sm-max){    
+                                    padding-right: 30px;
+                                }
+                                @include bp(sm-max){
+                                    padding-left: 10px;
+                                    padding-right: 10px;
+                                }
                                 h3{
                                     left: auto;
                                     right: 0;

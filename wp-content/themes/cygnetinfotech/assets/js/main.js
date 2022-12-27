@@ -601,7 +601,7 @@ jQuery(document).ready(function () {
     jQuery(this).remove();
   });
 
-  jQuery("a[href*=\\#]").bind("click", function (e) {
+  jQuery(".Website-list a[href*=\\#]").bind("click", function (e) {
     e.preventDefault(); // prevent hard jump, the default behavior
     var target = jQuery(this).attr("href"); // Set the target as variable
     // perform animated scrolling by getting top-position of target-element and set it as scroll target
