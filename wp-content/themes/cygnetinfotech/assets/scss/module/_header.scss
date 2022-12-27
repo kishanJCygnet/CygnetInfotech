@@ -126,6 +126,10 @@ body {
         }
         color: #0c3761;
         text-decoration: none;
+        &:hover{
+            background-color: #0e3863;
+            color: #fff;
+        }
     }
 
     // End Top bar

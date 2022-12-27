@@ -143,6 +143,10 @@
         margin-bottom: 20px;
         font-size: 14px;
         text-align: center;
+        @include bp(xs-max){
+            width: 96%;
+            margin: auto;
+        }
         p{
         color: #fff;
         }
@@ -1143,12 +1147,18 @@
                 h3{
                     font-size: 28px;
                     color: #3cb4e7;
+                    @include bp(sm-max){
+                        font-size: 22px;
+                    }
                     span{
                         display: inline-block;
                         width: 100%;                  
                         font-size: 20px;
                         font-weight: normal;
                         margin-top: 10px;
+                        @include bp(sm-max){
+                            font-size: 16px;
+                        }
                     }
                 }
             }
