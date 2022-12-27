@@ -381,6 +381,7 @@
     margin: auto;
     max-width: 100%;
     position: relative;
+    z-index: 2;
     .zick-zack-inner-content{
         margin: 40px 0;
         .in-content{
@@ -434,7 +435,7 @@
         position: relative;
         padding: 0 30px;
         @include bp(sm-max){
-            padding: 0 0px !important;
+            padding: 0 15px !important;
         }
         
         &:after{
@@ -654,21 +655,60 @@
 }
 .success-story-cygnet{
     .zick-zack-content {
+        @include bp(sm-max){
+            padding-top: 0 !important;
+        }
             .zick-zack-inner-content{
+                @include bp(sm-max){
+                 margin: 0;
+                 border-bottom: 1px solid #ddd;
+                 padding: 15px 0;
+                 &:first-child{
+                    padding-top: 0;
+                 }
+                 &:last-child{
+                    padding-bottom: 0;
+                    border-bottom: 0;
+                 }
+                }
                 .col-img{
                     width:375px;
                     background-image: url('../../images/success-story-bg.png');
                     background-size: 274px;
                     background-position: center left;
                     background-repeat: no-repeat;  
+                    @include bp(sm-max){
+                        width: 200px;
+                        background-size: 200px;
+                        background-position: center right;
+                        margin: auto;
+                        margin-bottom: 15px;
+                    }
                     .img-content {
                         height: 274px;
                         width: 274px;
+                        @include bp(sm-max){
+                            height: 200px;
+                            width: 200px;
+                            background-size: cover;
+                        }
                     }  
                 }
                 .in-content {
+                    @include bp(sm-max){
+                        flex-wrap: wrap;
+                    }
                     .col-text{
                           width: calc(100% - 375px);
+                          @include bp(sm-max){
+                            width: calc(100% - 0px);
+                            text-align: center;
+                        }
+                        h3{
+                            @include bp(sm-max){
+                                margin-bottom: 0;
+                            }
+                        }
                        
                     }
                 }

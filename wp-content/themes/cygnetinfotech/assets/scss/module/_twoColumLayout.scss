@@ -349,13 +349,18 @@
             @include bp(lg-max){
                 border-radius: 90px;
             }
+            @include bp(sm-max){
+                border-radius: 30px;
+            }
         }
     }
 }
 .left-colum-img{
+    .two-colum-content{
     @include bp(sm-max){
-        flex-direction: column;
+        flex-direction: column !important;
     }
+}
     .col-right{
         padding-right: 25px;
         @include bp(sm-max){
@@ -605,14 +610,28 @@
     }
 }
 .event-activity{
+    @include bp(sm-max){
+        padding-bottom: 0;
+    }
     .two-colum-content{
         h3{
             font-size: 24px;
             margin-bottom: 20px;
+            @include bp(md-max){
+                font-size: 16px;
+            }
         }
         & > div{
             padding: 30px;
             margin-bottom: 100px;
+            @include bp(md-max){
+                padding: 10px;
+                margin-bottom: 130px;
+            }
+            @include bp(sm-max){
+                padding: 0px;
+                margin-bottom: 100px;
+            }
         }
         .col-left{
             & > div{
@@ -633,6 +652,16 @@
                     bottom: -190px;
                     min-height: calc(100% - 100px);
                     text-align: center;
+
+                    @include bp(md-max){
+                        width: 94%;
+                        left: 3%;
+                        right: 3%;
+                    }
+                    @include bp(sm-max){
+                        bottom: -80px;
+                        min-height: auto !important;
+                    }
                 }
             }
         }
@@ -655,6 +684,16 @@
                     bottom: -190px;
                     min-height: calc(100% - 100px);
                     text-align: center;
+                    @include bp(sm-max){
+                        bottom: -80px;
+                        min-height: auto !important;
+                    }
+                    @include bp(md-max){
+                        width: 94%;
+                        left: 3%;
+                        right: 3%;
+                        min-height: calc(100% - 54px);
+                    }
                 }
             }
         }
