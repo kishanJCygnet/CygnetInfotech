@@ -37,6 +37,8 @@
                     margin-top: 40px;
                     @include bp(sm-max){
                         width: 100%;
+                        font-size: 16px;
+                        margin-top: 20px;
                     }
 
                 }
