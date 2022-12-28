@@ -583,9 +583,12 @@ jQuery(document).ready(function () {
     jQuery(this).remove();
   });
 
+  // Home page
+
+ 
   jQuery(".stiky-osp-after-content").after(
     '<section class="py-0 osp-sticky-section"></section>'
-  );
+  ); 
   jQuery(".stiky-osp").each(function () {
     $Stikysosp = jQuery(this).clone();
     jQuery(".osp-sticky-section").append($Stikysosp);
@@ -618,6 +621,11 @@ jQuery(document).ready(function () {
       );
     return false;
   });
+
+  jQuery('.modal .btn-close').click(function(){
+    jQuery('iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+  });
+  $('.modal').modal({backdrop: 'static', keyboard: false});
 });
 jQuery(window).resize(function () {
   pepoleclu();
@@ -645,3 +653,16 @@ jQuery(window)
     }
   })
   .scroll();
+
+  jQuery(window).on('load', function(){
+    jQuery(".home-banner-content").before(
+      '<div class="home-banner-with-menu"></div>'
+    );
+    jQuery(".anim-home-sec").each(function () {
+      $homeaanim = jQuery(this).clone();
+      jQuery(".home-banner-with-menu").append($homeaanim);
+      jQuery(this).remove();
+    });
+  
+  });
+  
