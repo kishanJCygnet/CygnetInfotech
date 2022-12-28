@@ -720,15 +720,13 @@ video {
 }
 // Floting menu
 .home-menu {
-  background-image: url("../../images/bg-menu.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url("../../images/curve.svg");
   position: relative;
-  // background-color: #E4F8FF;
-  // background-blend-mode: multiply;
   height: 1030px;
   overflow-y: visible;
   overflow-x: clip;
+  background-repeat: no-repeat;
+  background-position: bottom center;
   @include bp(sm-max) {
     height: 1350px;
   }
@@ -739,15 +737,15 @@ video {
     height: 1376px;
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: #40aad26b;
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   top: 0;
+  //   bottom: 0;
+  //   background-color: #40aad26b;
+  // }
   video {
     opacity: 0.6;
   }
@@ -1985,8 +1983,17 @@ br {
         flex-wrap: wrap;
         justify-content: space-around;
       }
-      img {
+      a{
         position: absolute;
+        display: inline-block;
+        @include bp(sm-max) {     
+         position: static;
+         width: 50%;
+         padding: 10px;
+        //  margin: 10px 0;
+        }
+      }
+      img {     
         width: 220px;
         padding: 17px 34px;
         box-shadow: 0px 10px 15px #0000000a;
@@ -1996,12 +2003,9 @@ br {
           width: 130px;
           padding: 10px;
         }
-        @include bp(sm-max) {
-          position: static;
-          height: 100px;
-          width: 46%;
-          padding: 10px;
-          margin: 10px 0;
+        @include bp(sm-max) {        
+          height: 100px; 
+          width: 100%;        
           object-fit: contain;
         }
       }
