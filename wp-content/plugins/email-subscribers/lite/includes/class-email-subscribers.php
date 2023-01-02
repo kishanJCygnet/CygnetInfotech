@@ -372,7 +372,7 @@ if ( ! class_exists( 'Email_Subscribers' ) ) {
 				);
 
 				/* translators: %s: ES Pro URL */
-				$disable_wp_cron_notice .= '<br/>' . sprintf( __( 'Or use <strong><a href="%s" target="_blank">Icegram Express (formerly known as Email Subscribers & Newsletters) Pro</a></strong> for automatic Cron support', 'email-subscribers' ), $es_pro_url );
+				$disable_wp_cron_notice .= '<br/>' . sprintf( __( 'Or use <strong><a href="%s" target="_blank">Icegram Express Pro</a></strong> for automatic Cron support', 'email-subscribers' ), $es_pro_url );
 				$html                    = '<div class="notice notice-warning" style="background-color: #FFF;"><p style="letter-spacing: 0.6px;">' . $disable_wp_cron_notice . '<a style="float:right" class="es-admin-btn es-admin-btn-secondary " href="' . esc_url( $notice_dismiss_url ) . '">' . __(
 					'OK, I Got it!',
 					'email-subscribers'
@@ -1392,7 +1392,7 @@ if ( ! class_exists( 'Email_Subscribers' ) ) {
 				self::$instance->custom_fields_db  = new ES_DB_Custom_Fields();
 
 				// Start-IG-Code.
-				$name         = 'Icegram Express (formerly known as Email Subscribers & Newsletters)';
+				$name         = 'Icegram Express';
 				$plugin       = 'email-subscribers';
 				$plugin_abbr  = 'ig_es';
 				$plugin_plan  = self::$instance->get_plan();
@@ -1404,11 +1404,11 @@ if ( ! class_exists( 'Email_Subscribers' ) ) {
 					$ig_es_feedback_class = 'IG_Feedback_V_' . str_replace( '.', '_', IG_ES_FEEDBACK_TRACKER_VERSION );
 
 					if ( self::$instance->is_pro() ) {
-						$name         = 'Icegram Express (formerly known as Email Subscribers & Newsletters) MAX';
+						$name         = 'Icegram Express MAX';
 						$plugin       = 'email-subscribers-newsletters-pro';
 						$event_prefix = 'espro.';
 					} elseif ( self::$instance->is_starter() ) {
-						$name         = 'Icegram Express (formerly known as Email Subscribers & Newsletters) Starter';
+						$name         = 'Icegram Express PRO';
 						$plugin       = 'email-subscribers-newsletters-starter';
 						$event_prefix = 'esstarter.';
 					}

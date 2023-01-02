@@ -362,7 +362,7 @@ class ES_Shortcode {
 		// Don't show form if submission was successful.
 		if ( 'success' !== $message_class) {
 			$form_action_url             = ES_Common::get_current_request_url();
-			$enable_ajax_form_submission = get_option( 'ig_es_enable_ajax_form_submission', 'no' );
+			$enable_ajax_form_submission = get_option( 'ig_es_enable_ajax_form_submission', 'yes' );
 			$extra_form_class            = ( 'yes' == $enable_ajax_form_submission ) ? ' es_ajax_subscription_form' : '';
 
 			$form_header_html .= '<form action="' . $form_action_url . '#es_form_' . self::$form_identifier . '" method="post" class="es_subscription_form es_shortcode_form ' . esc_attr( $extra_form_class ) . '" id="es_subscription_form_' . $unique_id . '" data-source="ig-es" data-form-id="' . $form_id . '">';

@@ -245,6 +245,7 @@ class Email_Subscribers_Admin {
 		if ( 'es_forms' === $get_page && ES_Drag_And_Drop_Editor::is_dnd_editor_page() ) {
 			$ig_es_js_data['frontend_css'] = ES_Form_Admin::get_frontend_css();
 			$ig_es_js_data['form_styles']  = ES_Form_Admin::get_form_styles();
+			$ig_es_js_data['common_css']   = ES_Form_Admin::get_common_css();
 		}
 
 		wp_localize_script( $this->email_subscribers, 'ig_es_js_data', $ig_es_js_data );
@@ -984,7 +985,7 @@ class Email_Subscribers_Admin {
 			$icegram_url   = 'https://www.icegram.com';
 
 			/* translators: 1. WordPress URL 2. Icegram Express version 3. Icegram site URL */
-			$footer_text = sprintf( __( '<span id="footer-thankyou">Thank you for creating with <a href="%1$s" target="_blank">WordPress</a> | Icegram Express (formerly known as Email Subscribers & Newsletters) <b>%2$s</b>. Developed by team <a href="%3$s" target="_blank">Icegram</a></span>', 'email-subscribers' ), esc_url( $wordpress_url ), ES_PLUGIN_VERSION, esc_url( $icegram_url ) );
+			$footer_text = sprintf( __( '<span id="footer-thankyou">Thank you for creating with <a href="%1$s" target="_blank">WordPress</a> | Icegram Express <b>%2$s</b>. Developed by team <a href="%3$s" target="_blank">Icegram</a></span>', 'email-subscribers' ), esc_url( $wordpress_url ), ES_PLUGIN_VERSION, esc_url( $icegram_url ) );
 		}
 
 		return $footer_text;
