@@ -487,6 +487,7 @@ if ( ! class_exists( 'ES_Form_Admin' ) ) {
 											}
 
 											let formStyles      = ig_es_js_data.form_styles;
+											let commonCSS       = ig_es_js_data.common_css;
 											let currentStyleId  = $('#form_style').val();
 											currentStyleId      = currentStyleId ? currentStyleId : 'theme-styling'; // Set default styling to theme style.
 											let currentStyle    = formStyles.find( style => currentStyleId === style.id );
@@ -495,11 +496,12 @@ if ( ! class_exists( 'ES_Form_Admin' ) ) {
 											if ( currentStyle ) {
 												currentStyleCSS = currentStyle ? currentStyle.css : '';
 											} else {
+												// Set default style to theme styling.
 												let themeStyle  = formStyles.find( style => style.id === 'theme-styling' );
 												currentStyleCSS = themeStyle.css;
 											}
 											
-											esVisualEditor.setStyle(currentStyleCSS);
+											esVisualEditor.setStyle( commonCSS + currentStyleCSS);
 
 											let esPlan             = ig_es_js_data.es_plan;
 											let isPremium          = ig_es_js_data.is_premium;
@@ -562,7 +564,7 @@ if ( ! class_exists( 'ES_Form_Admin' ) ) {
 												let selected_style_id  = $(this).val();
 												let selected_style     = formStyles.find(style => style.id === selected_style_id);
 												let selected_style_css = selected_style.css ? selected_style.css : '';
-												esVisualEditor.setStyle( selected_style_css );
+												esVisualEditor.setStyle( commonCSS + selected_style_css );
 											});
 										});
 									});
@@ -681,8 +683,13 @@ if ( ! class_exists( 'ES_Form_Admin' ) ) {
 			}
 		}
 
-		public static function get_form_styles() {
+		public static function get_styles_path() {
 			$form_styles_path = ES_PLUGIN_DIR . 'lite/admin/css/form-styles/';
+			return $form_styles_path;
+		}
+
+		public static function get_form_styles() {
+			$form_styles_path = self::get_styles_path();
 
 			$form_styles = array(
 				array(
@@ -720,6 +727,12 @@ if ( ! class_exists( 'ES_Form_Admin' ) ) {
 			}
 	
 			return $css_html;
+		}
+
+		public static function get_common_css() {
+			$form_styles_path = self::get_styles_path();
+			$common_css       = file_get_contents( $form_styles_path . 'common.css' );
+			return $common_css;
 		}
 	}
 

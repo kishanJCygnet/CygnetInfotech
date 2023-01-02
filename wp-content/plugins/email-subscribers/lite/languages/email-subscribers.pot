@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Icegram Express - Email Subscribers, Newsletters and Marketing Automation Plugin plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Icegram Express - Email Subscribers, Newsletters and Marketing Automation Plugin 5.5.4\n"
+"Project-Id-Version: Icegram Express - Email Subscribers, Newsletters and Marketing Automation Plugin 5.5.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/email-subscribers\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-12-21T06:24:05+01:00\n"
+"POT-Creation-Date: 2022-12-28T12:07:14+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: email-subscribers\n"
@@ -38,13 +38,13 @@ msgstr ""
 msgid "Icegram Express requires PHP version %s+, plugin is currently NOT RUNNING."
 msgstr ""
 
-#. translators: %s: Link to Icegram Express (formerly known as Email Subscribers & Newsletters) Premium upgrade
+#. translators: %s: Link to Icegram Express Premium upgrade
 #: email-subscribers.php:117
-msgid "You are using older version of <strong>Icegram Express (formerly known as Email Subscribers & Newsletters) Premium</strong> plugin. It won't work because it needs plugin to be updated. Please update %s plugin."
+msgid "You are using older version of <strong>Icegram Express Premium</strong> plugin. It won't work because it needs plugin to be updated. Please update %s plugin."
 msgstr ""
 
 #: email-subscribers.php:118
-msgid "Icegram Express (formerly known as Email Subscribers & Newsletters) Premium"
+msgid "Icegram Express Premium"
 msgstr ""
 
 #: email-subscribers.php:233
@@ -237,39 +237,39 @@ msgstr ""
 msgid "Please select a user."
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:324
-#: lite/admin/partials/dashboard.php:167
+#: lite/admin/class-email-subscribers-admin.php:325
+#: lite/admin/partials/dashboard.php:166
 msgid "Dashboard"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:329
-#: lite/admin/partials/dashboard.php:174
+#: lite/admin/class-email-subscribers-admin.php:330
+#: lite/admin/partials/dashboard.php:173
 #: lite/includes/classes/class-es-contacts-table.php:238
 #: lite/includes/pro-features.php:205
-#: starter/starter-class-email-subscribers.php:824
+#: starter/starter-class-email-subscribers.php:827
 msgid "Audience"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:333
+#: lite/admin/class-email-subscribers-admin.php:334
 #: lite/admin/class-es-form-admin.php:232
-#: lite/admin/class-es-form-admin.php:613
+#: lite/admin/class-es-form-admin.php:615
 #: lite/includes/classes/class-es-lists-table.php:34
 #: lite/includes/classes/class-es-lists-table.php:88
 msgid "Lists"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:339
+#: lite/admin/class-email-subscribers-admin.php:340
 #: lite/admin/class-es-form-admin.php:399
 #: lite/includes/classes/class-es-form-widget.php:87
 #: lite/includes/classes/class-es-forms-table.php:39
 #: lite/includes/classes/class-es-forms-table.php:40
 #: lite/includes/classes/class-es-forms-table.php:99
 #: lite/includes/pro-features.php:206
-#: starter/starter-class-email-subscribers.php:825
+#: starter/starter-class-email-subscribers.php:828
 msgid "Forms"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:345
+#: lite/admin/class-email-subscribers-admin.php:346
 #: lite/admin/class-es-campaign-admin.php:597
 #: lite/admin/partials/gallery.php:10
 #: lite/includes/classes/class-es-campaigns-table.php:124
@@ -277,15 +277,15 @@ msgstr ""
 #: lite/includes/classes/class-es-newsletters.php:240
 #: lite/includes/pro-features.php:207
 #: pro/partials/es-dashboard.php:8
-#: starter/starter-class-email-subscribers.php:826
+#: starter/starter-class-email-subscribers.php:829
 msgid "Campaigns"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:349
+#: lite/admin/class-email-subscribers-admin.php:350
 msgid "Post Notifications"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:351
+#: lite/admin/class-email-subscribers-admin.php:352
 #: lite/admin/class-es-campaign-admin.php:568
 #: lite/includes/classes/class-es-campaign-report.php:56
 #: lite/includes/classes/class-es-campaigns-table.php:357
@@ -299,7 +299,7 @@ msgstr ""
 msgid "Broadcast"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:352
+#: lite/admin/class-email-subscribers-admin.php:353
 #: lite/includes/classes/class-es-newsletters.php:426
 #: lite/includes/classes/class-es-reports-table.php:595
 #: lite/includes/classes/class-es-templates-table.php:149
@@ -308,36 +308,36 @@ msgstr ""
 msgid "Template Preview"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:357
+#: lite/admin/class-email-subscribers-admin.php:358
 msgid "Gallery"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:361
+#: lite/admin/class-email-subscribers-admin.php:362
 #: lite/admin/dist/main.js:1
 #: lite/admin/js/src/views/EditorChoicePopup.js:10
 msgid "Template"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:361
-#: lite/admin/partials/dashboard.php:618
+#: lite/admin/class-email-subscribers-admin.php:362
+#: lite/admin/partials/dashboard.php:617
 #: lite/includes/class-email-subscribers-activator.php:49
 #: lite/includes/class-email-subscribers-activator.php:50
 #: lite/includes/class-email-subscribers-activator.php:55
 msgid "Templates"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:367
+#: lite/admin/class-email-subscribers-admin.php:368
 #: lite/includes/pro-features.php:210
 #: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:341
 #: lite/includes/workflows/class-es-workflows-table.php:53
 #: lite/includes/workflows/class-es-workflows-table.php:276
 #: lite/includes/workflows/class-es-workflows-table.php:291
-#: starter/starter-class-email-subscribers.php:829
+#: starter/starter-class-email-subscribers.php:832
 msgid "Workflows"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:376
-#: lite/admin/partials/dashboard.php:614
+#: lite/admin/class-email-subscribers-admin.php:377
+#: lite/admin/partials/dashboard.php:613
 #: lite/includes/classes/class-es-campaign-report.php:17
 #: lite/includes/classes/class-es-reports-table.php:17
 #: lite/includes/classes/class-es-reports-table.php:55
@@ -346,46 +346,50 @@ msgstr ""
 #: pro/classes/class-es-pro-sequence-report.php:21
 #: pro/classes/class-es-pro-sequence-report.php:44
 #: pro/classes/class-es-pro-sequence-report.php:77
-#: starter/starter-class-email-subscribers.php:827
+#: starter/starter-class-email-subscribers.php:830
 msgid "Reports"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:380
+#: lite/admin/class-email-subscribers-admin.php:381
 #: lite/admin/class-es-form-admin.php:414
-#: lite/admin/partials/dashboard.php:622
+#: lite/admin/partials/dashboard.php:621
 #: lite/includes/classes/class-es-admin-settings.php:136
 msgid "Settings"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:385
+#: lite/admin/class-email-subscribers-admin.php:386
 msgid "Go To Icegram"
 msgstr ""
 
 #. translators: 1. WordPress URL 2. Icegram Express version 3. Icegram site URL
-#: lite/admin/class-email-subscribers-admin.php:987
-msgid "<span id=\"footer-thankyou\">Thank you for creating with <a href=\"%1$s\" target=\"_blank\">WordPress</a> | Icegram Express (formerly known as Email Subscribers & Newsletters) <b>%2$s</b>. Developed by team <a href=\"%3$s\" target=\"_blank\">Icegram</a></span>"
+#: lite/admin/class-email-subscribers-admin.php:988
+msgid "<span id=\"footer-thankyou\">Thank you for creating with <a href=\"%1$s\" target=\"_blank\">WordPress</a> | Icegram Express <b>%2$s</b>. Developed by team <a href=\"%3$s\" target=\"_blank\">Icegram</a></span>"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:1015
-#: lite/admin/class-email-subscribers-admin.php:1837
-#: lite/admin/class-email-subscribers-admin.php:1860
+#: lite/admin/class-email-subscribers-admin.php:1016
+#: lite/admin/class-email-subscribers-admin.php:1838
+#: lite/admin/class-email-subscribers-admin.php:1861
 msgid "Something went wrong"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:1487
+#. translators: %s: Pricing page URL
+#: lite/admin/class-email-subscribers-admin.php:1488
 #: lite/includes/class-email-subscribers-activator.php:61
 #: lite/includes/class-email-subscribers.php:1537
+#: lite/includes/classes/class-email-subscribers-pricing.php:781
+#: lite/includes/classes/class-es-form-widget.php:11
 #: lite/includes/classes/class-es-old-widget.php:13
 #: lite/includes/classes/class-es-widget.php:11
+#: lite/includes/compatibilities/elementor/actions/class-es-ig-form-action.php:27
 #: lite/includes/compatibilities/elementor/actions/class-es-ig-form-action.php:40
 msgid "Icegram Express"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:1529
+#: lite/admin/class-email-subscribers-admin.php:1530
 msgid "Last 30 days"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:1538
+#: lite/admin/class-email-subscribers-admin.php:1539
 #: lite/includes/class-es-common.php:405
 #: lite/includes/classes/class-es-contacts-table.php:356
 #: lite/includes/classes/class-es-import-subscribers.php:867
@@ -396,8 +400,8 @@ msgstr ""
 msgid "Subscribed"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:1546
-#: lite/admin/partials/dashboard.php:284
+#: lite/admin/class-email-subscribers-admin.php:1547
+#: lite/admin/partials/dashboard.php:283
 #: lite/includes/class-es-common.php:407
 #: lite/includes/classes/class-es-campaign-report.php:262
 #: lite/includes/classes/class-es-contacts-table.php:364
@@ -410,27 +414,27 @@ msgstr ""
 msgid "Unsubscribed"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:1554
+#: lite/admin/class-email-subscribers-admin.php:1555
 #: lite/includes/pro-features.php:1346
 msgid "Avg Open Rate"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:1562
+#: lite/admin/class-email-subscribers-admin.php:1563
 msgid "Messages Sent"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:1573
+#: lite/admin/class-email-subscribers-admin.php:1574
 msgid "Last Campaign"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:1609
+#: lite/admin/class-email-subscribers-admin.php:1610
 msgid "Sent to"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:1621
-#: lite/admin/partials/dashboard.php:360
-#: lite/admin/partials/dashboard.php:378
-#: lite/admin/partials/dashboard.php:539
+#: lite/admin/class-email-subscribers-admin.php:1622
+#: lite/admin/partials/dashboard.php:359
+#: lite/admin/partials/dashboard.php:377
+#: lite/admin/partials/dashboard.php:538
 #: lite/includes/pro-features.php:1426
 #: lite/includes/pro-features.php:1464
 #: pro/classes/class-es-pro-reports-data.php:321
@@ -441,20 +445,20 @@ msgstr ""
 msgid "Opens"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:1635
+#: lite/admin/class-email-subscribers-admin.php:1636
 msgid "No campaigns sent yet"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:1643
+#: lite/admin/class-email-subscribers-admin.php:1644
 msgid "Latest Blog Posts from Icegram"
 msgstr ""
 
-#: lite/admin/class-email-subscribers-admin.php:1760
+#: lite/admin/class-email-subscribers-admin.php:1761
 msgid "Please publish it or save it as a draft."
 msgstr ""
 
 #. translators: %s: link to new keyword doc
-#: lite/admin/class-email-subscribers-admin.php:1816
+#: lite/admin/class-email-subscribers-admin.php:1817
 msgid "There seems to be some issue in sending your emails. You may have to check your %1$semail sending setting%2$s."
 msgstr ""
 
@@ -636,8 +640,8 @@ msgstr ""
 #: lite/admin/class-es-campaign-admin.php:395
 #: lite/admin/class-es-campaign-admin.php:418
 #: lite/admin/class-es-form-admin.php:182
-#: lite/includes/classes/class-es-admin-settings.php:232
-#: lite/includes/classes/class-es-admin-settings.php:235
+#: lite/includes/classes/class-es-admin-settings.php:228
+#: lite/includes/classes/class-es-admin-settings.php:231
 #: lite/includes/classes/class-es-campaigns-table.php:626
 #: lite/includes/classes/class-es-forms-table.php:808
 #: lite/includes/classes/class-es-lists-table.php:637
@@ -660,7 +664,7 @@ msgstr ""
 #: lite/admin/class-es-campaign-admin.php:407
 #: lite/admin/class-es-form-admin.php:165
 #: lite/admin/class-ig-es-campaign-rules.php:672
-#: lite/includes/classes/class-es-admin-settings.php:241
+#: lite/includes/classes/class-es-admin-settings.php:237
 #: lite/includes/classes/class-es-campaign-report.php:436
 #: lite/includes/classes/class-es-contacts-table.php:838
 #: lite/includes/classes/class-es-export-subscribers.php:331
@@ -874,13 +878,13 @@ msgstr ""
 
 #. translators: %s: Create list page url
 #: lite/admin/class-es-form-admin.php:250
-#: lite/admin/class-es-form-admin.php:630
+#: lite/admin/class-es-form-admin.php:632
 msgid "List not found. Please %s"
 msgstr ""
 
 #. translators: %s: Create list page url
 #: lite/admin/class-es-form-admin.php:250
-#: lite/admin/class-es-form-admin.php:630
+#: lite/admin/class-es-form-admin.php:632
 msgid "create your first list"
 msgstr ""
 
@@ -936,11 +940,11 @@ msgstr ""
 msgid "Design"
 msgstr ""
 
-#: lite/admin/class-es-form-admin.php:595
+#: lite/admin/class-es-form-admin.php:597
 msgid "Form Preview"
 msgstr ""
 
-#: lite/admin/class-es-form-admin.php:690
+#: lite/admin/class-es-form-admin.php:697
 msgid "Theme styling"
 msgstr ""
 
@@ -1003,7 +1007,7 @@ msgstr ""
 #: lite/includes/classes/class-es-post-notifications.php:545
 #: lite/includes/workflows/admin/views/meta-box-actions.php:105
 #: pro/pro-class-sequences.php:260
-#: starter/starter-class-email-subscribers.php:1735
+#: starter/starter-class-email-subscribers.php:1738
 msgid "Loading..."
 msgstr ""
 
@@ -1249,220 +1253,220 @@ msgid "Unable to create %1$s and %2$s list."
 msgstr ""
 
 #. translators: Main list name
-#: lite/admin/class-ig-es-onboarding.php:594
+#: lite/admin/class-ig-es-onboarding.php:595
 msgid "Add to %s list when someone registers"
 msgstr ""
 
-#: lite/admin/class-ig-es-onboarding.php:718
+#: lite/admin/class-ig-es-onboarding.php:719
 msgid "Please accept terms & condition"
 msgstr ""
 
 #. translators: Active sidebar name.
-#: lite/admin/class-ig-es-onboarding.php:776
+#: lite/admin/class-ig-es-onboarding.php:777
 msgid "Adding the form to \"%s\" sidebar, so you can show it on the site"
 msgstr ""
 
 #. translators: Active sidebar name.
-#: lite/admin/class-ig-es-onboarding.php:779
+#: lite/admin/class-ig-es-onboarding.php:780
 msgid "Unable to add form widget to \"%s\" sidebar. Widget may already exists."
 msgstr ""
 
 #. translators: Active sidebar name.
-#: lite/admin/class-ig-es-onboarding.php:784
+#: lite/admin/class-ig-es-onboarding.php:785
 msgid "Unable to add form widget to \"%s\" sidebar. No subscription form found."
 msgstr ""
 
-#: lite/admin/class-ig-es-onboarding.php:836
 #: lite/admin/class-ig-es-onboarding.php:837
-msgid "Welcome To Icegram Express (formerly known as Email Subscribers & Newsletters)"
+#: lite/admin/class-ig-es-onboarding.php:838
+msgid "Welcome To Icegram Express"
 msgstr ""
 
-#: lite/admin/class-ig-es-onboarding.php:1000
+#: lite/admin/class-ig-es-onboarding.php:1001
 msgid "Seems like your server is not setup correctly to send emails. Please confirm if you're getting any other emails from within WordPress"
 msgstr ""
 
-#: lite/admin/class-ig-es-onboarding.php:1103
+#: lite/admin/class-ig-es-onboarding.php:1104
 msgid "New Post Published - {{POSTTITLE}}"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:69
+#: lite/admin/partials/dashboard.php:68
 msgid "Add a Subscription Form"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:70
+#: lite/admin/partials/dashboard.php:69
 msgid "Grow subscribers. Add a newsletter signup form to your site."
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:71
-#: lite/admin/partials/dashboard.php:183
+#: lite/admin/partials/dashboard.php:70
+#: lite/admin/partials/dashboard.php:182
 msgid "Create"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:77
+#: lite/admin/partials/dashboard.php:76
 #: lite/includes/classes/class-es-contacts-table.php:133
 #: lite/includes/classes/class-es-import-subscribers.php:415
 msgid "Import Contacts"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:78
+#: lite/admin/partials/dashboard.php:77
 msgid "Coming from another email marketing system? Upload a CSV file to import subscribers."
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:79
+#: lite/admin/partials/dashboard.php:78
 #: lite/includes/classes/class-es-import-subscribers.php:378
 msgid "Import"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:85
+#: lite/admin/partials/dashboard.php:84
 msgid "Configure Email Sending"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:86
+#: lite/admin/partials/dashboard.php:85
 msgid " Essential for high email delivery and reaching the inbox. SMTP, email service providers... set it all up."
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:87
+#: lite/admin/partials/dashboard.php:86
 msgid "Setup"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:93
+#: lite/admin/partials/dashboard.php:92
 msgid "Send a Newsletter"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:94
+#: lite/admin/partials/dashboard.php:93
 msgid "Broadcast a newsletter campaign to all or selected subscribers."
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:95
+#: lite/admin/partials/dashboard.php:94
 msgid "Begin"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:101
+#: lite/admin/partials/dashboard.php:100
 msgid "Create an Auto-responder Sequence"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:102
+#: lite/admin/partials/dashboard.php:101
 msgid "Welcome emails, drip campaigns... Send automatic emails at regular intervals to engage readers."
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:103
+#: lite/admin/partials/dashboard.php:102
 msgid "Start"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:117
-msgid "Try Icegram Express (formerly known as Email Subscribers & Newsletters) Premium"
+#: lite/admin/partials/dashboard.php:116
+msgid "Try Icegram Express Premium"
 msgstr ""
 
 #. translators: %d: Trial period in days
-#: lite/admin/partials/dashboard.php:119
+#: lite/admin/partials/dashboard.php:118
 msgid "Start your %d days free trial to get automatic email sending, advance spam protection and more."
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:120
+#: lite/admin/partials/dashboard.php:119
 #: lite/admin/partials/trial-optin-form.php:33
 msgid "Start trial"
 msgstr ""
 
 #. translators: %d: Trial period in days
-#: lite/admin/partials/dashboard.php:132
+#: lite/admin/partials/dashboard.php:131
 msgid "Your free %d days trial is on"
 msgstr ""
 
 #. translators: %s: Number of days remaining in trial
-#: lite/admin/partials/dashboard.php:134
-msgid "Hope you are enjoying the premium features of Icegram Express (formerly known as Email Subscribers & Newsletters). It will expire on %s. You can anytime upgrade it to MAX."
+#: lite/admin/partials/dashboard.php:133
+msgid "Hope you are enjoying the premium features of Icegram Express. It will expire on %s. You can anytime upgrade it to MAX."
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:135
-#: lite/admin/partials/dashboard.php:147
+#: lite/admin/partials/dashboard.php:134
+#: lite/admin/partials/dashboard.php:146
 msgid "Upgrade to Max"
 msgstr ""
 
 #. translators: %d: Trial period in days
-#: lite/admin/partials/dashboard.php:145
+#: lite/admin/partials/dashboard.php:144
 msgid "Your %d days trial is expired"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:146
+#: lite/admin/partials/dashboard.php:145
 msgid "Upgrade now to continue uninterrupted use of premium features like automatic email sending and more."
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:194
+#: lite/admin/partials/dashboard.php:193
 msgid "New Broadcast"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:196
+#: lite/admin/partials/dashboard.php:195
 msgid "New Post Notification"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:199
-#: lite/admin/partials/dashboard.php:201
+#: lite/admin/partials/dashboard.php:198
+#: lite/admin/partials/dashboard.php:200
 #: pro/pro-class-sequences.php:136
 msgid "New Sequence"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:202
+#: lite/admin/partials/dashboard.php:201
 msgid "Premium"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:207
+#: lite/admin/partials/dashboard.php:206
 msgid "New Template"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:211
+#: lite/admin/partials/dashboard.php:210
 msgid "New Form"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:212
+#: lite/admin/partials/dashboard.php:211
 msgid "New List"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:213
+#: lite/admin/partials/dashboard.php:212
 msgid "New Contact"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:228
+#: lite/admin/partials/dashboard.php:227
 #: lite/includes/classes/class-es-contacts-table.php:349
 msgid "Last 60 days"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:260
-#: lite/admin/partials/dashboard.php:277
+#: lite/admin/partials/dashboard.php:259
+#: lite/admin/partials/dashboard.php:276
 msgid "New subscribers"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:304
+#: lite/admin/partials/dashboard.php:303
 #: pro/classes/class-es-pro-campaign-rules.php:42
 msgid "Engagement score"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:331
+#: lite/admin/partials/dashboard.php:330
 msgid "Messages sent"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:410
-#: lite/admin/partials/dashboard.php:427
-#: lite/admin/partials/dashboard.php:547
+#: lite/admin/partials/dashboard.php:409
+#: lite/admin/partials/dashboard.php:426
+#: lite/admin/partials/dashboard.php:546
 #: pro/classes/class-es-pro-reports-data.php:682
 #: pro/partials/es-dashboard.php:100
 #: pro/templates/email/es-admin-subscription-summary.php:175
 msgid "Clicks"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:453
+#: lite/admin/partials/dashboard.php:452
 msgid "Top campaigns"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:555
+#: lite/admin/partials/dashboard.php:554
 #: pro/partials/es-dashboard.php:112
 msgid "Lost"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:576
+#: lite/admin/partials/dashboard.php:575
 msgid "No campaigns found"
 msgstr ""
 
-#: lite/admin/partials/dashboard.php:612
+#: lite/admin/partials/dashboard.php:611
 msgid "Jump to: "
 msgstr ""
 
@@ -1509,7 +1513,7 @@ msgstr ""
 
 #. translators: 1. Starting strong tag 2. Closing strong tag
 #: lite/admin/partials/help.php:136
-msgid "If you found duplicate campaigns, lists, forms, reports after upgrading from Icegram Express (formerly known as Email Subscribers & Newsletters) 3.5.x to 4.x and want to run the database migration again to fix this, please click the below %1$sRun the updater%2$s button."
+msgid "If you found duplicate campaigns, lists, forms, reports after upgrading from Icegram Express 3.5.x to 4.x and want to run the database migration again to fix this, please click the below %1$sRun the updater%2$s button."
 msgstr ""
 
 #. translators: 1. Starting strong tag 2. Closing strong tag
@@ -1876,7 +1880,7 @@ msgstr ""
 
 #. translators: %s: ES Pro URL
 #: lite/includes/class-email-subscribers.php:375
-msgid "Or use <strong><a href=\"%s\" target=\"_blank\">Icegram Express (formerly known as Email Subscribers & Newsletters) Pro</a></strong> for automatic Cron support"
+msgid "Or use <strong><a href=\"%s\" target=\"_blank\">Icegram Express Pro</a></strong> for automatic Cron support"
 msgstr ""
 
 #: lite/includes/class-email-subscribers.php:376
@@ -2013,7 +2017,7 @@ msgid "5 Simple Tricks to Improve Email Marketing Campaign Results"
 msgstr ""
 
 #: lite/includes/class-es-common.php:1882
-msgid "<b>Icegram Express</b> (formerly known as <br/><b>Email Subscribers & Newsletters</b>) Secret Club"
+msgid "<b>Icegram Express</b>) Secret Club"
 msgstr ""
 
 #: lite/includes/class-es-common.php:1884
@@ -2022,7 +2026,7 @@ msgid "Join Now"
 msgstr ""
 
 #: lite/includes/class-es-common.php:1890
-msgid "Icegram Express (formerly known as Email Subscribers & Newsletters) MAX"
+msgid "Icegram Express MAX"
 msgstr ""
 
 #: lite/includes/class-es-common.php:1892
@@ -2055,7 +2059,6 @@ msgstr ""
 #: lite/includes/classes/class-es-campaigns-table.php:543
 #: lite/includes/classes/class-es-campaigns-table.php:579
 #: lite/includes/classes/class-es-reports-table.php:252
-#: lite/includes/workflows/admin/views/meta-box-timing.php:36
 msgid "Scheduled"
 msgstr ""
 
@@ -2126,7 +2129,6 @@ msgstr ""
 
 #: lite/includes/class-es-common.php:2635
 #: lite/includes/pro-features.php:1194
-#: lite/includes/workflows/admin/views/meta-box-timing.php:82
 #: lite/includes/workflows/fields/class-es-date.php:31
 #: pro/classes/class-es-campaign-admin-pro.php:194
 #: pro/pro-class-email-subscribers.php:913
@@ -2140,7 +2142,7 @@ msgstr ""
 
 #. translators: %s: Offer text
 #: lite/includes/classes/class-email-subscribers-pricing.php:353
-msgid "Congratulations! You just unlocked %s on Icegram Express (formerly known as Email Subscribers & Newsletters) Premium!"
+msgid "Congratulations! You just unlocked %s on Icegram Express Premium!"
 msgstr ""
 
 #. translators: %s: Offer text
@@ -2214,7 +2216,7 @@ msgid "mnmatty"
 msgstr ""
 
 #: lite/includes/classes/class-email-subscribers-pricing.php:403
-msgid " More powerful features with Icegram Express (formerly known as Email Subscribers & Newsletters) Premium!"
+msgid " More powerful features with Icegram Express Premium!"
 msgstr ""
 
 #: lite/includes/classes/class-email-subscribers-pricing.php:408
@@ -2404,13 +2406,6 @@ msgstr ""
 msgid "You can either manually send normal email marketing campaigns or use %s to automate reliable emails that land in subscribers’ inboxes, not in the spam folders."
 msgstr ""
 
-#. translators: %s: Pricing page URL
-#: lite/includes/classes/class-email-subscribers-pricing.php:781
-#: lite/includes/classes/class-es-form-widget.php:11
-#: lite/includes/compatibilities/elementor/actions/class-es-ig-form-action.php:27
-msgid "Icegram Express (formerly known as Email Subscribers & Newsletters)"
-msgstr ""
-
 #: lite/includes/classes/class-es-admin-settings.php:41
 msgid "You do not have permission to update settings"
 msgstr ""
@@ -2420,364 +2415,360 @@ msgid "General"
 msgstr ""
 
 #: lite/includes/classes/class-es-admin-settings.php:152
-msgid "Notifications"
-msgstr ""
-
-#: lite/includes/classes/class-es-admin-settings.php:156
 msgid "Email Sending"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:160
+#: lite/includes/classes/class-es-admin-settings.php:156
 msgid "Security"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:168
-msgid "REST API"
+#: lite/includes/classes/class-es-admin-settings.php:164
+msgid "API"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:210
+#: lite/includes/classes/class-es-admin-settings.php:206
 msgid "Your emails might land in spam if you use above email address.."
 msgstr ""
 
 #. translators: %s: Site domain
-#: lite/includes/classes/class-es-admin-settings.php:214
+#: lite/includes/classes/class-es-admin-settings.php:210
 msgid "Consider using email address matching your site domain like %s"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:220
+#: lite/includes/classes/class-es-admin-settings.php:216
 msgid "The \"from\" email address for all emails."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:228
+#: lite/includes/classes/class-es-admin-settings.php:224
 msgid "Sender"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:233
+#: lite/includes/classes/class-es-admin-settings.php:229
 msgid "The \"from\" name people will see when they receive emails."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:244
+#: lite/includes/classes/class-es-admin-settings.php:240
 msgid "Email Address"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:252
+#: lite/includes/classes/class-es-admin-settings.php:248
 msgid "Admin emails"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:253
+#: lite/includes/classes/class-es-admin-settings.php:249
 msgid "Who should be notified about system events like \"someone subscribed\", \"campaign sent\" etc?"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:255
+#: lite/includes/classes/class-es-admin-settings.php:251
 msgid "You can enter multiple email addresses - separate them with comma"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:261
+#: lite/includes/classes/class-es-admin-settings.php:257
 msgid "Opt-in type"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:263
+#: lite/includes/classes/class-es-admin-settings.php:259
 msgid "Single = confirm subscribers as they subscribe.<br> Double = send a confirmation email and require clicking on a link to confirm subscription."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:272
+#: lite/includes/classes/class-es-admin-settings.php:268
 msgid "Image size"
 msgstr ""
 
 #. translators: %s: Keyword
-#: lite/includes/classes/class-es-admin-settings.php:277
+#: lite/includes/classes/class-es-admin-settings.php:273
 msgid "%s keyword will use this image size. Use full size only if your template design needs it. Thumbnail should work well otherwise."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:284
+#: lite/includes/classes/class-es-admin-settings.php:280
 msgid "Enable AJAX subscription form submission"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:285
+#: lite/includes/classes/class-es-admin-settings.php:281
 msgid "Enabling this will let users to submit their subscription form without page reload using AJAX call."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:292
+#: lite/includes/classes/class-es-admin-settings.php:288
 msgid "Track opens"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:293
+#: lite/includes/classes/class-es-admin-settings.php:289
 msgid "Do you want to track when people view your emails? (We recommend keeping it enabled)"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:305
+#: lite/includes/classes/class-es-admin-settings.php:301
 msgid "Subscription success message"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:306
+#: lite/includes/classes/class-es-admin-settings.php:302
 msgid "This message will show when a visitor successfully subscribes using the form."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:317
+#: lite/includes/classes/class-es-admin-settings.php:313
 msgid "Unsubscribe text in email footer:"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:318
+#: lite/includes/classes/class-es-admin-settings.php:314
 msgid "All emails will include this text in the footer so people can unsubscribe if they want."
 msgstr ""
 
 #. translators: %s: List of Keywords
-#: lite/includes/classes/class-es-admin-settings.php:320
+#: lite/includes/classes/class-es-admin-settings.php:316
 msgid "Use %s keyword to add unsubscribe link."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:325
+#: lite/includes/classes/class-es-admin-settings.php:321
 msgid "Double opt-in subscription messages:"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:326
+#: lite/includes/classes/class-es-admin-settings.php:322
 msgid "Page and messages to show when people click on the link in a subscription confirmation email."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:333
+#: lite/includes/classes/class-es-admin-settings.php:329
 msgid "You have been subscribed successfully!"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:335
+#: lite/includes/classes/class-es-admin-settings.php:331
 msgid "Message on successful subscription"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:336
+#: lite/includes/classes/class-es-admin-settings.php:332
 msgid "Show this message if contact is successfully subscribed from double opt-in (confirmation) email"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:344
+#: lite/includes/classes/class-es-admin-settings.php:340
 msgid "Oops.. Your request couldn't be completed. This email address seems to be already subscribed / blocked."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:346
+#: lite/includes/classes/class-es-admin-settings.php:342
 msgid "Message when subscription fails"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:347
+#: lite/includes/classes/class-es-admin-settings.php:343
 msgid "Show this message if any error occured after clicking confirmation link from double opt-in (confirmation) email."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:355
+#: lite/includes/classes/class-es-admin-settings.php:351
 msgid "Unsubscribe messages"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:356
+#: lite/includes/classes/class-es-admin-settings.php:352
 msgid "Page and messages to show when people click on the unsubscribe link in an email's footer."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:364
+#: lite/includes/classes/class-es-admin-settings.php:360
 msgid "Thank You, You have been successfully unsubscribed. You will no longer hear from us."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:366
+#: lite/includes/classes/class-es-admin-settings.php:362
 msgid "Message on unsubscribe success"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:367
+#: lite/includes/classes/class-es-admin-settings.php:363
 msgid "Once contact clicks on unsubscribe link, he/she will be redirected to a page where this message will be shown."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:375
+#: lite/includes/classes/class-es-admin-settings.php:371
 msgid "Oops.. There was some technical error. Please try again later or contact us."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:377
+#: lite/includes/classes/class-es-admin-settings.php:373
 msgid "Message when unsubscribe fails"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:378
+#: lite/includes/classes/class-es-admin-settings.php:374
 msgid "Show this message if any error occured after clicking on unsubscribe link."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:386
+#: lite/includes/classes/class-es-admin-settings.php:382
 msgid "Share Icegram"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:395
+#: lite/includes/classes/class-es-admin-settings.php:391
 msgid "Delete plugin data on uninstall"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:396
+#: lite/includes/classes/class-es-admin-settings.php:392
 msgid "Be careful with this! When enabled, it will remove all lists, campaigns and other data if you uninstall the plugin."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:423
+#: lite/includes/classes/class-es-admin-settings.php:419
 msgid "<br><span class=\"ml-6\">Cron last hit time : <b>"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:430
+#: lite/includes/classes/class-es-admin-settings.php:426
 msgid "<span class=\"es-send-success es-icon\"></span> We will take care of it. You don't need to visit this URL manually."
 msgstr ""
 
 #. translators: %s: Link to Icegram documentation
-#: lite/includes/classes/class-es-admin-settings.php:433
+#: lite/includes/classes/class-es-admin-settings.php:429
 msgid "You need to visit this URL to send email notifications. Know <a href='%s' target='_blank'>how to run this in background</a>"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:436
+#: lite/includes/classes/class-es-admin-settings.php:432
 msgid "How to configure Email Sending"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:452
+#: lite/includes/classes/class-es-admin-settings.php:448
 msgid "Cron URL"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:461
+#: lite/includes/classes/class-es-admin-settings.php:457
 msgid "Disable Wordpress Cron"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:462
-msgid "Enable this option if you do not want Icegram Express (formerly known as Email Subscribers & Newsletters) to use WP Cron to send emails."
+#: lite/includes/classes/class-es-admin-settings.php:458
+msgid "Enable this option if you do not want Icegram Express to use WP Cron to send emails."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:467
+#: lite/includes/classes/class-es-admin-settings.php:463
 msgid "Send emails at most every"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:470
+#: lite/includes/classes/class-es-admin-settings.php:466
 msgid "Optional if a real cron service is used"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:480
+#: lite/includes/classes/class-es-admin-settings.php:476
 msgid "Maximum emails to send in an hour"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:481
+#: lite/includes/classes/class-es-admin-settings.php:477
 msgid "Total emails your host can send in an hour.<br>Total emails sent in current hour: <b>"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:490
+#: lite/includes/classes/class-es-admin-settings.php:486
 msgid "Maximum emails to send at once"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:491
+#: lite/includes/classes/class-es-admin-settings.php:487
 msgid "Maximum emails you want to send on every cron request."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:502
+#: lite/includes/classes/class-es-admin-settings.php:498
 msgid "Send test email"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:503
+#: lite/includes/classes/class-es-admin-settings.php:499
 msgid "Enter email address to send test email."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:511
+#: lite/includes/classes/class-es-admin-settings.php:507
 msgid "Select Mailer"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:523
-#: lite/includes/classes/class-es-admin-settings.php:892
+#: lite/includes/classes/class-es-admin-settings.php:519
+#: lite/includes/classes/class-es-admin-settings.php:888
 msgid "Pepipost API key"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:540
+#: lite/includes/classes/class-es-admin-settings.php:536
 msgid "Select a mailer to send mail"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:550
+#: lite/includes/classes/class-es-admin-settings.php:546
 msgid "Blocked domain(s)"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:552
+#: lite/includes/classes/class-es-admin-settings.php:548
 msgid "Seeing spam signups from particular domains? Enter domains names (one per line) that you want to block here."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:573
-msgid "Enable REST API"
+#: lite/includes/classes/class-es-admin-settings.php:569
+msgid "Enable API"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:574
-msgid "Enable REST API to add/edit/delete subscribers through third-party sites or apps."
+#: lite/includes/classes/class-es-admin-settings.php:570
+msgid "Enable API to add/edit/delete subscribers through third-party sites or apps."
 msgstr ""
 
 #. translators: REST API endpoint
+#: lite/includes/classes/class-es-admin-settings.php:574
+msgid "URL endpoint: %s"
+msgstr ""
+
 #: lite/includes/classes/class-es-admin-settings.php:578
-msgid "REST endpoint: %s"
+msgid "API Keys"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:582
-msgid "REST API Keys"
-msgstr ""
-
-#: lite/includes/classes/class-es-admin-settings.php:787
+#: lite/includes/classes/class-es-admin-settings.php:783
 msgid "Save Settings"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:891
+#: lite/includes/classes/class-es-admin-settings.php:887
 msgid "Signup for Pepipost"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:892
+#: lite/includes/classes/class-es-admin-settings.php:888
 msgid "How to find"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:893
+#: lite/includes/classes/class-es-admin-settings.php:889
 msgid "Why to choose Pepipost"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:917
+#: lite/includes/classes/class-es-admin-settings.php:913
 msgid "Cron Info"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:984
+#: lite/includes/classes/class-es-admin-settings.php:980
 msgid "Event"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:985
+#: lite/includes/classes/class-es-admin-settings.php:981
 msgid "Interval"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:986
+#: lite/includes/classes/class-es-admin-settings.php:982
 msgid "Next Execution"
 msgstr ""
 
 #. translators: %s: Next scheduled time
-#: lite/includes/classes/class-es-admin-settings.php:1032
+#: lite/includes/classes/class-es-admin-settings.php:1028
 msgid "In %s"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:1067
+#: lite/includes/classes/class-es-admin-settings.php:1063
 msgid "Plugin usage tracking"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:1070
-msgid "Help us to improve Icegram Express (formerly known as Email Subscribers & Newsletters) by opting in to share non-sensitive plugin usage data."
+#: lite/includes/classes/class-es-admin-settings.php:1066
+msgid "Help us to improve Icegram Express by opting in to share non-sensitive plugin usage data."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:1099
+#: lite/includes/classes/class-es-admin-settings.php:1095
 msgid "Now you can control all your notifications through workflows."
 msgstr ""
 
 #. translators: 1. Anchor start tag 2. Anchor end tag
-#: lite/includes/classes/class-es-admin-settings.php:1102
+#: lite/includes/classes/class-es-admin-settings.php:1098
 msgid "Click %1$shere%2$s to go to workflows."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:1123
+#: lite/includes/classes/class-es-admin-settings.php:1119
 msgid "Key"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:1124
+#: lite/includes/classes/class-es-admin-settings.php:1120
 msgid "Username"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:1125
+#: lite/includes/classes/class-es-admin-settings.php:1121
 #: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:401
 msgid "Actions"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:1163
+#: lite/includes/classes/class-es-admin-settings.php:1159
 msgid "No API keys found."
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:1177
+#: lite/includes/classes/class-es-admin-settings.php:1173
 msgid "Please select a user"
 msgstr ""
 
-#: lite/includes/classes/class-es-admin-settings.php:1188
-msgid "Generate new key"
+#: lite/includes/classes/class-es-admin-settings.php:1184
+msgid "Generate API key"
 msgstr ""
 
 #: lite/includes/classes/class-es-campaign-report.php:16
@@ -2945,7 +2936,7 @@ msgstr ""
 
 #: lite/includes/classes/class-es-campaigns-table.php:371
 #: lite/includes/workflows/actions/class-es-action-send-email.php:55
-#: starter/starter-class-email-subscribers.php:437
+#: starter/starter-class-email-subscribers.php:440
 msgid "None"
 msgstr ""
 
@@ -3215,7 +3206,7 @@ msgid "Please select list."
 msgstr ""
 
 #: lite/includes/classes/class-es-cron.php:285
-msgid "Icegram Express (formerly known as Email Subscribers & Newsletters) Cronjob Interval"
+msgid "Icegram Express Cronjob Interval"
 msgstr ""
 
 #: lite/includes/classes/class-es-cron.php:289
@@ -3364,7 +3355,7 @@ msgid "Created On"
 msgstr ""
 
 #: lite/includes/classes/class-es-form-widget.php:11
-msgid "Icegram Express (formerly known as Email Subscribers & Newsletters) Form"
+msgid "Icegram Express Form"
 msgstr ""
 
 #: lite/includes/classes/class-es-form-widget.php:44
@@ -3545,7 +3536,7 @@ msgstr ""
 
 #. translators: %s: Link to Workflow page
 #: lite/includes/classes/class-es-handle-sync-wp-user.php:262
-msgid "Hey!!! now sync users using Icegram Express (formerly known as Email Subscribers & Newsletters)' workflows. <a href=\"%s\" class=\"text-indigo-400\">Create new workflows</a>"
+msgid "Hey!!! now sync users using Icegram Express' workflows. <a href=\"%s\" class=\"text-indigo-400\">Create new workflows</a>"
 msgstr ""
 
 #. translators: %s:  Link to WordPress.org Icegram plugin page
@@ -4248,18 +4239,18 @@ msgstr ""
 
 #: lite/includes/classes/class-es-widget.php:50
 #: lite/includes/feedback.php:233
-#: starter/starter-class-email-subscribers.php:465
+#: starter/starter-class-email-subscribers.php:468
 msgid "Yes"
 msgstr ""
 
 #: lite/includes/classes/class-es-widget.php:51
 #: lite/includes/feedback.php:240
-#: starter/starter-class-email-subscribers.php:465
+#: starter/starter-class-email-subscribers.php:468
 msgid "No"
 msgstr ""
 
 #: lite/includes/feedback.php:56
-msgid "Allow Icegram Express (formerly known as Email Subscribers & Newsletters) to track plugin usage. It will help us to understand your issue better. We guarantee no sensitive data is collected."
+msgid "Allow Icegram Express to track plugin usage. It will help us to understand your issue better. We guarantee no sensitive data is collected."
 msgstr ""
 
 #: lite/includes/feedback.php:117
@@ -4271,7 +4262,7 @@ msgid "Join"
 msgstr ""
 
 #: lite/includes/feedback.php:119
-msgid "Icegram Express (formerly known as Email Subscribers & Newsletters) Secret Club"
+msgid "Icegram Express Secret Club"
 msgstr ""
 
 #: lite/includes/feedback.php:119
@@ -4279,7 +4270,7 @@ msgid "on Facebook"
 msgstr ""
 
 #: lite/includes/feedback.php:149
-msgid "<span><p>We hope you're enjoying <b>Icegram Express (formerly known as Email Subscribers & Newsletters)</b> plugin! Could you please do us a BIG favor and give us a 5-star rating on WordPress to help us spread the word and boost our motivation?</p>"
+msgid "<span><p>We hope you're enjoying <b>Icegram Express</b> plugin! Could you please do us a BIG favor and give us a 5-star rating on WordPress to help us spread the word and boost our motivation?</p>"
 msgstr ""
 
 #: lite/includes/feedback.php:226
@@ -4415,7 +4406,7 @@ msgstr ""
 
 #. translators: 1. Trial expiration message. 2. Discount message.
 #: lite/includes/notices/views/trial-to-premium-offer.php:88
-msgid "Hi there,<br/>Hope you are enjoying <strong>Icegram Express (formerly known as Email Subscribers & Newsletters) MAX trial</strong>.<br/>%1$s<br/>Upgrade now to continue uninterrupted use of premium features like <strong>block fake signups, prevent bot attacks, broadcast scheduling, automatic email sending, detailed campaign report, prevent emails from going to spam</strong> & lot more....<br/>%2$s"
+msgid "Hi there,<br/>Hope you are enjoying <strong>Icegram Express MAX trial</strong>.<br/>%1$s<br/>Upgrade now to continue uninterrupted use of premium features like <strong>block fake signups, prevent bot attacks, broadcast scheduling, automatic email sending, detailed campaign report, prevent emails from going to spam</strong> & lot more....<br/>%2$s"
 msgstr ""
 
 #: lite/includes/premium-services-ui/class-ig-es-premium-services-ui.php:107
@@ -4507,26 +4498,26 @@ msgid "Customize user roles permissions with "
 msgstr ""
 
 #: lite/includes/pro-features.php:195
-msgid "Icegram Express (formerly known as Email Subscribers & Newsletters) PRO"
+msgid "Icegram Express PRO"
 msgstr ""
 
 #: lite/includes/pro-features.php:200
-#: starter/starter-class-email-subscribers.php:819
-msgid "You can allow different user roles access to different operations within Icegram Express (formerly known as Email Subscribers & Newsletters) plugin. Please select which roles should have what access below."
+#: starter/starter-class-email-subscribers.php:822
+msgid "You can allow different user roles access to different operations within Icegram Express plugin. Please select which roles should have what access below."
 msgstr ""
 
 #: lite/includes/pro-features.php:204
-#: starter/starter-class-email-subscribers.php:823
+#: starter/starter-class-email-subscribers.php:826
 msgid "Roles"
 msgstr ""
 
 #: lite/includes/pro-features.php:209
-#: starter/starter-class-email-subscribers.php:828
+#: starter/starter-class-email-subscribers.php:831
 msgid "Sequences"
 msgstr ""
 
 #: lite/includes/pro-features.php:269
-#: starter/starter-class-email-subscribers.php:793
+#: starter/starter-class-email-subscribers.php:796
 msgid "Access Control"
 msgstr ""
 
@@ -4563,28 +4554,28 @@ msgid "Allow user to select list(s) while unsubscribing"
 msgstr ""
 
 #: lite/includes/pro-features.php:355
-#: starter/starter-class-email-subscribers.php:643
+#: starter/starter-class-email-subscribers.php:646
 msgid "Enabling this will let users unsubscribe from multiple lists at once. (We recommend keeping it enabled)"
 msgstr ""
 
 #: lite/includes/pro-features.php:367
-#: starter/starter-class-email-subscribers.php:631
+#: starter/starter-class-email-subscribers.php:634
 msgid "Nudge people to subscribe while performing some actions"
 msgstr ""
 
 #: lite/includes/pro-features.php:368
-#: starter/starter-class-email-subscribers.php:632
+#: starter/starter-class-email-subscribers.php:635
 msgid "For example : Adds a checkbox to subscribe when people post a comment."
 msgstr ""
 
 #: lite/includes/pro-features.php:373
 #: pro/pro-class-email-subscribers.php:2901
-#: starter/starter-class-email-subscribers.php:611
+#: starter/starter-class-email-subscribers.php:614
 msgid "(toggle to enable this)"
 msgstr ""
 
 #: lite/includes/pro-features.php:381
-#: starter/starter-class-email-subscribers.php:618
+#: starter/starter-class-email-subscribers.php:621
 msgid "Opt-in consent message text"
 msgstr ""
 
@@ -4593,17 +4584,17 @@ msgid "Subscribe to our email updates as well."
 msgstr ""
 
 #: lite/includes/pro-features.php:385
-#: starter/starter-class-email-subscribers.php:622
+#: starter/starter-class-email-subscribers.php:625
 msgid "Opt-in consent text"
 msgstr ""
 
 #: lite/includes/pro-features.php:407
-#: starter/starter-class-email-subscribers.php:573
+#: starter/starter-class-email-subscribers.php:576
 msgid "Block known attackers"
 msgstr ""
 
 #: lite/includes/pro-features.php:408
-#: starter/starter-class-email-subscribers.php:574
+#: starter/starter-class-email-subscribers.php:577
 msgid "Stop spam bot attacker domains from signing up. Icegram maintains a blacklist of such attackers and enabling this option will keep the blacklist updated."
 msgstr ""
 
@@ -4617,23 +4608,23 @@ msgid "Secure your list from known spam bot attacker domains, fake email address
 msgstr ""
 
 #: lite/includes/pro-features.php:423
-#: starter/starter-class-email-subscribers.php:581
+#: starter/starter-class-email-subscribers.php:584
 msgid "Block temporary / fake emails"
 msgstr ""
 
 #: lite/includes/pro-features.php:424
-#: starter/starter-class-email-subscribers.php:582
+#: starter/starter-class-email-subscribers.php:585
 msgid "Plenty of sites provide disposable / fake / temporary email addresses. People use them when they don't want to give you their real email. Block such emails to keep your list clean. Turning this on will update the blacklist automatically."
 msgstr ""
 
 #: lite/includes/pro-features.php:437
 #: lite/includes/pro-features.php:939
-#: starter/starter-class-email-subscribers.php:590
+#: starter/starter-class-email-subscribers.php:593
 msgid "Enable Captcha"
 msgstr ""
 
 #: lite/includes/pro-features.php:438
-#: starter/starter-class-email-subscribers.php:591
+#: starter/starter-class-email-subscribers.php:594
 msgid "Prevent bot signups even further. Set default captcha option for new subscription forms."
 msgstr ""
 
@@ -4728,7 +4719,7 @@ msgstr ""
 #: lite/includes/pro-features.php:738
 #: lite/includes/pro-features.php:769
 #: lite/includes/pro-features.php:807
-msgid "Icegram Express (formerly known as Email Subscribers & Newsletters) Starter"
+msgid "Icegram Express Starter"
 msgstr ""
 
 #: lite/includes/pro-features.php:582
@@ -4830,7 +4821,7 @@ msgid "ES PRO Integrations"
 msgstr ""
 
 #: lite/includes/pro-features.php:878
-msgid "Avoid manual actions and make your workflow quick, simple and effortless by integrating popular WordPress plugins with Icegram Express (formerly known as Email Subscribers & Newsletters) MAX."
+msgid "Avoid manual actions and make your workflow quick, simple and effortless by integrating popular WordPress plugins with Icegram Express MAX."
 msgstr ""
 
 #: lite/includes/pro-features.php:880
@@ -4847,7 +4838,7 @@ msgid "Get a gatekeeper like %1$sCaptcha%2$s and prevent bot signups from your s
 msgstr ""
 
 #: lite/includes/pro-features.php:943
-#: starter/starter-class-email-subscribers.php:1429
+#: starter/starter-class-email-subscribers.php:1432
 msgid "Show a captcha to protect from bot signups."
 msgstr ""
 
@@ -4860,7 +4851,7 @@ msgid "Want to send notification emails to more than one list? You can select mu
 msgstr ""
 
 #: lite/includes/pro-features.php:983
-msgid "Icegram Express (formerly known as Email Subscribers & Newsletters) MAX."
+msgid "Icegram Express MAX."
 msgstr ""
 
 #: lite/includes/pro-features.php:990
@@ -4944,7 +4935,7 @@ msgstr ""
 
 #. translators: 1. Bold tag 2. Bold close tag
 #: lite/includes/pro-features.php:1286
-msgid "Want to track some very useful statistics of your campaigns and improve your future campaign ? Upgrade to %1$s Icegram Express (formerly known as Email Subscribers & Newsletters) MAX %2$s and measure the effectiveness of your campaigns."
+msgid "Want to track some very useful statistics of your campaigns and improve your future campaign ? Upgrade to %1$s Icegram Express MAX %2$s and measure the effectiveness of your campaigns."
 msgstr ""
 
 #: lite/includes/pro-features.php:1319
@@ -5310,16 +5301,16 @@ msgid "Placeholders"
 msgstr ""
 
 #. translators: 1. Email Subscriber name 3. Supported plugin name
-#: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:1065
+#: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:1051
 msgid "Connect %1$s and %2$s"
 msgstr ""
 
 #. translators: 1. Plugin name
-#: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:1071
+#: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:1057
 msgid "Automatically sync your %1$s users/members into %2$s's audience list through our workflow integrations."
 msgstr ""
 
-#: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:1076
+#: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:1062
 msgid "Browse workflows"
 msgstr ""
 
@@ -5370,6 +5361,7 @@ msgid "Run now"
 msgstr ""
 
 #: lite/includes/workflows/admin/views/meta-box-timing.php:26
+#: starter/workflows/admin/class-es-workflow-timing-metabox.php:30
 msgid "Timing"
 msgstr ""
 
@@ -5381,33 +5373,24 @@ msgstr ""
 msgid "Delayed"
 msgstr ""
 
-#: lite/includes/workflows/admin/views/meta-box-timing.php:37
-msgid "Fixed"
+#: lite/includes/workflows/admin/views/meta-box-timing.php:47
+msgid "Length of the delay"
 msgstr ""
 
-#: lite/includes/workflows/admin/views/meta-box-timing.php:48
-msgid "Scheduled time"
+#: lite/includes/workflows/admin/views/meta-box-timing.php:68
+msgid "Hours"
 msgstr ""
 
-#: lite/includes/workflows/admin/views/meta-box-timing.php:48
-msgid "(24hr)"
+#: lite/includes/workflows/admin/views/meta-box-timing.php:69
+msgid "Minutes"
 msgstr ""
 
-#: lite/includes/workflows/admin/views/meta-box-timing.php:61
-msgid "Scheduled days"
+#: lite/includes/workflows/admin/views/meta-box-timing.php:70
+msgid "Days"
 msgstr ""
 
-#: lite/includes/workflows/admin/views/meta-box-timing.php:61
-msgid "(optional)"
-msgstr ""
-
-#: lite/includes/workflows/admin/views/meta-box-timing.php:72
-msgid "[Any day]"
-msgstr ""
-
-#: lite/includes/workflows/admin/views/meta-box-timing.php:83
-#: lite/includes/workflows/fields/class-es-time.php:126
-msgid "(24 hour time)"
+#: lite/includes/workflows/admin/views/meta-box-timing.php:71
+msgid "Weeks"
 msgstr ""
 
 #: lite/includes/workflows/admin/views/meta-box-trigger.php:22
@@ -5790,6 +5773,10 @@ msgctxt "time field"
 msgid "MM"
 msgstr ""
 
+#: lite/includes/workflows/fields/class-es-time.php:126
+msgid "(24 hour time)"
+msgstr ""
+
 #: lite/includes/workflows/fields/class-es-wp-editor.php:29
 msgid "WP Editor"
 msgstr ""
@@ -5921,13 +5908,13 @@ msgstr ""
 
 #: lite/public/class-email-subscribers-public.php:383
 #: lite/public/class-email-subscribers-public.php:480
-#: starter/starter-class-email-subscribers.php:981
-#: starter/starter-class-email-subscribers.php:1117
+#: starter/starter-class-email-subscribers.php:984
+#: starter/starter-class-email-subscribers.php:1120
 msgid "Unsubscribe"
 msgstr ""
 
 #: lite/public/class-email-subscribers-public.php:465
-#: starter/starter-class-email-subscribers.php:1093
+#: starter/starter-class-email-subscribers.php:1096
 msgid "is subscribed to our mailing list(s)."
 msgstr ""
 
@@ -6712,31 +6699,31 @@ msgid "Total Opened"
 msgstr ""
 
 #: pro/pro-class-email-subscribers.php:2547
-msgid "How to configure Mailgun to send emails in the  Icegram Express (formerly known as Email Subscribers & Newsletters) plugin?"
+msgid "How to configure Mailgun to send emails in the  Icegram Express plugin?"
 msgstr ""
 
 #: pro/pro-class-email-subscribers.php:2579
-msgid "How to configure SendGrid to send emails in the  Icegram Express (formerly known as Email Subscribers & Newsletters) plugin?"
+msgid "How to configure SendGrid to send emails in the  Icegram Express plugin?"
 msgstr ""
 
 #: pro/pro-class-email-subscribers.php:2611
-msgid "How to configure Sparkpost to send emails in the  Icegram Express (formerly known as Email Subscribers & Newsletters) plugin?"
+msgid "How to configure Sparkpost to send emails in the  Icegram Express plugin?"
 msgstr ""
 
 #: pro/pro-class-email-subscribers.php:2643
-msgid "How to configure Amazon SES to send emails in the  Icegram Express (formerly known as Email Subscribers & Newsletters) plugin?"
+msgid "How to configure Amazon SES to send emails in the  Icegram Express plugin?"
 msgstr ""
 
 #: pro/pro-class-email-subscribers.php:2675
-msgid "How to configure Postmark to send emails in the  Icegram Express (formerly known as Email Subscribers & Newsletters) plugin?"
+msgid "How to configure Postmark to send emails in the  Icegram Express plugin?"
 msgstr ""
 
 #: pro/pro-class-email-subscribers.php:2707
-msgid "How to configure Sendinblue to send emails in the Icegram Express (formerly known as Email Subscribers & Newsletters) plugin?"
+msgid "How to configure Sendinblue to send emails in the Icegram Express plugin?"
 msgstr ""
 
 #: pro/pro-class-email-subscribers.php:2739
-msgid "How to configure Mailjet to send emails in the Icegram Express (formerly known as Email Subscribers & Newsletters) plugin?"
+msgid "How to configure Mailjet to send emails in the Icegram Express plugin?"
 msgstr ""
 
 #: pro/pro-class-email-subscribers.php:2790
@@ -7514,138 +7501,138 @@ msgid "Please check your GMail Client ID and Client Secret."
 msgstr ""
 
 #: starter/mailers/gmail/class-es-gmail-mailer.php:186
-msgid "Please authorize GMail to send Email using Icegram Express (formerly known as Email Subscribers & Newsletters) plugin."
+msgid "Please authorize GMail to send Email using Icegram Express plugin."
 msgstr ""
 
 #: starter/mailers/gmail/php-gmail-api/es-google-service.php:323
 msgid "Please check your configuration!"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:250
+#: starter/starter-class-email-subscribers.php:253
 msgid "Are You a Human?"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:360
+#: starter/starter-class-email-subscribers.php:363
 msgid "No Thanks"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:361
+#: starter/starter-class-email-subscribers.php:364
 msgid "You won't receive further emails from us, thank you!"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:428
+#: starter/starter-class-email-subscribers.php:431
 msgid "SMTP Host"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:437
+#: starter/starter-class-email-subscribers.php:440
 msgid "SSL"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:437
+#: starter/starter-class-email-subscribers.php:440
 msgid "TLS"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:442
+#: starter/starter-class-email-subscribers.php:445
 msgid "Encryption"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:456
+#: starter/starter-class-email-subscribers.php:459
 msgid "SMTP Port"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:470
+#: starter/starter-class-email-subscribers.php:473
 msgid "Authentication"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:484
+#: starter/starter-class-email-subscribers.php:487
 msgid "SMTP Username"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:498
+#: starter/starter-class-email-subscribers.php:501
 msgid "SMTP Password"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:518
+#: starter/starter-class-email-subscribers.php:521
 msgid "Client ID"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:532
+#: starter/starter-class-email-subscribers.php:535
 msgid "Client Secret"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:547
+#: starter/starter-class-email-subscribers.php:550
 msgid "Redirect URL"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:642
+#: starter/starter-class-email-subscribers.php:645
 msgid "Allow user to select list(s) while unsubscribe"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:672
-msgid "How to configure Gmail to send emails in the Icegram Express (formerly known as Email Subscribers & Newsletters) plugin?"
+#: starter/starter-class-email-subscribers.php:675
+msgid "How to configure Gmail to send emails in the Icegram Express plugin?"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:696
+#: starter/starter-class-email-subscribers.php:699
 msgid "Disconnect from Gmail"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:704
+#: starter/starter-class-email-subscribers.php:707
 msgid "Authorize ES to send emails using Gmail"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:996
+#: starter/starter-class-email-subscribers.php:999
 msgid "Please select a list to unsubscribe"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:1102
+#: starter/starter-class-email-subscribers.php:1105
 msgid "Unsubscribe from below mailing list(s)"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:1103
+#: starter/starter-class-email-subscribers.php:1106
 msgid "Unsubscribe from all the lists"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:1542
+#: starter/starter-class-email-subscribers.php:1545
 msgid "Pause"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:1550
+#: starter/starter-class-email-subscribers.php:1553
 msgid "Resume"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:1574
+#: starter/starter-class-email-subscribers.php:1577
 msgid "Pause campaign"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:1583
+#: starter/starter-class-email-subscribers.php:1586
 msgid "Resume campaign"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:1674
+#: starter/starter-class-email-subscribers.php:1677
 msgid "Email Authentication"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:1677
+#: starter/starter-class-email-subscribers.php:1680
 msgid "Click on Verify Email to check for Email Authentication Headers"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:1702
+#: starter/starter-class-email-subscribers.php:1705
 msgid "Auth Header Name"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:1703
+#: starter/starter-class-email-subscribers.php:1706
 msgid "Result"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:1704
+#: starter/starter-class-email-subscribers.php:1707
 msgid "Raw Headers"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:1715
+#: starter/starter-class-email-subscribers.php:1718
 msgid "Not Verified"
 msgstr ""
 
-#: starter/starter-class-email-subscribers.php:1716
+#: starter/starter-class-email-subscribers.php:1719
 msgid "Not Found"
 msgstr ""
 

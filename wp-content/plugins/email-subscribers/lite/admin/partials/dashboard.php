@@ -55,10 +55,9 @@ $new_post_notification_url = admin_url( 'admin.php?page=es_gallery&campaign-type
 $new_sequence_url          = admin_url( 'admin.php?page=es_sequence&action=new' );
 $new_form_url              = admin_url( 'admin.php?page=es_forms&action=new' );
 $new_list_url              = admin_url( 'admin.php?page=es_lists&action=new' );
-$new_template_url          = admin_url( 'admin.php?page=es_gallery&manage-templates=yes' );
+$manage_templates_url      = admin_url( 'admin.php?page=es_gallery&manage-templates=yes' );
 $icegram_pricing_url       = 'https://www.icegram.com/email-subscribers-pricing/';
 $reports_url               = admin_url( 'admin.php?page=es_reports' );
-$templates_url             = admin_url( 'edit.php?post_type=es_template' );
 $settings_url              = admin_url( 'admin.php?page=es_settings' );
 $facebook_url              = 'https://www.facebook.com/groups/2298909487017349/';
 
@@ -114,7 +113,7 @@ if ( $show_trial_optin ) {
 
 	$trial_block = array(
 		'trial-optin' => array(
-			'title'        => __( 'Try Icegram Express (formerly known as Email Subscribers & Newsletters) Premium', 'email-subscribers' ),
+			'title'        => __( 'Try Icegram Express Premium', 'email-subscribers' ),
 			/* translators: %d: Trial period in days */
 			'desc'         => sprintf( __( 'Start your %d days free trial to get automatic email sending, advance spam protection and more.', 'email-subscribers' ), $trial_period_in_days),
 			'cta_text'     => __( 'Start trial', 'email-subscribers' ),
@@ -131,7 +130,7 @@ if ( $show_trial_optin ) {
 			/* translators: %d: Trial period in days */
 			'title'        => sprintf( __( 'Your free %d days trial is on', 'email-subscribers' ), $trial_period_in_days ),
 			/* translators: %s: Number of days remaining in trial */
-			'desc'         => sprintf( __( 'Hope you are enjoying the premium features of Icegram Express (formerly known as Email Subscribers & Newsletters). It will expire on %s. You can anytime upgrade it to MAX.', 'email-subscribers' ), $formatted_trial_expiry_date ),
+			'desc'         => sprintf( __( 'Hope you are enjoying the premium features of Icegram Express. It will expire on %s. You can anytime upgrade it to MAX.', 'email-subscribers' ), $formatted_trial_expiry_date ),
 			'cta_text'     => __( 'Upgrade to Max', 'email-subscribers' ),
 			'feature_url'  => 'https://www.icegram.com/email-subscribers-pricing/?utm_source=in_app&utm_medium=upsell&utm_campaign=es_upsell',
 		),
@@ -204,7 +203,7 @@ $allowed_html_tags = ig_es_allowed_html_tags_in_esc();
 							</div>
 							<div class="border-t border-gray-100"></div>
 							<div class="py-1">
-									<a href="<?php echo esc_url( $new_template_url ); ?>" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"><?php echo esc_html__( 'New Template', 'email-subscribers' ); ?></a>
+									<a href="<?php echo esc_url( $manage_templates_url ); ?>" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"><?php echo esc_html__( 'New Template', 'email-subscribers' ); ?></a>
 							</div>
 							<div class="border-t border-gray-100"></div>
 							<div class="py-1">
@@ -614,7 +613,7 @@ $allowed_html_tags = ig_es_allowed_html_tags_in_esc();
 									<?php echo esc_html__( 'Reports', 'email-subscribers' ); ?>
 								</a>
 								・
-								<a href="<?php echo esc_url( $templates_url ); ?>" class="font-bold" target="_blank">
+								<a href="<?php echo esc_url( $manage_templates_url ); ?>" class="font-bold" target="_blank">
 									<?php echo esc_html__( 'Templates', 'email-subscribers' ); ?>
 								</a>
 								・

@@ -3,7 +3,7 @@
  * Plugin Name: Icegram Express - Email Subscribers, Newsletters and Marketing Automation Plugin
  * Plugin URI: https://www.icegram.com/
  * Description: Add subscription forms on website, send HTML newsletters & automatically notify subscribers about new blog posts once it is published.
- * Version: 5.5.4
+ * Version: 5.5.5
  * Author: Icegram
  * Author URI: https://www.icegram.com/
  * Requires at least: 3.9
@@ -113,9 +113,9 @@ if ( ! function_exists( 'ig_es_show_upgrade_pro_notice' ) ) {
 			<?php
 			echo wp_kses_post(
 				sprintf(
-					/* translators: %s: Link to Icegram Express (formerly known as Email Subscribers & Newsletters) Premium upgrade */
-					__( 'You are using older version of <strong>Icegram Express (formerly known as Email Subscribers & Newsletters) Premium</strong> plugin. It won\'t work because it needs plugin to be updated. Please update %s plugin.', 'email-subscribers' ),
-					'<a href="' . esc_url( $url ) . '" target="_blank">' . __( 'Icegram Express (formerly known as Email Subscribers & Newsletters) Premium', 'email-subscribers' ) . '</a>'
+					/* translators: %s: Link to Icegram Express Premium upgrade */
+					__( 'You are using older version of <strong>Icegram Express Premium</strong> plugin. It won\'t work because it needs plugin to be updated. Please update %s plugin.', 'email-subscribers' ),
+					'<a href="' . esc_url( $url ) . '" target="_blank">' . __( 'Icegram Express Premium', 'email-subscribers' ) . '</a>'
 				)
 			);
 			?>
@@ -187,7 +187,7 @@ if ( 'premium' === $ig_es_plan ) {
 /* ***************************** Initial Compatibility Work (End) ******************* */
 
 if ( ! defined( 'ES_PLUGIN_VERSION' ) ) {
-	define( 'ES_PLUGIN_VERSION', '5.5.4' );
+	define( 'ES_PLUGIN_VERSION', '5.5.5' );
 }
 
 // Plugin Folder Path.
