@@ -986,11 +986,8 @@ function get_search_result_listing()
         die();
         ?>
       </div>
-<?php } ?>
+<?php } 
 
-
-
-<?php
 /* Career Listing 12-12-2022*/
 add_action('wp_ajax_get_career_listing', 'get_career_listing');
 add_action('wp_ajax_nopriv_get_career_listing', 'get_career_listing');
